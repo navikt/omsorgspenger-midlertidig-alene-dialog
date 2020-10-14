@@ -7,7 +7,7 @@ export enum Arbeidssituasjon {
     'annen' = 'annen',
 }
 
-export enum AndreForeldrenSituasjon {
+export enum AnnenForeldrenSituasjon {
     'sykdom' = 'sykdom',
     'innlagt i helseinstitusjon' = 'innlagt i helseinstitusjon',
     'fengsel' = 'fengsel',
@@ -21,21 +21,17 @@ export enum SoknadFormField {
     borINorge = 'borINorge',
     arbeiderINorge = 'arbeiderINorge',
     arbeidssituasjon = 'arbeidssituasjon',
-    andreForeldren = 'andreForeldren',
+    annenForelderNavn = 'annenForelderNavn',
+    annenForelderEtternavn = 'annenForelderEtternavn',
+    annenForelderFnr = 'annenForelderFnr',
+    annenForelderSituasjon = 'annenForelderSituasjon',
+    annenForelderSituasjonBeskrivelse = 'annenForelderSituasjonBeskrivelse',
+    annenForelderPeriodeFom = 'annenForelderPeriodeFom',
+    annenForelderPeriodeTom = 'annenForelderPeriodeTom',
     antallFellesBarn = 'antallFellesBarn',
     alderYngsteBarn = 'alderYngsteBarn',
     harFosterbarn = 'harFosterbarn',
     alderAvAlleFosterbarn = 'alderAvAlleFosterbarn',
-}
-
-export interface AndreForelderen {
-    fornavn: string;
-    etternavn: string;
-    fnr: string;
-    situasjon: string;
-    situasjonBeskrivelse?: string;
-    situasjonFom: Date;
-    situasjonTom: Date;
 }
 
 export interface SoknadFormData {
@@ -44,7 +40,13 @@ export interface SoknadFormData {
     [SoknadFormField.borINorge]: YesOrNo;
     [SoknadFormField.arbeiderINorge]: YesOrNo;
     [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
-    [SoknadFormField.andreForeldren]: AndreForelderen;
+    [SoknadFormField.annenForelderNavn]: string;
+    [SoknadFormField.annenForelderEtternavn]: string;
+    [SoknadFormField.annenForelderFnr]: string;
+    [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon[];
+    [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
+    [SoknadFormField.annenForelderPeriodeFom]: Date;
+    [SoknadFormField.annenForelderPeriodeTom]: Date;
     [SoknadFormField.antallFellesBarn]: number;
     [SoknadFormField.alderYngsteBarn]: number;
     [SoknadFormField.harFosterbarn]: YesOrNo;
@@ -56,7 +58,16 @@ export type DinArbeidSituasjonFormData = Pick<
     SoknadFormField.arbeiderINorge | SoknadFormField.borINorge | SoknadFormField.arbeidssituasjon
 >;
 
-export type OmAndreForeldrenFormData = Pick<SoknadFormData, SoknadFormField.andreForeldren>;
+export type OmAnnenForeldrenFormData = Pick<
+    SoknadFormData,
+    | SoknadFormField.annenForelderNavn
+    | SoknadFormField.annenForelderEtternavn
+    | SoknadFormField.annenForelderFnr
+    | SoknadFormField.annenForelderSituasjon
+    | SoknadFormField.annenForelderSituasjonBeskrivelse
+    | SoknadFormField.annenForelderPeriodeFom
+    | SoknadFormField.annenForelderPeriodeTom
+>;
 
 export type OmBarnaFormData = Pick<
     SoknadFormData,

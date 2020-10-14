@@ -26,7 +26,7 @@ const OmAndreForelderenStep = () => {
     const intl = useIntl();
 
     return (
-        <SoknadFormStep id={StepID.OM_ANDRE_FORELDEREN}>
+        <SoknadFormStep id={StepID.OM_ANNEN_FORELDER}>
             <CounsellorPanel>
                 {intlHelper(intl, 'step.om-barna.info.1')}
                 <p>{intlHelper(intl, 'step.om-barna.info.2')}</p>

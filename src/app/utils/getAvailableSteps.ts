@@ -3,14 +3,7 @@ import { validateFødselsnummer } from '@navikt/sif-common-core/lib/validation/f
 import { ANTALL_DAGER_RANGE } from '../soknad/mottaker-step/MottakerStep';
 import { StepID } from '../soknad/soknadStepsConfig';
 import { Person } from '../types/Person';
-import {
-    Barn,
-    DineBarnFormData,
-    DinSituasjonFormData,
-    MottakerFormData,
-    OmBarnaFormData,
-    SoknadFormData,
-} from '../types/SoknadFormData';
+import { DinArbeidSituasjonFormData, OmBarnaFormData, SoknadFormData } from '../types/SoknadFormData';
 import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValidation';
 
 const dineBarnIsComplete = ({ andreBarn }: Partial<DineBarnFormData>, barn: Barn[]): boolean => {
@@ -42,9 +35,7 @@ const dinSituasjonIsComplete = ({
     arbeiderINorge,
     borINorge,
     arbeidssituasjon,
-    harBruktOmsorgsdagerEtter1Juli,
-    antallDagerBruktEtter1Juli,
-}: Partial<DinSituasjonFormData>): boolean => {
+}: Partial<DinArbeidSituasjonFormData>): boolean => {
     if (arbeiderINorge !== YesOrNo.YES) {
         return false;
     }
@@ -52,12 +43,6 @@ const dinSituasjonIsComplete = ({
         return false;
     }
     if (arbeidssituasjon?.length === 0) {
-        return false;
-    }
-    if (harBruktOmsorgsdagerEtter1Juli === YesOrNo.UNANSWERED) {
-        return false;
-    }
-    if (harBruktOmsorgsdagerEtter1Juli === YesOrNo.YES && antallDagerBruktEtter1Juli === undefined) {
         return false;
     }
     return true;
@@ -98,21 +83,17 @@ const mottakerIsComplete = (
     return true;
 };
 
-export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person, barn: Barn[]): StepID[] => {
+export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
     const steps: StepID[] = [];
-    steps.push(StepID.DINE_BARN);
-    if (dineBarnIsComplete(values, barn)) {
-        steps.push(StepID.OM_BARNA);
-    }
-    if (omBarnaIsComplete(values)) {
-        steps.push(StepID.DIN_SITUASJON);
-    }
+    steps.push(StepID.DIN_SITUASJON);
     if (dinSituasjonIsComplete(values)) {
-        steps.push(StepID.MOTTAKER);
+        steps.push(StepID.OM_ANDRE_FORELDEREN);
     }
-    if (mottakerIsComplete(values, søker)) {
+
+    if (omBarnaIsComplete(values)) {
         steps.push(StepID.OPPSUMMERING);
     }
+
     return steps;
 };
 
