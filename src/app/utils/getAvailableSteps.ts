@@ -3,7 +3,7 @@ import { validateFødselsnummer } from '@navikt/sif-common-core/lib/validation/f
 import { ANTALL_DAGER_RANGE } from '../soknad/mottaker-step/MottakerStep';
 import { StepID } from '../soknad/soknadStepsConfig';
 import { Person } from '../types/Person';
-import { DinArbeidSituasjonFormData, OmBarnaFormData, SoknadFormData } from '../types/SoknadFormData';
+import { DinSituasjonFormData, OmBarnaFormData, SoknadFormData } from '../types/SoknadFormData';
 import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValidation';
 
 const dineBarnIsComplete = ({ andreBarn }: Partial<DineBarnFormData>, barn: Barn[]): boolean => {
@@ -35,7 +35,7 @@ const dinSituasjonIsComplete = ({
     arbeiderINorge,
     borINorge,
     arbeidssituasjon,
-}: Partial<DinArbeidSituasjonFormData>): boolean => {
+}: Partial<DinSituasjonFormData>): boolean => {
     if (arbeiderINorge !== YesOrNo.YES) {
         return false;
     }
@@ -48,46 +48,11 @@ const dinSituasjonIsComplete = ({
     return true;
 };
 
-const mottakerIsComplete = (
-    {
-        overføreTilEktefelle,
-        overføreTilSamboer,
-        fnrMottaker,
-        navnMottaker = '',
-        antallDagerSomSkalOverføres,
-    }: Partial<MottakerFormData>,
-    søker: Person
-): boolean => {
-    if (overføreTilEktefelle === YesOrNo.NO && overføreTilSamboer !== YesOrNo.YES) {
-        return false;
-    }
-    if (overføreTilSamboer === YesOrNo.NO && overføreTilEktefelle !== YesOrNo.YES) {
-        return false;
-    }
-    const fnrValid = validateFødselsnummer(fnrMottaker || '');
-    const fnrDifferent = validateFødselsnummerIsDifferentThan(søker.fødselsnummer)(fnrMottaker || '');
-    if (fnrValid !== undefined || fnrDifferent !== undefined) {
-        return false;
-    }
-    if ((navnMottaker || '')?.length < 1) {
-        return false;
-    }
-
-    if (
-        antallDagerSomSkalOverføres === undefined ||
-        antallDagerSomSkalOverføres < ANTALL_DAGER_RANGE.min ||
-        antallDagerSomSkalOverføres > ANTALL_DAGER_RANGE.max
-    ) {
-        return false;
-    }
-    return true;
-};
-
 export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
     const steps: StepID[] = [];
     steps.push(StepID.DIN_SITUASJON);
     if (dinSituasjonIsComplete(values)) {
-        steps.push(StepID.OM_ANDRE_FORELDEREN);
+        steps.push(StepID.OM_ANNET_FORELDER);
     }
 
     if (omBarnaIsComplete(values)) {

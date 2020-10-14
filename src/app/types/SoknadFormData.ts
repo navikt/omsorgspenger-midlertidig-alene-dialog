@@ -9,9 +9,9 @@ export enum Arbeidssituasjon {
 
 export enum AnnenForeldrenSituasjon {
     'sykdom' = 'sykdom',
-    'innlagt i helseinstitusjon' = 'innlagt i helseinstitusjon',
+    'innlagt_i_helseinstitusjon' = 'innlagt_i_helseinstitusjon',
     'fengsel' = 'fengsel',
-    'utøver verneplikt' = 'utøver verneplikt',
+    'utøver_verneplikt' = 'utøver_verneplikt',
     'annet' = 'annet',
 }
 
@@ -53,7 +53,7 @@ export interface SoknadFormData {
     [SoknadFormField.alderAvAlleFosterbarn]: Array<number>;
 }
 
-export type DinArbeidSituasjonFormData = Pick<
+export type DinSituasjonFormData = Pick<
     SoknadFormData,
     SoknadFormField.arbeiderINorge | SoknadFormField.borINorge | SoknadFormField.arbeidssituasjon
 >;

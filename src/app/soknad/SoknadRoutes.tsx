@@ -21,6 +21,7 @@ import OppsummeringStep from './oppsummering-step/OppsummeringStep';
 import { useSoknadContext } from './SoknadContext';
 import { StepID } from './soknadStepsConfig';
 import VelkommenPage from './velkommen-page/VelkommenPage';
+import OmAndreForelderenStep from './om-barn-step/OmBarnStep';
 
 interface Props {
     soknadId?: string;
@@ -35,11 +36,12 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
 
     const renderSoknadStep = (id: string, søker: Person, stepID: StepID): React.ReactNode => {
         switch (stepID) {
-            case StepID.OM_BARNA:
-                return <OmBarnStep />;
             case StepID.DIN_SITUASJON:
                 return <DinSituasjonStep />;
-
+            case StepID.OM_ANNEN_FORELDER:
+                return <OmAndreForelderenStep />;
+            case StepID.OM_BARNA:
+                return <OmBarnStep />;
             case StepID.OPPSUMMERING:
                 // const apiValues = mapFormDataToApiData(id, intl.locale, values);
                 // return <OppsummeringStep apiValues={apiValues} søker={søker} />;

@@ -12,14 +12,14 @@ import FormQuestion from '@navikt/sif-common-soknad/lib/form-question/FormQuesti
 import { useFormikContext } from 'formik';
 import Lenke from 'nav-frontend-lenker';
 import getLenker from '../../lenker';
-import { Arbeidssituasjon, DinArbeidSituasjonFormData, SoknadFormField } from '../../types/SoknadFormData';
+import { Arbeidssituasjon, DinSituasjonFormData, SoknadFormField } from '../../types/SoknadFormData';
 import SoknadFormComponents from '../SoknadFormComponents';
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 
 const DinSituasjonStep = () => {
     const intl = useIntl();
-    const { values } = useFormikContext<DinArbeidSituasjonFormData>();
+    const { values } = useFormikContext<DinSituasjonFormData>();
     const stepId = StepID.DIN_SITUASJON;
 
     const { arbeiderINorge } = values;
