@@ -1,4 +1,4 @@
-import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
+/*import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { SoknadApiData } from '../../types/SoknadApiData';
 import { DinSituasjonFormData } from '../../types/SoknadFormData';
 
@@ -18,3 +18,4 @@ export const mapDinSituasjonToApiData = (formData: DinSituasjonFormData): DinSit
                 : undefined,
     };
 };
+*/

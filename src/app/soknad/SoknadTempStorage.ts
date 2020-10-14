@@ -3,7 +3,7 @@ import { AxiosResponse } from 'axios';
 import * as hash from 'object-hash';
 import { ApiEndpoint, defaultAxiosConfig } from '../api/api';
 import { Person } from '../types/Person';
-import { Barn, SoknadFormData } from '../types/SoknadFormData';
+import { SoknadFormData } from '../types/SoknadFormData';
 import { SoknadTempStorageData } from '../types/SoknadTempStorageData';
 import { StepID } from './soknadStepsConfig';
 
@@ -11,7 +11,6 @@ export const STORAGE_VERSION = '1.0';
 
 interface UserHashInfo {
     søker: Person;
-    barn: Barn[];
 }
 
 interface SoknadTemporaryStorage extends Omit<PersistenceInterface<SoknadTempStorageData>, 'persist'> {

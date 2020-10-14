@@ -2,19 +2,12 @@ import { SoknadApplicationType } from '@navikt/sif-common-soknad/lib/soknad-step
 import soknadStepUtils from '@navikt/sif-common-soknad/lib/soknad-step/soknadStepUtils';
 
 export enum StepID {
-    'DINE_BARN' = 'dine-barn',
-    'OM_BARNA' = 'om-barna',
     'DIN_SITUASJON' = 'din-situasjon',
-    'MOTTAKER' = 'mottaker',
+    'OM_ANDRE_FORELDEREN' = 'om-andre-forelderen',
+    'OM_BARNA' = 'om-barna',
     'OPPSUMMERING' = 'oppsummering',
 }
 
-const SoknadSteps: StepID[] = [
-    StepID.DINE_BARN,
-    StepID.OM_BARNA,
-    StepID.DIN_SITUASJON,
-    StepID.MOTTAKER,
-    StepID.OPPSUMMERING,
-];
+const SoknadSteps: StepID[] = [StepID.DIN_SITUASJON, StepID.OM_ANDRE_FORELDEREN, StepID.OM_BARNA, StepID.OPPSUMMERING];
 
 export const soknadStepsConfig = soknadStepUtils.getStepsConfig(SoknadSteps, SoknadApplicationType.MELDING);

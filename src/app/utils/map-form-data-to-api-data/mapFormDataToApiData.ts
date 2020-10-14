@@ -1,4 +1,4 @@
-import { SoknadApiData } from '../../types/SoknadApiData';
+/*import { SoknadApiData } from '../../types/SoknadApiData';
 import { SoknadFormData, Barn } from '../../types/SoknadFormData';
 import { mapBarnToApiData } from './mapBarnToApiData';
 import { mapDinSituasjonToApiData } from './mapDinSituasjonToApiData';
@@ -26,3 +26,4 @@ export const mapFormDataToApiData = (
         return undefined;
     }
 };
+*/

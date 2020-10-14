@@ -1,14 +1,15 @@
 import { ApiStringDate } from '@navikt/sif-common-core/lib/types/ApiStringDate';
 import { Locale } from '@navikt/sif-common-core/lib/types/Locale';
-import { Arbeidssituasjon, Mottaker } from './SoknadFormData';
+import { Arbeidssituasjon } from './SoknadFormData';
 
-export interface ApiBarn {
-    identitetsnummer?: string;
-    aktørId?: string;
-    fødselsdato: ApiStringDate;
+export interface ApiAndreForelderen {
     navn: string;
-    aleneOmOmsorgen: boolean;
-    utvidetRett: boolean;
+    fornavn: string;
+    fnr: string;
+    situasjon: string;
+    situasjonBeskrivelse?: string;
+    situasjonFom: ApiStringDate;
+    situasjonTom: ApiStringDate;
 }
 
 export interface SoknadApiData {
@@ -16,15 +17,12 @@ export interface SoknadApiData {
     språk: Locale;
     harForståttRettigheterOgPlikter: boolean;
     harBekreftetOpplysninger: boolean;
-    barn: ApiBarn[];
-    harAleneomsorg: boolean;
-    harUtvidetRett: boolean;
     borINorge: boolean;
     arbeiderINorge: boolean;
     arbeidssituasjon: Arbeidssituasjon[];
-    antallDagerBruktEtter1Juli?: number;
-    mottakerType: Mottaker;
-    mottakerFnr: string;
-    mottakerNavn: string;
-    antallDagerSomSkalOverføres: number;
+    andreForeldren: ApiAndreForelderen;
+    antallFellesBarn: number;
+    alderYngsteBarn: number;
+    harFosterbarn: boolean;
+    alderAvAlleFosterbarn: number[];
 }
