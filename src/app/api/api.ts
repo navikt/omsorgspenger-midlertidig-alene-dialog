@@ -26,8 +26,8 @@ axios.interceptors.response.use(
 
 export enum ApiEndpoint {
     'soker' = 'sokerMelding',
-    'barn' = 'barn',
     'mellomlagring' = 'mellomlagring',
+    // TODO:
     'sendSoknad' = 'melding/dele-dager',
 }
 

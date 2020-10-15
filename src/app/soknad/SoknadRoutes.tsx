@@ -15,13 +15,15 @@ import { Person } from '../types/Person';
 import { SoknadFormData } from '../types/SoknadFormData';
 import { getAvailableSteps } from '../utils/getAvailableSteps';
 // import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
-import DinSituasjonStep from './din-situasjon-step/DinSituasjonStep';
+import DinArbeidsituasjonStep from './din-arbeidsituasjon-step/DinArbeidsituasjonStep';
 import OmBarnStep from './om-barn-step/OmBarnStep';
 import OppsummeringStep from './oppsummering-step/OppsummeringStep';
 import { useSoknadContext } from './SoknadContext';
 import { StepID } from './soknadStepsConfig';
 import VelkommenPage from './velkommen-page/VelkommenPage';
-import OmAndreForelderenStep from './om-barn-step/OmBarnStep';
+import AnnenForelderenSituasjonStep from './annen-forelderens-situasjon-step/AnnenForelderenSituasjonStep';
+import MedlemskapStep from './medlemskap-step/MedlemskapStep';
+import OmAnnenForelderenStep from './om-annen-forelderen-step/OmAnnenForelderenStep';
 
 interface Props {
     soknadId?: string;
@@ -37,12 +39,16 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
 
     const renderSoknadStep = (id: string, søker: Person, stepID: StepID): React.ReactNode => {
         switch (stepID) {
-            case StepID.DIN_SITUASJON:
-                return <DinSituasjonStep />;
+            case StepID.DIN_ARBEIDSITUASJON:
+                return <DinArbeidsituasjonStep />;
             case StepID.OM_ANNEN_FORELDER:
-                return <OmAndreForelderenStep />;
+                return <OmAnnenForelderenStep />;
+            case StepID.ANNEN_FORELDER_SITUASJON:
+                return <AnnenForelderenSituasjonStep />;
             case StepID.OM_BARNA:
                 return <OmBarnStep />;
+            case StepID.MEDLEMSKAP:
+                return <MedlemskapStep />;
             case StepID.OPPSUMMERING:
                 // const apiValues = mapFormDataToApiData(id, intl.locale, values);
                 // return <OppsummeringStep apiValues={apiValues} søker={søker} />;

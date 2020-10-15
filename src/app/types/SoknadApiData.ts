@@ -7,8 +7,6 @@ export interface SoknadApiData {
     språk: Locale;
     harForståttRettigheterOgPlikter: boolean;
     harBekreftetOpplysninger: boolean;
-    borINorge: boolean;
-    arbeiderINorge: boolean;
     arbeidssituasjon: Arbeidssituasjon[];
     annenForelderNavn: string;
     annenForelderEtternavn: string;
@@ -21,4 +19,5 @@ export interface SoknadApiData {
     alderYngsteBarn: number;
     harFosterbarn: boolean;
     alderAvAlleFosterbarn: number[];
+    // TODO legge til medlemskapvariabler
 }

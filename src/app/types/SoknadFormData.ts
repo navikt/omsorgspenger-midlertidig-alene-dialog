@@ -1,4 +1,5 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
+import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
 
 export enum Arbeidssituasjon {
     'arbeidstaker' = 'arbeidstaker',
@@ -18,8 +19,6 @@ export enum AnnenForeldrenSituasjon {
 export enum SoknadFormField {
     harForståttRettigheterOgPlikter = 'harForståttRettigheterOgPlikter',
     harBekreftetOpplysninger = 'harBekreftetOpplysninger',
-    borINorge = 'borINorge',
-    arbeiderINorge = 'arbeiderINorge',
     arbeidssituasjon = 'arbeidssituasjon',
     annenForelderNavn = 'annenForelderNavn',
     annenForelderEtternavn = 'annenForelderEtternavn',
@@ -32,13 +31,17 @@ export enum SoknadFormField {
     alderYngsteBarn = 'alderYngsteBarn',
     harFosterbarn = 'harFosterbarn',
     alderAvAlleFosterbarn = 'alderAvAlleFosterbarn',
+    harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
+    utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
+    skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
+    utenlandsoppholdNeste12Mnd = 'utenlandsoppholdNeste12Mnd',
+    skalOppholdeSegIUtlandetIPerioden = 'skalOppholdeSegIUtlandetIPerioden',
+    utenlandsoppholdIPerioden = 'utenlandsoppholdIPerioden',
 }
 
 export interface SoknadFormData {
     [SoknadFormField.harForståttRettigheterOgPlikter]: boolean;
     [SoknadFormField.harBekreftetOpplysninger]: boolean;
-    [SoknadFormField.borINorge]: YesOrNo;
-    [SoknadFormField.arbeiderINorge]: YesOrNo;
     [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
     [SoknadFormField.annenForelderNavn]: string;
     [SoknadFormField.annenForelderEtternavn]: string;
@@ -51,22 +54,37 @@ export interface SoknadFormData {
     [SoknadFormField.alderYngsteBarn]: number;
     [SoknadFormField.harFosterbarn]: YesOrNo;
     [SoknadFormField.alderAvAlleFosterbarn]: Array<number>;
+    [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
+    [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
+    [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
+    [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
+    [SoknadFormField.skalOppholdeSegIUtlandetIPerioden]?: YesOrNo;
+    [SoknadFormField.utenlandsoppholdIPerioden]?: Utenlandsopphold[];
 }
 
-export type DinSituasjonFormData = Pick<
-    SoknadFormData,
-    SoknadFormField.arbeiderINorge | SoknadFormField.borINorge | SoknadFormField.arbeidssituasjon
->;
+export type DinSituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
 
 export type OmAnnenForelderFormData = Pick<
     SoknadFormData,
-    | SoknadFormField.annenForelderNavn
-    | SoknadFormField.annenForelderEtternavn
-    | SoknadFormField.annenForelderFnr
+    SoknadFormField.annenForelderNavn | SoknadFormField.annenForelderEtternavn | SoknadFormField.annenForelderFnr
+>;
+
+export type AnnenForelderSituasjonFormData = Pick<
+    SoknadFormData,
     | SoknadFormField.annenForelderSituasjon
     | SoknadFormField.annenForelderSituasjonBeskrivelse
     | SoknadFormField.annenForelderPeriodeFom
     | SoknadFormField.annenForelderPeriodeTom
+>;
+
+export type MedlemskapFormData = Pick<
+    SoknadFormData,
+    | SoknadFormField.harBoddUtenforNorgeSiste12Mnd
+    | SoknadFormField.utenlandsoppholdSiste12Mnd
+    | SoknadFormField.skalBoUtenforNorgeNeste12Mnd
+    | SoknadFormField.utenlandsoppholdNeste12Mnd
+    | SoknadFormField.skalOppholdeSegIUtlandetIPerioden
+    | SoknadFormField.utenlandsoppholdIPerioden
 >;
 
 export type OmBarnaFormData = Pick<

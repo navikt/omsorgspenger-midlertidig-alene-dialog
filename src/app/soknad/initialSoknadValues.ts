@@ -4,8 +4,6 @@ import { SoknadFormData, SoknadFormField } from '../types/SoknadFormData';
 export const initialSoknadFormData: Partial<SoknadFormData> = {
     [SoknadFormField.harForståttRettigheterOgPlikter]: false,
     [SoknadFormField.harBekreftetOpplysninger]: false,
-    [SoknadFormField.borINorge]: YesOrNo.UNANSWERED,
-    [SoknadFormField.arbeiderINorge]: YesOrNo.UNANSWERED,
     [SoknadFormField.arbeidssituasjon]: [],
     [SoknadFormField.annenForelderNavn]: '',
     [SoknadFormField.annenForelderEtternavn]: '',
@@ -16,4 +14,10 @@ export const initialSoknadFormData: Partial<SoknadFormData> = {
     [SoknadFormField.alderYngsteBarn]: 0,
     [SoknadFormField.harFosterbarn]: YesOrNo.UNANSWERED,
     [SoknadFormField.alderAvAlleFosterbarn]: [],
+    [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo.UNANSWERED,
+    [SoknadFormField.utenlandsoppholdSiste12Mnd]: [],
+    [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo.UNANSWERED,
+    [SoknadFormField.utenlandsoppholdNeste12Mnd]: [],
+    [SoknadFormField.skalOppholdeSegIUtlandetIPerioden]: YesOrNo.UNANSWERED,
+    [SoknadFormField.utenlandsoppholdIPerioden]: [],
 };

@@ -3,18 +3,16 @@ import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 // import { useIntl } from 'react-intl';
 // import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-// import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-panel/CounsellorPanel';
-// import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 
-const OmAnnenForelderenStep = () => {
+const MedlemskapStep = () => {
     // const intl = useIntl();
 
     return (
-        <SoknadFormStep id={StepID.OM_ANNEN_FORELDER}>
-            <CounsellorPanel>Om den andre forelderen</CounsellorPanel>
+        <SoknadFormStep id={StepID.MEDLEMSKAP}>
+            <CounsellorPanel>Medlemskap Steg</CounsellorPanel>
         </SoknadFormStep>
     );
 };
 
-export default OmAnnenForelderenStep;
+export default MedlemskapStep;

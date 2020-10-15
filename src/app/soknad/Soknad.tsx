@@ -67,9 +67,12 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
         await resetSoknad();
         const sId = ulid();
         setSoknadId(sId);
-        await soknadTempStorage.persist(sId, initialFormData, StepID.DIN_SITUASJON, { søker });
+        await soknadTempStorage.persist(sId, initialFormData, StepID.DIN_ARBEIDSITUASJON, { søker });
         setTimeout(() => {
-            navigateTo(soknadStepUtils.getStepRoute(StepID.DIN_SITUASJON, SoknadApplicationType.MELDING), history);
+            navigateTo(
+                soknadStepUtils.getStepRoute(StepID.DIN_ARBEIDSITUASJON, SoknadApplicationType.MELDING),
+                history
+            );
         });
     };
 
