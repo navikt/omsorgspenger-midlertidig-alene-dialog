@@ -58,7 +58,7 @@ export type DinSituasjonFormData = Pick<
     SoknadFormField.arbeiderINorge | SoknadFormField.borINorge | SoknadFormField.arbeidssituasjon
 >;
 
-export type OmAnnenForeldrenFormData = Pick<
+export type OmAnnenForelderFormData = Pick<
     SoknadFormData,
     | SoknadFormField.annenForelderNavn
     | SoknadFormField.annenForelderEtternavn
