@@ -1,4 +1,4 @@
-import { formatDateToApiFormat } from '@navikt/sif-common-core/lib/utils/dateUtils';
+/* import { formatDateToApiFormat } from '@navikt/sif-common-core/lib/utils/dateUtils';
 import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
 import { AnnetBarn } from '@navikt/sif-common-forms/lib/annet-barn/types';
 import { ApiBarn } from '../../types/SoknadApiData';
@@ -37,3 +37,4 @@ export const mapBarnToApiBarn = (
         utvidetRett: barnFinnesIArray(registrertBarn.aktørId, harUtvidetRettFor),
     };
 };
+*/

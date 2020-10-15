@@ -12,43 +12,40 @@ import soknadStepUtils from '@navikt/sif-common-soknad/lib/soknad-step/soknadSte
 import AppRoutes from '../config/routeConfig';
 import KvitteringPage from '../pages/kvittering-page/KvitteringPage';
 import { Person } from '../types/Person';
-import { Barn, SoknadFormData } from '../types/SoknadFormData';
+import { SoknadFormData } from '../types/SoknadFormData';
 import { getAvailableSteps } from '../utils/getAvailableSteps';
-import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
+// import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
 import DinSituasjonStep from './din-situasjon-step/DinSituasjonStep';
-import DineBarnStep from './dine-barn-step/DineBarnStep';
-import MottakerStep from './mottaker-step/MottakerStep';
-import OmBarnaStep from './om-barna-step/OmBarnaStep';
+import OmBarnStep from './om-barn-step/OmBarnStep';
 import OppsummeringStep from './oppsummering-step/OppsummeringStep';
 import { useSoknadContext } from './SoknadContext';
 import { StepID } from './soknadStepsConfig';
 import VelkommenPage from './velkommen-page/VelkommenPage';
+import OmAndreForelderenStep from './om-barn-step/OmBarnStep';
 
 interface Props {
     soknadId?: string;
-    barn?: Barn[];
     søker: Person;
 }
 
-const SoknadRoutes = ({ soknadId, søker, barn = [] }: Props) => {
+const SoknadRoutes = ({ soknadId, søker }: Props) => {
     const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
-    const availableSteps = getAvailableSteps(values, søker, barn);
+    const availableSteps = getAvailableSteps(values, søker);
     const { soknadStepsConfig, sendSoknadStatus } = useSoknadContext();
 
-    const renderSoknadStep = (id: string, barn: Barn[], søker: Person, stepID: StepID): React.ReactNode => {
+    const renderSoknadStep = (id: string, søker: Person, stepID: StepID): React.ReactNode => {
         switch (stepID) {
-            case StepID.DINE_BARN:
-                return <DineBarnStep barn={barn} />;
-            case StepID.OM_BARNA:
-                return <OmBarnaStep barn={barn} />;
             case StepID.DIN_SITUASJON:
                 return <DinSituasjonStep />;
-            case StepID.MOTTAKER:
-                return <MottakerStep søker={søker} />;
+            case StepID.OM_ANNEN_FORELDER:
+                return <OmAndreForelderenStep />;
+            case StepID.OM_BARNA:
+                return <OmBarnStep />;
             case StepID.OPPSUMMERING:
-                const apiValues = mapFormDataToApiData(id, intl.locale, values, barn);
-                return <OppsummeringStep apiValues={apiValues} søker={søker} barn={barn} />;
+                // const apiValues = mapFormDataToApiData(id, intl.locale, values);
+                // return <OppsummeringStep apiValues={apiValues} søker={søker} />;
+                return <OppsummeringStep />;
         }
     };
 
@@ -87,7 +84,7 @@ const SoknadRoutes = ({ soknadId, søker, barn = [] }: Props) => {
                             key={step}
                             path={soknadStepsConfig[step].route}
                             exact={true}
-                            render={() => renderSoknadStep(soknadId, barn, søker, step)}
+                            render={() => renderSoknadStep(soknadId, søker, step)}
                         />
                     );
                 })}

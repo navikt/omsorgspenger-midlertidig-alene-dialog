@@ -1,4 +1,4 @@
-import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
+/* import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { SoknadApiData } from '../../types/SoknadApiData';
 import { Mottaker, MottakerFormData } from '../../types/SoknadFormData';
 
@@ -15,3 +15,4 @@ export const mapMottakerToApiData = (formData: MottakerFormData): MottakerApiDat
         mottakerNavn: formData.navnMottaker,
     };
 };
+*/

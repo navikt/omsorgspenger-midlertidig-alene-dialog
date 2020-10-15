@@ -6,30 +6,20 @@ import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import {
     validateRequiredList,
-    validateRequiredNumber,
     validateYesOrNoIsAnswered,
 } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import FormQuestion from '@navikt/sif-common-soknad/lib/form-question/FormQuestion';
 import { useFormikContext } from 'formik';
 import Lenke from 'nav-frontend-lenker';
 import getLenker from '../../lenker';
-import { Arbeidssituasjon, DinSituasjonFormData, SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
+import { Arbeidssituasjon, DinSituasjonFormData, SoknadFormField } from '../../types/SoknadFormData';
 import SoknadFormComponents from '../SoknadFormComponents';
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 
-const cleanupDinSituasjonStep = (values: SoknadFormData): SoknadFormData => {
-    const cleanedValues = { ...values };
-    if (values.harBruktOmsorgsdagerEtter1Juli === YesOrNo.NO) {
-        cleanedValues.antallDagerBruktEtter1Juli = undefined;
-    }
-    return cleanedValues;
-};
-
 const DinSituasjonStep = () => {
     const intl = useIntl();
     const { values } = useFormikContext<DinSituasjonFormData>();
-    const { harBruktOmsorgsdagerEtter1Juli } = values;
     const stepId = StepID.DIN_SITUASJON;
 
     const { arbeiderINorge } = values;
@@ -47,7 +37,7 @@ const DinSituasjonStep = () => {
     );
 
     return (
-        <SoknadFormStep id={stepId} showSubmitButton={kanFortsette} onStepCleanup={cleanupDinSituasjonStep}>
+        <SoknadFormStep id={stepId} showSubmitButton={kanFortsette}>
             <CounsellorPanel>
                 <FormattedMessage id="step.din_situasjon.veileder.intro.1" />
                 <p>
@@ -97,25 +87,6 @@ const DinSituasjonStep = () => {
                             validate={validateRequiredList}
                         />
                     </FormBlock>
-                    <FormBlock>
-                        <SoknadFormComponents.YesOrNoQuestion
-                            name={SoknadFormField.harBruktOmsorgsdagerEtter1Juli}
-                            legend={intlHelper(intl, 'step.din_situasjon.form.harBruktOmsorgsdagerEtter1Juli.spm')}
-                            validate={validateYesOrNoIsAnswered}
-                        />
-                    </FormBlock>
-                    {harBruktOmsorgsdagerEtter1Juli === YesOrNo.YES && (
-                        <FormBlock>
-                            <SoknadFormComponents.Input
-                                name={SoknadFormField.antallDagerBruktEtter1Juli}
-                                label={intlHelper(intl, 'step.din_situasjon.form.antallDagerBruktEtter1Juli.spm')}
-                                validate={validateRequiredNumber({ min: 1 })}
-                                inputMode="numeric"
-                                style={{ maxWidth: '4rem' }}
-                                maxLength={2}
-                            />
-                        </FormBlock>
-                    )}
                 </>
             )}
         </SoknadFormStep>

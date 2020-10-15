@@ -1,4 +1,4 @@
-import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
+/*import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { apiStringDateToDate } from '@navikt/sif-common-core/lib/utils/dateUtils';
 import { ApiBarn } from '../../types/SoknadApiData';
 import { Barn, SoknadFormData } from '../../types/SoknadFormData';
@@ -32,3 +32,4 @@ export const mapBarnToApiData = (
         barn: barn.sort(sortBarnByFødseldsdato),
     };
 };
+*/

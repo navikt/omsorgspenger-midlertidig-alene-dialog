@@ -1,5 +1,4 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-import { AnnetBarn } from '@navikt/sif-common-forms/lib/annet-barn/types';
 
 export enum Arbeidssituasjon {
     'arbeidstaker' = 'arbeidstaker',
@@ -8,88 +7,72 @@ export enum Arbeidssituasjon {
     'annen' = 'annen',
 }
 
-export enum Mottaker {
-    'ektefelle' = 'ektefelle',
-    'samboer' = 'samboer',
-    'annen' = 'annen',
+export enum AnnenForeldrenSituasjon {
+    'sykdom' = 'sykdom',
+    'innlagt_i_helseinstitusjon' = 'innlagt_i_helseinstitusjon',
+    'fengsel' = 'fengsel',
+    'utøver_verneplikt' = 'utøver_verneplikt',
+    'annet' = 'annet',
 }
 
 export enum SoknadFormField {
     harForståttRettigheterOgPlikter = 'harForståttRettigheterOgPlikter',
     harBekreftetOpplysninger = 'harBekreftetOpplysninger',
-    andreBarn = 'andreBarn',
-    harAleneomsorg = 'harAleneomsorg',
-    harAleneomsorgFor = 'harAleneomsorgFor',
-    harUtvidetRett = 'harUtvidetRett',
-    harUtvidetRettFor = 'harUtvidetRettFor',
     borINorge = 'borINorge',
     arbeiderINorge = 'arbeiderINorge',
     arbeidssituasjon = 'arbeidssituasjon',
-    harBruktOmsorgsdagerEtter1Juli = 'harBruktOmsorgsdagerEtter1Juli',
-    antallDagerBruktEtter1Juli = 'antallDagerBruktEtter1Juli',
-    harDeltDagerMedAndreTidligere = 'harDeltDagerMedAndreTidligere',
-    antallDagerHarDeltMedAndre = 'antallDagerHarDeltMedAndre',
-    overføreTilEktefelle = 'overføreTilEktefelle',
-    overføreTilSamboer = 'overføreTilSamboer',
-    fnrMottaker = 'fnrMottaker',
-    navnMottaker = 'navnMottaker',
-    antallDagerSomSkalOverføres = 'antallDagerSomSkalOverføres',
-}
-
-export interface Barn {
-    fornavn: string;
-    etternavn: string;
-    mellomnavn?: string;
-    aktørId: string;
-    fødselsdato: Date;
+    annenForelderNavn = 'annenForelderNavn',
+    annenForelderEtternavn = 'annenForelderEtternavn',
+    annenForelderFnr = 'annenForelderFnr',
+    annenForelderSituasjon = 'annenForelderSituasjon',
+    annenForelderSituasjonBeskrivelse = 'annenForelderSituasjonBeskrivelse',
+    annenForelderPeriodeFom = 'annenForelderPeriodeFom',
+    annenForelderPeriodeTom = 'annenForelderPeriodeTom',
+    antallFellesBarn = 'antallFellesBarn',
+    alderYngsteBarn = 'alderYngsteBarn',
+    harFosterbarn = 'harFosterbarn',
+    alderAvAlleFosterbarn = 'alderAvAlleFosterbarn',
 }
 
 export interface SoknadFormData {
     [SoknadFormField.harForståttRettigheterOgPlikter]: boolean;
     [SoknadFormField.harBekreftetOpplysninger]: boolean;
-    [SoknadFormField.andreBarn]: AnnetBarn[];
-    [SoknadFormField.harAleneomsorg]: YesOrNo;
-    [SoknadFormField.harAleneomsorgFor]: Array<string>;
-    [SoknadFormField.harUtvidetRett]: YesOrNo;
-    [SoknadFormField.harUtvidetRettFor]: Array<string>;
     [SoknadFormField.borINorge]: YesOrNo;
     [SoknadFormField.arbeiderINorge]: YesOrNo;
     [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
-    [SoknadFormField.harBruktOmsorgsdagerEtter1Juli]: YesOrNo;
-    [SoknadFormField.antallDagerBruktEtter1Juli]?: number;
-    [SoknadFormField.harDeltDagerMedAndreTidligere]: YesOrNo;
-    [SoknadFormField.antallDagerHarDeltMedAndre]: number;
-    [SoknadFormField.overføreTilEktefelle]: YesOrNo;
-    [SoknadFormField.overføreTilSamboer]: YesOrNo;
-    [SoknadFormField.fnrMottaker]: string;
-    [SoknadFormField.navnMottaker]: string;
-    [SoknadFormField.antallDagerSomSkalOverføres]: number;
+    [SoknadFormField.annenForelderNavn]: string;
+    [SoknadFormField.annenForelderEtternavn]: string;
+    [SoknadFormField.annenForelderFnr]: string;
+    [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon[];
+    [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
+    [SoknadFormField.annenForelderPeriodeFom]: Date;
+    [SoknadFormField.annenForelderPeriodeTom]: Date;
+    [SoknadFormField.antallFellesBarn]: number;
+    [SoknadFormField.alderYngsteBarn]: number;
+    [SoknadFormField.harFosterbarn]: YesOrNo;
+    [SoknadFormField.alderAvAlleFosterbarn]: Array<number>;
 }
-
-export type DineBarnFormData = Pick<SoknadFormData, SoknadFormField.andreBarn>;
-
-export type OmBarnaFormData = Pick<
-    SoknadFormData,
-    | SoknadFormField.harAleneomsorg
-    | SoknadFormField.harAleneomsorgFor
-    | SoknadFormField.harUtvidetRett
-    | SoknadFormField.harUtvidetRettFor
->;
 
 export type DinSituasjonFormData = Pick<
     SoknadFormData,
-    | SoknadFormField.arbeiderINorge
-    | SoknadFormField.borINorge
-    | SoknadFormField.arbeidssituasjon
-    | SoknadFormField.harBruktOmsorgsdagerEtter1Juli
-    | SoknadFormField.antallDagerBruktEtter1Juli
+    SoknadFormField.arbeiderINorge | SoknadFormField.borINorge | SoknadFormField.arbeidssituasjon
 >;
 
-export type MottakerFormData = Pick<
+export type OmAnnenForelderFormData = Pick<
     SoknadFormData,
-    | SoknadFormField.overføreTilEktefelle
-    | SoknadFormField.overføreTilSamboer
-    | SoknadFormField.fnrMottaker
-    | SoknadFormField.navnMottaker
-    | SoknadFormField.antallDagerSomSkalOverføres
+    | SoknadFormField.annenForelderNavn
+    | SoknadFormField.annenForelderEtternavn
+    | SoknadFormField.annenForelderFnr
+    | SoknadFormField.annenForelderSituasjon
+    | SoknadFormField.annenForelderSituasjonBeskrivelse
+    | SoknadFormField.annenForelderPeriodeFom
+    | SoknadFormField.annenForelderPeriodeTom
+>;
+
+export type OmBarnaFormData = Pick<
+    SoknadFormData,
+    | SoknadFormField.antallFellesBarn
+    | SoknadFormField.alderYngsteBarn
+    | SoknadFormField.harFosterbarn
+    | SoknadFormField.alderAvAlleFosterbarn
 >;

@@ -6,11 +6,10 @@ import getBarnRemoteData from '../api/getBarn';
 import getSokerRemoteData from '../api/getSoker';
 import getSoknadTempStorage from '../api/getSoknadTempStorage';
 import { Person } from '../types/Person';
-import { Barn } from '../types/SoknadFormData';
 import { SoknadTempStorageData } from '../types/SoknadTempStorageData';
 import { relocateToLoginPage } from '../utils/navigationUtils';
 
-export type SoknadEssentials = [Person, Barn[], SoknadTempStorageData];
+export type SoknadEssentials = [Person, SoknadTempStorageData];
 
 export type SoknadEssentialsRemoteData = RemoteData<AxiosError, SoknadEssentials>;
 
@@ -18,12 +17,11 @@ function useSoknadEssentials(): SoknadEssentialsRemoteData {
     const [data, setData] = useState<SoknadEssentialsRemoteData>(initial);
     const fetch = async () => {
         try {
-            const [sokerResult, barnResult, soknadTempStorageResult] = await Promise.all([
+            const [sokerResult, soknadTempStorageResult] = await Promise.all([
                 getSokerRemoteData(),
-                getBarnRemoteData(),
                 getSoknadTempStorage(),
             ]);
-            setData(combine(sokerResult, barnResult, soknadTempStorageResult));
+            setData(combine(sokerResult, soknadTempStorageResult));
         } catch (remoteDataError) {
             if (isUserLoggedOut(remoteDataError.error)) {
                 setData(pending);
