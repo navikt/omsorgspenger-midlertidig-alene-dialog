@@ -1,12 +1,12 @@
-apiVersion: 'nais.io/v1alpha1'
-kind: 'Application'
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
 metadata:
     name: midlertidig-alene
     namespace: default
     labels:
         team: dusseldorf
 spec:
-    image: { { image } }
+    image: {{ image }}
     port: 8080
     liveness:
         path: /familie/sykdom-i-familien/soknad/midlertidig-alene/health/isAlive
@@ -47,6 +47,6 @@ spec:
         - name: LOGIN_URL
           value: https://loginservice-q.nav.no/login?redirect=https://www-q0.nav.no/familie/sykdom-i-familien/soknad/midlertidig-alene/soknad
         - name: APPSTATUS_PROJECT_ID
-          value: 'ryujtq87'
+          value: "ryujtq87"
         - name: APPSTATUS_DATASET
-          value: 'staging'
+          value: "staging"
