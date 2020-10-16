@@ -33,7 +33,7 @@ render(
         <SoknadApplicationCommonRoutes
             contentRoutes={[
                 <Route path="/" key="intro" exact={true} component={IntroPage} />,
-                <Route path="/melding" key="soknad" component={SoknadRemoteDataFetcher} />,
+                <Route path="/soknad" key="soknad" component={SoknadRemoteDataFetcher} />,
             ]}
         />
     </SoknadApplication>,

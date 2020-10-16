@@ -7,7 +7,7 @@ import { StepID } from '../soknadStepsConfig';
 import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-panel/CounsellorPanel';
 // import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 
-const OmAnnenForelderenStep = () => {
+const OmAnnenForelderStep = () => {
     // const intl = useIntl();
 
     return (
@@ -17,4 +17,4 @@ const OmAnnenForelderenStep = () => {
     );
 };
 
-export default OmAnnenForelderenStep;
+export default OmAnnenForelderStep;

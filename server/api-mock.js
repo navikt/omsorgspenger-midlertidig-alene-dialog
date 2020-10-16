@@ -137,7 +137,7 @@ const startExpressServer = () => {
         res.sendStatus(401);
     });
     // TODO: endre her
-    server.post('/melding/dele-dager', (req, res) => {
+    server.post('/soknad/dele-dager', (req, res) => {
         const body = req.body;
         console.log('[POST] body', body);
         setTimeout(() => {
@@ -145,7 +145,7 @@ const startExpressServer = () => {
         }, 2500);
     });
     // TODO: endre her
-    server.post('/melding/dele-dager-err', (req, res) => {
+    server.post('/soknad/dele-dager-err', (req, res) => {
         const body = req.body;
         console.log('[POST] body', body);
         setTimeout(() => {

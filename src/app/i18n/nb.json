@@ -1,5 +1,5 @@
 {
-    "application.title": "Overføring av omsorgsdager til ny ektefelle eller samboer",
+    "application.title": "Søknad om å bli regnet som midertidig alene for omsorgen",
 
     "application.loadError.title": "Noe gikk galt ...",
     "application.loadError.message": "Beklager, her har det dessverre skjedd en feil. Dersom feilen fortsetter, prøv igjen litt senere.",
@@ -33,22 +33,8 @@
 
     "nav.no": "nav.no",
 
-    "step.dine-barn.pageTitle": "Barna dine",
-    "step.dine-barn.stepTitle": "Barna dine",
-    "step.dine-barn.født": "Født",
-    "step.dine-barn.listHeader.registrerteBarn": "Registrerte barn",
-    "step.dine-barn.nextButtonLabel": "Fortsett",
-    "step.dine-barn.info.title": "Nå skal du legge inn opplysninger om dine egne barn, som bor fast hos deg.",
-    "step.dine-barn.info": "Det er kun barn under 18 år som vises automatisk her. Hvis du har et barn som er fylt 18 år, og som du har fått ekstra omsorgsdager for på grunn av at barnet har kronisk sykdom eller funksjonshemning, kan du selv legge til dette barnet.",
-    "step.dine-barn.info.ingenbarn.1": "Vi fant ingen barn registrert på deg. Har du  barn som ikke er registrert her, kan du selv legge inn disse. Dette kan være fosterbarn, eller om du har barn som er fylt 18 år og som har ekstra omsorgsdager på grunn av kronisk sykdom eller funksjonshemning.",
-    "step.dine-barn.info.ingenbarn.2": "Du må legge til minst ett barn for å kunne gå videre.",
-    "step.dine-barn.info.spm.andreBarn": "Har du andre barn?",
-    "step.dine-barn.info.spm.flereBarn": "Har du flere barn?",
-    "step.dine-barn.info.spm.text": "Har du flere barn som ikke er registrert her, kan du legge inn disse selv. Det kan være fosterbarn, eller om du har barn som er fylt 18 år og som har ekstra omsorgsdager på grunn av kronisk sykdom eller funksjonshemning.",
-    "step.dine-barn.formLeggTilBarn.aldersGrenseInfo": "(Du kan ikke legge til barn som er 19 år eller eldre)",
-
-    "step.om-barna.pageTitle": "Om barna dine",
-    "step.om-barna.stepTitle": "Om barna dine",
+    "step.om-barna.pageTitle": "Om barna",
+    "step.om-barna.stepTitle": "Om barna",
     "step.om-barna.info.1": "Når det gjelder omsorgsdager, er du regnet som alene om omsorgen hvis du ikke bor sammen med den andre forelderen, og barnet bor fast bare hos deg. Det vil si at barnet har folkeregistrert adresse hos deg.",
     "step.om-barna.info.2": "Hvis du og den andre forelderen har en avtale om delt bosted bor barnet fast hos dere begge, og ingen av dere blir regnet som alene om omsorgen.",
     "step.om-barna.info.3": "Hvis du er alene om omsorgen nå, men blir sammen med den andre forelderen, må du melde fra om det til NAV.",
@@ -61,17 +47,21 @@
     "step.om-barna.form.spm.hvilkeAvBarnaUtvRett": "Kryss av for barn du har fått ekstra omsorgsdager for",
     "step.om-barna.nextButtonLabel": "Fortsett",
 
-    "step.din-situasjon.pageTitle": "Din situasjon",
-    "step.din-situasjon.stepTitle": "Din situasjon",
-    "step.din-situasjon.nextButtonLabel": "Fortsett",
+    "step.din-arbeidsituasjon.pageTitle": "Din arbeidsituasjon",
+    "step.din-arbeidsituasjon.stepTitle": "Din arbeidsituasjon",
+    "step.din-arbeidsituasjon.nextButtonLabel": "Fortsett",
 
-    "step.omsorgsdager.pageTitle": "Omsorgsdager",
-    "step.omsorgsdager.stepTitle": "Omsorgsdager",
-    "step.omsorgsdager.nextButtonLabel": "Fortsett",
+    "step.om-annen-forelder.pageTitle": "Om den andre forelderen",
+    "step.om-annen-forelder.stepTitle": "Om den andre forelderen",
+    "step.om-annen-forelder.nextButtonLabel": "Fortsett",
 
-    "step.mottaker.pageTitle": "Mottaker",
-    "step.mottaker.stepTitle": "Hvem skal du overføre dager til?",
-    "step.mottaker.nextButtonLabel": "Fortsett",
+    "step.annen-forelder-situasjon.pageTitle": "Den andre forelderens situasjon",
+    "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
+    "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
+
+    "step.medlemskap.pageTitle": "Medlemskap",
+    "step.medlemskap.stepTitle": "Medlemskap",
+    "step.medlemskap.nextButtonLabel": "Fortsett",
 
     "step.oppsummering.pageTitle": "Oppsummering",
     "step.oppsummering.stepTitle": "Oppsummering",
@@ -100,15 +90,6 @@
     "step.din_situasjon.form.arbeidssituasjon.spm": "Hva er din arbeidssituasjon? Du kan velge flere.",
     "step.din_situasjon.form.harBruktOmsorgsdagerEtter1Juli.spm": "Har du brukt omsorgsdager etter 1. juli 2020?",
     "step.din_situasjon.form.antallDagerBruktEtter1Juli.spm": "Hvor mange omsorgsdager har du brukt etter 1. juli 2020?",
-
-    "step.mottaker.veileder.intro.1": "Den du skal overføre omsorgsdager til må være yrkesaktiv, altså være èn eller flere av punktene under:",
-    "step.mottaker.form.overføreTilEktefelle.spm": "Skal du overføre dager til en ny ektefelle?",
-    "step.mottaker.form.overføreTilSamboer.spm": "Skal du overføre dager til en samboer du har bodd med i minst 12 måneder?",
-    "step.mottaker.form.stopMessage.html": "I dette skjemaet kan du <strong>kun</strong> overføre omsorgsdager til en ny ektefelle, eller en samboer du har bodd med i minst 12 måneder.",
-    "step.mottaker.form.stopMessage.lenke": "Hvis du heller vil dele omsorgsdager med den andre forelderen, kan du gjøre det her",
-    "step.mottaker.form.fnr.spm": "Hva er fødselsnummeret til den du skal overføre omsorgsdager til?",
-    "step.mottaker.form.navn.spm": "Hva er navnet til den du skal overføre omsorgsdager til? (Skriv inn hele navnet)",
-    "step.mottaker.form.antallDagerSomSkalOverføres.spm": "Hvor mange omsorgsdager vil du overføre? Du kan maksimalt overføre 10 dager.",
 
     "step.oppsummering.info": "Les gjennom oppsummeringen og sjekk at alt er riktig før du sender inn meldingen om overføring av omsorgsdager. Hvis du vil gjøre endringer, kan du gå tilbake.",
     "step.oppsummering.søker.header": "Om deg",

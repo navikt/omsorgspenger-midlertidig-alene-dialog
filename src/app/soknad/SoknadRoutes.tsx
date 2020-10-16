@@ -23,7 +23,7 @@ import { StepID } from './soknadStepsConfig';
 import VelkommenPage from './velkommen-page/VelkommenPage';
 import AnnenForelderenSituasjonStep from './annen-forelderens-situasjon-step/AnnenForelderenSituasjonStep';
 import MedlemskapStep from './medlemskap-step/MedlemskapStep';
-import OmAnnenForelderenStep from './om-annen-forelderen-step/OmAnnenForelderenStep';
+import OmAnnenForelderStep from './om-annen-forelder-step/OmAnnenForelderStep';
 
 interface Props {
     soknadId?: string;
@@ -42,7 +42,7 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
             case StepID.DIN_ARBEIDSITUASJON:
                 return <DinArbeidsituasjonStep />;
             case StepID.OM_ANNEN_FORELDER:
-                return <OmAnnenForelderenStep />;
+                return <OmAnnenForelderStep />;
             case StepID.ANNEN_FORELDER_SITUASJON:
                 return <AnnenForelderenSituasjonStep />;
             case StepID.OM_BARNA:

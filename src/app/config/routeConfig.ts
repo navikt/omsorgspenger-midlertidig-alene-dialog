@@ -2,8 +2,8 @@ import { getEnvironmentVariable } from '@navikt/sif-common-core/lib/utils/envUti
 
 enum AppRoutes {
     NOT_OPEN = '/utilgjengelig',
-    SOKNAD = '/melding',
-    SOKNAD_SENT = '/melding/melding-sendt',
+    SOKNAD = '/soknad',
+    SOKNAD_SENT = '/soknad/soknad-sendt',
     ERROR = '/feil',
 }
 
