@@ -27,8 +27,8 @@ interface AnnenForelder {
     fnr: string;
     situasjon: AnnenForeldrenSituasjon[];
     situasjonBeskrivelse?: string;
-    periodeFom: ApiStringDate;
-    periodeTom: ApiStringDate;
+    periodeFraOgMed: ApiStringDate;
+    periodeTilOgMed: ApiStringDate;
 }
 
 export interface SoknadApiData {
