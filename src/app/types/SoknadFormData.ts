@@ -27,10 +27,8 @@ export enum SoknadFormField {
     annenForelderSituasjonBeskrivelse = 'annenForelderSituasjonBeskrivelse',
     annenForelderPeriodeFom = 'annenForelderPeriodeFom',
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
-    antallFellesBarn = 'antallFellesBarn',
-    alderYngsteBarn = 'alderYngsteBarn',
-    harFosterbarn = 'harFosterbarn',
-    alderAvAlleFosterbarn = 'alderAvAlleFosterbarn',
+    antallBarn = 'antallBarn',
+    alderAvAlleBarn = 'alderAvAlleBarn',
     harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
     utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
     skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
@@ -44,16 +42,13 @@ export interface SoknadFormData {
     [SoknadFormField.harBekreftetOpplysninger]: boolean;
     [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
     [SoknadFormField.annenForelderNavn]: string;
-    [SoknadFormField.annenForelderEtternavn]: string;
     [SoknadFormField.annenForelderFnr]: string;
     [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon[];
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
     [SoknadFormField.annenForelderPeriodeFom]: Date;
     [SoknadFormField.annenForelderPeriodeTom]: Date;
-    [SoknadFormField.antallFellesBarn]: number;
-    [SoknadFormField.alderYngsteBarn]: number;
-    [SoknadFormField.harFosterbarn]: YesOrNo;
-    [SoknadFormField.alderAvAlleFosterbarn]: Array<number>;
+    [SoknadFormField.antallBarn]: number;
+    [SoknadFormField.alderAvAlleBarn]: Date[];
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
@@ -66,7 +61,7 @@ export type DinSituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidss
 
 export type OmAnnenForelderFormData = Pick<
     SoknadFormData,
-    SoknadFormField.annenForelderNavn | SoknadFormField.annenForelderEtternavn | SoknadFormField.annenForelderFnr
+    SoknadFormField.annenForelderNavn | SoknadFormField.annenForelderFnr
 >;
 
 export type AnnenForelderSituasjonFormData = Pick<
@@ -87,10 +82,4 @@ export type MedlemskapFormData = Pick<
     | SoknadFormField.utenlandsoppholdIPerioden
 >;
 
-export type OmBarnaFormData = Pick<
-    SoknadFormData,
-    | SoknadFormField.antallFellesBarn
-    | SoknadFormField.alderYngsteBarn
-    | SoknadFormField.harFosterbarn
-    | SoknadFormField.alderAvAlleFosterbarn
->;
+export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.alderAvAlleBarn>;

@@ -40,7 +40,7 @@ spec:
         - name: DEKORATOR_URL
           value: https://www.nav.no/dekoratoren/?simple=true
         - name: API_URL
-          value: https://omsorgspengermidlertidigalenedialog-api.nav.no
+          value: https://omsorgspenger-midlertidig-alene-api.nav.no
         - name: PUBLIC_PATH
           value: /familie/sykdom-i-familien/soknad/midlertidig-alene
         - name: LOGIN_URL
