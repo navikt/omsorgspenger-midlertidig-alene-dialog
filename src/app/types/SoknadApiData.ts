@@ -22,18 +22,22 @@ export interface UtenlandsoppholdIPeriodenApiData {
     landnavn: string;
 }
 
-export interface SoknadApiData {
-    id: string;
-    språk: Locale;
-    harForståttRettigheterOgPlikter: boolean;
-    harBekreftetOpplysninger: boolean;
-    arbeidssituasjon: Arbeidssituasjon[];
+interface AnnenForelder {
     annenForelderNavn: string;
     annenForelderFnr: string;
     annenForelderSituasjon: AnnenForeldrenSituasjon[];
     annenForelderSituasjonBeskrivelse: string;
     annenForelderPeriodeFom: ApiStringDate;
     annenForelderPeriodeTom: ApiStringDate;
+}
+
+export interface SoknadApiData {
+    id: string;
+    språk: Locale;
+    harForståttRettigheterOgPlikter: boolean;
+    harBekreftetOpplysninger: boolean;
+    arbeidssituasjon: Arbeidssituasjon[];
+    annenForelder: AnnenForelder;
     antallBarn: number;
     alderAvAlleBarn: ApiStringDate[];
     medlemskap: Medlemskap;

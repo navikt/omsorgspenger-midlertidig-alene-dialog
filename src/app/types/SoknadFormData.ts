@@ -10,9 +10,9 @@ export enum Arbeidssituasjon {
 
 export enum AnnenForeldrenSituasjon {
     'sykdom' = 'sykdom',
-    'innlagt_i_helseinstitusjon' = 'innlagt_i_helseinstitusjon',
+    'innlagtIHelseinstitusjon' = 'innlagtIHelseinstitusjon',
     'fengsel' = 'fengsel',
-    'utøver_verneplikt' = 'utøver_verneplikt',
+    'utøverVerneplikt' = 'utøverVerneplikt',
     'annet' = 'annet',
 }
 
