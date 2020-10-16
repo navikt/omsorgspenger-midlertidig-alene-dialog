@@ -69,10 +69,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
         setSoknadId(sId);
         await soknadTempStorage.persist(sId, initialFormData, StepID.DIN_ARBEIDSITUASJON, { søker });
         setTimeout(() => {
-            navigateTo(
-                soknadStepUtils.getStepRoute(StepID.DIN_ARBEIDSITUASJON, SoknadApplicationType.MELDING),
-                history
-            );
+            navigateTo(soknadStepUtils.getStepRoute(StepID.DIN_ARBEIDSITUASJON, SoknadApplicationType.SOKNAD), history);
         });
     };
 
@@ -124,12 +121,12 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
             const currentRoute = history.location.pathname;
             const lastStepRoute = soknadStepUtils.getStepRoute(
                 tempStorage.metadata.lastStepID,
-                SoknadApplicationType.MELDING
+                SoknadApplicationType.SOKNAD
             );
             if (currentRoute !== lastStepRoute) {
                 setTimeout(() => {
                     navigateTo(
-                        soknadStepUtils.getStepRoute(tempStorage.metadata.lastStepID, SoknadApplicationType.MELDING),
+                        soknadStepUtils.getStepRoute(tempStorage.metadata.lastStepID, SoknadApplicationType.SOKNAD),
                         history
                     );
                     setInitializing(false);

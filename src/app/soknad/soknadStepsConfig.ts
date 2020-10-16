@@ -19,4 +19,4 @@ const SoknadSteps: StepID[] = [
     StepID.OPPSUMMERING,
 ];
 
-export const soknadStepsConfig = soknadStepUtils.getStepsConfig(SoknadSteps, SoknadApplicationType.MELDING);
+export const soknadStepsConfig = soknadStepUtils.getStepsConfig(SoknadSteps, SoknadApplicationType.SOKNAD);
