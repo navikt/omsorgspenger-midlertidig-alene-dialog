@@ -23,12 +23,12 @@ export interface UtenlandsoppholdIPeriodenApiData {
 }
 
 interface AnnenForelder {
-    annenForelderNavn: string;
-    annenForelderFnr: string;
-    annenForelderSituasjon: AnnenForeldrenSituasjon[];
-    annenForelderSituasjonBeskrivelse: string;
-    annenForelderPeriodeFom: ApiStringDate;
-    annenForelderPeriodeTom: ApiStringDate;
+    navn: string;
+    fnr: string;
+    situasjon: AnnenForeldrenSituasjon[];
+    situasjonBeskrivelse?: string;
+    periodeFom: ApiStringDate;
+    periodeTom: ApiStringDate;
 }
 
 export interface SoknadApiData {
