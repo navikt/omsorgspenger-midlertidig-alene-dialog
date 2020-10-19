@@ -3,50 +3,34 @@ import { QuestionConfig, Questions } from '@navikt/sif-common-question-config/li
 import { yesOrNoIsAnswered } from '@navikt/sif-common-core/lib/utils/yesOrNoUtils';
 
 export enum IntroFormField {
-    'erArbeidstakerSnEllerFrilanser' = 'erArbeidstakerSnEllerFrilanser',
-    'harAleneomsorg' = 'harAleneomsorg',
-    'mottakerErIkkeEktefelleEllerSamboer' = 'mottakerErEktefelleEllerSamboer',
-    'mottakersArbeidssituasjonErOk' = 'mottakersArbeidssituasjonErOk',
+    'erYrkesaktiv' = 'erYrkesaktiv',
+    'erAndreForelderenUtAvStandMinst6Måneder' = 'erAndreForelderenUtAvStandMinst6Måneder',
 }
 
 export interface IntroFormData {
-    [IntroFormField.erArbeidstakerSnEllerFrilanser]: YesOrNo;
-    [IntroFormField.harAleneomsorg]: YesOrNo;
-    [IntroFormField.mottakerErIkkeEktefelleEllerSamboer]: YesOrNo;
-    [IntroFormField.mottakersArbeidssituasjonErOk]: YesOrNo;
+    [IntroFormField.erYrkesaktiv]: YesOrNo;
+    [IntroFormField.erAndreForelderenUtAvStandMinst6Måneder]: YesOrNo;
 }
 
 export const introFormInitialValues: Partial<IntroFormData> = {
-    [IntroFormField.erArbeidstakerSnEllerFrilanser]: YesOrNo.UNANSWERED,
-    [IntroFormField.harAleneomsorg]: YesOrNo.UNANSWERED,
-    [IntroFormField.mottakerErIkkeEktefelleEllerSamboer]: YesOrNo.UNANSWERED,
-    [IntroFormField.mottakersArbeidssituasjonErOk]: YesOrNo.UNANSWERED,
+    [IntroFormField.erYrkesaktiv]: YesOrNo.UNANSWERED,
+    [IntroFormField.erAndreForelderenUtAvStandMinst6Måneder]: YesOrNo.UNANSWERED,
 };
 
 export enum IntroFormAvslag {
-    erIkkeArbeidstakerSnEllerFrilanser = 'erIkkeArbeidstakerSnEllerFrilanser',
-    harIkkeAleneomsorg = 'harIkkeAleneomsorg',
-    mottakerErIkkeEktefelleEllerSamboer = 'mottakerErIkkeEktefelleEllerSamboer',
-    mottakersArbeidssituasjonErIkkeOk = 'mottakersArbeidssituasjonErIkkeOk',
+    erIkkeYrkesaktiv = 'erYrkesaktiv',
+    erAndreForelderenIkkeUtAvStandMinst6Måneder = 'erAndreForelderenUtAvStandMinst6Måneder',
 }
 
 export const getIntroFormAvslag = ({
-    erArbeidstakerSnEllerFrilanser,
-    harAleneomsorg,
-    mottakerErEktefelleEllerSamboer,
-    mottakersArbeidssituasjonErOk,
+    erYrkesaktiv,
+    erAndreForelderenUtAvStandMinst6Måneder,
 }: IntroFormData): IntroFormAvslag | undefined => {
-    if (erArbeidstakerSnEllerFrilanser === YesOrNo.NO) {
-        return IntroFormAvslag.erIkkeArbeidstakerSnEllerFrilanser;
+    if (erYrkesaktiv === YesOrNo.NO) {
+        return IntroFormAvslag.erIkkeYrkesaktiv;
     }
-    if (harAleneomsorg === YesOrNo.NO) {
-        return IntroFormAvslag.harIkkeAleneomsorg;
-    }
-    if (mottakerErEktefelleEllerSamboer == YesOrNo.NO) {
-        return IntroFormAvslag.mottakerErIkkeEktefelleEllerSamboer;
-    }
-    if (mottakersArbeidssituasjonErOk === YesOrNo.NO) {
-        return IntroFormAvslag.mottakersArbeidssituasjonErIkkeOk;
+    if (erAndreForelderenUtAvStandMinst6Måneder === YesOrNo.NO) {
+        return IntroFormAvslag.erAndreForelderenIkkeUtAvStandMinst6Måneder;
     }
     return undefined;
 };
@@ -56,28 +40,15 @@ const Q = IntroFormField;
 type IntroFormQuestionsPayload = IntroFormData & { avslag: IntroFormAvslag | undefined };
 
 const IntroFormConfig: QuestionConfig<IntroFormQuestionsPayload, IntroFormField> = {
-    [Q.erArbeidstakerSnEllerFrilanser]: {
-        isAnswered: ({ erArbeidstakerSnEllerFrilanser }) => yesOrNoIsAnswered(erArbeidstakerSnEllerFrilanser),
+    [Q.erYrkesaktiv]: {
+        isAnswered: ({ erYrkesaktiv }) => yesOrNoIsAnswered(erYrkesaktiv),
     },
-    [Q.harAleneomsorg]: {
-        parentQuestion: Q.erArbeidstakerSnEllerFrilanser,
-        isIncluded: ({ erArbeidstakerSnEllerFrilanser, avslag }) =>
-            yesOrNoIsAnswered(erArbeidstakerSnEllerFrilanser) &&
-            avslag !== IntroFormAvslag.erIkkeArbeidstakerSnEllerFrilanser,
-        isAnswered: ({ harAleneomsorg }) => yesOrNoIsAnswered(harAleneomsorg),
-    },
-    [Q.mottakerErIkkeEktefelleEllerSamboer]: {
-        parentQuestion: Q.harAleneomsorg,
-        isIncluded: ({ harAleneomsorg, avslag }) =>
-            yesOrNoIsAnswered(harAleneomsorg) && avslag !== IntroFormAvslag.harIkkeAleneomsorg,
-        isAnswered: ({ mottakerErEktefelleEllerSamboer }) => yesOrNoIsAnswered(mottakerErEktefelleEllerSamboer),
-    },
-    [Q.mottakersArbeidssituasjonErOk]: {
-        parentQuestion: Q.mottakerErIkkeEktefelleEllerSamboer,
-        isIncluded: ({ mottakerErEktefelleEllerSamboer, avslag }) =>
-            yesOrNoIsAnswered(mottakerErEktefelleEllerSamboer) &&
-            avslag !== IntroFormAvslag.mottakerErIkkeEktefelleEllerSamboer,
-        isAnswered: ({ mottakersArbeidssituasjonErOk }) => yesOrNoIsAnswered(mottakersArbeidssituasjonErOk),
+    [Q.erAndreForelderenUtAvStandMinst6Måneder]: {
+        parentQuestion: Q.erYrkesaktiv,
+        isIncluded: ({ erYrkesaktiv, avslag }) =>
+            yesOrNoIsAnswered(erYrkesaktiv) && avslag !== IntroFormAvslag.erIkkeYrkesaktiv,
+        isAnswered: ({ erAndreForelderenUtAvStandMinst6Måneder }) =>
+            yesOrNoIsAnswered(erAndreForelderenUtAvStandMinst6Måneder),
     },
 };
 
