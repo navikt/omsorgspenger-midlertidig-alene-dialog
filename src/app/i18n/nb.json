@@ -130,5 +130,9 @@
     "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
     "kvittering.info.3a": "Når vi har behandlet meldingen din får både du og den du overfører omsorgsdager til et svar fra oss i posten, og på deres egne sider på",
     "kvittering.info.3b": "Ditt NAV",
-    "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet."
+    "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet.",
+
+    "step.omAnnenForlder.tittel": "Om den andre forelderen",
+    "step.omAnnenForlder.fnr.spm": "Hva er fødselsnummeret til den andre forelderen?",
+    "step.omAnnenForlder.navn.spm": "Hva er navnet til den andre forelderen?"
 }
