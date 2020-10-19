@@ -27,6 +27,7 @@ export enum SoknadFormField {
     annenForelderSituasjonBeskrivelse = 'annenForelderSituasjonBeskrivelse',
     annenForelderPeriodeFom = 'annenForelderPeriodeFom',
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
+    annenForelderPeriodeMer6Maneder = 'annenForelderPeriodeMer6Maneder',
     antallBarn = 'antallBarn',
     alderAvAlleBarn = 'alderAvAlleBarn',
     harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
@@ -43,10 +44,11 @@ export interface SoknadFormData {
     [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
     [SoknadFormField.annenForelderNavn]: string;
     [SoknadFormField.annenForelderFnr]: string;
-    [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon[];
+    [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
     [SoknadFormField.annenForelderPeriodeFom]: Date;
     [SoknadFormField.annenForelderPeriodeTom]: Date;
+    [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.antallBarn]: number;
     [SoknadFormField.alderAvAlleBarn]: Date[];
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
@@ -70,6 +72,7 @@ export type AnnenForelderSituasjonFormData = Pick<
     | SoknadFormField.annenForelderSituasjonBeskrivelse
     | SoknadFormField.annenForelderPeriodeFom
     | SoknadFormField.annenForelderPeriodeTom
+    | SoknadFormField.annenForelderPeriodeMer6Maneder
 >;
 
 export type MedlemskapFormData = Pick<

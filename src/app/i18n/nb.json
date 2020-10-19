@@ -134,5 +134,16 @@
 
     "step.omAnnenForlder.tittel": "Om den andre forelderen",
     "step.omAnnenForlder.fnr.spm": "Hva er fødselsnummeret til den andre forelderen?",
-    "step.omAnnenForlder.navn.spm": "Hva er navnet til den andre forelderen?"
+    "step.omAnnenForlder.navn.spm": "Hva er navnet til den andre forelderen?",
+
+    "step.annenForeldrensSituasjon.tittel": "Den andre forelderens situasjon",
+    "step.annenForeldrensSituasjon.grunn.spm": "Hva er grunnen til at...?",
+    "step.annenForeldrensSituasjon.grunn.sykdom": "Sykdom, skade eller funksjonhemming",
+    "step.annenForeldrensSituasjon.grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
+    "step.annenForeldrensSituasjon.grunn.fengsel": "Fengsel",
+    "step.annenForeldrensSituasjon.grunn.verneplikt": "Verneplikt",
+    "step.annenForeldrensSituasjon.grunn.annet": "Annet",
+    "step.annenForeldrensSituasjon.beskrivelseAvSituasjonen.spm": "Gi en utdypende beskrivelse av situasjonen",
+    "step.annenForeldrensSituasjon.erVarighetMerEnn6Maneder.spm": "Er det varighet på mer enn 6 måneder?",
+    "step.annenForeldrensSituasjon.periode.spm": "Hvilken periode gjelder soningen?"
 }
