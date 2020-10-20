@@ -145,5 +145,9 @@
     "step.annenForeldrensSituasjon.grunn.annet": "Annet",
     "step.annenForeldrensSituasjon.beskrivelseAvSituasjonen.spm": "Gi en utdypende beskrivelse av situasjonen",
     "step.annenForeldrensSituasjon.erVarighetMerEnn6Maneder.spm": "Er det varighet på mer enn 6 måneder?",
-    "step.annenForeldrensSituasjon.periode.spm": "Hvilken periode gjelder soningen?"
+    "step.annenForeldrensSituasjon.periode.innlagtIHelseinstitusjon.spm": "Hvilken periode gjelder innleggelsen?",
+    "step.annenForeldrensSituasjon.periode.fengsel.spm": "Hvilken periode gjelder soningen?",
+    "step.annenForeldrensSituasjon.periode.verneplikt.spm": "Hvilken periode gjelder verneplikten?",
+    "step.annenForeldrensSituasjon.periode.fra": "Fra",
+    "step.annenForeldrensSituasjon.periode.til": "Til"
 }

@@ -23,6 +23,7 @@ const AnnenForelderenSituasjonStep = () => {
     const addTextboxAndYesNo =
         values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
         values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet;
+
     const kanIkkeFortsette =
         addTextboxAndYesNo &&
         (values.annenForelderPeriodeMer6Maneder === YesOrNo.NO ||
@@ -81,6 +82,29 @@ const AnnenForelderenSituasjonStep = () => {
                         />
                     </FormBlock>
                 </>
+            )}
+            {values.annenForelderSituasjon && !addTextboxAndYesNo && (
+                <FormBlock>
+                    <SoknadFormComponents.DateRangePicker
+                        legend={
+                            values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
+                                ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.innlagtIHelseinstitusjon.spm')
+                                : values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel
+                                ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fengsel.spm')
+                                : intlHelper(intl, 'step.annenForeldrensSituasjon.periode.verneplikt.spm')
+                        }
+                        fromInputProps={{
+                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fra'),
+                            // validate: validateFraDatoField,
+                            name: SoknadFormField.annenForelderPeriodeFom,
+                        }}
+                        toInputProps={{
+                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.til'),
+                            // validate: validateTilDatoField,
+                            name: SoknadFormField.annenForelderPeriodeTom,
+                        }}
+                    />
+                </FormBlock>
             )}
         </SoknadFormStep>
     );
