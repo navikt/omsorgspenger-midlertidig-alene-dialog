@@ -25,10 +25,11 @@ export interface UtenlandsoppholdIPeriodenApiData {
 interface AnnenForelder {
     navn: string;
     fnr: string;
-    situasjon: AnnenForeldrenSituasjon[];
+    situasjon: AnnenForeldrenSituasjon;
     situasjonBeskrivelse?: string;
-    periodeFraOgMed: ApiStringDate;
-    periodeTilOgMed: ApiStringDate;
+    periodeFraOgMed?: ApiStringDate;
+    periodeTilOgMed?: ApiStringDate;
+    periodeMer6Maneder?: boolean;
 }
 
 export interface SoknadApiData {
