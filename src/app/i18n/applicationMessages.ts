@@ -1,7 +1,8 @@
 import { MessageFileFormat } from '@navikt/sif-common-core/lib/dev-utils/intl/devIntlUtils';
 import { allCommonMessages } from '@navikt/sif-common-core/lib/i18n/allCommonMessages';
-import annetBarnMessages from '@navikt/sif-common-forms/lib/annet-barn/annetBarnMessages';
+// import annetBarnMessages from '@navikt/sif-common-forms/lib/annet-barn/annetBarnMessages';
 import soknadErrorIntlMessages from '@navikt/sif-common-soknad/lib/soknad-error-messages/soknadErrorIntlMessages';
+import bostedUtlandMessages from '@navikt/sif-common-forms/lib/bosted-utland/bostedUtlandMessages';
 
 const appMessagesNB = require('./nb.json');
 const introFormMessagesNB = require('../pages/intro-page/introFormMessagesNB.json');
@@ -14,10 +15,17 @@ const bokmålstekster = {
     ...introFormMessagesNB,
     ...dinePlikterNB,
     ...personopplysningerNB,
-    ...annetBarnMessages.nb,
+    //...annetBarnMessages.nb,
     ...soknadErrorIntlMessages.nb,
+    ...bostedUtlandMessages.nb,
+};
+const nynorskstekster = {
+    ...allCommonMessages.nn,
+    ...soknadErrorIntlMessages.nn,
+    ...bostedUtlandMessages.nn,
 };
 
 export const applicationIntlMessages: MessageFileFormat = {
     nb: bokmålstekster,
+    nn: nynorskstekster,
 };

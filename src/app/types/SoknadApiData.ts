@@ -15,13 +15,6 @@ interface Medlemskap {
     utenlandsoppholdSiste12Mnd: BostedUtlandApiData[];
 }
 
-export interface UtenlandsoppholdIPeriodenApiData {
-    fraOgMed: ApiStringDate;
-    tilOgMed: ApiStringDate;
-    landkode: string;
-    landnavn: string;
-}
-
 interface AnnenForelder {
     navn: string;
     fnr: string;
@@ -42,8 +35,4 @@ export interface SoknadApiData {
     antallBarn: number;
     alderAvAlleBarn: ApiStringDate[];
     medlemskap: Medlemskap;
-    utenlandsoppholdIPerioden?: {
-        skalOppholdeSegIUtlandetIPerioden: boolean;
-        opphold: UtenlandsoppholdIPeriodenApiData[];
-    };
 }

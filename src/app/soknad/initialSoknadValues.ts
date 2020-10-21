@@ -15,6 +15,6 @@ export const initialSoknadFormData: Partial<SoknadFormData> = {
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: [],
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo.UNANSWERED,
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: [],
-    [SoknadFormField.skalOppholdeSegIUtlandetIPerioden]: YesOrNo.UNANSWERED,
-    [SoknadFormField.utenlandsoppholdIPerioden]: [],
+    // [SoknadFormField.skalOppholdeSegIUtlandetIPerioden]: YesOrNo.UNANSWERED,
+    // [SoknadFormField.utenlandsoppholdIPerioden]: [],
 };

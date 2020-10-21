@@ -34,8 +34,6 @@ export enum SoknadFormField {
     utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
     skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
     utenlandsoppholdNeste12Mnd = 'utenlandsoppholdNeste12Mnd',
-    skalOppholdeSegIUtlandetIPerioden = 'skalOppholdeSegIUtlandetIPerioden',
-    utenlandsoppholdIPerioden = 'utenlandsoppholdIPerioden',
 }
 
 export interface SoknadFormData {
@@ -55,8 +53,6 @@ export interface SoknadFormData {
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
-    [SoknadFormField.skalOppholdeSegIUtlandetIPerioden]?: YesOrNo;
-    [SoknadFormField.utenlandsoppholdIPerioden]?: Utenlandsopphold[];
 }
 
 export type DinSituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
@@ -81,8 +77,6 @@ export type MedlemskapFormData = Pick<
     | SoknadFormField.utenlandsoppholdSiste12Mnd
     | SoknadFormField.skalBoUtenforNorgeNeste12Mnd
     | SoknadFormField.utenlandsoppholdNeste12Mnd
-    | SoknadFormField.skalOppholdeSegIUtlandetIPerioden
-    | SoknadFormField.utenlandsoppholdIPerioden
 >;
 
 export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.alderAvAlleBarn>;
