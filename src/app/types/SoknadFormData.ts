@@ -48,7 +48,7 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderPeriodeTom]: Date;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.antallBarn]: number;
-    [SoknadFormField.alderAvAlleBarn]: Date[];
+    [SoknadFormField.alderAvAlleBarn]: number[];
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
