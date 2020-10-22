@@ -33,6 +33,6 @@ export interface SoknadApiData {
     arbeidssituasjon: Arbeidssituasjon[];
     annenForelder: AnnenForelder;
     antallBarn: number;
-    alderAvAlleBarn: ApiStringDate[];
+    alderAvAlleBarn: number[];
     medlemskap: Medlemskap;
 }
