@@ -8,8 +8,8 @@ export interface BostedUtlandApiData {
     landkode: string;
     landnavn: string;
 }
-interface Medlemskap {
-    harBoddIUtlandetSiste12Mnd: boolean;
+export interface Medlemskap {
+    harBoddUtenforNorgeSiste12Mnd: boolean;
     skalBoIUtlandetNeste12Mnd: boolean;
     utenlandsoppholdNeste12Mnd: BostedUtlandApiData[];
     utenlandsoppholdSiste12Mnd: BostedUtlandApiData[];

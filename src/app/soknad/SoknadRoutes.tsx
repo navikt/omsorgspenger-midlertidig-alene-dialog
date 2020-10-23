@@ -24,6 +24,7 @@ import VelkommenPage from './velkommen-page/VelkommenPage';
 import AnnenForelderenSituasjonStep from './annen-forelderens-situasjon-step/AnnenForelderenSituasjonStep';
 import MedlemskapStep from './medlemskap-step/MedlemskapStep';
 import OmAnnenForelderStep from './om-annen-forelder-step/OmAnnenForelderStep';
+import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
 
 interface Props {
     soknadId?: string;
@@ -50,9 +51,8 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
             case StepID.MEDLEMSKAP:
                 return <MedlemskapStep />;
             case StepID.OPPSUMMERING:
-                // const apiValues = mapFormDataToApiData(id, intl.locale, values);
-                // return <OppsummeringStep apiValues={apiValues} søker={søker} />;
-                return <OppsummeringStep />;
+                const apiValues = mapFormDataToApiData(id, intl.locale, values);
+                return <OppsummeringStep apiValues={apiValues} søker={søker} />;
         }
     };
 

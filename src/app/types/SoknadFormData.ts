@@ -1,5 +1,6 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
+import { Barn } from '../pre-common/question-visibility/forms/barn/types';
 
 export enum Arbeidssituasjon {
     'arbeidstaker' = 'arbeidstaker',
@@ -48,22 +49,19 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderPeriodeTom]: Date;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.antallBarn]: number;
-    [SoknadFormField.alderAvAlleBarn]: number[];
+    [SoknadFormField.alderAvAlleBarn]: Barn[];
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
 }
 
-export type DinSituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
+export type DinArbeidssituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
 
-export type OmAnnenForelderFormData = Pick<
+export type AnnenForelderFormData = Pick<
     SoknadFormData,
-    SoknadFormField.annenForelderNavn | SoknadFormField.annenForelderFnr
->;
-
-export type AnnenForelderSituasjonFormData = Pick<
-    SoknadFormData,
+    | SoknadFormField.annenForelderNavn
+    | SoknadFormField.annenForelderFnr
     | SoknadFormField.annenForelderSituasjon
     | SoknadFormField.annenForelderSituasjonBeskrivelse
     | SoknadFormField.annenForelderPeriodeFom
