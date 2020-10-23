@@ -16,14 +16,15 @@ import { useSoknadContext } from '../SoknadContext';
 import SoknadFormComponents from '../SoknadFormComponents';
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
+import { SoknadApiData } from 'app/types/SoknadApiData';
+import { Person } from 'app/types/Person';
 
-/*type Props = {
+type Props = {
     søker: Person;
     apiValues?: SoknadApiData;
 };
-*/
 
-const OppsummeringStep = () => {
+const OppsummeringStep = ({ søker, apiValues }: Props) => {
     const intl = useIntl();
     const { sendSoknadStatus } = useSoknadContext();
 
@@ -40,7 +41,8 @@ const OppsummeringStep = () => {
 
                 <>
                     <Box margin="xxl">oppsummering</Box>
-
+                    {console.log(apiValues)}
+                    {console.log(søker)}
                     <Box margin="l">
                         <SoknadFormComponents.ConfirmationCheckbox
                             label={intlHelper(intl, 'step.oppsummering.bekrefterOpplysninger')}

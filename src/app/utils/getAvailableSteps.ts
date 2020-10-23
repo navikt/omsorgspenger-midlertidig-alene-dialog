@@ -4,24 +4,23 @@
 import { StepID } from '../soknad/soknadStepsConfig';
 // import { Person } from '../types/Person';
 import {
-    AnnenForelderSituasjonFormData,
-    DinSituasjonFormData,
+    AnnenForelderFormData,
+    DinArbeidssituasjonFormData,
     MedlemskapFormData,
-    OmAnnenForelderFormData,
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
 // import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValidation';
 
-const dinArbeidsituasjonIsComplete = ({}: Partial<DinSituasjonFormData>): boolean => {
+const dinArbeidsituasjonIsComplete = ({}: Partial<DinArbeidssituasjonFormData>): boolean => {
     return true;
 };
 
-const omAnnenForelderIsComplete = ({}: Partial<OmAnnenForelderFormData>): boolean => {
+const omAnnenForelderIsComplete = ({}: Partial<AnnenForelderFormData>): boolean => {
     return true;
 };
 
-const annenForelderSituasjonIsComplete = ({}: Partial<AnnenForelderSituasjonFormData>): boolean => {
+const annenForelderSituasjonIsComplete = ({}: Partial<AnnenForelderFormData>): boolean => {
     return true;
 };
 
@@ -32,7 +31,7 @@ const medlemskapIsComplete = ({}: Partial<MedlemskapFormData>): boolean => {
 const omBarnaIsComplete = ({}: Partial<OmBarnaFormData>): boolean => {
     return true;
 };
-
+// TODO
 // export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
 export const getAvailableSteps = (values: Partial<SoknadFormData>): StepID[] => {
     const steps: StepID[] = [];

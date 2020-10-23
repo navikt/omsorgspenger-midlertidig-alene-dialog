@@ -1,14 +1,14 @@
-/*import { SoknadApiData } from '../../types/SoknadApiData';
-import { SoknadFormData, Barn } from '../../types/SoknadFormData';
+import { SoknadApiData } from '../../types/SoknadApiData';
+import { SoknadFormData } from '../../types/SoknadFormData';
+import { mapAnnenForelderToApiData } from './mapAnnenForelderToApiData';
 import { mapBarnToApiData } from './mapBarnToApiData';
-import { mapDinSituasjonToApiData } from './mapDinSituasjonToApiData';
-import { mapMottakerToApiData } from './mapMottakerToApiData';
+import { mapDinArbeidssituasjonToApiData } from './mapDinArbeidssituasjonToApiData';
+import { mapMedlemskapToApiData } from './mapMedlemskapToApiData';
 
 export const mapFormDataToApiData = (
     soknadId: string,
     locale = 'nb',
-    formData: SoknadFormData,
-    registrerteBarn: Barn[]
+    formData: SoknadFormData
 ): SoknadApiData | undefined => {
     try {
         const apiData: SoknadApiData = {
@@ -16,9 +16,10 @@ export const mapFormDataToApiData = (
             språk: locale === 'en' ? 'nn' : 'nb',
             harBekreftetOpplysninger: formData.harBekreftetOpplysninger,
             harForståttRettigheterOgPlikter: formData.harForståttRettigheterOgPlikter,
-            ...mapDinSituasjonToApiData(formData),
-            ...mapMottakerToApiData(formData),
-            ...mapBarnToApiData(formData, registrerteBarn),
+            ...mapDinArbeidssituasjonToApiData(formData),
+            ...mapAnnenForelderToApiData(formData),
+            ...mapBarnToApiData(formData),
+            ...mapMedlemskapToApiData(formData),
         };
         return apiData;
     } catch (error) {
@@ -26,4 +27,3 @@ export const mapFormDataToApiData = (
         return undefined;
     }
 };
-*/
