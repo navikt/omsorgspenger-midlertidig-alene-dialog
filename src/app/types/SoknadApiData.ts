@@ -15,7 +15,7 @@ export interface Medlemskap {
     utenlandsoppholdSiste12Mnd: BostedUtlandApiData[];
 }
 
-interface AnnenForelder {
+export interface AnnenForelder {
     navn: string;
     fnr: string;
     situasjon: AnnenForeldrenSituasjon;

@@ -13,23 +13,109 @@ import {
 } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
-import FormQuestion from '@navikt/sif-common-soknad/lib/form-question/FormQuestion';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-// import TidsperiodeForm from '@navikt/sif-common-forms/lib/tidsperiode/TidsperiodeForm';
+import AlertStripe from 'nav-frontend-alertstriper';
 
 const AnnenForelderenSituasjonStep = () => {
     const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
-    const addTextboxAndYesNo =
-        values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
-        values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet;
 
-    const kanIkkeFortsette =
-        addTextboxAndYesNo &&
-        (values.annenForelderPeriodeMer6Maneder === YesOrNo.NO ||
-            values.annenForelderPeriodeMer6Maneder === YesOrNo.UNANSWERED);
+    const renderTekstArea = () => {
+        return (
+            <FormBlock>
+                <SoknadFormComponents.Textarea
+                    name={SoknadFormField.annenForelderSituasjonBeskrivelse}
+                    label={intlHelper(intl, 'step.annenForeldrensSituasjon.beskrivelseAvSituasjonen.spm')}
+                    validate={validateRequiredField}
+                    maxLength={1000}
+                />
+            </FormBlock>
+        );
+    };
+
+    const renderOver6MndSpm = () => {
+        return (
+            <>
+                <FormBlock>
+                    <SoknadFormComponents.YesOrNoQuestion
+                        name={SoknadFormField.annenForelderPeriodeMer6Maneder}
+                        legend={intlHelper(intl, 'step.annenForeldrensSituasjon.erVarighetMerEnn6Maneder.spm')}
+                        validate={validateYesOrNoIsAnswered}
+                    />
+                    {values.annenForelderPeriodeMer6Maneder === YesOrNo.NO && (
+                        <FormBlock>
+                            <AlertStripe type={'info'}>Det må være mer enn 6 måneder, ellers....</AlertStripe>
+                        </FormBlock>
+                    )}
+                </FormBlock>
+            </>
+        );
+    };
+
+    const renderHvorLengeInnleggelsesperiodenKommerTilSpm = () => {
+        return (
+            <FormBlock>
+                <SoknadFormComponents.YesOrNoQuestion
+                    name={SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil}
+                    legend={intlHelper(
+                        intl,
+                        'step.annenForeldrensSituasjon.hvorLengeInnleggelsesperiodenKommerTil.spm'
+                    )}
+                    validate={validateYesOrNoIsAnswered}
+                />
+            </FormBlock>
+        );
+    };
+
+    const renderDateRangePicker = () => {
+        return (
+            <FormBlock>
+                <SoknadFormComponents.DateRangePicker
+                    legend={
+                        values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
+                            ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.innlagtIHelseinstitusjon.spm')
+                            : values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel
+                            ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fengsel.spm')
+                            : intlHelper(intl, 'step.annenForeldrensSituasjon.periode.verneplikt.spm')
+                    }
+                    fromInputProps={{
+                        label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fra'),
+                        validate: validateRequiredField,
+                        name: SoknadFormField.annenForelderPeriodeFom,
+                    }}
+                    toInputProps={{
+                        label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.til'),
+                        validate: validateRequiredField,
+                        name: SoknadFormField.annenForelderPeriodeTom,
+                    }}
+                />
+            </FormBlock>
+        );
+    };
+
+    const renderAlternativer = () => {
+        switch (values.annenForelderSituasjon) {
+            case AnnenForeldrenSituasjon.sykdom || AnnenForeldrenSituasjon.annet:
+                return (
+                    <>
+                        {renderTekstArea()}
+                        {renderOver6MndSpm()}
+                    </>
+                );
+            case AnnenForeldrenSituasjon.innlagtIHelseinstitusjon:
+                return (
+                    <>
+                        {renderHvorLengeInnleggelsesperiodenKommerTilSpm()}
+                        {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.YES && renderDateRangePicker()}
+                        {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.NO && renderOver6MndSpm()}
+                    </>
+                );
+            default:
+                return <>{renderDateRangePicker()}</>;
+        }
+    };
     return (
-        <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} buttonDisabled={kanIkkeFortsette}>
+        <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON}>
             <CounsellorPanel>{intlHelper(intl, 'step.annenForeldrensSituasjon.tittel')}</CounsellorPanel>
 
             <Box margin="xxl">
@@ -61,51 +147,7 @@ const AnnenForelderenSituasjonStep = () => {
                     validate={validateRequiredField}
                 />
             </Box>
-            {addTextboxAndYesNo && (
-                <>
-                    <Box margin="xxl">
-                        <SoknadFormComponents.Textarea
-                            name={SoknadFormField.annenForelderSituasjonBeskrivelse}
-                            label={intlHelper(intl, 'step.annenForeldrensSituasjon.beskrivelseAvSituasjonen.spm')}
-                            validate={validateRequiredField}
-                            maxLength={1000}
-                        />
-                    </Box>
-
-                    <FormBlock>
-                        <FormQuestion
-                            name={SoknadFormField.annenForelderPeriodeMer6Maneder}
-                            legend={intlHelper(intl, 'step.annenForeldrensSituasjon.erVarighetMerEnn6Maneder.spm')}
-                            validate={validateYesOrNoIsAnswered}
-                            showStop={values.annenForelderPeriodeMer6Maneder === YesOrNo.NO}
-                            stopMessage={'Stop message'}
-                        />
-                    </FormBlock>
-                </>
-            )}
-            {values.annenForelderSituasjon && !addTextboxAndYesNo && (
-                <FormBlock>
-                    <SoknadFormComponents.DateRangePicker
-                        legend={
-                            values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
-                                ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.innlagtIHelseinstitusjon.spm')
-                                : values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel
-                                ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fengsel.spm')
-                                : intlHelper(intl, 'step.annenForeldrensSituasjon.periode.verneplikt.spm')
-                        }
-                        fromInputProps={{
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fra'),
-                            // validate: validateFraDatoField,
-                            name: SoknadFormField.annenForelderPeriodeFom,
-                        }}
-                        toInputProps={{
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.til'),
-                            // validate: validateTilDatoField,
-                            name: SoknadFormField.annenForelderPeriodeTom,
-                        }}
-                    />
-                </FormBlock>
-            )}
+            {renderAlternativer()}
         </SoknadFormStep>
     );
 };

@@ -35,6 +35,7 @@ export enum SoknadFormField {
     utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
     skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
     utenlandsoppholdNeste12Mnd = 'utenlandsoppholdNeste12Mnd',
+    hvorLengeInnleggelsesperiodenKommerTil = 'hvorLengeInnleggelsesperiodenKommerTil',
 }
 
 export interface SoknadFormData {
@@ -54,6 +55,7 @@ export interface SoknadFormData {
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
+    [SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil]: YesOrNo;
 }
 
 export type DinArbeidssituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;

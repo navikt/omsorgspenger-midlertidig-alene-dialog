@@ -1,18 +1,23 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-// import JaNeiSvar from '@navikt/sif-common-soknad/lib/soknad-summary/JaNeiSvar';
 import SummaryBlock from '@navikt/sif-common-soknad/lib/soknad-summary/summary-block/SummaryBlock';
 import SummarySection from '@navikt/sif-common-soknad/lib/soknad-summary/summary-section/SummarySection';
-// import { BarnApiData } from '../../utils/map-form-data-to-api-data/mapBarnToApiData';
+import { SoknadApiData } from 'app/types/SoknadApiData';
+import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/SummaryList';
 
-const OmBarnaSummary = () => {
+interface Props {
+    apiValues: SoknadApiData;
+}
+
+const OmBarnaSummary = ({ apiValues }: Props) => {
     const intl = useIntl();
 
     return (
         <SummarySection header={intlHelper(intl, 'step.oppsummering.om-barna.header')}>
-            <SummaryBlock header={intlHelper(intl, 'step.oppsummering.om-barna.harAleneomsorg')}>
-                Oppsummering
+            <SummaryBlock header="Barna">
+                <SummaryList items={apiValues.alderAvAlleBarn} itemRenderer={(a) => `Født i ${a}`} />
+                Antall barn: {apiValues.antallBarn}
             </SummaryBlock>
         </SummarySection>
     );
