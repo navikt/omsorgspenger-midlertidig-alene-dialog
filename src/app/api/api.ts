@@ -25,10 +25,10 @@ axios.interceptors.response.use(
 );
 
 export enum ApiEndpoint {
-    'soker' = 'sokerMelding',
+    'soker' = 'soker',
     'mellomlagring' = 'mellomlagring',
-    // TODO:
-    'sendSoknad' = 'soknad/dele-dager',
+    'barn' = 'barn',
+    'sendSoknad' = 'soknad/valider',
 }
 
 const api = {
