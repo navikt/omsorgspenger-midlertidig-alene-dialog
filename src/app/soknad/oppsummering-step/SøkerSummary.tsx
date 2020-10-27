@@ -6,17 +6,26 @@ import FødselsnummerSvar from '@navikt/sif-common-soknad/lib/soknad-summary/Fø
 import SummaryBlock from '@navikt/sif-common-soknad/lib/soknad-summary/summary-block/SummaryBlock';
 import SummarySection from '@navikt/sif-common-soknad/lib/soknad-summary/summary-section/SummarySection';
 import { Person } from '../../types/Person';
+import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/SummaryList';
+import { SoknadApiData } from '../../types/SoknadApiData';
 
 interface Props {
     søker: Person;
+    apiValues: SoknadApiData;
 }
 
-const SøkerSummary = ({ søker }: Props) => {
+const SøkerSummary = ({ søker, apiValues }: Props) => {
     const intl = useIntl();
     return (
         <SummarySection header={intlHelper(intl, 'step.oppsummering.søker.header')}>
             <SummaryBlock header={formatName(søker.fornavn, søker.etternavn, søker.mellomnavn)}>
                 <FormattedMessage id="Fødselsnummer" />: <FødselsnummerSvar fødselsnummer={søker.fødselsnummer} />
+            </SummaryBlock>
+            <SummaryBlock header={intlHelper(intl, 'step.oppsummering.søker.arbeidssituasjon')}>
+                <SummaryList
+                    items={apiValues.arbeidssituasjon}
+                    itemRenderer={(a) => <FormattedMessage id={`arbeidssituasjon.${a}`} />}
+                />
             </SummaryBlock>
         </SummarySection>
     );

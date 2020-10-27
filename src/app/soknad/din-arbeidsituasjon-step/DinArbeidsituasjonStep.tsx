@@ -19,7 +19,7 @@ const DinArbeidsituasjonStep = () => {
             </CounsellorPanel>
             <FormBlock>
                 <SoknadFormComponents.CheckboxPanelGroup
-                    legend={intlHelper(intl, 'step.din_situasjon.form.arbeidssituasjon.spm')}
+                    legend={intlHelper(intl, 'step.din-arbeidsituasjon.spm')}
                     name={SoknadFormField.arbeidssituasjon}
                     checkboxes={[
                         {

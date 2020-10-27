@@ -15,14 +15,14 @@ export interface Medlemskap {
     utenlandsoppholdSiste12Mnd: BostedUtlandApiData[];
 }
 
-interface AnnenForelder {
+export interface AnnenForelder {
     navn: string;
     fnr: string;
     situasjon: AnnenForeldrenSituasjon;
     situasjonBeskrivelse?: string;
     periodeFraOgMed?: ApiStringDate;
     periodeTilOgMed?: ApiStringDate;
-    periodeMer6Maneder?: boolean;
+    periodeOver6Måneder?: boolean;
 }
 
 export interface SoknadApiData {

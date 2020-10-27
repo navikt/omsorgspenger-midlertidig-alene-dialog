@@ -12,14 +12,14 @@ import './styles/app.less';
 
 Modal.setAppElement('#app');
 
-const APPLICATION_KEY = 'omsorgsdager-deling';
+const APPLICATION_KEY = 'omsorgsdager-midlertidig-alene';
 const root = document.getElementById('app');
 
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 
 render(
     <SoknadApplication
-        appName="Overføring av omsorgsdager til ny ektefelle eller samboer"
+        appName="Søknad om å bli regnet som midertidig alene for omsorgen"
         intlMessages={applicationIntlMessages}
         sentryKey={APPLICATION_KEY}
         appStatus={{
