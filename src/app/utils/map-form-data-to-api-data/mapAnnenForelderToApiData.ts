@@ -15,7 +15,7 @@ export const mapAnnenForelderToApiData = (formData: AnnenForelderFormData): Anne
             situasjonBeskrivelse: formData.annenForelderSituasjonBeskrivelse,
             periodeFraOgMed: formatDateToApiFormat(formData.annenForelderPeriodeFom),
             periodeTilOgMed: formatDateToApiFormat(formData.annenForelderPeriodeTom),
-            periodeOver6Maneder: formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
+            periodeOver6Måneder: formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
         },
     };
 };

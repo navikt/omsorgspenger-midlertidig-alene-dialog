@@ -34,9 +34,9 @@ const AnnenForelderSituasjonSummary = ({ annenForelder }: Props) => {
         <SummarySection header={intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.header')}>
             <SummaryBlock
                 header={intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder')}>
-                <JaNeiSvar harSvartJa={annenForelder.periodeOver6Maneder} />
+                <JaNeiSvar harSvartJa={annenForelder.periodeOver6Måneder} />
             </SummaryBlock>
-            {annenForelder.periodeOver6Maneder && (
+            {annenForelder.periodeOver6Måneder && (
                 <Box margin="l">
                     <FormattedHtmlMessage id="step.oppsummering.annenForelderensSituasjon.html" />{' '}
                     <FormattedMessage id={`grunn.${annenForelder.situasjon}`} />
