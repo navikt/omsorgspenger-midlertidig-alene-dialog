@@ -95,7 +95,14 @@ const AnnenForelderenSituasjonStep = () => {
 
     const renderAlternativer = () => {
         switch (values.annenForelderSituasjon) {
-            case AnnenForeldrenSituasjon.sykdom || AnnenForeldrenSituasjon.annet:
+            case AnnenForeldrenSituasjon.sykdom:
+                return (
+                    <>
+                        {renderTekstArea()}
+                        {renderOver6MndSpm()}
+                    </>
+                );
+            case AnnenForeldrenSituasjon.annet:
                 return (
                     <>
                         {renderTekstArea()}
