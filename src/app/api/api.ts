@@ -28,7 +28,7 @@ export enum ApiEndpoint {
     'soker' = 'soker',
     'mellomlagring' = 'mellomlagring',
     'barn' = 'barn',
-    'sendSoknad' = 'soknad/valider',
+    'sendSoknad' = 'soknad',
 }
 
 const api = {

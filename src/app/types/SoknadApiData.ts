@@ -22,7 +22,7 @@ export interface AnnenForelder {
     situasjonBeskrivelse?: string;
     periodeFraOgMed?: ApiStringDate;
     periodeTilOgMed?: ApiStringDate;
-    periodeMer6Maneder?: boolean;
+    periodeOver6Måneder?: boolean;
 }
 
 export interface SoknadApiData {
