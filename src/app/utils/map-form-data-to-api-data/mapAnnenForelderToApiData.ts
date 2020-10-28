@@ -13,8 +13,12 @@ export const mapAnnenForelderToApiData = (formData: AnnenForelderFormData): Anne
             fnr: formData.annenForelderFnr,
             situasjon: formData.annenForelderSituasjon,
             situasjonBeskrivelse: formData.annenForelderSituasjonBeskrivelse,
-            periodeFraOgMed: formatDateToApiFormat(formData.annenForelderPeriodeFom),
-            periodeTilOgMed: formatDateToApiFormat(formData.annenForelderPeriodeTom),
+            periodeFraOgMed: formData.annenForelderPeriodeFom
+                ? formatDateToApiFormat(formData.annenForelderPeriodeFom)
+                : formData.annenForelderPeriodeFom,
+            periodeTilOgMed: formData.annenForelderPeriodeTom
+                ? formatDateToApiFormat(formData.annenForelderPeriodeTom)
+                : formData.annenForelderPeriodeTom,
             periodeOver6Måneder: formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
         },
     };

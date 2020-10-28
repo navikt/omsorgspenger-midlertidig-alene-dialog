@@ -8,7 +8,7 @@ export const initialSoknadFormData: Partial<SoknadFormData> = {
     [SoknadFormField.annenForelderNavn]: '',
     [SoknadFormField.annenForelderFnr]: '',
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: '',
-    [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo.UNANSWERED,
+    // [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo.UNANSWERED,
     [SoknadFormField.antallBarn]: 0,
     [SoknadFormField.alderAvAlleBarn]: [],
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo.UNANSWERED,

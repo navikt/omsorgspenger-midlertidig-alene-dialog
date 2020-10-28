@@ -117,8 +117,12 @@ const AnnenForelderenSituasjonStep = () => {
                         {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.NO && renderOver6MndSpm()}
                     </>
                 );
-            default:
+            case AnnenForeldrenSituasjon.fengsel:
                 return <>{renderDateRangePicker()}</>;
+            case AnnenForeldrenSituasjon.utøverVerneplikt:
+                return <>{renderDateRangePicker()}</>;
+            default:
+                return <></>;
         }
     };
     return (

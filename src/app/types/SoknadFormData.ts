@@ -69,6 +69,7 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.annenForelderPeriodeFom
     | SoknadFormField.annenForelderPeriodeTom
     | SoknadFormField.annenForelderPeriodeMer6Maneder
+    | SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil
 >;
 
 export type MedlemskapFormData = Pick<
