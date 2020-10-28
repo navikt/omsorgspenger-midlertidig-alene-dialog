@@ -34,8 +34,8 @@ const MedlemskapSummary = ({ medlemskap }: Props) => {
     return (
         <SummarySection header="Medlemskap">
             <SummaryBlock header={intlHelper(intl, 'steg.oppsummering.medlemskap.utlandetSiste12.header')}>
-                <JaNeiSvar harSvartJa={medlemskap.harBoddUtenforNorgeSiste12Mnd} />
-                {medlemskap.harBoddUtenforNorgeSiste12Mnd && (
+                <JaNeiSvar harSvartJa={medlemskap.harBoddIUtlandetSiste12Mnd} />
+                {medlemskap.harBoddIUtlandetSiste12Mnd && (
                     <ContentWithHeader
                         header={intlHelper(intl, 'steg.oppsummering.medlemskap.utlandetSiste12.liste.header')}>
                         <SummaryList
