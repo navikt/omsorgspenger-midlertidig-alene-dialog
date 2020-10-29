@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-// import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
 import SummaryBlock from '@navikt/sif-common-soknad/lib/soknad-summary/summary-block/SummaryBlock';
 import SummarySection from '@navikt/sif-common-soknad/lib/soknad-summary/summary-section/SummarySection';
 import { AnnenForelder } from '../../types/SoknadApiData';
@@ -9,7 +8,6 @@ import JaNeiSvar from '@navikt/sif-common-soknad/lib/soknad-summary/JaNeiSvar';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import TextareaSvar from '@navikt/sif-common-soknad/lib/soknad-summary/TextareaSvar';
 import { apiStringDateToDate, prettifyDateExtended } from '@navikt/sif-common-core/lib/utils/dateUtils';
-// import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/SummaryList';
 import FormattedHtmlMessage from '@navikt/sif-common-core/lib/components/formatted-html-message/FormattedHtmlMessage';
 import bemUtils from '@navikt/sif-common-core/lib/utils/bemUtils';
 

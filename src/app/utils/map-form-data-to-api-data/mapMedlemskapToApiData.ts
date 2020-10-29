@@ -22,6 +22,7 @@ export const getValidSpråk = (locale?: any): Locale => {
                 return 'nb';
         }
     } catch {
+        // TODO
         // appSentryLogger.logInfo('Fallback on getValidSpråk', loc);
         return 'nb';
     }

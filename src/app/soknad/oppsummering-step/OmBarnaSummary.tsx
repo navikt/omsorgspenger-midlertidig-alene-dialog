@@ -9,7 +9,7 @@ import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/Sum
 interface Props {
     apiValues: SoknadApiData;
 }
-
+// TODO: intl
 const OmBarnaSummary = ({ apiValues }: Props) => {
     const intl = useIntl();
 

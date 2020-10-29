@@ -1,4 +1,3 @@
-// import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { AnnenForelderFormData } from '../../types/SoknadFormData';
 import { SoknadApiData } from '../../types/SoknadApiData';
 import { formatDateToApiFormat } from '@navikt/sif-common-core/lib/utils/dateUtils';

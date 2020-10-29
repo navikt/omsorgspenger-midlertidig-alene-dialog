@@ -42,7 +42,7 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
             case StepID.DIN_ARBEIDSITUASJON:
                 return <DinArbeidsituasjonStep />;
             case StepID.OM_ANNEN_FORELDER:
-                return <OmAnnenForelderStep />;
+                return <OmAnnenForelderStep søker={søker} />;
             case StepID.ANNEN_FORELDER_SITUASJON:
                 return <AnnenForelderenSituasjonStep />;
             case StepID.OM_BARNA:

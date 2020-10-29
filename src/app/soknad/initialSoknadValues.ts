@@ -8,13 +8,10 @@ export const initialSoknadFormData: Partial<SoknadFormData> = {
     [SoknadFormField.annenForelderNavn]: '',
     [SoknadFormField.annenForelderFnr]: '',
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: '',
-    // [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo.UNANSWERED,
     [SoknadFormField.antallBarn]: 0,
     [SoknadFormField.fødselsårBarn]: [],
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo.UNANSWERED,
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: [],
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo.UNANSWERED,
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: [],
-    // [SoknadFormField.skalOppholdeSegIUtlandetIPerioden]: YesOrNo.UNANSWERED,
-    // [SoknadFormField.utenlandsoppholdIPerioden]: [],
 };

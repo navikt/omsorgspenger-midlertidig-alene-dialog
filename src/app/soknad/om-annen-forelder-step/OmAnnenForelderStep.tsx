@@ -3,7 +3,6 @@ import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 import { useIntl } from 'react-intl';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-// import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-panel/CounsellorPanel';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { SoknadFormField } from '../../types/SoknadFormData';
@@ -13,9 +12,14 @@ import {
     validateFødselsnummer,
     validateRequiredField,
 } from '@navikt/sif-common-core/lib/validation/fieldValidations';
-// import { validateFødselsnummerIsDifferentThan } from 'app/validation/fieldValidation';
+import { Person } from 'app/types/Person';
+import { validateFødselsnummerIsDifferentThan } from 'app/validation/fieldValidation';
 
-const OmAnnenForelderStep = () => {
+type Props = {
+    søker: Person;
+};
+
+const OmAnnenForelderStep = ({ søker }: Props) => {
     const intl = useIntl();
 
     return (
@@ -28,8 +32,7 @@ const OmAnnenForelderStep = () => {
                     label={intlHelper(intl, 'step.omAnnenForlder.fnr.spm')}
                     validate={validateAll([
                         validateFødselsnummer,
-                        // TODO legg til søker
-                        //  validateFødselsnummerIsDifferentThan(søker.fødselsnummer),
+                        validateFødselsnummerIsDifferentThan(søker.fødselsnummer),
                     ])}
                     inputMode="numeric"
                     maxLength={11}

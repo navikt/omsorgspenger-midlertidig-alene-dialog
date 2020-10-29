@@ -1,13 +1,11 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
-// import Tiles from '@navikt/sif-common-core/lib/components/tiles/Tiles';
 import { commonFieldErrorRenderer } from '@navikt/sif-common-core/lib/utils/commonFieldErrorRenderer';
 import { validateAll, validateRequiredNumber } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { getTypedFormComponents } from '@navikt/sif-common-formik/lib';
 import { Systemtittel } from 'nav-frontend-typografi';
 import { Barn, isBarn } from './types';
-// import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { guid } from 'nav-frontend-js-utils';
 import { dateToday } from '@navikt/sif-common-core/lib/utils/dateUtils';
 

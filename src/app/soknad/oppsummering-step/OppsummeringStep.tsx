@@ -2,7 +2,6 @@ import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { isPending } from '@devexperts/remote-data-ts';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
-// import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import Guide from '@navikt/sif-common-core/lib/components/guide/Guide';
 import ResponsivePanel from '@navikt/sif-common-core/lib/components/responsive-panel/ResponsivePanel';
 import VeilederSVG from '@navikt/sif-common-core/lib/components/veileder-svg/VeilederSVG';

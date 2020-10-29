@@ -1,12 +1,9 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-// import JaNeiSvar from '@navikt/sif-common-soknad/lib/soknad-summary/JaNeiSvar';
-// import SummaryBlock from '@navikt/sif-common-soknad/lib/soknad-summary/summary-block/SummaryBlock';
 import SummarySection from '@navikt/sif-common-soknad/lib/soknad-summary/summary-section/SummarySection';
 import { BostedUtlandApiData, Medlemskap } from '../../types/SoknadApiData';
 import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/SummaryList';
-// import { BarnApiData } from '../../utils/map-form-data-to-api-data/mapBarnToApiData';
 import JaNeiSvar from '@navikt/sif-common-soknad/lib/soknad-summary/JaNeiSvar';
 import SummaryBlock from '@navikt/sif-common-soknad/lib/soknad-summary/summary-block/SummaryBlock';
 import ContentWithHeader from '@navikt/sif-common-core/lib/components/content-with-header/ContentWithHeader';
@@ -30,7 +27,6 @@ export const renderUtenlandsoppholdSummary = (opphold: BostedUtlandApiData): Rea
 
 const MedlemskapSummary = ({ medlemskap }: Props) => {
     const intl = useIntl();
-    // steg.oppsummering.medlemskap.utlandetSiste12.liste.header
     return (
         <SummarySection header="Medlemskap">
             <SummaryBlock header={intlHelper(intl, 'steg.oppsummering.medlemskap.utlandetSiste12.header')}>
