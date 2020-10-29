@@ -13,7 +13,7 @@ import {
     validateRequiredField,
 } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { Person } from 'app/types/Person';
-import { validateFødselsnummerIsDifferentThan } from 'app/validation/fieldValidation';
+import { validateFødselsnummerIsDifferentThan } from '../../validation/fieldValidation';
 
 type Props = {
     søker: Person;
