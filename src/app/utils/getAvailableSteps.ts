@@ -53,9 +53,9 @@ const annenForelderSituasjonIsComplete = ({
     } else return annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
 };
 
-const omBarnaIsComplete = ({ alderAvAlleBarn }: Partial<OmBarnaFormData>): boolean => {
+const omBarnaIsComplete = ({ fødselsårBarn }: Partial<OmBarnaFormData>): boolean => {
     // TODO: Alders validering hvis trenges
-    return (alderAvAlleBarn || []).length > 0;
+    return (fødselsårBarn || []).length > 0;
 };
 
 const medlemskapIsComplete = ({

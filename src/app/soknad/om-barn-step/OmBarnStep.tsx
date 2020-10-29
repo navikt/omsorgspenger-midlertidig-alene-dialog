@@ -45,16 +45,16 @@ const OmBarnaStep = () => {
     const { values } = useFormikContext<SoknadFormData>();
 
     return (
-        <SoknadFormStep id={StepID.OM_BARNA} buttonDisabled={values.alderAvAlleBarn.length < 1}>
+        <SoknadFormStep id={StepID.OM_BARNA} buttonDisabled={values.fødselsårBarn.length < 1}>
             <CounsellorPanel>Om Barna step</CounsellorPanel>
 
-            {values.alderAvAlleBarn.length === 0 && (
+            {values.fødselsårBarn.length === 0 && (
                 <FormBlock>
                     <AlertStripe type={'info'}>Du må legge til minst ett barn for å fortsette</AlertStripe>
                 </FormBlock>
             )}
             <FormBlock>
-                <BarnListAndDialog<SoknadFormField> name={SoknadFormField.alderAvAlleBarn} />
+                <BarnListAndDialog<SoknadFormField> name={SoknadFormField.fødselsårBarn} />
             </FormBlock>
         </SoknadFormStep>
     );

@@ -16,7 +16,7 @@ const OmBarnaSummary = ({ apiValues }: Props) => {
     return (
         <SummarySection header={intlHelper(intl, 'step.oppsummering.om-barna.header')}>
             <SummaryBlock header="Barna">
-                <SummaryList items={apiValues.alderAvAlleBarn} itemRenderer={(a) => `Født i ${a}`} />
+                <SummaryList items={apiValues.fødselsårBarn} itemRenderer={(a) => `Født i ${a}`} />
                 Antall barn: {apiValues.antallBarn}
             </SummaryBlock>
         </SummarySection>
