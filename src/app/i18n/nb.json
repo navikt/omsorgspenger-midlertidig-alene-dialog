@@ -125,7 +125,7 @@
     "step.annenForeldrensSituasjon.periode.verneplikt.spm": "Hvilken periode gjelder verneplikten?",
     "step.annenForeldrensSituasjon.periode.fra": "Fra",
     "step.annenForeldrensSituasjon.periode.til": "Til",
-    "step.annenForeldrensSituasjon.hvorLengeInnleggelsesperiodenKommerTil.spm": "Vet du hvor lenge innleggelsesperioden kommer til å vare? ",
+    "step.annenForeldrensSituasjon.vetLengdePåInnleggelseperioden.spm": "Vet du hvor lenge innleggelsesperioden kommer til å vare? ",
 
     "step.medlemskap.pageTitle": "Medlemskap",
     "step.medlemskap.stepTitle": "Medlemskap",

@@ -33,7 +33,7 @@ const annenForelderSituasjonIsComplete = ({
     annenForelderPeriodeFom,
     annenForelderPeriodeTom,
     annenForelderPeriodeMer6Maneder,
-    hvorLengeInnleggelsesperiodenKommerTil,
+    vetLengdePåInnleggelseperioden,
 }: Partial<AnnenForelderFormData>): boolean => {
     if (
         annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
@@ -46,7 +46,7 @@ const annenForelderSituasjonIsComplete = ({
         );
     } else if (
         annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon &&
-        hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.NO
+        vetLengdePåInnleggelseperioden === YesOrNo.NO
     ) {
         return annenForelderPeriodeMer6Maneder !== undefined;
         // TODO: teste, validate datoer

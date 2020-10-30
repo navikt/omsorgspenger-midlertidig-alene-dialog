@@ -19,6 +19,9 @@ export const mapAnnenForelderToApiData = (formData: AnnenForelderFormData): Anne
                 ? formatDateToApiFormat(formData.annenForelderPeriodeTom)
                 : formData.annenForelderPeriodeTom,
             periodeOver6Måneder: formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
+            vetLengdePåInnleggelseperioden: formData.vetLengdePåInnleggelseperioden
+                ? formData.vetLengdePåInnleggelseperioden === YesOrNo.YES
+                : formData.vetLengdePåInnleggelseperioden,
         },
     };
 };

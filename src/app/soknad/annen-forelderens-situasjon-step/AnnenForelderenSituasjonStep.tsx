@@ -52,15 +52,12 @@ const AnnenForelderenSituasjonStep = () => {
         );
     };
 
-    const renderHvorLengeInnleggelsesperiodenKommerTilSpm = () => {
+    const renderVetLengdePåInnleggelseperiodenSpm = () => {
         return (
             <FormBlock>
                 <SoknadFormComponents.YesOrNoQuestion
-                    name={SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil}
-                    legend={intlHelper(
-                        intl,
-                        'step.annenForeldrensSituasjon.hvorLengeInnleggelsesperiodenKommerTil.spm'
-                    )}
+                    name={SoknadFormField.vetLengdePåInnleggelseperioden}
+                    legend={intlHelper(intl, 'step.annenForeldrensSituasjon.vetLengdePåInnleggelseperioden.spm')}
                     validate={validateYesOrNoIsAnswered}
                 />
             </FormBlock>
@@ -112,9 +109,9 @@ const AnnenForelderenSituasjonStep = () => {
             case AnnenForeldrenSituasjon.innlagtIHelseinstitusjon:
                 return (
                     <>
-                        {renderHvorLengeInnleggelsesperiodenKommerTilSpm()}
-                        {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.YES && renderDateRangePicker()}
-                        {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.NO && renderOver6MndSpm()}
+                        {renderVetLengdePåInnleggelseperiodenSpm()}
+                        {values.vetLengdePåInnleggelseperioden === YesOrNo.YES && renderDateRangePicker()}
+                        {values.vetLengdePåInnleggelseperioden === YesOrNo.NO && renderOver6MndSpm()}
                     </>
                 );
             case AnnenForeldrenSituasjon.fengsel:
