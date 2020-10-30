@@ -22,6 +22,7 @@ export const getValidSpråk = (locale?: any): Locale => {
                 return 'nb';
         }
     } catch {
+        // TODO
         // appSentryLogger.logInfo('Fallback on getValidSpråk', loc);
         return 'nb';
     }
@@ -32,7 +33,7 @@ export const mapMedlemskapToApiData = (formData: MedlemskapFormData): AnnenForel
     const sprak = getValidSpråk();
     return {
         medlemskap: {
-            harBoddUtenforNorgeSiste12Mnd: formData.harBoddUtenforNorgeSiste12Mnd === YesOrNo.YES,
+            harBoddIUtlandetSiste12Mnd: formData.harBoddUtenforNorgeSiste12Mnd === YesOrNo.YES,
             skalBoIUtlandetNeste12Mnd: formData.skalBoUtenforNorgeNeste12Mnd === YesOrNo.YES,
             utenlandsoppholdSiste12Mnd:
                 formData.harBoddUtenforNorgeSiste12Mnd === YesOrNo.YES

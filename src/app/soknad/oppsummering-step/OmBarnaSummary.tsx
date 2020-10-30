@@ -9,14 +9,14 @@ import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/Sum
 interface Props {
     apiValues: SoknadApiData;
 }
-
+// TODO: intl
 const OmBarnaSummary = ({ apiValues }: Props) => {
     const intl = useIntl();
 
     return (
         <SummarySection header={intlHelper(intl, 'step.oppsummering.om-barna.header')}>
             <SummaryBlock header="Barna">
-                <SummaryList items={apiValues.alderAvAlleBarn} itemRenderer={(a) => `Født i ${a}`} />
+                <SummaryList items={apiValues.fødselsårBarn} itemRenderer={(a) => `Født i ${a}`} />
                 Antall barn: {apiValues.antallBarn}
             </SummaryBlock>
         </SummarySection>

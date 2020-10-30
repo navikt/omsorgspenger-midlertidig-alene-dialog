@@ -2,12 +2,12 @@ import { SoknadFormData } from '../../types/SoknadFormData';
 
 export interface BarnApiData {
     antallBarn: number;
-    alderAvAlleBarn: number[];
+    fødselsårBarn: number[];
 }
 
-export const mapBarnToApiData = ({ alderAvAlleBarn }: SoknadFormData): BarnApiData => {
+export const mapBarnToApiData = ({ fødselsårBarn }: SoknadFormData): BarnApiData => {
     return {
-        antallBarn: alderAvAlleBarn.length,
-        alderAvAlleBarn: alderAvAlleBarn.map((barn) => barn.alders),
+        antallBarn: fødselsårBarn.length,
+        fødselsårBarn: fødselsårBarn.map((barn) => barn.alders),
     };
 };

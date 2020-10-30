@@ -1,52 +1,91 @@
-// import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-// import { validateFødselsnummer } from '@navikt/sif-common-core/lib/validation/fieldValidations';
-// import { ANTALL_DAGER_RANGE } from '../soknad/mottaker-step/MottakerStep';
+import { validateFødselsnummer } from '@navikt/sif-common-core/lib/validation/fieldValidations';
+import { Person } from 'app/types/Person';
 import { StepID } from '../soknad/soknadStepsConfig';
-// import { Person } from '../types/Person';
+import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValidation';
 import {
     AnnenForelderFormData,
+    AnnenForeldrenSituasjon,
     DinArbeidssituasjonFormData,
     MedlemskapFormData,
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
-// import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValidation';
+import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 
-const dinArbeidsituasjonIsComplete = ({}: Partial<DinArbeidssituasjonFormData>): boolean => {
+const dinArbeidsituasjonIsComplete = ({ arbeidssituasjon }: Partial<DinArbeidssituasjonFormData>): boolean => {
+    return (arbeidssituasjon || []).length > 0;
+};
+
+const omAnnenForelderIsComplete = (
+    { annenForelderNavn, annenForelderFnr }: Partial<AnnenForelderFormData>,
+    søker: Person
+): boolean => {
+    return (
+        (annenForelderNavn || '')?.length > 0 &&
+        validateFødselsnummer(annenForelderFnr || '') === undefined &&
+        validateFødselsnummerIsDifferentThan(søker.fødselsnummer)(annenForelderFnr || '') === undefined
+    );
+};
+
+const annenForelderSituasjonIsComplete = ({
+    annenForelderSituasjon,
+    annenForelderSituasjonBeskrivelse,
+    annenForelderPeriodeFom,
+    annenForelderPeriodeTom,
+    annenForelderPeriodeMer6Maneder,
+    hvorLengeInnleggelsesperiodenKommerTil,
+}: Partial<AnnenForelderFormData>): boolean => {
+    if (
+        annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
+        annenForelderSituasjon === AnnenForeldrenSituasjon.annet
+    ) {
+        return (
+            (annenForelderSituasjonBeskrivelse || '').length > 0 &&
+            (annenForelderSituasjonBeskrivelse || '').length <= 1000 &&
+            annenForelderPeriodeMer6Maneder !== (YesOrNo.UNANSWERED || undefined)
+        );
+    } else if (
+        annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon &&
+        hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.NO
+    ) {
+        return annenForelderPeriodeMer6Maneder !== undefined;
+        // TODO: teste, validate datoer
+    } else return annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
+};
+
+const omBarnaIsComplete = ({ fødselsårBarn }: Partial<OmBarnaFormData>): boolean => {
+    // TODO: Alders validering hvis trenges
+    return (fødselsårBarn || []).length > 0;
+};
+
+const medlemskapIsComplete = ({
+    harBoddUtenforNorgeSiste12Mnd,
+    skalBoUtenforNorgeNeste12Mnd,
+    utenlandsoppholdSiste12Mnd,
+    utenlandsoppholdNeste12Mnd,
+}: Partial<MedlemskapFormData>): boolean => {
+    if (harBoddUtenforNorgeSiste12Mnd === YesOrNo.YES && (utenlandsoppholdSiste12Mnd || []).length < 1) {
+        return false;
+    }
+    if (skalBoUtenforNorgeNeste12Mnd === YesOrNo.YES && (utenlandsoppholdNeste12Mnd || []).length < 1) {
+        return false;
+    }
     return true;
 };
 
-const omAnnenForelderIsComplete = ({}: Partial<AnnenForelderFormData>): boolean => {
-    return true;
-};
-
-const annenForelderSituasjonIsComplete = ({}: Partial<AnnenForelderFormData>): boolean => {
-    return true;
-};
-
-const medlemskapIsComplete = ({}: Partial<MedlemskapFormData>): boolean => {
-    return true;
-};
-
-const omBarnaIsComplete = ({}: Partial<OmBarnaFormData>): boolean => {
-    return true;
-};
-// TODO
-// export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
-export const getAvailableSteps = (values: Partial<SoknadFormData>): StepID[] => {
+export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
     const steps: StepID[] = [];
     steps.push(StepID.DIN_ARBEIDSITUASJON);
 
     if (dinArbeidsituasjonIsComplete(values)) {
         steps.push(StepID.OM_ANNEN_FORELDER);
     }
-    if (omAnnenForelderIsComplete(values)) {
+    if (omAnnenForelderIsComplete(values, søker)) {
         steps.push(StepID.ANNEN_FORELDER_SITUASJON);
     }
     if (annenForelderSituasjonIsComplete(values)) {
         steps.push(StepID.OM_BARNA);
     }
-
     if (omBarnaIsComplete(values)) {
         steps.push(StepID.MEDLEMSKAP);
     }

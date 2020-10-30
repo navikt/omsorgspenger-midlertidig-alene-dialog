@@ -30,7 +30,7 @@ export enum SoknadFormField {
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
     annenForelderPeriodeMer6Maneder = 'annenForelderPeriodeMer6Maneder',
     antallBarn = 'antallBarn',
-    alderAvAlleBarn = 'alderAvAlleBarn',
+    fødselsårBarn = 'fødselsårBarn',
     harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
     utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
     skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
@@ -50,7 +50,7 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderPeriodeTom]: Date;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.antallBarn]: number;
-    [SoknadFormField.alderAvAlleBarn]: Barn[];
+    [SoknadFormField.fødselsårBarn]: Barn[];
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
@@ -69,6 +69,7 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.annenForelderPeriodeFom
     | SoknadFormField.annenForelderPeriodeTom
     | SoknadFormField.annenForelderPeriodeMer6Maneder
+    | SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil
 >;
 
 export type MedlemskapFormData = Pick<
@@ -79,4 +80,4 @@ export type MedlemskapFormData = Pick<
     | SoknadFormField.utenlandsoppholdNeste12Mnd
 >;
 
-export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.alderAvAlleBarn>;
+export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.fødselsårBarn>;

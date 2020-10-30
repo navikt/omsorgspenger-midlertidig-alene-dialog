@@ -9,7 +9,7 @@ export interface BostedUtlandApiData {
     landnavn: string;
 }
 export interface Medlemskap {
-    harBoddUtenforNorgeSiste12Mnd: boolean;
+    harBoddIUtlandetSiste12Mnd: boolean;
     skalBoIUtlandetNeste12Mnd: boolean;
     utenlandsoppholdNeste12Mnd: BostedUtlandApiData[];
     utenlandsoppholdSiste12Mnd: BostedUtlandApiData[];
@@ -33,6 +33,6 @@ export interface SoknadApiData {
     arbeidssituasjon: Arbeidssituasjon[];
     annenForelder: AnnenForelder;
     antallBarn: number;
-    alderAvAlleBarn: number[];
+    fødselsårBarn: number[];
     medlemskap: Medlemskap;
 }

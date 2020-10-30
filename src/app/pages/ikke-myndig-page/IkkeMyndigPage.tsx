@@ -5,8 +5,6 @@ import FrontPageBanner from '@navikt/sif-common-core/lib/components/front-page-b
 import Page from '@navikt/sif-common-core/lib/components/page/Page';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { Innholdstittel } from 'nav-frontend-typografi';
-import getLenker from '../../lenker';
-import Lenke from 'nav-frontend-lenker';
 import './ikkeMyndigPage.less';
 
 const IkkeMyndigPage = () => {
@@ -21,11 +19,7 @@ const IkkeMyndigPage = () => {
                     counsellorWithSpeechBubbleProps={{
                         strongText: intlHelper(intl, 'page.ikkeMyndig.banner.tittel'),
                         normalText: intlHelper(intl, 'page.ikkeMyndig.banner.tekst'),
-                        bottomContent: (
-                            <Lenke href={getLenker(intl.locale).meldingOmDelingAvOmsorgsdager} target="_blank">
-                                <FormattedMessage id="page.ikkeMyndig.banner.lastNed" />
-                            </Lenke>
-                        ),
+                        bottomContent: <FormattedMessage id="page.ikkeMyndig.banner.lastNed" />,
                     }}
                 />
             )}>
