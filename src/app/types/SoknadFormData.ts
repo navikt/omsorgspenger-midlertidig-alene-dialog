@@ -46,8 +46,8 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderFnr]: string;
     [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
-    [SoknadFormField.annenForelderPeriodeFom]: Date;
-    [SoknadFormField.annenForelderPeriodeTom]: Date;
+    [SoknadFormField.annenForelderPeriodeFom]: string;
+    [SoknadFormField.annenForelderPeriodeTom]: string;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.vetLengdePåInnleggelseperioden]: YesOrNo;
     [SoknadFormField.antallBarn]: number;

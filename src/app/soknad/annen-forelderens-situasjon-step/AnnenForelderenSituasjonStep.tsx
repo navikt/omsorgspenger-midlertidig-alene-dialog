@@ -15,6 +15,11 @@ import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
+import moment from 'moment';
+
+export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
+    return moment(periodeTom).diff(periodeFom, 'month', true) < 6;
+};
 
 const AnnenForelderenSituasjonStep = () => {
     const intl = useIntl();
@@ -86,6 +91,13 @@ const AnnenForelderenSituasjonStep = () => {
                         name: SoknadFormField.annenForelderPeriodeTom,
                     }}
                 />
+                {values.annenForelderPeriodeTom &&
+                    values.annenForelderPeriodeTom &&
+                    isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom) && (
+                        <FormBlock>
+                            <AlertStripe type={'info'}>Det må være mer enn 6 måneder, ellers....</AlertStripe>
+                        </FormBlock>
+                    )}
             </FormBlock>
         );
     };
