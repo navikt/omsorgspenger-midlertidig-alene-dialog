@@ -43,14 +43,6 @@ const webpackConfig = {
                         },
                         {
                             loader: 'less-loader',
-                            options: {
-                                lessOptions: {
-                                    globalVars: {
-                                        coreModulePath: '"~"',
-                                        nodeModulesPath: '"~"',
-                                    },
-                                },
-                            },
                         },
                     ],
                 }),

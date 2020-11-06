@@ -29,13 +29,13 @@ export enum SoknadFormField {
     annenForelderPeriodeFom = 'annenForelderPeriodeFom',
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
     annenForelderPeriodeMer6Maneder = 'annenForelderPeriodeMer6Maneder',
+    vetLengdePåInnleggelseperioden = 'vetLengdePåInnleggelseperioden',
     antallBarn = 'antallBarn',
     fødselsårBarn = 'fødselsårBarn',
     harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
     utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
     skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
     utenlandsoppholdNeste12Mnd = 'utenlandsoppholdNeste12Mnd',
-    hvorLengeInnleggelsesperiodenKommerTil = 'hvorLengeInnleggelsesperiodenKommerTil',
 }
 
 export interface SoknadFormData {
@@ -46,16 +46,16 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderFnr]: string;
     [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
-    [SoknadFormField.annenForelderPeriodeFom]: Date;
-    [SoknadFormField.annenForelderPeriodeTom]: Date;
+    [SoknadFormField.annenForelderPeriodeFom]: string;
+    [SoknadFormField.annenForelderPeriodeTom]: string;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
+    [SoknadFormField.vetLengdePåInnleggelseperioden]: YesOrNo;
     [SoknadFormField.antallBarn]: number;
     [SoknadFormField.fødselsårBarn]: Barn[];
     [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
-    [SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil]: YesOrNo;
 }
 
 export type DinArbeidssituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
@@ -69,7 +69,7 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.annenForelderPeriodeFom
     | SoknadFormField.annenForelderPeriodeTom
     | SoknadFormField.annenForelderPeriodeMer6Maneder
-    | SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil
+    | SoknadFormField.vetLengdePåInnleggelseperioden
 >;
 
 export type MedlemskapFormData = Pick<

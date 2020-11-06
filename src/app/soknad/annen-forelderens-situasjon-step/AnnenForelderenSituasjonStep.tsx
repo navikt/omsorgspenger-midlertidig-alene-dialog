@@ -15,6 +15,11 @@ import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
+import moment from 'moment';
+
+export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
+    return moment(periodeTom).diff(periodeFom, 'month', true) < 6;
+};
 
 const AnnenForelderenSituasjonStep = () => {
     const intl = useIntl();
@@ -52,15 +57,12 @@ const AnnenForelderenSituasjonStep = () => {
         );
     };
 
-    const renderHvorLengeInnleggelsesperiodenKommerTilSpm = () => {
+    const renderVetLengdePåInnleggelseperiodenSpm = () => {
         return (
             <FormBlock>
                 <SoknadFormComponents.YesOrNoQuestion
-                    name={SoknadFormField.hvorLengeInnleggelsesperiodenKommerTil}
-                    legend={intlHelper(
-                        intl,
-                        'step.annenForeldrensSituasjon.hvorLengeInnleggelsesperiodenKommerTil.spm'
-                    )}
+                    name={SoknadFormField.vetLengdePåInnleggelseperioden}
+                    legend={intlHelper(intl, 'step.annenForeldrensSituasjon.vetLengdePåInnleggelseperioden.spm')}
                     validate={validateYesOrNoIsAnswered}
                 />
             </FormBlock>
@@ -89,6 +91,13 @@ const AnnenForelderenSituasjonStep = () => {
                         name: SoknadFormField.annenForelderPeriodeTom,
                     }}
                 />
+                {values.annenForelderPeriodeTom &&
+                    values.annenForelderPeriodeTom &&
+                    isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom) && (
+                        <FormBlock>
+                            <AlertStripe type={'info'}>Det må være mer enn 6 måneder, ellers....</AlertStripe>
+                        </FormBlock>
+                    )}
             </FormBlock>
         );
     };
@@ -112,9 +121,9 @@ const AnnenForelderenSituasjonStep = () => {
             case AnnenForeldrenSituasjon.innlagtIHelseinstitusjon:
                 return (
                     <>
-                        {renderHvorLengeInnleggelsesperiodenKommerTilSpm()}
-                        {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.YES && renderDateRangePicker()}
-                        {values.hvorLengeInnleggelsesperiodenKommerTil === YesOrNo.NO && renderOver6MndSpm()}
+                        {renderVetLengdePåInnleggelseperiodenSpm()}
+                        {values.vetLengdePåInnleggelseperioden === YesOrNo.YES && renderDateRangePicker()}
+                        {values.vetLengdePåInnleggelseperioden === YesOrNo.NO && renderOver6MndSpm()}
                     </>
                 );
             case AnnenForeldrenSituasjon.fengsel:
