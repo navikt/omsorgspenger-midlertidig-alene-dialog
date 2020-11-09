@@ -20,10 +20,18 @@ const BehandlingAvPersonopplysningerContent: React.FunctionComponent = () => {
                 <Ingress>{getText('opplysninger.tittel')}</Ingress>
                 <Normaltekst>{getText('opplysninger.part1')}</Normaltekst>
                 <ul>
-                    <li>{getText('opplysninger.1')}</li>
-                    <li>{getText('opplysninger.2')}</li>
-                    <li>{getText('opplysninger.4')}</li>
-                    <li>{getText('opplysninger.5')}</li>
+                    <li>
+                        <Normaltekst>{getText('opplysninger.1')}</Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>{getText('opplysninger.2')}</Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>{getText('opplysninger.4')}</Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>{getText('opplysninger.5')}</Normaltekst>
+                    </li>
                 </ul>
                 <Normaltekst>{getText('opplysninger.part2')}</Normaltekst>
             </Box>
@@ -31,9 +39,6 @@ const BehandlingAvPersonopplysningerContent: React.FunctionComponent = () => {
             <Box margin="xl">
                 <Ingress>{getText('svar.tittel')}</Ingress>
                 <Normaltekst>{getText('svar.part1')}</Normaltekst>
-                <ul>
-                    <li>{getText('svar.1')}</li>
-                </ul>
             </Box>
 
             <Box margin="xl">

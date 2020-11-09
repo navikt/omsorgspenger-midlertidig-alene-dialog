@@ -37,19 +37,32 @@
 
     "lesMerOmFastBostedOgSamvær": "Les mer om fast bosted og samvær",
 
-    "step.om-barna.pageTitle": "Om barna",
-    "step.om-barna.stepTitle": "Om barna",
-    "step.om-barna.nextButtonLabel": "Fortsett",
-    "step.om-barna.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
+    "step.velkommen.banner.tittel": "Hei!",
+    "step.velkommen.banner.tekst": "Jeg vil hjelpe deg med å fylle ut søknaden om å bli regnet som at du er alene om omsorgen.",
+    "step.velkommen.tittel": "Søknad om å bli regnet som at du er alene om omsorgen for barn",
+    "step.velkommen.personopplysninger.lenketekst": "Les om hvordan NAV behandler personopplysningene dine",
+    "step.velkommen.button.start": "Fortsett",
 
     "step.din-arbeidsituasjon.pageTitle": "Din arbeidsituasjon",
     "step.din-arbeidsituasjon.stepTitle": "Din arbeidsituasjon",
+    "step.din-arbeidsituasjon.banner": "Både du og den andre forelderen må ha rett til å bruke omsorgsdager for at du skal kunne bli regnet som at du er alene om omsorgen for barn. Det vil si at dere begge må enten være arbeidstaker, selvstendig næringsdrivende, frilanser eller en kombinasjon av disse.",
     "step.din-arbeidsituasjon.nextButtonLabel": "Fortsett",
     "step.din-arbeidsituasjon.spm": "Hva er din arbeidssituasjon? Du kan velge flere.",
 
     "step.om-annen-forelder.pageTitle": "Om den andre forelderen",
     "step.om-annen-forelder.stepTitle": "Om den andre forelderen",
+    "step.om-annen-forelder.banner": "Her legger du inn informasjon om den andre forelderen som ",
+    "step.om-annen-forelder.banner.list.1": "du bor sammen med, og",
+    "step.om-annen-forelder.banner.list.2": "som ikke er i stand til å ta seg av barn i en periode på minst 6 måneder",
+    "step.om-Annen-forlder.fnr.spm": "Skriv inn fødselsnummeret til den andre forelderen, 11 siffer",
+    "step.om-Annen-forlder.navn.spm": "Skriv inn navnet til den andre forelderen",
+
     "step.om-annen-forelder.nextButtonLabel": "Fortsett",
+
+    "step.om-barna.pageTitle": "Om barna",
+    "step.om-barna.stepTitle": "Om barna",
+    "step.om-barna.nextButtonLabel": "Fortsett",
+    "step.om-barna.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
 
     "step.annen-forelder-situasjon.pageTitle": "Den andre forelderens situasjon",
     "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
@@ -61,12 +74,6 @@
 
     "steg.footer.avbryt": "Avbryt",
     "steg.footer.fortsettSenere": "Fortsett senere",
-
-    "step.velkommen.banner.tittel": "Hei!",
-    "step.velkommen.banner.tekst": "Jeg vil hjelpe deg med å fylle ut søknad.......",
-    "step.velkommen.tittel": "Søknad om å bli regnet som at du er alene om omsorgen for barnet",
-    "step.velkommen.personopplysninger.lenketekst": "Les om hvordan NAV behandler personopplysningene dine",
-    "step.velkommen.button.start": "Fortsett",
 
     "samtykke.tekst": "Jeg bekrefter at jeg har lest og forstått",
     "samtykke.harIkkeGodkjentVilkår": "Du må godkjenne vilkårene",
@@ -106,10 +113,6 @@
     "kvittering.info.3a": "Når vi har behandlet meldingen din får både du og den du overfører omsorgsdager til et svar fra oss i posten, og på deres egne sider på",
     "kvittering.info.3b": "Ditt NAV",
     "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet.",
-
-    "step.omAnnenForlder.tittel": "Om den andre forelderen",
-    "step.omAnnenForlder.fnr.spm": "Hva er fødselsnummeret til den andre forelderen?",
-    "step.omAnnenForlder.navn.spm": "Hva er navnet til den andre forelderen?",
 
     "step.annenForeldrensSituasjon.tittel": "Den andre forelderens situasjon",
     "step.annenForeldrensSituasjon.grunn.spm": "Hva er grunnen til at...?",

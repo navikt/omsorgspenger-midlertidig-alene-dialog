@@ -24,12 +24,18 @@ const OmAnnenForelderStep = ({ søker }: Props) => {
 
     return (
         <SoknadFormStep id={StepID.OM_ANNEN_FORELDER}>
-            <CounsellorPanel>{intlHelper(intl, 'step.omAnnenForlder.tittel')}</CounsellorPanel>
+            <CounsellorPanel>
+                {intlHelper(intl, 'step.om-annen-forelder.banner')}
+                <ul>
+                    <li>{intlHelper(intl, 'step.om-annen-forelder.banner.list.1')}</li>
+                    <li>{intlHelper(intl, 'step.om-annen-forelder.banner.list.2')}</li>
+                </ul>
+            </CounsellorPanel>
 
             <FormBlock>
                 <SoknadFormComponents.Input
                     name={SoknadFormField.annenForelderFnr}
-                    label={intlHelper(intl, 'step.omAnnenForlder.fnr.spm')}
+                    label={intlHelper(intl, 'step.om-Annen-forlder.fnr.spm')}
                     validate={validateAll([
                         validateFødselsnummer,
                         validateFødselsnummerIsDifferentThan(søker.fødselsnummer),
@@ -43,7 +49,7 @@ const OmAnnenForelderStep = ({ søker }: Props) => {
             <FormBlock>
                 <SoknadFormComponents.Input
                     name={SoknadFormField.annenForelderNavn}
-                    label={intlHelper(intl, 'step.omAnnenForlder.navn.spm')}
+                    label={intlHelper(intl, 'step.om-Annen-forlder.navn.spm')}
                     validate={validateRequiredField}
                     style={{ maxWidth: '20rem' }}
                 />
