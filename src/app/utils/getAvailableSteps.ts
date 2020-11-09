@@ -84,7 +84,7 @@ export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Perso
         steps.push(StepID.ANNEN_FORELDER_SITUASJON);
     }
     if (annenForelderSituasjonIsComplete(values)) {
-        steps.push(StepID.OM_BARNA);
+        steps.push(StepID.DERES_FELLES_BARN);
     }
     if (omBarnaIsComplete(values)) {
         steps.push(StepID.MEDLEMSKAP);

@@ -59,6 +59,7 @@
     "step.om-annen-forelder.nextButtonLabel": "Fortsett",
 
     "step.annen-foreldrens-situasjon.tittel": "Den andre forelderens situasjon",
+    "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
     "step.annen-foreldrens-situasjon.banner.1": "Her skal du gi informasjon om hva som er grunnen til at den andre forelderen ikke kan ta seg av barn i en periode på minst 6 måneder.",
     "step.annen-foreldrens-situasjon.banner.2": "Husk at du ikke regnes for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
     "step.annen-foreldrens-situasjon.grunn.spm": "Hva er grunnen til at...?",
@@ -76,15 +77,14 @@
     "step.annen-foreldrens-situasjon.periode.til": "Til",
     "step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm": "Vet du hvor lenge innleggelsesperioden kommer til å vare? ",
     "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, vil du ikke bli regnet som alene om omsorgen.",
-
-    "step.om-barna.pageTitle": "Om barna",
-    "step.om-barna.stepTitle": "Om barna",
-    "step.om-barna.nextButtonLabel": "Fortsett",
-    "step.om-barna.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
-
-    "step.annen-forelder-situasjon.pageTitle": "Den andre forelderens situasjon",
-    "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
     "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
+
+    "step.deres-felles-barn.pageTitle": "Deres felles barn",
+    "step.deres-felles-barn.stepTitle": "Deres felles barn",
+    "step.deres-felles-barn.banner": "Her skal du legge inn barn du har felles med den andre forelderen som omfattes av denne søknaden. Hvis du har andre barn, skal ikke de legges inn her.",
+    "step.deres-felles-barn.stopMessage": "Du må legge til minst ett barn for å fortsette",
+    "step.deres-felles-barn.nextButtonLabel": "Fortsett",
+    "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
 
     "step.oppsummering.pageTitle": "Oppsummering",
     "step.oppsummering.stepTitle": "Oppsummering",

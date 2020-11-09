@@ -16,7 +16,7 @@ import { SoknadFormData } from '../types/SoknadFormData';
 import { getAvailableSteps } from '../utils/getAvailableSteps';
 // import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
 import DinArbeidsituasjonStep from './din-arbeidsituasjon-step/DinArbeidsituasjonStep';
-import OmBarnStep from './om-barn-step/OmBarnStep';
+import OmDeresFellesBarnStep from './deres-felles-barn/DeresFellesBarn';
 import OppsummeringStep from './oppsummering-step/OppsummeringStep';
 import { useSoknadContext } from './SoknadContext';
 import { StepID } from './soknadStepsConfig';
@@ -45,8 +45,8 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
                 return <OmAnnenForelderStep søker={søker} />;
             case StepID.ANNEN_FORELDER_SITUASJON:
                 return <AnnenForelderenSituasjonStep />;
-            case StepID.OM_BARNA:
-                return <OmBarnStep />;
+            case StepID.DERES_FELLES_BARN:
+                return <OmDeresFellesBarnStep />;
             case StepID.MEDLEMSKAP:
                 return <MedlemskapStep />;
             case StepID.OPPSUMMERING:

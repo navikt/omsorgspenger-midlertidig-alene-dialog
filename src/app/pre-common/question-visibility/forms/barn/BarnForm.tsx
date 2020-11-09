@@ -8,6 +8,7 @@ import { Systemtittel } from 'nav-frontend-typografi';
 import { Barn, isBarn } from './types';
 import { guid } from 'nav-frontend-js-utils';
 import { dateToday } from '@navikt/sif-common-core/lib/utils/dateUtils';
+import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 
 interface BarnFormText {
     form_barn_alders_label: string;
@@ -48,7 +49,7 @@ const BarnForm = ({ barn: initialValues = { alders: undefined }, text, onCancel,
     const intl = useIntl();
 
     const defaultText: BarnFormText = {
-        form_barn_alders_label: 'Hvilket årstall er barna født?',
+        form_barn_alders_label: intlHelper(intl, 'barn.modal.alders_spm.label'),
     };
     const txt = { ...defaultText, ...text };
 
@@ -68,7 +69,7 @@ const BarnForm = ({ barn: initialValues = { alders: undefined }, text, onCancel,
                     <Form.Form
                         onCancel={onCancel}
                         fieldErrorRenderer={(error) => commonFieldErrorRenderer(intl, error)}>
-                        <Systemtittel tag="h1">Legg til barn</Systemtittel>
+                        <Systemtittel tag="h1">{intlHelper(intl, 'barn.modal.tittel')}</Systemtittel>
                         <FormBlock>
                             <Form.Select
                                 name={FosterbarnFormField.alders}

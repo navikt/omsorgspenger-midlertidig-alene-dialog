@@ -97,7 +97,9 @@ const AnnenForelderenSituasjonStep = () => {
                     values.annenForelderPeriodeTom &&
                     isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom) && (
                         <FormBlock>
-                            <AlertStripe type={'info'}>Det må være mer enn 6 måneder, ellers....</AlertStripe>
+                            <AlertStripe type={'info'}>
+                                {intlHelper(intl, 'step.annen-foreldrens-situasjon.advarsel.1')}
+                            </AlertStripe>
                         </FormBlock>
                     )}
             </FormBlock>

@@ -7,20 +7,20 @@ import BarnListAndDialog from '../../pre-common/question-visibility/forms/barn/B
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { useFormikContext } from 'formik';
 import AlertStripe from 'nav-frontend-alertstriper';
+import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
+import { useIntl } from 'react-intl';
 
-const OmBarnaStep = () => {
+const OmDeresFellesBarnStep = () => {
+    const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
 
     return (
-        <SoknadFormStep id={StepID.OM_BARNA} buttonDisabled={values.fødselsårBarn.length < 1}>
-            {
-                //TODO intl
-            }
-            <CounsellorPanel>Om Barna step</CounsellorPanel>
+        <SoknadFormStep id={StepID.DERES_FELLES_BARN} buttonDisabled={values.fødselsårBarn.length < 1}>
+            <CounsellorPanel>{intlHelper(intl, 'step.deres-felles-barn.banner')}</CounsellorPanel>
 
             {values.fødselsårBarn.length === 0 && (
                 <FormBlock>
-                    <AlertStripe type={'info'}>Du må legge til minst ett barn for å fortsette</AlertStripe>
+                    <AlertStripe type={'info'}>{intlHelper(intl, 'step.deres-felles-barn.stopMessage')}</AlertStripe>
                 </FormBlock>
             )}
             <FormBlock>
@@ -30,4 +30,4 @@ const OmBarnaStep = () => {
     );
 };
 
-export default OmBarnaStep;
+export default OmDeresFellesBarnStep;
