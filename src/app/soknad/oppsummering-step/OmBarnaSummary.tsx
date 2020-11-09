@@ -14,10 +14,13 @@ const OmBarnaSummary = ({ apiValues }: Props) => {
     const intl = useIntl();
 
     return (
-        <SummarySection header={intlHelper(intl, 'step.oppsummering.om-barna.header')}>
-            <SummaryBlock header="Barna">
-                <SummaryList items={apiValues.fødselsårBarn} itemRenderer={(a) => `Født i ${a}`} />
-                Antall barn: {apiValues.antallBarn}
+        <SummarySection header={intlHelper(intl, 'step.oppsummering.deres-felles-barn.header')}>
+            <SummaryBlock header={intlHelper(intl, 'step.oppsummering.deres-felles-barn.barn')}>
+                <SummaryList
+                    items={apiValues.fødselsårBarn}
+                    itemRenderer={(a) => `${intlHelper(intl, 'step.oppsummering.deres-felles-barn.født')} ${a}`}
+                />
+                {intlHelper(intl, 'step.oppsummering.deres-felles-barn.antallBarn')} {apiValues.antallBarn}
             </SummaryBlock>
         </SummarySection>
     );
