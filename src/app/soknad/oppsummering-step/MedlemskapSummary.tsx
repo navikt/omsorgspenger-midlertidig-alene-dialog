@@ -28,7 +28,7 @@ export const renderUtenlandsoppholdSummary = (opphold: BostedUtlandApiData): Rea
 const MedlemskapSummary = ({ medlemskap }: Props) => {
     const intl = useIntl();
     return (
-        <SummarySection header="Medlemskap">
+        <SummarySection header={intlHelper(intl, 'steg.oppsummering.medlemskap.header')}>
             <SummaryBlock header={intlHelper(intl, 'steg.oppsummering.medlemskap.utlandetSiste12.header')}>
                 <JaNeiSvar harSvartJa={medlemskap.harBoddIUtlandetSiste12Mnd} />
                 {medlemskap.harBoddIUtlandetSiste12Mnd && (

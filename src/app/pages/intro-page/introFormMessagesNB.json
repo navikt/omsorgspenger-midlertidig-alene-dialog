@@ -1,8 +1,25 @@
 {
     "introForm.start": "Start søknad",
 
+    "introForm.arbeidstaker": "arbeidstaker",
+    "introForm.selvstendigNæringsdrivende": "selvstendig næringsdrivende",
+    "introForm.frilanser": "frilanser",
+
+    "introForm.hvaBetyrDette": "Hva betyr dette?",
+
+    "introForm.info.1": "Denne søknaden er for deg som bor sammen med den andre forelderen, men som skal søke om å bli regnet som at du er alene om omsorgen. Dette er i tilfeller hvor den andre forelderen ikke er i stand til å ha tilsyn med barn i en periode på minst 6 måneder. Det kan være at den andre forelderen for eksempel",
+    "introForm.info.grunnList.1": "er fysisk eller psykisk syk",
+    "introForm.info.grunnList.2": "er innlagt i helseinstitusjon",
+    "introForm.info.grunnList.3": "har en funksjonshemning",
+    "introForm.info.grunnList.4": "er i fengsel",
+    "introForm.info.grunnList.5": "utøver verneplikt",
+    "introForm.info.2": "Du regnes ikke for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
+
     "introForm.erYrkesaktiv.spm": "Er du yrkesaktiv?",
-    "introForm.erYrkesaktiv.stopMessage": "Stop message",
-    "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Er den andre forelderen ut av stand til å ta seg av barnet i minst 6 måneder?",
-    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Stop message"
+    "introForm.erYrkesaktiv.forklaring.1": "For å søke må du være yrkesaktiv, det vil si at du må være i minst én av disse arbeidssituasjonene:",
+    "introForm.erYrkesaktiv.forklaring": "For å søke må du være yrkesaktiv, det vil si at du må være i minst én av disse arbeidssituasjonene:",
+    "introForm.erYrkesaktiv.stopMessage": "Hvis du ikke er yrkesaktiv, har du ikke rett til å bruke omsorgsdager. Det betyr at du ikke kan gå videre i denne søknaden.",
+
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du bekrefte at den andre forelderen ikke er i stand til å ta seg av barn i en periode på minst 6 måneder?",
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "For at du skal bli regnet som midlertidig alene om omsorgen, må den andre forelderen være ute av stand til å ta seg av barnet i en periode som varer i minst 6 måneder. Hvis perioden er kortere, kan du ikke gå videre med søknaden."
 }

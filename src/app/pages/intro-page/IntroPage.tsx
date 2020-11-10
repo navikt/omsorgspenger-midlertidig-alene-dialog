@@ -21,7 +21,16 @@ const IntroPage = () => {
             topContentRenderer={() => <StepBanner text={intlHelper(intl, 'application.title')} />}>
             <Box margin="xxxl">
                 <InformationPoster>
-                    <p>Intro page</p>
+                    <p>{intlHelper(intl, 'introForm.info.1')}</p>
+                    <ul>
+                        <li>{intlHelper(intl, 'introForm.info.grunnList.1')}</li>
+                        <li>{intlHelper(intl, 'introForm.info.grunnList.2')}</li>
+                        <li>{intlHelper(intl, 'introForm.info.grunnList.3')}</li>
+                        <li>{intlHelper(intl, 'introForm.info.grunnList.4')}</li>
+                        <li>{intlHelper(intl, 'introForm.info.grunnList.5')}</li>
+                    </ul>
+
+                    <p>{intlHelper(intl, 'introForm.info.2')}</p>
                 </InformationPoster>
             </Box>
             <FormBlock>

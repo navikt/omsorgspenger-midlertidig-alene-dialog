@@ -18,19 +18,25 @@ const DinePlikterContent: React.FunctionComponent = () => {
                     </Normaltekst>
                     <ul>
                         <li>
-                            <FormattedMessage id="modal.dinePlikter.part1a" />
+                            <Normaltekst>
+                                <FormattedMessage id="modal.dinePlikter.part1a" />
+                            </Normaltekst>
                         </li>
                         <li>
-                            <FormattedMessage id="modal.dinePlikter.part1b" />
+                            <Normaltekst>
+                                <FormattedMessage id="modal.dinePlikter.part1b" />
+                            </Normaltekst>
                         </li>
                     </ul>
                 </li>
                 <li style={{ marginTop: '0.5rem' }}>
                     <span>
-                        <FormattedMessage id="modal.dinePlikter.part2a" />{' '}
-                        <Lenke href={getLenker(intl.locale).rettOgPlikt} target="_blank">
-                            <FormattedMessage id="modal.dinePlikter.part2b" />
-                        </Lenke>
+                        <Normaltekst>
+                            <FormattedMessage id="modal.dinePlikter.part2a" />{' '}
+                            <Lenke href={getLenker(intl.locale).rettOgPlikt} target="_blank">
+                                <FormattedMessage id="modal.dinePlikter.part2b" />
+                            </Lenke>
+                        </Normaltekst>
                     </span>
                 </li>
             </ul>

@@ -30,7 +30,7 @@ const AnnenForelderenSituasjonStep = () => {
             <FormBlock>
                 <SoknadFormComponents.Textarea
                     name={SoknadFormField.annenForelderSituasjonBeskrivelse}
-                    label={intlHelper(intl, 'step.annenForeldrensSituasjon.beskrivelseAvSituasjonen.spm')}
+                    label={intlHelper(intl, 'step.annen-foreldrens-situasjon.beskrivelseAvSituasjonen.spm')}
                     validate={validateRequiredField}
                     maxLength={1000}
                 />
@@ -44,12 +44,14 @@ const AnnenForelderenSituasjonStep = () => {
                 <FormBlock>
                     <SoknadFormComponents.YesOrNoQuestion
                         name={SoknadFormField.annenForelderPeriodeMer6Maneder}
-                        legend={intlHelper(intl, 'step.annenForeldrensSituasjon.erVarighetMerEnn6Maneder.spm')}
+                        legend={intlHelper(intl, 'step.annen-foreldrens-situasjon.erVarighetMerEnn6Maneder.spm')}
                         validate={validateYesOrNoIsAnswered}
                     />
                     {values.annenForelderPeriodeMer6Maneder === YesOrNo.NO && (
                         <FormBlock>
-                            <AlertStripe type={'info'}>Det må være mer enn 6 måneder, ellers....</AlertStripe>
+                            <AlertStripe type={'info'}>
+                                {intlHelper(intl, 'step.annen-foreldrens-situasjon.advarsel.1')}
+                            </AlertStripe>
                         </FormBlock>
                     )}
                 </FormBlock>
@@ -62,7 +64,7 @@ const AnnenForelderenSituasjonStep = () => {
             <FormBlock>
                 <SoknadFormComponents.YesOrNoQuestion
                     name={SoknadFormField.vetLengdePåInnleggelseperioden}
-                    legend={intlHelper(intl, 'step.annenForeldrensSituasjon.vetLengdePåInnleggelseperioden.spm')}
+                    legend={intlHelper(intl, 'step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm')}
                     validate={validateYesOrNoIsAnswered}
                 />
             </FormBlock>
@@ -75,18 +77,18 @@ const AnnenForelderenSituasjonStep = () => {
                 <SoknadFormComponents.DateRangePicker
                     legend={
                         values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
-                            ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.innlagtIHelseinstitusjon.spm')
+                            ? intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.innlagtIHelseinstitusjon.spm')
                             : values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel
-                            ? intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fengsel.spm')
-                            : intlHelper(intl, 'step.annenForeldrensSituasjon.periode.verneplikt.spm')
+                            ? intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.fengsel.spm')
+                            : intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.verneplikt.spm')
                     }
                     fromInputProps={{
-                        label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.fra'),
+                        label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.fra'),
                         validate: validateRequiredField,
                         name: SoknadFormField.annenForelderPeriodeFom,
                     }}
                     toInputProps={{
-                        label: intlHelper(intl, 'step.annenForeldrensSituasjon.periode.til'),
+                        label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.til'),
                         validate: validateRequiredField,
                         name: SoknadFormField.annenForelderPeriodeTom,
                     }}
@@ -95,7 +97,9 @@ const AnnenForelderenSituasjonStep = () => {
                     values.annenForelderPeriodeTom &&
                     isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom) && (
                         <FormBlock>
-                            <AlertStripe type={'info'}>Det må være mer enn 6 måneder, ellers....</AlertStripe>
+                            <AlertStripe type={'info'}>
+                                {intlHelper(intl, 'step.annen-foreldrens-situasjon.advarsel.1')}
+                            </AlertStripe>
                         </FormBlock>
                     )}
             </FormBlock>
@@ -136,31 +140,34 @@ const AnnenForelderenSituasjonStep = () => {
     };
     return (
         <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON}>
-            <CounsellorPanel>{intlHelper(intl, 'step.annenForeldrensSituasjon.tittel')}</CounsellorPanel>
+            <CounsellorPanel>
+                {intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.1')}
+                <p>{intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.2')}</p>
+            </CounsellorPanel>
 
             <Box margin="xxl">
                 <SoknadFormComponents.RadioPanelGroup
-                    legend={intlHelper(intl, 'step.annenForeldrensSituasjon.grunn.spm')}
+                    legend={intlHelper(intl, 'step.annen-foreldrens-situasjon.grunn.spm')}
                     name={SoknadFormField.annenForelderSituasjon}
                     radios={[
                         {
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.grunn.sykdom'),
+                            label: intlHelper(intl, 'step.annen-foreldrens-situasjon.grunn.sykdom'),
                             value: AnnenForeldrenSituasjon.sykdom,
                         },
                         {
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.grunn.innlagtIHelseinstitusjon'),
+                            label: intlHelper(intl, 'step.annen-foreldrens-situasjon.grunn.innlagtIHelseinstitusjon'),
                             value: AnnenForeldrenSituasjon.innlagtIHelseinstitusjon,
                         },
                         {
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.grunn.fengsel'),
+                            label: intlHelper(intl, 'step.annen-foreldrens-situasjon.grunn.fengsel'),
                             value: AnnenForeldrenSituasjon.fengsel,
                         },
                         {
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.grunn.verneplikt'),
+                            label: intlHelper(intl, 'step.annen-foreldrens-situasjon.grunn.verneplikt'),
                             value: AnnenForeldrenSituasjon.utøverVerneplikt,
                         },
                         {
-                            label: intlHelper(intl, 'step.annenForeldrensSituasjon.grunn.annet'),
+                            label: intlHelper(intl, 'step.annen-foreldrens-situasjon.grunn.annet'),
                             value: AnnenForeldrenSituasjon.annet,
                         },
                     ]}

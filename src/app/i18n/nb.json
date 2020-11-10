@@ -1,5 +1,5 @@
 {
-    "application.title": "Søknad om å bli regnet som midertidig alene for omsorgen",
+    "application.title": "Søknad om å bli regnet som alene om omsorgen for barn",
 
     "application.loadError.title": "Noe gikk galt ...",
     "application.loadError.message": "Beklager, her har det dessverre skjedd en feil. Dersom feilen fortsetter, prøv igjen litt senere.",
@@ -37,95 +37,54 @@
 
     "lesMerOmFastBostedOgSamvær": "Les mer om fast bosted og samvær",
 
-    "step.om-barna.pageTitle": "Om barna",
-    "step.om-barna.stepTitle": "Om barna",
-    "step.om-barna.nextButtonLabel": "Fortsett",
-    "step.om-barna.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
+    "step.velkommen.banner.tittel": "Hei!",
+    "step.velkommen.banner.tekst": "Jeg vil hjelpe deg med å fylle ut søknaden om å bli regnet som at du er alene om omsorgen.",
+    "step.velkommen.tittel": "Søknad om å bli regnet som at du er alene om omsorgen for barn",
+    "step.velkommen.personopplysninger.lenketekst": "Les om hvordan NAV behandler personopplysningene dine",
+    "step.velkommen.button.start": "Fortsett",
 
     "step.din-arbeidsituasjon.pageTitle": "Din arbeidsituasjon",
     "step.din-arbeidsituasjon.stepTitle": "Din arbeidsituasjon",
+    "step.din-arbeidsituasjon.banner": "Både du og den andre forelderen må ha rett til å bruke omsorgsdager for at du skal kunne bli regnet som at du er alene om omsorgen for barn. Det vil si at dere begge må enten være arbeidstaker, selvstendig næringsdrivende, frilanser eller en kombinasjon av disse.",
     "step.din-arbeidsituasjon.nextButtonLabel": "Fortsett",
     "step.din-arbeidsituasjon.spm": "Hva er din arbeidssituasjon? Du kan velge flere.",
 
     "step.om-annen-forelder.pageTitle": "Om den andre forelderen",
     "step.om-annen-forelder.stepTitle": "Om den andre forelderen",
+    "step.om-annen-forelder.banner": "Her legger du inn informasjon om den andre forelderen som ",
+    "step.om-annen-forelder.banner.list.1": "du bor sammen med, og",
+    "step.om-annen-forelder.banner.list.2": "som ikke er i stand til å ta seg av barn i en periode på minst 6 måneder",
+    "step.om-annen-forlder.fnr.spm": "Skriv inn fødselsnummeret til den andre forelderen, 11 siffer",
+    "step.om-annen-forlder.navn.spm": "Skriv inn navnet til den andre forelderen",
     "step.om-annen-forelder.nextButtonLabel": "Fortsett",
 
-    "step.annen-forelder-situasjon.pageTitle": "Den andre forelderens situasjon",
+    "step.annen-foreldrens-situasjon.tittel": "Den andre forelderens situasjon",
     "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
+    "step.annen-foreldrens-situasjon.banner.1": "Her skal du gi informasjon om hva som er grunnen til at den andre forelderen ikke kan ta seg av barn i en periode på minst 6 måneder.",
+    "step.annen-foreldrens-situasjon.banner.2": "Husk at du ikke regnes for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
+    "step.annen-foreldrens-situasjon.grunn.spm": "Hva er grunnen til at...?",
+    "step.annen-foreldrens-situasjon.grunn.sykdom": "Sykdom, skade eller funksjonhemming",
+    "step.annen-foreldrens-situasjon.grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
+    "step.annen-foreldrens-situasjon.grunn.fengsel": "Fengsel",
+    "step.annen-foreldrens-situasjon.grunn.verneplikt": "Verneplikt",
+    "step.annen-foreldrens-situasjon.grunn.annet": "Annet",
+    "step.annen-foreldrens-situasjon.beskrivelseAvSituasjonen.spm": "Beskriv hva som gjør at den andre forelderen ikke er i stand til å ta seg av barn:",
+    "step.annen-foreldrens-situasjon.erVarighetMerEnn6Maneder.spm": "Kan du bekrefte at den andre forelderen ikke er i stand til å ta seg av barn i en periode på minst 6 måneder?",
+    "step.annen-foreldrens-situasjon.periode.innlagtIHelseinstitusjon.spm": "Hvilken periode gjelder innleggelsen?",
+    "step.annen-foreldrens-situasjon.periode.fengsel.spm": "Hvilken periode gjelder soningen?",
+    "step.annen-foreldrens-situasjon.periode.verneplikt.spm": "Hvilken periode gjelder verneplikten?",
+    "step.annen-foreldrens-situasjon.periode.fra": "Fra",
+    "step.annen-foreldrens-situasjon.periode.til": "Til",
+    "step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm": "Vet du hvor lenge innleggelsesperioden kommer til å vare? ",
+    "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, vil du ikke bli regnet som alene om omsorgen.",
     "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
 
-    "step.oppsummering.pageTitle": "Oppsummering",
-    "step.oppsummering.stepTitle": "Oppsummering",
-    "step.oppsummering.nextButtonLabel": "Fortsett",
-
-    "steg.footer.avbryt": "Avbryt",
-    "steg.footer.fortsettSenere": "Fortsett senere",
-
-    "step.velkommen.banner.tittel": "Hei!",
-    "step.velkommen.banner.tekst": "Jeg vil hjelpe deg med å fylle ut søknad.......",
-    "step.velkommen.tittel": "Søknad om å bli regnet som at du er alene om omsorgen for barnet",
-    "step.velkommen.personopplysninger.lenketekst": "Les om hvordan NAV behandler personopplysningene dine",
-    "step.velkommen.button.start": "Fortsett",
-
-    "samtykke.tekst": "Jeg bekrefter at jeg har lest og forstått",
-    "samtykke.harIkkeGodkjentVilkår": "Du må godkjenne vilkårene",
-    "samtykke.harForståttLabel": "For å gå videre må du bekrefte at du har lest og forstått {plikterLink}.",
-    "samtykke.harForståttLabel.lenketekst": "dine plikter",
-    "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tastet inn ditt eget fødselsnummer",
-
-    "step.oppsummering.info": "Les gjennom oppsummeringen og sjekk at alt er riktig før du sender inn meldingen om overføring av omsorgsdager. Hvis du vil gjøre endringer, kan du gå tilbake.",
-    "step.oppsummering.søker.header": "Om deg som søker",
-    "step.oppsummering.søker.arbeidssituasjon": "Hva er din arbeidssituasjon?",
-
-    "step.oppsummering.om-barna.header": "Om barn i husstanden",
-    "step.oppsummering.om-barna.født": "Født",
-
-    "step.oppsummering.annenForelder.header": "Om den andre forelderen",
-
-    "step.oppsummering.annenForelderensSituasjon.header": "Den andre forelderens situasjon",
-    "step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder": "Jeg bekrefter at den andre forelderen ikke kan ha tilsyn med barnet/barna i minst 6 måneder",
-    "step.oppsummering.annenForelderensSituasjon.html": "<strong>Grunn: </strong>",
-    "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
-    "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen kan ikke ha tilsyn med barnet/barna:",
-
-    "steg.oppsummering.medlemskap.utlandetSiste12.header": "Har bodd i utlandet siste 12 måneder?",
-    "steg.oppsummering.medlemskap.utlandetNeste12.header": "Skal bo i utlandet neste 12 måneder",
-    "steg.oppsummering.medlemskap.utlandetSiste12.liste.header": "Utenlandsopphold siste 12 måneder",
-    "steg.oppsummering.medlemskap.utlandetNeste12.liste.header": "Utenlandsopphold neste 12 måneder",
-
-    "step.oppsummering.bekrefterOpplysninger": "Jeg bekrefter at opplysningene jeg har gitt er riktige, og at jeg ikke har holdt tilbake opplysninger som har betydning for min rett til omsorgsdager.",
-
-    "step.oppsummering.sendMelding.feilmelding.førsteGang": "Det oppstod en feil under innsending. Vennligst prøv på nytt.",
-    "step.oppsummering.sendMelding.feilmelding.andreGang": "Det oppstod fortsatt en feil under innsending. Vennligst vent litt og prøv på nytt.",
-
-    "kvittering.tittel": "Melding om overføring av omsorgsdager er mottatt",
-    "kvittering.info.tittel": "Hva skjer videre nå?",
-    "kvittering.info.1": "Vi behandler meldingen fra deg om overføring av omsorgsdager.",
-    "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
-    "kvittering.info.3a": "Når vi har behandlet meldingen din får både du og den du overfører omsorgsdager til et svar fra oss i posten, og på deres egne sider på",
-    "kvittering.info.3b": "Ditt NAV",
-    "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet.",
-
-    "step.omAnnenForlder.tittel": "Om den andre forelderen",
-    "step.omAnnenForlder.fnr.spm": "Hva er fødselsnummeret til den andre forelderen?",
-    "step.omAnnenForlder.navn.spm": "Hva er navnet til den andre forelderen?",
-
-    "step.annenForeldrensSituasjon.tittel": "Den andre forelderens situasjon",
-    "step.annenForeldrensSituasjon.grunn.spm": "Hva er grunnen til at...?",
-    "step.annenForeldrensSituasjon.grunn.sykdom": "Sykdom, skade eller funksjonhemming",
-    "step.annenForeldrensSituasjon.grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
-    "step.annenForeldrensSituasjon.grunn.fengsel": "Fengsel",
-    "step.annenForeldrensSituasjon.grunn.verneplikt": "Verneplikt",
-    "step.annenForeldrensSituasjon.grunn.annet": "Annet",
-    "step.annenForeldrensSituasjon.beskrivelseAvSituasjonen.spm": "Gi en utdypende beskrivelse av situasjonen",
-    "step.annenForeldrensSituasjon.erVarighetMerEnn6Maneder.spm": "Er det varighet på mer enn 6 måneder?",
-    "step.annenForeldrensSituasjon.periode.innlagtIHelseinstitusjon.spm": "Hvilken periode gjelder innleggelsen?",
-    "step.annenForeldrensSituasjon.periode.fengsel.spm": "Hvilken periode gjelder soningen?",
-    "step.annenForeldrensSituasjon.periode.verneplikt.spm": "Hvilken periode gjelder verneplikten?",
-    "step.annenForeldrensSituasjon.periode.fra": "Fra",
-    "step.annenForeldrensSituasjon.periode.til": "Til",
-    "step.annenForeldrensSituasjon.vetLengdePåInnleggelseperioden.spm": "Vet du hvor lenge innleggelsesperioden kommer til å vare? ",
+    "step.deres-felles-barn.pageTitle": "Deres felles barn",
+    "step.deres-felles-barn.stepTitle": "Deres felles barn",
+    "step.deres-felles-barn.banner": "Her skal du legge inn barn du har felles med den andre forelderen som omfattes av denne søknaden. Hvis du har andre barn, skal ikke de legges inn her.",
+    "step.deres-felles-barn.stopMessage": "Du må legge til minst ett barn for å fortsette",
+    "step.deres-felles-barn.nextButtonLabel": "Fortsett",
+    "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
 
     "step.medlemskap.pageTitle": "Medlemskap",
     "step.medlemskap.stepTitle": "Medlemskap",
@@ -137,5 +96,54 @@
     "steg.medlemsskap.annetLandSiste12.listeTittel": "Utenlandsopphold siste 12 måneder",
     "steg.medlemsskap.annetLandNeste12.hjelp": "Du svarer ja bare hvis du planlegger å oppholde deg fast i et annet land enn Norge. Korte utlandsturer i forbindelse med for eksempel ferie regnes ikke med.",
     "steg.medlemsskap.annetLandNeste12.listeTittel": "Utenlandsopphold neste 12 måneder",
-    "step.medlemskap.knap.leggNyttUtenlandsopphold": "Legg til nytt utenlandsopphold"
+    "step.medlemskap.knap.leggNyttUtenlandsopphold": "Legg til nytt utenlandsopphold",
+
+    "step.oppsummering.pageTitle": "Oppsummering",
+    "step.oppsummering.stepTitle": "Oppsummering",
+    "step.oppsummering.nextButtonLabel": "Fortsett",
+    "step.oppsummering.info": "Les gjennom oppsummeringen og sjekk at alt er riktig før du sender inn søknaden. Hvis du vil gjøre endringer, kan du gå tilbake.",
+
+    "step.oppsummering.søker.header": "Om deg som søker",
+    "step.oppsummering.søker.arbeidssituasjon": "Hva er din arbeidssituasjon?",
+
+    "step.oppsummering.deres-felles-barn.header": "Deres felles barn",
+    "step.oppsummering.deres-felles-barn.barn": "Barn",
+    "step.oppsummering.deres-felles-barn.født": "Født i",
+    "step.oppsummering.deres-felles-barn.antallBarn": "Antall barn:",
+
+    "step.oppsummering.annenForelder.header": "Om den andre forelderen",
+
+    "step.oppsummering.annenForelderensSituasjon.header": "Den andre forelderens situasjon",
+    "step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder": "Har du bekreftet at den andre forelderen ikke er i stand til å ta seg av barn i periode på minst 6 måneder?",
+    "step.oppsummering.annenForelderensSituasjon.html": "<strong>Grunn: </strong>",
+    "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
+    "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen kan ikke ha tilsyn med barnet/barna:",
+
+    "steg.oppsummering.medlemskap.header": "Medlemskap i Folketrygden",
+    "steg.oppsummering.medlemskap.utlandetSiste12.header": "Har du bodd i utlandet i de siste 12 månedene?",
+    "steg.oppsummering.medlemskap.utlandetNeste12.header": "Skal du bo i utlandet i de neste 12 månedene?",
+    "steg.oppsummering.medlemskap.utlandetSiste12.liste.header": "Utenlandsopphold siste 12 måneder",
+    "steg.oppsummering.medlemskap.utlandetNeste12.liste.header": "Utenlandsopphold neste 12 måneder",
+
+    "step.oppsummering.bekrefterOpplysninger": "Jeg bekrefter at opplysningene jeg har gitt er riktige, og at jeg ikke har holdt tilbake opplysninger som har betydning for min rett til omsorgsdager.",
+
+    "step.oppsummering.sendMelding.feilmelding.førsteGang": "Det oppstod en feil under innsending. Vennligst prøv på nytt.",
+    "step.oppsummering.sendMelding.feilmelding.andreGang": "Det oppstod fortsatt en feil under innsending. Vennligst vent litt og prøv på nytt.",
+
+    "steg.footer.avbryt": "Avbryt",
+    "steg.footer.fortsettSenere": "Fortsett senere",
+
+    "samtykke.tekst": "Jeg bekrefter at jeg har lest og forstått",
+    "samtykke.harIkkeGodkjentVilkår": "Du må godkjenne vilkårene",
+    "samtykke.harForståttLabel": "For å gå videre må du bekrefte at du har lest og forstått {plikterLink}.",
+    "samtykke.harForståttLabel.lenketekst": "dine plikter",
+    "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tastet inn ditt eget fødselsnummer",
+
+    "kvittering.tittel": "Melding om overføring av omsorgsdager er mottatt",
+    "kvittering.info.tittel": "Hva skjer videre nå?",
+    "kvittering.info.1": "Vi behandler meldingen fra deg om overføring av omsorgsdager.",
+    "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
+    "kvittering.info.3a": "Når vi har behandlet meldingen din får både du og den du overfører omsorgsdager til et svar fra oss i posten, og på deres egne sider på",
+    "kvittering.info.3b": "Ditt NAV",
+    "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet."
 }

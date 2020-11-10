@@ -14,9 +14,7 @@ const DinArbeidsituasjonStep = () => {
 
     return (
         <SoknadFormStep id={StepID.DIN_ARBEIDSITUASJON}>
-            <CounsellorPanel>
-                <p>Din arbeidssituasjon</p>
-            </CounsellorPanel>
+            <CounsellorPanel>{intlHelper(intl, 'step.din-arbeidsituasjon.banner')}</CounsellorPanel>
             <FormBlock>
                 <SoknadFormComponents.CheckboxPanelGroup
                     legend={intlHelper(intl, 'step.din-arbeidsituasjon.spm')}

@@ -17,6 +17,7 @@ import {
     IntroFormQuestions,
 } from './introFormConfig';
 import IntroFormQuestion from './IntroFormQuestion';
+import ExpandableInfo from '@navikt/sif-common-core/lib/components/expandable-content/ExpandableInfo';
 
 interface Props {
     onValidSubmit: () => void;
@@ -51,6 +52,16 @@ const IntroForm = ({ onValidSubmit }: Props) => {
                                 validate={validateYesOrNoIsAnswered}
                                 showStop={avslag === IntroFormAvslag.erIkkeYrkesaktiv}
                                 stopMessage={<>{intlHelper(intl, 'introForm.erYrkesaktiv.stopMessage')}</>}
+                                description={
+                                    <ExpandableInfo title={intlHelper(intl, 'introForm.hvaBetyrDette')}>
+                                        {intlHelper(intl, 'introForm.erYrkesaktiv.forklaring.1')}
+                                        <ul>
+                                            <li>{intlHelper(intl, 'introForm.arbeidstaker')}</li>
+                                            <li>{intlHelper(intl, 'introForm.selvstendigNæringsdrivende')}</li>
+                                            <li>{intlHelper(intl, 'introForm.frilanser')}</li>
+                                        </ul>
+                                    </ExpandableInfo>
+                                }
                             />
                             <IntroFormQuestion
                                 name={IntroFormField.erAndreForelderenUtAvStandMinst6Måneder}
