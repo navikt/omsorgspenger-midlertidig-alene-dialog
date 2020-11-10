@@ -10,13 +10,24 @@ export const mapAnnenForelderToApiData = (formData: AnnenForelderFormData): Anne
             navn: formData.annenForelderNavn,
             fnr: formData.annenForelderFnr,
             situasjon: formData.annenForelderSituasjon,
-            situasjonBeskrivelse: formData.annenForelderSituasjonBeskrivelse,
-            periodeFraOgMed: formData.annenForelderPeriodeFom,
-            periodeTilOgMed: formData.annenForelderPeriodeTom,
+            situasjonBeskrivelse:
+                formData.annenForelderSituasjonBeskrivelse && formData.annenForelderSituasjonBeskrivelse.length > 0
+                    ? formData.annenForelderSituasjonBeskrivelse
+                    : undefined,
+            periodeFraOgMed:
+                formData.annenForelderPeriodeFom && formData.annenForelderPeriodeFom.length > 0
+                    ? formData.annenForelderPeriodeFom
+                    : undefined,
+            periodeTilOgMed:
+                formData.annenForelderPeriodeTom && formData.annenForelderPeriodeTom.length > 0
+                    ? formData.annenForelderPeriodeTom
+                    : undefined,
             periodeOver6Måneder: formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
-            vetLengdePåInnleggelseperioden: formData.vetLengdePåInnleggelseperioden
-                ? formData.vetLengdePåInnleggelseperioden === YesOrNo.YES
-                : formData.vetLengdePåInnleggelseperioden,
+            vetLengdePåInnleggelseperioden:
+                formData.vetLengdePåInnleggelseperioden ||
+                formData.vetLengdePåInnleggelseperioden !== YesOrNo.UNANSWERED
+                    ? formData.vetLengdePåInnleggelseperioden === YesOrNo.YES
+                    : undefined,
         },
     };
 };
