@@ -59,6 +59,7 @@
     "step.om-annen-forelder.nextButtonLabel": "Fortsett",
 
     "step.annen-foreldrens-situasjon.tittel": "Den andre forelderens situasjon",
+    "step.annen-forelder-situasjon.pageTitle": "Den andre forelderens situasjon",
     "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
     "step.annen-foreldrens-situasjon.banner.1": "Her skal du gi informasjon om hva som er grunnen til at den andre forelderen ikke kan ta seg av barn i en periode på minst 6 måneder.",
     "step.annen-foreldrens-situasjon.banner.2": "Husk at du ikke regnes for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
@@ -139,11 +140,11 @@
     "samtykke.harForståttLabel.lenketekst": "dine plikter",
     "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tastet inn ditt eget fødselsnummer",
 
-    "kvittering.tittel": "Melding om overføring av omsorgsdager er mottatt",
+    "kvittering.tittel": "Søknad om å bli regnet som alene om omsorgen for barn er mottatt",
     "kvittering.info.tittel": "Hva skjer videre nå?",
-    "kvittering.info.1": "Vi behandler meldingen fra deg om overføring av omsorgsdager.",
+    "kvittering.info.1": "Vi behandler søknad fra deg.....",
     "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
-    "kvittering.info.3a": "Når vi har behandlet meldingen din får både du og den du overfører omsorgsdager til et svar fra oss i posten, og på deres egne sider på",
+    "kvittering.info.3a": "Når vi har behandlet søknaden din .....",
     "kvittering.info.3b": "Ditt NAV",
     "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet."
 }
