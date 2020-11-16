@@ -145,9 +145,8 @@
 
     "kvittering.tittel": "Søknad om å bli regnet som alene om omsorgen for barn er mottatt",
     "kvittering.info.tittel": "Hva skjer videre nå?",
-    "kvittering.info.1": "Vi behandler søknad fra deg.....",
+    "kvittering.info.1": "Vi behandler søknaden fra deg om å bli regnet som alene om omsorgen.",
     "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
-    "kvittering.info.3a": "Når vi har behandlet søknaden din .....",
-    "kvittering.info.3b": "Ditt NAV",
-    "kvittering.info.3c": ". Vi gir beskjed når meldingen er ferdig behandlet."
+    "kvittering.info.3a": "Når vi har behandlet søknaden din får du et svar fra oss i posten og på ",
+    "kvittering.info.3b": "Ditt NAV"
 }
