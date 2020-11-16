@@ -19,6 +19,8 @@ export enum AppFieldValidationErrors {
     utenlandsopphold_overlapper = 'utenlandsopphold_overlapper',
     utenlandsopphold_utenfor_periode = 'utenlandsopphold_utenfor_periode',
     utenlandsopphold_overlapper_samme_start_slutt = 'utenlandsopphold_overlapper_samme_start_slutt',
+    mindre_5_bokstaver = 'validationText.mindre_5_bokstaver',
+    mer_1000_bokstaver = 'validationText.mer_1000_bokstaver',
 }
 
 export const createAppFieldValidationError = (
@@ -55,6 +57,16 @@ export const validateUtenlandsoppholdIPerioden = (
     }
     if (dateRangesHasFromDateEqualPreviousRangeToDate(dateRanges)) {
         return createAppFieldValidationError(AppFieldValidationErrors.utenlandsopphold_overlapper_samme_start_slutt);
+    }
+    return undefined;
+};
+
+export const validateTextArea = (text: string): FieldValidationResult => {
+    if (text.length < 5) {
+        return createAppFieldValidationError(AppFieldValidationErrors.mindre_5_bokstaver);
+    }
+    if (text.length > 1000) {
+        return createAppFieldValidationError(AppFieldValidationErrors.mer_1000_bokstaver);
     }
     return undefined;
 };
