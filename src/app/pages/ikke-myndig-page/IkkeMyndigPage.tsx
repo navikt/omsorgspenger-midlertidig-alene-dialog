@@ -6,6 +6,8 @@ import Page from '@navikt/sif-common-core/lib/components/page/Page';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { Innholdstittel } from 'nav-frontend-typografi';
 import './ikkeMyndigPage.less';
+import Lenke from 'nav-frontend-lenker';
+import getLenker from '../../lenker';
 
 const IkkeMyndigPage = () => {
     const intl = useIntl();
@@ -19,7 +21,11 @@ const IkkeMyndigPage = () => {
                     counsellorWithSpeechBubbleProps={{
                         strongText: intlHelper(intl, 'page.ikkeMyndig.banner.tittel'),
                         normalText: intlHelper(intl, 'page.ikkeMyndig.banner.tekst'),
-                        bottomContent: <FormattedMessage id="page.ikkeMyndig.banner.lastNed" />,
+                        bottomContent: (
+                            <Lenke href={getLenker(intl.locale).soknadRegnetSomAleneBrev} target="_blank">
+                                <FormattedMessage id="page.ikkeMyndig.banner.lastNed" />
+                            </Lenke>
+                        ),
                     }}
                 />
             )}>
