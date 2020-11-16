@@ -19,14 +19,7 @@ const bokmålstekster = {
     ...soknadErrorIntlMessages.nb,
     ...bostedUtlandMessages.nb,
 };
-const nynorskstekster = {
-    ...allCommonMessages.nn,
-    ...soknadErrorIntlMessages.nn,
-    ...bostedUtlandMessages.nn,
-    ...barnMessages.nn,
-};
 
 export const applicationIntlMessages: MessageFileFormat = {
     nb: bokmålstekster,
-    nn: nynorskstekster,
 };

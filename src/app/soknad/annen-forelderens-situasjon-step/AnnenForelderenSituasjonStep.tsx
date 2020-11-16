@@ -16,6 +16,7 @@ import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlo
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
 import moment from 'moment';
+import { validateTextArea } from '../../validation/fieldValidation';
 
 export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
     return moment(periodeTom).diff(periodeFom, 'month', true) < 6;
@@ -74,7 +75,7 @@ const AnnenForelderenSituasjonStep = () => {
                 <SoknadFormComponents.Textarea
                     name={SoknadFormField.annenForelderSituasjonBeskrivelse}
                     label={intlHelper(intl, 'step.annen-foreldrens-situasjon.beskrivelseAvSituasjonen.spm')}
-                    validate={validateRequiredField}
+                    validate={validateTextArea}
                     maxLength={1000}
                 />
             </FormBlock>

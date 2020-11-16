@@ -20,6 +20,9 @@
     "selvstendigNæringsdrivende": "selvstendig næringsdrivende",
     "frilanser": "frilanser",
 
+    "validationText.mindre_5_bokstaver": "Du må skrive minst 5 tegn",
+    "validationText.mer_1000_bokstaver": "Du kan skrive max 1000 tegn",
+
     "grunn.sykdom": "Sykdom",
     "grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
     "grunn.fengsel": "Fengsel",
