@@ -5,6 +5,7 @@ import SummaryBlock from '@navikt/sif-common-soknad/lib/soknad-summary/summary-b
 import SummarySection from '@navikt/sif-common-soknad/lib/soknad-summary/summary-section/SummarySection';
 import { SoknadApiData } from 'app/types/SoknadApiData';
 import SummaryList from '@navikt/sif-common-core/lib/components/summary-list/SummaryList';
+import Box from '@navikt/sif-common-core/lib/components/box/Box';
 
 interface Props {
     apiValues: SoknadApiData;
@@ -15,13 +16,17 @@ const OmBarnaSummary = ({ apiValues }: Props) => {
 
     return (
         <SummarySection header={intlHelper(intl, 'step.oppsummering.deres-felles-barn.header')}>
-            <SummaryBlock header={intlHelper(intl, 'step.oppsummering.deres-felles-barn.barn')}>
-                <SummaryList
-                    items={apiValues.fødselsårBarn}
-                    itemRenderer={(a) => `${intlHelper(intl, 'step.oppsummering.deres-felles-barn.født')} ${a}`}
-                />
-                {intlHelper(intl, 'step.oppsummering.deres-felles-barn.antallBarn')} {apiValues.antallBarn}
-            </SummaryBlock>
+            <>
+                <SummaryBlock header={intlHelper(intl, 'step.oppsummering.deres-felles-barn.barn')}>
+                    <SummaryList
+                        items={apiValues.fødselsårBarn}
+                        itemRenderer={(a) => `${intlHelper(intl, 'step.oppsummering.deres-felles-barn.født')} ${a}`}
+                    />
+                </SummaryBlock>
+                <Box margin="m">
+                    {intlHelper(intl, 'step.oppsummering.deres-felles-barn.antallBarn')} {apiValues.antallBarn}
+                </Box>
+            </>
         </SummarySection>
     );
 };
