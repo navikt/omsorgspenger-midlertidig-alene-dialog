@@ -121,7 +121,7 @@
     "step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder": "Har du bekreftet at den andre forelderen ikke er i stand til å ta seg av barn i periode på minst 6 måneder?",
     "step.oppsummering.annenForelderensSituasjon.html": "<strong>Grunn: </strong>",
     "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
-    "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen kan ikke ha tilsyn med barnet/barna:",
+    "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen ikke kan ha tilsyn med barnet/barna:",
 
     "steg.oppsummering.medlemskap.header": "Medlemskap i Folketrygden",
     "steg.oppsummering.medlemskap.utlandetSiste12.header": "Har du bodd i utlandet i de siste 12 månedene?",
