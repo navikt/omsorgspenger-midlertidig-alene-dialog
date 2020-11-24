@@ -1,4 +1,4 @@
-# Søknadsdialog for å bli anset som midlertidig alene
+# Søknad om å bli regnet som alene om omsorgen for barn
 
 ## Komme i gang
 
