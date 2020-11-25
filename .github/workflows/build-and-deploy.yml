@@ -79,8 +79,8 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - uses: nais/deploy/actions/deploy@v1
-            env:
-            APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                CLUSTER: prod-gcp
-                RESOURCE: nais/naiserator.yml
-                VARS: nais/prod-gcp.json
+              env:
+                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+                  CLUSTER: prod-gcp
+                  RESOURCE: nais/naiserator.yml
+                  VARS: nais/prod-gcp.json
