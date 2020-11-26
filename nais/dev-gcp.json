@@ -1,5 +1,5 @@
 {
-    "app": "midlertidig-alene",
+    "app": "omsorgspenger-midlertidig-alene-dialog",
     "cluster": "dev-gcp",
     "namespace": "dusseldorf",
     "team": "dusseldorf",
