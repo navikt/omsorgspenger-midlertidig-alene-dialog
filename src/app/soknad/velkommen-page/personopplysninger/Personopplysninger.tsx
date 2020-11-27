@@ -32,8 +32,13 @@ const BehandlingAvPersonopplysningerContent: React.FunctionComponent = () => {
                     <li>
                         <Normaltekst>{getText('opplysninger.5')}</Normaltekst>
                     </li>
+                    <li>
+                        <Normaltekst>{getText('opplysninger.6')}</Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>{getText('opplysninger.7')}</Normaltekst>
+                    </li>
                 </ul>
-                <Normaltekst>{getText('opplysninger.part2')}</Normaltekst>
             </Box>
 
             <Box margin="xl">
