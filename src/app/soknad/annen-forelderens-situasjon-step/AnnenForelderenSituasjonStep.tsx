@@ -25,7 +25,10 @@ export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boo
 export const cleanupnnenForelderenSituasjonStep = (values: SoknadFormData): SoknadFormData => {
     const cleanedValues = { ...values };
 
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom) {
+    if (
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet
+    ) {
         cleanedValues.annenForelderPeriodeFom = '';
         cleanedValues.annenForelderPeriodeTom = '';
         cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
@@ -34,34 +37,22 @@ export const cleanupnnenForelderenSituasjonStep = (values: SoknadFormData): Sokn
     if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon) {
         cleanedValues.annenForelderSituasjonBeskrivelse = '';
         if (values.vetLengdePåInnleggelseperioden === YesOrNo.YES) {
-            isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom)
-                ? (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.NO)
-                : (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.YES);
+            cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
         } else {
             cleanedValues.annenForelderPeriodeFom = '';
             cleanedValues.annenForelderPeriodeTom = '';
         }
     }
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel) {
+
+    if (
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel ||
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt
+    ) {
         cleanedValues.annenForelderSituasjonBeskrivelse = '';
-        isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom)
-            ? (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.NO)
-            : (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.YES);
-        cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
-    }
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt) {
-        cleanedValues.annenForelderSituasjonBeskrivelse = '';
-        isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom)
-            ? (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.NO)
-            : (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.YES);
+        cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
         cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
     }
 
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet) {
-        cleanedValues.annenForelderPeriodeFom = '';
-        cleanedValues.annenForelderPeriodeTom = '';
-        cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
-    }
     return cleanedValues;
 };
 
