@@ -7,7 +7,9 @@
 
     "introForm.hvaBetyrDette": "Hva betyr dette?",
 
-    "introForm.info.1": "Denne søknaden er for deg som bor sammen med den andre forelderen, men som skal søke om å bli regnet som at du er alene om omsorgen. Dette er i tilfeller hvor den andre forelderen ikke er i stand til å ha tilsyn med barn i en periode på minst 6 måneder. Det kan være at den andre forelderen for eksempel",
+    "introForm.info.1": "Denne søknaden er for deg som bor sammen med den andre forelderen, men som skal søke om å bli regnet som at du er alene om omsorgen. I slike tilfeller får du doblet antall omsorgsdager.",
+    "introForm.info.2.html": "Du kan bli regnet som at du er alene om omsorgen når den andre forelderen ikke er i stand til å ta seg av barn <strong>i en periode på minst 6 måneder.</strong> Det kan være at den andre forelderen for eksempel",
+
     "introForm.info.grunnList.1": "er fysisk eller psykisk syk",
     "introForm.info.grunnList.2": "er innlagt i helseinstitusjon",
     "introForm.info.grunnList.3": "har en funksjonshemning",
