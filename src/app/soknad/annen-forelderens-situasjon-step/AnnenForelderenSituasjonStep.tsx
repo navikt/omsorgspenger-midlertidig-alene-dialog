@@ -15,14 +15,14 @@ import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { validateTextArea } from '../../validation/fieldValidation';
 
 export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
-    return moment(periodeTom).diff(periodeFom, 'month', true) < 6;
+    return dayjs(periodeTom).add(1, 'day').diff(periodeFom, 'month', true) < 6;
 };
 
-export const cleanupnnenForelderenSituasjonStep = (values: SoknadFormData): SoknadFormData => {
+export const cleanupAnnenForelderenSituasjonStep = (values: SoknadFormData): SoknadFormData => {
     const cleanedValues = { ...values };
 
     if (
@@ -174,7 +174,7 @@ const AnnenForelderenSituasjonStep = () => {
         }
     };
     return (
-        <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} onStepCleanup={cleanupnnenForelderenSituasjonStep}>
+        <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} onStepCleanup={cleanupAnnenForelderenSituasjonStep}>
             <CounsellorPanel>
                 {intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.1')}
                 <p>{intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.2')}</p>
