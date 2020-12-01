@@ -22,6 +22,10 @@
 
     "validationText.mindre_5_bokstaver": "Du må skrive minst 5 tegn",
     "validationText.mer_1000_bokstaver": "Du kan skrive max 1000 tegn",
+    "validationText.utenlandsopphold_ikke_registrert": "Du har ikke registrert noen utenlandsopphold for perioden",
+    "validationText.utenlandsopphold_overlapper": "Utenlandsopphold overlapper",
+    "validationText.utenlandsopphold_utenfor_periode": "Utenlandsopphold er utenfor periode",
+    "validationText.utenlandsopphold_overlapper_samme_start_slutt": "Utenlandsopphold har samme start og slutt",
 
     "grunn.sykdom": "Sykdom",
     "grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",

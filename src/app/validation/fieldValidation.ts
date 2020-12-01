@@ -14,11 +14,11 @@ import { FieldValidationResult } from '@navikt/sif-common-core/lib/validation/ty
 import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
 
 export enum AppFieldValidationErrors {
-    'fnr_lik_søkerFnr' = 'fieldvalidation.mottakersFnrErSøkersFnr',
-    utenlandsopphold_ikke_registrert = 'utenlandsopphold_ikke_registrert',
-    utenlandsopphold_overlapper = 'utenlandsopphold_overlapper',
-    utenlandsopphold_utenfor_periode = 'utenlandsopphold_utenfor_periode',
-    utenlandsopphold_overlapper_samme_start_slutt = 'utenlandsopphold_overlapper_samme_start_slutt',
+    fnr_lik_søkerFnr = 'fieldvalidation.mottakersFnrErSøkersFnr',
+    utenlandsopphold_ikke_registrert = 'validationText.utenlandsopphold_ikke_registrert',
+    utenlandsopphold_overlapper = 'validationText.utenlandsopphold_overlapper',
+    utenlandsopphold_utenfor_periode = 'validationText.utenlandsopphold_utenfor_periode',
+    utenlandsopphold_overlapper_samme_start_slutt = 'validationText.utenlandsopphold_overlapper_samme_start_slutt',
     mindre_5_bokstaver = 'validationText.mindre_5_bokstaver',
     mer_1000_bokstaver = 'validationText.mer_1000_bokstaver',
 }
