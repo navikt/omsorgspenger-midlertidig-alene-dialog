@@ -27,7 +27,7 @@
     "validationText.utenlandsopphold_utenfor_periode": "Utenlandsopphold er utenfor periode",
     "validationText.utenlandsopphold_overlapper_samme_start_slutt": "Utenlandsopphold har samme start og slutt",
 
-    "grunn.sykdom": "Sykdom",
+    "grunn.sykdom": "Sykdom, skade eller funksjonhemming",
     "grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
     "grunn.fengsel": "Fengsel",
     "grunn.utøverVerneplikt": "Utøver verneplikt",
