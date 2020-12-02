@@ -9,9 +9,10 @@ import { useIntl } from 'react-intl';
 interface Props<FieldNames> {
     name: FieldNames;
     validate?: FormikValidateFunction;
+    selectDescription?: string;
 }
 
-function BarnListAndDialog<FieldNames>({ name, validate }: Props<FieldNames>) {
+function BarnListAndDialog<FieldNames>({ name, validate, selectDescription }: Props<FieldNames>) {
     const intl = useIntl();
 
     return (
@@ -26,7 +27,12 @@ function BarnListAndDialog<FieldNames>({ name, validate }: Props<FieldNames>) {
                 dialogWidth="narrow"
                 validate={validate}
                 formRenderer={({ onSubmit, onCancel, item }) => (
-                    <BarnForm barn={item} onSubmit={onSubmit} onCancel={onCancel} />
+                    <BarnForm
+                        barn={item}
+                        onSubmit={onSubmit}
+                        onCancel={onCancel}
+                        selectDescription={selectDescription}
+                    />
                 )}
                 listRenderer={({ items, onEdit, onDelete }) => (
                     <BarnList barna={items} onEdit={onEdit} onDelete={onDelete} />

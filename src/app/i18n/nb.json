@@ -89,10 +89,11 @@
 
     "step.deres-felles-barn.pageTitle": "Deres felles barn",
     "step.deres-felles-barn.stepTitle": "Deres felles barn",
-    "step.deres-felles-barn.banner": "Her skal du legge inn barn du har felles med den andre forelderen som omfattes av denne søknaden. Hvis du har andre barn, skal ikke de legges inn her.",
+    "step.deres-felles-barn.banner": "Her skal du legge inn fødselsåret til barn og eventuelle fosterbarn du har felles med den andre forelderen som omfattes av denne søknaden.",
     "step.deres-felles-barn.stopMessage": "Du må legge til minst ett barn for å fortsette",
     "step.deres-felles-barn.nextButtonLabel": "Fortsett",
     "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
+    "step.deres-felles-barn.hvorforSpører.svar": "Som hovedregel har du rett til omsorgsdager ut kalenderåret barnet fyller 12 år. Hvis du har søkt og fått ekstra omsorgsdager har du rett til disse ut kalenderåret barnet fyller 18 år.",
 
     "step.medlemskap.pageTitle": "Medlemskap",
     "step.medlemskap.stepTitle": "Medlemskap",
