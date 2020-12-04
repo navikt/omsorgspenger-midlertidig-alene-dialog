@@ -22,16 +22,11 @@ export enum IntroFormAvslag {
     erAndreForelderenIkkeUtAvStandMinst6Måneder = 'erAndreForelderenUtAvStandMinst6Måneder',
 }
 
-export const getIntroFormAvslag = ({
-    erYrkesaktiv,
-    erAndreForelderenUtAvStandMinst6Måneder,
-}: IntroFormData): IntroFormAvslag | undefined => {
+export const getIntroFormAvslag = ({ erYrkesaktiv }: IntroFormData): IntroFormAvslag | undefined => {
     if (erYrkesaktiv === YesOrNo.NO) {
         return IntroFormAvslag.erIkkeYrkesaktiv;
     }
-    if (erAndreForelderenUtAvStandMinst6Måneder === YesOrNo.NO) {
-        return IntroFormAvslag.erAndreForelderenIkkeUtAvStandMinst6Måneder;
-    }
+
     return undefined;
 };
 

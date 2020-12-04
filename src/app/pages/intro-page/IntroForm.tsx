@@ -18,6 +18,7 @@ import {
 } from './introFormConfig';
 import IntroFormQuestion from './IntroFormQuestion';
 import ExpandableInfo from '@navikt/sif-common-core/lib/components/expandable-content/ExpandableInfo';
+import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 
 interface Props {
     onValidSubmit: () => void;
@@ -66,7 +67,7 @@ const IntroForm = ({ onValidSubmit }: Props) => {
                             <IntroFormQuestion
                                 name={IntroFormField.erAndreForelderenUtAvStandMinst6Måneder}
                                 validate={validateYesOrNoIsAnswered}
-                                showStop={avslag === IntroFormAvslag.erAndreForelderenIkkeUtAvStandMinst6Måneder}
+                                showStop={values.erAndreForelderenUtAvStandMinst6Måneder === YesOrNo.NO}
                                 stopMessage={
                                     <>
                                         {intlHelper(

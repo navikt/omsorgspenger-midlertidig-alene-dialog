@@ -8,7 +8,7 @@
     "introForm.hvaBetyrDette": "Hva betyr dette?",
 
     "introForm.info.1": "Denne søknaden er for deg som bor sammen med den andre forelderen, men som skal søke om å bli regnet som at du er alene om omsorgen. I slike tilfeller får du doblet antall omsorgsdager.",
-    "introForm.info.2.html": "Du kan bli regnet som at du er alene om omsorgen når den andre forelderen ikke er i stand til å ta seg av barn <strong>i en periode på minst 6 måneder.</strong> Det kan være at den andre forelderen for eksempel",
+    "introForm.info.2.html": "Du kan bli regnet som at du er alene om omsorgen når den andre forelderen ikke kan ha tilsyn med barn <strong>i en periode på minst 6 måneder.</strong> Det kan være at den andre forelderen for eksempel",
 
     "introForm.info.grunnList.1": "er fysisk eller psykisk syk",
     "introForm.info.grunnList.2": "er innlagt i helseinstitusjon",
@@ -22,6 +22,6 @@
     "introForm.erYrkesaktiv.forklaring.1": "For å kunne bli regnet som alene og få ekstra omsorgsdager må du være yrkesaktiv, det vil si at du må være i minst én av disse arbeidssituasjonene:",
     "introForm.erYrkesaktiv.stopMessage": "Hvis du ikke er yrkesaktiv, har du ikke rett til å bruke omsorgsdager. Det betyr at du ikke kan gå videre i denne søknaden.",
 
-    "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du bekrefte at den andre forelderen ikke er i stand til å ta seg av barn i en periode på minst 6 måneder?",
-    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "For at du skal bli regnet som midlertidig alene om omsorgen, må den andre forelderen være ute av stand til å ta seg av barnet i en periode som varer i minst 6 måneder. Hvis perioden er kortere, kan du ikke gå videre med søknaden."
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du bekrefte at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder?",
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din."
 }
