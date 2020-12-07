@@ -9,6 +9,7 @@ import { Barn, isBarn } from './types';
 import { guid } from 'nav-frontend-js-utils';
 import { dateToday } from '@navikt/sif-common-core/lib/utils/dateUtils';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
+import ExpandableInfo from '@navikt/sif-common-core/lib/components/expandable-content/ExpandableInfo';
 
 interface BarnFormText {
     form_barn_alders_label: string;
@@ -19,6 +20,7 @@ interface Props {
     onSubmit: (values: Barn) => void;
     onCancel: () => void;
     text?: BarnFormText;
+    selectDescription?: string;
 }
 
 enum FosterbarnFormField {
@@ -45,7 +47,13 @@ type FormValues = Partial<Barn>;
 
 const Form = getTypedFormComponents<FosterbarnFormField, FormValues>();
 
-const BarnForm = ({ barn: initialValues = { alders: undefined }, text, onCancel, onSubmit }: Props) => {
+const BarnForm = ({
+    barn: initialValues = { alders: undefined },
+    text,
+    onCancel,
+    onSubmit,
+    selectDescription,
+}: Props) => {
     const intl = useIntl();
 
     const defaultText: BarnFormText = {
@@ -59,6 +67,13 @@ const BarnForm = ({ barn: initialValues = { alders: undefined }, text, onCancel,
         } else {
             throw new Error('Barn skjema: Formvalues is not a valid Barn on submit.');
         }
+    };
+    const getDescription = (text: string) => {
+        return (
+            <>
+                <ExpandableInfo title={intlHelper(intl, 'barn.modal.hvorfor_spør')}>{text}</ExpandableInfo>
+            </>
+        );
     };
     return (
         <>
@@ -75,7 +90,8 @@ const BarnForm = ({ barn: initialValues = { alders: undefined }, text, onCancel,
                                 name={FosterbarnFormField.alders}
                                 label={txt.form_barn_alders_label}
                                 validate={validateAll([validateRequiredNumber(ARSTALL_RANGE)])}
-                                bredde="s">
+                                bredde="s"
+                                description={selectDescription ? getDescription(selectDescription) : undefined}>
                                 {getArstallOptions()}
                             </Form.Select>
                         </FormBlock>

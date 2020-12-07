@@ -24,7 +24,10 @@ const OmDeresFellesBarnStep = () => {
                 </FormBlock>
             )}
             <FormBlock>
-                <BarnListAndDialog<SoknadFormField> name={SoknadFormField.fødselsårBarn} />
+                <BarnListAndDialog<SoknadFormField>
+                    name={SoknadFormField.fødselsårBarn}
+                    selectDescription={intlHelper(intl, 'step.deres-felles-barn.hvorforSpører.svar')}
+                />
             </FormBlock>
         </SoknadFormStep>
     );

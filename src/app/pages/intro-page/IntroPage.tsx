@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory } from 'react-router-dom';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
@@ -11,6 +11,7 @@ import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 // import getLenker from '../../lenker';
 import { navigateToSoknadFrontpage } from '../../utils/navigationUtils';
 import IntroForm from './IntroForm';
+import FormattedHtmlMessage from '@navikt/sif-common-core/lib/components/formatted-html-message/FormattedHtmlMessage';
 
 const IntroPage = () => {
     const intl = useIntl();
@@ -21,7 +22,10 @@ const IntroPage = () => {
             topContentRenderer={() => <StepBanner text={intlHelper(intl, 'application.title')} />}>
             <Box margin="xxxl">
                 <InformationPoster>
-                    <p>{intlHelper(intl, 'introForm.info.1')}</p>
+                    <FormattedMessage id="introForm.info.1" />
+                    <p>
+                        <FormattedHtmlMessage id="introForm.info.2.html" />
+                    </p>
                     <ul>
                         <li>{intlHelper(intl, 'introForm.info.grunnList.1')}</li>
                         <li>{intlHelper(intl, 'introForm.info.grunnList.2')}</li>
@@ -29,7 +33,6 @@ const IntroPage = () => {
                         <li>{intlHelper(intl, 'introForm.info.grunnList.4')}</li>
                         <li>{intlHelper(intl, 'introForm.info.grunnList.5')}</li>
                     </ul>
-
                     <p>{intlHelper(intl, 'introForm.info.2')}</p>
                 </InformationPoster>
             </Box>

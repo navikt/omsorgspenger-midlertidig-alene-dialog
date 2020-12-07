@@ -15,17 +15,20 @@ import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { validateTextArea } from '../../validation/fieldValidation';
 
 export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
-    return moment(periodeTom).diff(periodeFom, 'month', true) < 6;
+    return dayjs(periodeTom).add(1, 'day').diff(periodeFom, 'month', true) < 6;
 };
 
-export const cleanupnnenForelderenSituasjonStep = (values: SoknadFormData): SoknadFormData => {
+export const cleanupAnnenForelderenSituasjonStep = (values: SoknadFormData): SoknadFormData => {
     const cleanedValues = { ...values };
 
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom) {
+    if (
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet
+    ) {
         cleanedValues.annenForelderPeriodeFom = '';
         cleanedValues.annenForelderPeriodeTom = '';
         cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
@@ -34,34 +37,22 @@ export const cleanupnnenForelderenSituasjonStep = (values: SoknadFormData): Sokn
     if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon) {
         cleanedValues.annenForelderSituasjonBeskrivelse = '';
         if (values.vetLengdePåInnleggelseperioden === YesOrNo.YES) {
-            isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom)
-                ? (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.NO)
-                : (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.YES);
+            cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
         } else {
             cleanedValues.annenForelderPeriodeFom = '';
             cleanedValues.annenForelderPeriodeTom = '';
         }
     }
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel) {
+
+    if (
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel ||
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt
+    ) {
         cleanedValues.annenForelderSituasjonBeskrivelse = '';
-        isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom)
-            ? (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.NO)
-            : (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.YES);
-        cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
-    }
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt) {
-        cleanedValues.annenForelderSituasjonBeskrivelse = '';
-        isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom)
-            ? (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.NO)
-            : (cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.YES);
+        cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
         cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
     }
 
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet) {
-        cleanedValues.annenForelderPeriodeFom = '';
-        cleanedValues.annenForelderPeriodeTom = '';
-        cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
-    }
     return cleanedValues;
 };
 
@@ -183,7 +174,7 @@ const AnnenForelderenSituasjonStep = () => {
         }
     };
     return (
-        <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} onStepCleanup={cleanupnnenForelderenSituasjonStep}>
+        <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} onStepCleanup={cleanupAnnenForelderenSituasjonStep}>
             <CounsellorPanel>
                 {intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.1')}
                 <p>{intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.2')}</p>

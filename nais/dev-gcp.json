@@ -1,0 +1,17 @@
+{
+    "app": "omsorgspenger-midlertidig-alene-dialog",
+    "cluster": "dev-gcp",
+    "namespace": "dusseldorf",
+    "team": "dusseldorf",
+    "minReplicas": "1",
+    "maxReplicas": "1",
+    "ingresses": ["https://omsorgspenger-midlertidig-alene-dialog.dev.nav.no"],
+    "env": {
+        "DEKORATOR_URL": "https://www.nav.no/dekoratoren/?simple=true",
+        "API_URL": "https://omsorgspenger-midlertidig-alene-api.dev.nav.no",
+        "PUBLIC_PATH": "/familie/sykdom-i-familien/soknad/regnet-som-alene",
+        "LOGIN_URL": "https://loginservice.dev.nav.no/login?redirect=https://omsorgspenger-midlertidig-alene-dialog.dev.nav.no/familie/sykdom-i-familien/soknad/regnet-som-alene/soknad",
+        "APPSTATUS_PROJECT_ID": "ryujtq87",
+        "APPSTATUS_DATASET": "staging"
+    }
+}

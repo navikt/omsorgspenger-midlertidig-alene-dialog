@@ -22,7 +22,11 @@ export const mapAnnenForelderToApiData = (formData: AnnenForelderFormData): Anne
                 formData.annenForelderPeriodeTom && formData.annenForelderPeriodeTom.length > 0
                     ? formData.annenForelderPeriodeTom
                     : undefined,
-            periodeOver6Måneder: formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
+            periodeOver6Måneder:
+                formData.annenForelderPeriodeMer6Maneder === undefined ||
+                formData.annenForelderPeriodeMer6Maneder === YesOrNo.UNANSWERED
+                    ? undefined
+                    : formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
             vetLengdePåInnleggelseperioden:
                 formData.vetLengdePåInnleggelseperioden ||
                 formData.vetLengdePåInnleggelseperioden !== YesOrNo.UNANSWERED
