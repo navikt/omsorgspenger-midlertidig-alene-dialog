@@ -12,6 +12,7 @@ import {
 import { hasValue } from '@navikt/sif-common-core/lib/validation/hasValue';
 import { FieldValidationResult } from '@navikt/sif-common-core/lib/validation/types';
 import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
+import { Barn } from '../pre-common/question-visibility/forms/barn';
 
 export enum AppFieldValidationErrors {
     fnr_lik_søkerFnr = 'fieldvalidation.mottakersFnrErSøkersFnr',
@@ -21,6 +22,7 @@ export enum AppFieldValidationErrors {
     utenlandsopphold_overlapper_samme_start_slutt = 'validationText.utenlandsopphold_overlapper_samme_start_slutt',
     mindre_5_bokstaver = 'validationText.mindre_5_bokstaver',
     mer_1000_bokstaver = 'validationText.mer_1000_bokstaver',
+    barnIkkeRegistrert = 'validationText.barn_ikke_registrert',
 }
 
 export const createAppFieldValidationError = (
@@ -39,6 +41,12 @@ export const validateFødselsnummerIsDifferentThan = (applicantFnr: string) => (
 
 export const isYesOrNoAnswered = (answer: YesOrNo) => {
     return answer === YesOrNo.NO || answer === YesOrNo.YES || answer === YesOrNo.DO_NOT_KNOW;
+};
+
+export const validateBarn = (barn: Barn[]) => {
+    if (barn === undefined || barn.length === 0) {
+        return createAppFieldValidationError(AppFieldValidationErrors.barnIkkeRegistrert);
+    }
 };
 
 export const validateUtenlandsoppholdIPerioden = (

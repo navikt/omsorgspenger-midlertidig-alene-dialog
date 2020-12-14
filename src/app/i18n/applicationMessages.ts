@@ -1,6 +1,6 @@
 import { MessageFileFormat } from '@navikt/sif-common-core/lib/dev-utils/intl/devIntlUtils';
 import { allCommonMessages } from '@navikt/sif-common-core/lib/i18n/allCommonMessages';
-import soknadErrorIntlMessages from '@navikt/sif-common-soknad/lib/soknad-error-messages/soknadErrorIntlMessages';
+import soknadIntlMessages from '@navikt/sif-common-soknad/lib/soknad-intl-messages/soknadIntlMessages';
 import bostedUtlandMessages from '@navikt/sif-common-forms/lib/bosted-utland/bostedUtlandMessages';
 import barnMessages from '../pre-common/question-visibility/forms/barn/barnMessages';
 
@@ -16,7 +16,7 @@ const bokmålstekster = {
     ...dinePlikterNB,
     ...personopplysningerNB,
     ...barnMessages.nb,
-    ...soknadErrorIntlMessages.nb,
+    ...soknadIntlMessages.nb,
     ...bostedUtlandMessages.nb,
 };
 
