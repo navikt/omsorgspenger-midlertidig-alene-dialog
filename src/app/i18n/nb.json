@@ -5,6 +5,7 @@
     "application.loadError.message": "Beklager, her har det dessverre skjedd en feil. Dersom feilen fortsetter, prøv igjen litt senere.",
 
     "page.error.pageTitle": "Noe gikk galt ...",
+    "page.form.ubesvarteSpørsmålInfo": "For å komme videre, må du svare på alle spørsmålene ovenfor",
 
     "page.ikkeMyndig.sidetittel": "Søknad om å bli regnet som alene om omsorgen for barn",
     "page.ikkeMyndig.banner.tittel": "Hei!",
@@ -26,6 +27,7 @@
     "validationText.utenlandsopphold_overlapper": "Utenlandsopphold overlapper",
     "validationText.utenlandsopphold_utenfor_periode": "Utenlandsopphold er utenfor periode",
     "validationText.utenlandsopphold_overlapper_samme_start_slutt": "Utenlandsopphold har samme start og slutt",
+    "validationText.barn_ikke_registrert": "Du må legge til minst ett barn for å fortsette",
 
     "grunn.sykdom": "Sykdom, skade eller funksjonhemming",
     "grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
@@ -124,7 +126,7 @@
 
     "step.oppsummering.annenForelderensSituasjon.header": "Den andre forelderens situasjon",
     "step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder": "Har du bekreftet at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder?",
-    "step.oppsummering.annenForelderensSituasjon.html": "<strong>Grunn: </strong>",
+    "step.oppsummering.annenForelderensSituasjon.tittel": "Grunn",
     "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
     "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen ikke kan ha tilsyn med barnet/barna:",
 

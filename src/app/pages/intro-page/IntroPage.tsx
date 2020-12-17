@@ -3,15 +3,13 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory } from 'react-router-dom';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
+import FormattedHtmlMessage from '@navikt/sif-common-core/lib/components/formatted-html-message/FormattedHtmlMessage';
 import InformationPoster from '@navikt/sif-common-core/lib/components/information-poster/InformationPoster';
 import Page from '@navikt/sif-common-core/lib/components/page/Page';
 import StepBanner from '@navikt/sif-common-core/lib/components/step-banner/StepBanner';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-// import Lenke from 'nav-frontend-lenker';
-// import getLenker from '../../lenker';
 import { navigateToSoknadFrontpage } from '../../utils/navigationUtils';
 import IntroForm from './IntroForm';
-import FormattedHtmlMessage from '@navikt/sif-common-core/lib/components/formatted-html-message/FormattedHtmlMessage';
 
 const IntroPage = () => {
     const intl = useIntl();
@@ -19,7 +17,7 @@ const IntroPage = () => {
     return (
         <Page
             title={intlHelper(intl, 'application.title')}
-            topContentRenderer={() => <StepBanner text={intlHelper(intl, 'application.title')} />}>
+            topContentRenderer={() => <StepBanner tag="h1" text={intlHelper(intl, 'application.title')} />}>
             <Box margin="xxxl">
                 <InformationPoster>
                     <FormattedMessage id="introForm.info.1" />

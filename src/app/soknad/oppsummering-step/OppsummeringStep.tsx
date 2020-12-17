@@ -7,18 +7,18 @@ import ResponsivePanel from '@navikt/sif-common-core/lib/components/responsive-p
 import VeilederSVG from '@navikt/sif-common-core/lib/components/veileder-svg/VeilederSVG';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { validateBekrefterOpplysninger } from '@navikt/sif-common-core/lib/validation/fieldValidations';
+import { Person } from 'app/types/Person';
+import { SoknadApiData } from 'app/types/SoknadApiData';
 import { SoknadFormField } from '../../types/SoknadFormData';
 import { useSoknadContext } from '../SoknadContext';
 import SoknadFormComponents from '../SoknadFormComponents';
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
-import { SoknadApiData } from 'app/types/SoknadApiData';
-import { Person } from 'app/types/Person';
-import SøkerSummary from './SøkerSummary';
-import OmBarnaSummary from './OmBarnaSummary';
-import MedlemskapSummary from './MedlemskapSummary';
-import AnnenForelderSummary from './AnnenForelderSummary';
 import AnnenForelderSituasjonSummary from './AnnenForelderSituasjonSummary';
+import AnnenForelderSummary from './AnnenForelderSummary';
+import MedlemskapSummary from './MedlemskapSummary';
+import OmBarnaSummary from './OmBarnaSummary';
+import SøkerSummary from './SøkerSummary';
 
 type Props = {
     søker: Person;

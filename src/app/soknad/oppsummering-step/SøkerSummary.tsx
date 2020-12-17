@@ -27,7 +27,6 @@ const SøkerSummary = ({ søker, apiValues }: Props) => {
                     itemRenderer={(a) => <FormattedMessage id={`arbeidssituasjon.${a}`} />}
                 />
             </SummaryBlock>
-            {console.log('test')}
         </SummarySection>
     );
 };

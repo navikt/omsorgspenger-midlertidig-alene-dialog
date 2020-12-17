@@ -1,21 +1,22 @@
 import React from 'react';
-import SoknadFormStep from '../SoknadFormStep';
-import { StepID } from '../soknadStepsConfig';
+import { useIntl } from 'react-intl';
 import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-panel/CounsellorPanel';
-import { SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
-import BarnListAndDialog from '../../pre-common/question-visibility/forms/barn/BarnListAndDialog';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
+import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { useFormikContext } from 'formik';
 import AlertStripe from 'nav-frontend-alertstriper';
-import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-import { useIntl } from 'react-intl';
+import BarnListAndDialog from '../../pre-common/question-visibility/forms/barn/BarnListAndDialog';
+import { SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
+import { validateBarn } from '../../validation/fieldValidation';
+import SoknadFormStep from '../SoknadFormStep';
+import { StepID } from '../soknadStepsConfig';
 
 const OmDeresFellesBarnStep = () => {
     const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
 
     return (
-        <SoknadFormStep id={StepID.DERES_FELLES_BARN} buttonDisabled={values.fødselsårBarn.length < 1}>
+        <SoknadFormStep id={StepID.DERES_FELLES_BARN}>
             <CounsellorPanel>{intlHelper(intl, 'step.deres-felles-barn.banner')}</CounsellorPanel>
 
             {values.fødselsårBarn.length === 0 && (
@@ -27,6 +28,7 @@ const OmDeresFellesBarnStep = () => {
                 <BarnListAndDialog<SoknadFormField>
                     name={SoknadFormField.fødselsårBarn}
                     selectDescription={intlHelper(intl, 'step.deres-felles-barn.hvorforSpører.svar')}
+                    validate={validateBarn}
                 />
             </FormBlock>
         </SoknadFormStep>
