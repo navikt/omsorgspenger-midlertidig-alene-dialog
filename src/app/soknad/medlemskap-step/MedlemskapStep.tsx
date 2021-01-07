@@ -1,28 +1,28 @@
 import React from 'react';
-import SoknadFormStep from '../SoknadFormStep';
-import { StepID } from '../soknadStepsConfig';
 import { useIntl } from 'react-intl';
-import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
+import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-panel/CounsellorPanel';
-import { useFormikContext } from 'formik';
-import { SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
-import { medlemskapQuestions } from './MedlemskapConfig';
-import { BostedUtland } from '@navikt/sif-common-forms/lib/bosted-utland/types';
-import moment from 'moment';
-import { date1YearAgo, date1YearFromNow, dateToday } from '@navikt/sif-common-core/lib/utils/dateUtils';
-import SoknadFormComponents from '../SoknadFormComponents';
 import ExpandableInfo from '@navikt/sif-common-core/lib/components/expandable-content/ExpandableInfo';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
+import { date1YearAgo, date1YearFromNow, dateToday } from '@navikt/sif-common-core/lib/utils/dateUtils';
+import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { validateYesOrNoIsAnswered } from '@navikt/sif-common-core/lib/validation/fieldValidations';
-import BostedsoppholdIUtlandetFormPart from './BostedsoppholdIUtlandetFormPart';
-import Box from '@navikt/sif-common-core/lib/components/box/Box';
-import getLenker from '../../lenker';
+import { BostedUtland } from '@navikt/sif-common-forms/lib/bosted-utland/types';
+import dayjs from 'dayjs';
+import { useFormikContext } from 'formik';
 import Lenke from 'nav-frontend-lenker';
+import getLenker from '../../lenker';
+import { SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
+import SoknadFormComponents from '../SoknadFormComponents';
+import SoknadFormStep from '../SoknadFormStep';
+import { StepID } from '../soknadStepsConfig';
+import BostedsoppholdIUtlandetFormPart from './BostedsoppholdIUtlandetFormPart';
+import { medlemskapQuestions } from './MedlemskapConfig';
 
 const getFomForBostedNeste12 = (bosted: BostedUtland[]): Date => {
     const sisteBosted = bosted.length > 0 ? bosted[bosted.length - 1] : undefined;
     if (sisteBosted) {
-        return moment(sisteBosted.tom).isSame(dateToday, 'day') ? moment(dateToday).add(1, 'day').toDate() : dateToday;
+        return dayjs(sisteBosted.tom).isSame(dateToday, 'day') ? dayjs(dateToday).add(1, 'day').toDate() : dateToday;
     }
     return dateToday;
 };
