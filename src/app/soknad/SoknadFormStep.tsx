@@ -10,6 +10,7 @@ import { SoknadFormData } from '../types/SoknadFormData';
 import { useSoknadContext } from './SoknadContext';
 import SoknadFormComponents from './SoknadFormComponents';
 import { StepID } from './soknadStepsConfig';
+import useLogSidevisning from '../sif-amplitude/hooks/useLogSidevisning';
 
 interface OwnProps {
     id: StepID;
@@ -38,7 +39,7 @@ const SoknadFormStep = ({
     const { soknadStepsConfig, resetSoknad, gotoNextStepFromStep, continueSoknadLater } = useSoknadContext();
     const stepConfig = soknadStepsConfig[id];
     const texts = soknadStepUtils.getStepTexts(intl, stepConfig);
-
+    useLogSidevisning(id);
     return (
         <Step
             bannerTitle={intlHelper(intl, 'application.title')}
