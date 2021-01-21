@@ -8,18 +8,19 @@ import SoknadApplicationCommonRoutes from '@navikt/sif-common-soknad/lib/soknad-
 import { applicationIntlMessages } from './i18n/applicationMessages';
 import IntroPage from './pages/intro-page/IntroPage';
 import SoknadRemoteDataFetcher from './soknad/SoknadRemoteDataFetcher';
-import { AmplitudeProvider } from './sif-amplitude/amplitude';
+import { AmplitudeProvider } from '@navikt/sif-common-amplitude/lib';
 import './styles/app.less';
 
 Modal.setAppElement('#app');
 
 export const APPLICATION_KEY = 'omsorgsdager-midlertidig-alene';
+export const SKJEMANAVN = 'Søknad om å bli regnet som alene om omsorgen for barn';
 const root = document.getElementById('app');
 
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 
 render(
-    <AmplitudeProvider>
+    <AmplitudeProvider applicationKey={APPLICATION_KEY}>
         <SoknadApplication
             appName="Søknad om å bli regnet som midertidig alene for omsorgen"
             intlMessages={applicationIntlMessages}

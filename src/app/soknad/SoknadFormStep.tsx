@@ -10,7 +10,7 @@ import { SoknadFormData } from '../types/SoknadFormData';
 import { useSoknadContext } from './SoknadContext';
 import SoknadFormComponents from './SoknadFormComponents';
 import { StepID } from './soknadStepsConfig';
-import useLogSidevisning from '../sif-amplitude/hooks/useLogSidevisning';
+import { useLogSidevisning } from '@navikt/sif-common-amplitude/lib';
 
 interface OwnProps {
     id: StepID;

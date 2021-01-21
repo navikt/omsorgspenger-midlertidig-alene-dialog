@@ -10,10 +10,13 @@ import StepBanner from '@navikt/sif-common-core/lib/components/step-banner/StepB
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { navigateToSoknadFrontpage } from '../../utils/navigationUtils';
 import IntroForm from './IntroForm';
+import { SIFCommonPageKey, useLogSidevisning } from '@navikt/sif-common-amplitude/lib';
 
 const IntroPage = () => {
     const intl = useIntl();
     const history = useHistory();
+    useLogSidevisning(SIFCommonPageKey.intro);
+
     return (
         <Page
             title={intlHelper(intl, 'application.title')}
