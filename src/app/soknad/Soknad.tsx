@@ -27,6 +27,8 @@ import SoknadFormComponents from './SoknadFormComponents';
 import SoknadRoutes from './SoknadRoutes';
 import { soknadStepsConfig, StepID } from './soknadStepsConfig';
 import soknadTempStorage, { isStorageDataValid } from './SoknadTempStorage';
+import { ApplikasjonHendelse, useAmplitudeInstance } from '@navikt/sif-common-amplitude';
+import { SKJEMANAVN } from '../App';
 
 interface Props {
     søker: Person;
@@ -41,6 +43,8 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
     const [initialFormData, setInitialFormData] = useState<Partial<SoknadFormData>>({ ...initialSoknadFormData });
     const [sendSoknadStatus, setSendSoknadStatus] = useState<SendSoknadStatus>(initialSendSoknadState);
     const [soknadId, setSoknadId] = useState<string | undefined>();
+
+    const { logSoknadSent, logSoknadStartet, logSoknadFailed, logHendelse, logUserLoggedOut } = useAmplitudeInstance();
 
     const resetSoknad = async (redirectToFrontpage = true) => {
         await soknadTempStorage.purge();
@@ -60,6 +64,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
 
     const abortSoknad = async () => {
         await soknadTempStorage.purge();
+        await logHendelse(ApplikasjonHendelse.avbryt);
         relocateToSoknad();
     };
 
@@ -67,19 +72,25 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
         await resetSoknad();
         const sId = ulid();
         setSoknadId(sId);
-        await soknadTempStorage.persist(sId, initialFormData, StepID.DIN_ARBEIDSITUASJON, { søker });
+        const firstStep = StepID.DIN_ARBEIDSITUASJON;
+
+        await soknadTempStorage.persist(sId, initialFormData, firstStep, { søker });
+        await logSoknadStartet(SKJEMANAVN);
+
         setTimeout(() => {
-            navigateTo(soknadStepUtils.getStepRoute(StepID.DIN_ARBEIDSITUASJON, SoknadApplicationType.SOKNAD), history);
+            navigateTo(soknadStepUtils.getStepRoute(firstStep, SoknadApplicationType.SOKNAD), history);
         });
     };
 
     const continueSoknadLater = async (sId: string, stepID: StepID, values: SoknadFormData) => {
         await soknadTempStorage.persist(sId, values, stepID, { søker });
+        await logHendelse(ApplikasjonHendelse.fortsettSenere);
         relocateToNavFrontpage();
     };
 
     const onSoknadSent = async (apiValues: SoknadApiData) => {
         await soknadTempStorage.purge();
+        await logSoknadSent('Søknad sent');
         setSendSoknadStatus({ failures: 0, status: success(apiValues) });
         setSoknadId(undefined);
         navigateToKvitteringPage(history);
@@ -91,8 +102,10 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
             onSoknadSent(apiValues);
         } catch (error) {
             if (isUserLoggedOut(error)) {
+                logUserLoggedOut('Ved innsending av søknad');
                 relocateToLoginPage();
             } else {
+                await logSoknadFailed('Ved innsending av søknad');
                 if (sendSoknadStatus.failures >= 2) {
                     navigateToErrorPage(history);
                 } else {
@@ -151,10 +164,17 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
                         initialValues={initialFormData}
                         onSubmit={() => null}
                         renderForm={({ values }) => {
-                            const navigateToNextStepFromStep = (stepID: StepID) => {
+                            const navigateToNextStepFromStep = async (stepID: StepID) => {
                                 const stepToPersist = soknadStepsConfig[stepID].nextStep;
                                 if (stepToPersist && soknadId) {
-                                    soknadTempStorage.persist(soknadId, values, stepToPersist, { søker });
+                                    try {
+                                        await soknadTempStorage.persist(soknadId, values, stepToPersist, { søker });
+                                    } catch (error) {
+                                        if (isUserLoggedOut(error)) {
+                                            await logUserLoggedOut('ved mellomlagring');
+                                            relocateToLoginPage();
+                                        }
+                                    }
                                 }
                                 const step = soknadStepsConfig[stepID];
                                 setTimeout(() => {

@@ -5,7 +5,6 @@ import Page from '@navikt/sif-common-core/lib/components/page/Page';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import Kvittering from '@navikt/sif-common-core/lib/components/kvittering/Kvittering';
 import getLenker from '../../lenker';
-// import useLogSidevisning from '../../sif-amplitude/hooks/useLogSidevisning';
 import { SIFCommonPageKey, useLogSidevisning } from '@navikt/sif-common-amplitude/lib';
 
 const KvitteringPage = () => {

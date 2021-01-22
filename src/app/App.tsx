@@ -20,7 +20,7 @@ const root = document.getElementById('app');
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 
 render(
-    <AmplitudeProvider applicationKey={APPLICATION_KEY}>
+    <AmplitudeProvider applicationKey={APPLICATION_KEY} isActive={getEnvironmentVariable('USE_AMPLITUDE') === 'true'}>
         <SoknadApplication
             appName="Søknad om å bli regnet som midertidig alene for omsorgen"
             intlMessages={applicationIntlMessages}
