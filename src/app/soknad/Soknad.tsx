@@ -90,7 +90,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
 
     const onSoknadSent = async (apiValues: SoknadApiData) => {
         await soknadTempStorage.purge();
-        await logSoknadSent('Søknad sent');
+        await logSoknadSent(SKJEMANAVN);
         setSendSoknadStatus({ failures: 0, status: success(apiValues) });
         setSoknadId(undefined);
         navigateToKvitteringPage(history);
