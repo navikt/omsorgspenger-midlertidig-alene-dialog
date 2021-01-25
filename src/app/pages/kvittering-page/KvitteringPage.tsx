@@ -5,9 +5,11 @@ import Page from '@navikt/sif-common-core/lib/components/page/Page';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import Kvittering from '@navikt/sif-common-core/lib/components/kvittering/Kvittering';
 import getLenker from '../../lenker';
+import { SIFCommonPageKey, useLogSidevisning } from '@navikt/sif-common-amplitude/lib';
 
 const KvitteringPage = () => {
     const intl = useIntl();
+    useLogSidevisning(SIFCommonPageKey.kvittering);
     return (
         <Page title={intlHelper(intl, 'application.title')}>
             <Kvittering
