@@ -11,7 +11,6 @@
         "API_URL": "https://omsorgspenger-midlertidig-alene-api.nav.no",
         "PUBLIC_PATH": "/familie/sykdom-i-familien/soknad/regnet-som-alene",
         "LOGIN_URL": "https://loginservice.nav.no/login?redirect=https://www.nav.no/familie/sykdom-i-familien/soknad/regnet-som-alene/soknad",
-        "USE_AMPLITUDE": "true",
         "APPSTATUS_PROJECT_ID": "ryujtq87",
         "APPSTATUS_DATASET": "production"
     }
