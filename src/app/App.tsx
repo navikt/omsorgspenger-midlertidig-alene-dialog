@@ -1,26 +1,26 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Route } from 'react-router-dom';
+import { AmplitudeProvider } from '@navikt/sif-common-amplitude/lib';
 import { getEnvironmentVariable } from '@navikt/sif-common-core/lib/utils/envUtils';
-import Modal from 'nav-frontend-modal';
 import SoknadApplication from '@navikt/sif-common-soknad/lib/soknad-application-setup/SoknadApplication';
 import SoknadApplicationCommonRoutes from '@navikt/sif-common-soknad/lib/soknad-application-setup/SoknadApplicationCommonRoutes';
+import Modal from 'nav-frontend-modal';
 import { applicationIntlMessages } from './i18n/applicationMessages';
 import IntroPage from './pages/intro-page/IntroPage';
 import SoknadRemoteDataFetcher from './soknad/SoknadRemoteDataFetcher';
-import { AmplitudeProvider } from '@navikt/sif-common-amplitude/lib';
+import '@navikt/sif-common-core/lib/styles/globalStyles.less';
 import './styles/app.less';
 
 Modal.setAppElement('#app');
 
 export const APPLICATION_KEY = 'omsorgsdager-midlertidig-alene';
 export const SKJEMANAVN = 'Søknad om å bli regnet som alene om omsorgen for barn';
-const root = document.getElementById('app');
 
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 
 render(
-    <AmplitudeProvider applicationKey={APPLICATION_KEY} isActive={getEnvironmentVariable('USE_AMPLITUDE') === 'true'}>
+    <AmplitudeProvider applicationKey={APPLICATION_KEY}>
         <SoknadApplication
             appName="Søknad om å bli regnet som midertidig alene for omsorgen"
             intlMessages={applicationIntlMessages}
@@ -42,5 +42,5 @@ render(
         </SoknadApplication>
         ,
     </AmplitudeProvider>,
-    root
+    document.getElementById('app')
 );
