@@ -74,7 +74,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
         setSoknadId(sId);
         const firstStep = StepID.DIN_ARBEIDSITUASJON;
 
-        await soknadTempStorage.persist(sId, initialFormData, firstStep, { søker });
+        await soknadTempStorage.create();
         await logSoknadStartet(SKJEMANAVN);
 
         setTimeout(() => {
@@ -83,7 +83,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
     };
 
     const continueSoknadLater = async (sId: string, stepID: StepID, values: SoknadFormData) => {
-        await soknadTempStorage.persist(sId, values, stepID, { søker });
+        await soknadTempStorage.update(sId, values, stepID, { søker });
         await logHendelse(ApplikasjonHendelse.fortsettSenere);
         relocateToNavFrontpage();
     };
@@ -168,7 +168,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
                                 const stepToPersist = soknadStepsConfig[stepID].nextStep;
                                 if (stepToPersist && soknadId) {
                                     try {
-                                        await soknadTempStorage.persist(soknadId, values, stepToPersist, { søker });
+                                        await soknadTempStorage.update(soknadId, values, stepToPersist, { søker });
                                     } catch (error) {
                                         if (isUserLoggedOut(error)) {
                                             await logUserLoggedOut('ved mellomlagring');
