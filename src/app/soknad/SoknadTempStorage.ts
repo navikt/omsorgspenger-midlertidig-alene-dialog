@@ -13,8 +13,8 @@ interface UserHashInfo {
     søker: Person;
 }
 
-interface SoknadTemporaryStorage extends Omit<PersistenceInterface<SoknadTempStorageData>, 'persist'> {
-    persist: (
+interface SoknadTemporaryStorage extends Omit<PersistenceInterface<SoknadTempStorageData>, 'update'> {
+    update: (
         soknadId: string,
         formData: Partial<SoknadFormData>,
         lastStepID: StepID,
@@ -45,12 +45,13 @@ export const isStorageDataValid = (
 };
 
 const soknadTempStorage: SoknadTemporaryStorage = {
-    persist: (soknadId: string, formData: SoknadFormData, lastStepID: StepID, userHashInfo: UserHashInfo) => {
-        return persistSetup.persist({
+    update: (soknadId: string, formData: SoknadFormData, lastStepID: StepID, userHashInfo: UserHashInfo) => {
+        return persistSetup.update({
             formData,
             metadata: { soknadId, lastStepID, version: STORAGE_VERSION, userHash: hash(userHashInfo) },
         });
     },
+    create: persistSetup.create,
     purge: persistSetup.purge,
     rehydrate: persistSetup.rehydrate,
 };
