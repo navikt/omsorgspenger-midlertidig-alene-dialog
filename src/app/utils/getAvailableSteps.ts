@@ -5,16 +5,11 @@ import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValida
 import {
     AnnenForelderFormData,
     AnnenForeldrenSituasjon,
-    DinArbeidssituasjonFormData,
     MedlemskapFormData,
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-
-const dinArbeidsituasjonIsComplete = ({ arbeidssituasjon }: Partial<DinArbeidssituasjonFormData>): boolean => {
-    return (arbeidssituasjon || []).length > 0;
-};
 
 const omAnnenForelderIsComplete = (
     { annenForelderNavn, annenForelderFnr }: Partial<AnnenForelderFormData>,
@@ -75,11 +70,8 @@ const medlemskapIsComplete = ({
 
 export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
     const steps: StepID[] = [];
-    steps.push(StepID.DIN_ARBEIDSITUASJON);
+    steps.push(StepID.OM_ANNEN_FORELDER);
 
-    if (dinArbeidsituasjonIsComplete(values)) {
-        steps.push(StepID.OM_ANNEN_FORELDER);
-    }
     if (omAnnenForelderIsComplete(values, søker)) {
         steps.push(StepID.ANNEN_FORELDER_SITUASJON);
     }

@@ -2,13 +2,6 @@ import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
 import { Barn } from '../pre-common/question-visibility/forms/barn/types';
 
-export enum Arbeidssituasjon {
-    'arbeidstaker' = 'arbeidstaker',
-    'selvstendigNæringsdrivende' = 'selvstendigNæringsdrivende',
-    'frilanser' = 'frilanser',
-    'annen' = 'annen',
-}
-
 export enum AnnenForeldrenSituasjon {
     'sykdom' = 'sykdom',
     'innlagtIHelseinstitusjon' = 'innlagtIHelseinstitusjon',
@@ -20,7 +13,6 @@ export enum AnnenForeldrenSituasjon {
 export enum SoknadFormField {
     harForståttRettigheterOgPlikter = 'harForståttRettigheterOgPlikter',
     harBekreftetOpplysninger = 'harBekreftetOpplysninger',
-    arbeidssituasjon = 'arbeidssituasjon',
     annenForelderNavn = 'annenForelderNavn',
     annenForelderEtternavn = 'annenForelderEtternavn',
     annenForelderFnr = 'annenForelderFnr',
@@ -41,7 +33,6 @@ export enum SoknadFormField {
 export interface SoknadFormData {
     [SoknadFormField.harForståttRettigheterOgPlikter]: boolean;
     [SoknadFormField.harBekreftetOpplysninger]: boolean;
-    [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
     [SoknadFormField.annenForelderNavn]: string;
     [SoknadFormField.annenForelderFnr]: string;
     [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
@@ -57,8 +48,6 @@ export interface SoknadFormData {
     [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
     [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
 }
-
-export type DinArbeidssituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
 
 export type AnnenForelderFormData = Pick<
     SoknadFormData,

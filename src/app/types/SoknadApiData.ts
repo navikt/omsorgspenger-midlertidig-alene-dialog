@@ -1,6 +1,6 @@
 import { ApiStringDate } from '@navikt/sif-common-core/lib/types/ApiStringDate';
 import { Locale } from '@navikt/sif-common-core/lib/types/Locale';
-import { AnnenForeldrenSituasjon, Arbeidssituasjon } from './SoknadFormData';
+import { AnnenForeldrenSituasjon } from './SoknadFormData';
 
 export interface BostedUtlandApiData {
     fraOgMed: ApiStringDate;
@@ -31,7 +31,6 @@ export interface SoknadApiData {
     språk: Locale;
     harForståttRettigheterOgPlikter: boolean;
     harBekreftetOpplysninger: boolean;
-    arbeidssituasjon: Arbeidssituasjon[];
     annenForelder: AnnenForelder;
     antallBarn: number;
     fødselsårBarn: number[];

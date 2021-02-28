@@ -17,7 +17,6 @@ import { getAvailableSteps } from '../utils/getAvailableSteps';
 import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
 import AnnenForelderenSituasjonStep from './annen-forelderens-situasjon-step/AnnenForelderenSituasjonStep';
 import OmDeresFellesBarnStep from './deres-felles-barn/DeresFellesBarn';
-import DinArbeidsituasjonStep from './din-arbeidsituasjon-step/DinArbeidsituasjonStep';
 import MedlemskapStep from './medlemskap-step/MedlemskapStep';
 import OmAnnenForelderStep from './om-annen-forelder-step/OmAnnenForelderStep';
 import OppsummeringStep from './oppsummering-step/OppsummeringStep';
@@ -38,8 +37,6 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
 
     const renderSoknadStep = (id: string, søker: Person, stepID: StepID): React.ReactNode => {
         switch (stepID) {
-            case StepID.DIN_ARBEIDSITUASJON:
-                return <DinArbeidsituasjonStep />;
             case StepID.OM_ANNEN_FORELDER:
                 return <OmAnnenForelderStep søker={søker} />;
             case StepID.ANNEN_FORELDER_SITUASJON:
