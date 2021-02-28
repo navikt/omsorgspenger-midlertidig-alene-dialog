@@ -71,8 +71,8 @@ const søkerMockIkkeMyndig = {
 
 const barnMock = {
     barn: [
-        { navn: 'Filip Jonson', aktørId: '1', identitetsnummer: '03078516487' },
-        { navn: 'Jason Mcmanus', aktørId: '2', identitetsnummer: '25078520003' },
+        { fødselsdato: '1990-01-02', fornavn: 'Barn', mellomnavn: 'Barne', etternavn: 'Barnesen', aktørId: '1' },
+        { fødselsdato: '1990-01-02', fornavn: 'Mock', etternavn: 'Mocknes', aktørId: '2' },
     ],
 };
 

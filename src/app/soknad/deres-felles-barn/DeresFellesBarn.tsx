@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
+import { IntlShape, useIntl } from 'react-intl';
 import ContentWithHeader from '@navikt/sif-common-core/lib/components/content-with-header/ContentWithHeader';
 import ItemList from '@navikt/sif-common-core/lib/components/item-list/ItemList';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
@@ -10,16 +10,21 @@ import { Barn, SoknadFormData, SoknadFormField } from '../../types/SoknadFormDat
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
+import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
+import { prettifyDate } from '@navikt/sif-common-core/lib/utils/dateUtils';
 
 interface Props {
     barn: Barn[];
 }
 
-const barnItemLabelRenderer = (barnet: Barn): React.ReactNode => {
-    const barnoplysninger = `${barnet.navn} (fnr. ${barnet.identitetsnummer})`;
+const barnItemLabelRenderer = (barnet: Barn, intl: IntlShape): React.ReactNode => {
+    console.log(barnet);
     return (
         <div style={{ display: 'flex' }}>
-            <span style={{ order: 1, paddingLeft: '1rem', justifySelf: 'flex-end' }}>{barnoplysninger}</span>
+            <span style={{ order: 1 }}>{formatName(barnet.fornavn, barnet.etternavn, barnet.mellomnavn)}</span>
+            <span style={{ order: 2, paddingLeft: '1rem', justifySelf: 'flex-end' }}>
+                {intlHelper(intl, 'step.deres-felles-barn.født')} {prettifyDate(barnet.fødselsdato)}
+            </span>
         </div>
     );
 };
@@ -38,8 +43,8 @@ const OmDeresFellesBarnStep = ({ barn }: Props) => {
                     <ContentWithHeader header={intlHelper(intl, 'step.deres-felles-barn.listHeader.registrerteBarn')}>
                         <ItemList<Barn>
                             getItemId={(registrerteBarn): string => registrerteBarn.aktørId}
-                            getItemTitle={(registrerteBarn): string => registrerteBarn.navn}
-                            labelRenderer={(barnet): React.ReactNode => barnItemLabelRenderer(barnet)}
+                            getItemTitle={(registrerteBarn): string => registrerteBarn.etternavn}
+                            labelRenderer={(barnet): React.ReactNode => barnItemLabelRenderer(barnet, intl)}
                             items={barn}
                         />
                     </ContentWithHeader>

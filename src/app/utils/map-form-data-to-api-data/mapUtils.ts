@@ -1,3 +1,4 @@
+import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
 import { AndreBarn } from 'app/pre-common/question-visibility/forms/barn/types';
 import { ApiBarn } from '../../types/SoknadApiData';
 import { Barn } from '../../types/SoknadFormData';
@@ -12,8 +13,8 @@ export const mapAndreBarnToApiBarn = (annetBarn: AndreBarn): ApiBarn => {
 
 export const mapBarnToApiBarn = (registrertBarn: Barn): ApiBarn => {
     return {
-        navn: registrertBarn.navn,
+        navn: formatName(registrertBarn.fornavn, registrertBarn.etternavn, registrertBarn.mellomnavn),
         aktørId: registrertBarn.aktørId,
-        identitetsnummer: registrertBarn.identitetsnummer,
+        identitetsnummer: undefined,
     };
 };

@@ -11,7 +11,7 @@ const BarnSummaryList = ({ barn }: Props) => {
         <SummaryList
             items={barn}
             itemRenderer={({ identitetsnummer, navn }: ApiBarn): string => {
-                const fnr = ` (fnr. ${identitetsnummer})`;
+                const fnr = identitetsnummer ? ` (fnr. ${identitetsnummer})` : '';
                 return `${navn}${fnr}`;
             }}
         />

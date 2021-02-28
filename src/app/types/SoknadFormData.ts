@@ -2,9 +2,11 @@ import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import { AndreBarn } from 'app/pre-common/question-visibility/forms/barn/types';
 
 export interface Barn {
-    navn: string;
+    fødselsdato: Date;
+    fornavn: string;
+    mellomnavn?: string;
+    etternavn: string;
     aktørId: string;
-    identitetsnummer: string;
 }
 
 export enum AnnenForeldrenSituasjon {
