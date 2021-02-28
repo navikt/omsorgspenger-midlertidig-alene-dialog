@@ -2,7 +2,6 @@ import { SoknadApiData } from '../../types/SoknadApiData';
 import { SoknadFormData } from '../../types/SoknadFormData';
 import { mapAnnenForelderToApiData } from './mapAnnenForelderToApiData';
 import { mapBarnToApiData } from './mapBarnToApiData';
-import { mapMedlemskapToApiData } from './mapMedlemskapToApiData';
 
 export const mapFormDataToApiData = (
     soknadId: string,
@@ -17,7 +16,6 @@ export const mapFormDataToApiData = (
             harForståttRettigheterOgPlikter: formData.harForståttRettigheterOgPlikter,
             ...mapAnnenForelderToApiData(formData),
             ...mapBarnToApiData(formData),
-            ...mapMedlemskapToApiData(formData),
         };
         return apiData;
     } catch (error) {

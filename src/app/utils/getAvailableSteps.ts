@@ -5,7 +5,6 @@ import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValida
 import {
     AnnenForelderFormData,
     AnnenForeldrenSituasjon,
-    MedlemskapFormData,
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
@@ -53,21 +52,6 @@ const omBarnaIsComplete = ({ fødselsårBarn }: Partial<OmBarnaFormData>): boole
     return (fødselsårBarn || []).length > 0;
 };
 
-const medlemskapIsComplete = ({
-    harBoddUtenforNorgeSiste12Mnd,
-    skalBoUtenforNorgeNeste12Mnd,
-    utenlandsoppholdSiste12Mnd,
-    utenlandsoppholdNeste12Mnd,
-}: Partial<MedlemskapFormData>): boolean => {
-    if (harBoddUtenforNorgeSiste12Mnd === YesOrNo.YES && (utenlandsoppholdSiste12Mnd || []).length < 1) {
-        return false;
-    }
-    if (skalBoUtenforNorgeNeste12Mnd === YesOrNo.YES && (utenlandsoppholdNeste12Mnd || []).length < 1) {
-        return false;
-    }
-    return true;
-};
-
 export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
     const steps: StepID[] = [];
     steps.push(StepID.OM_ANNEN_FORELDER);
@@ -79,10 +63,6 @@ export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Perso
         steps.push(StepID.DERES_FELLES_BARN);
     }
     if (omBarnaIsComplete(values)) {
-        steps.push(StepID.MEDLEMSKAP);
-    }
-
-    if (medlemskapIsComplete(values)) {
         steps.push(StepID.OPPSUMMERING);
     }
 

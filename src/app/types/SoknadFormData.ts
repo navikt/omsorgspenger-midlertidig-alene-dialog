@@ -1,5 +1,4 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
 import { Barn } from '../pre-common/question-visibility/forms/barn/types';
 
 export enum AnnenForeldrenSituasjon {
@@ -24,10 +23,6 @@ export enum SoknadFormField {
     vetLengdePåInnleggelseperioden = 'vetLengdePåInnleggelseperioden',
     antallBarn = 'antallBarn',
     fødselsårBarn = 'fødselsårBarn',
-    harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
-    utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
-    skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
-    utenlandsoppholdNeste12Mnd = 'utenlandsoppholdNeste12Mnd',
 }
 
 export interface SoknadFormData {
@@ -43,10 +38,6 @@ export interface SoknadFormData {
     [SoknadFormField.vetLengdePåInnleggelseperioden]: YesOrNo;
     [SoknadFormField.antallBarn]: number;
     [SoknadFormField.fødselsårBarn]: Barn[];
-    [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
-    [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
-    [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
-    [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
 }
 
 export type AnnenForelderFormData = Pick<
@@ -59,14 +50,6 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.annenForelderPeriodeTom
     | SoknadFormField.annenForelderPeriodeMer6Maneder
     | SoknadFormField.vetLengdePåInnleggelseperioden
->;
-
-export type MedlemskapFormData = Pick<
-    SoknadFormData,
-    | SoknadFormField.harBoddUtenforNorgeSiste12Mnd
-    | SoknadFormField.utenlandsoppholdSiste12Mnd
-    | SoknadFormField.skalBoUtenforNorgeNeste12Mnd
-    | SoknadFormField.utenlandsoppholdNeste12Mnd
 >;
 
 export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.fødselsårBarn>;

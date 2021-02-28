@@ -16,7 +16,6 @@ import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 import AnnenForelderSituasjonSummary from './AnnenForelderSituasjonSummary';
 import AnnenForelderSummary from './AnnenForelderSummary';
-import MedlemskapSummary from './MedlemskapSummary';
 import OmBarnaSummary from './OmBarnaSummary';
 import SøkerSummary from './SøkerSummary';
 
@@ -49,7 +48,6 @@ const OppsummeringStep = ({ søker, apiValues }: Props) => {
                                 <AnnenForelderSummary annenForelder={apiValues.annenForelder} />
                                 <OmBarnaSummary apiValues={apiValues} />
                                 <AnnenForelderSituasjonSummary annenForelder={apiValues.annenForelder} />
-                                <MedlemskapSummary medlemskap={apiValues.medlemskap} />
                             </ResponsivePanel>
                         </Box>
 

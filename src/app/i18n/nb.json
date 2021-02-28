@@ -88,18 +88,6 @@
     "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
     "step.deres-felles-barn.hvorforSpører.svar": "Vi trenger å vite alderen på barn for å kunne beregne hvor mange omsorgsdager du kan ha rett på og hvor lenge du har rett til å bruke omsorgsdager.",
 
-    "step.medlemskap.pageTitle": "Medlemskap",
-    "step.medlemskap.stepTitle": "Medlemskap",
-    "step.medlemskap.nextButtonLabel": "Fortsett",
-    "steg.medlemsskap.info": "Medlemskap i folketrygden er nøkkelen til rettigheter fra NAV. Hvis du bor eller jobber i Norge er du vanligvis medlem. Du kan lese mer om medlemskap på",
-    "steg.medlemsskap.annetLandSiste12.spm": "Har du bodd i utlandet i hele eller deler av de siste 12 månedene?",
-    "steg.medlemsskap.annetLandNeste12.spm": "Planlegger du å bo i utlandet i hele eller deler av de neste 12 månedene?",
-    "steg.medlemsskap.annetLandSiste12.hjelp": "Du svarer ja bare hvis du har oppholdt deg fast i et annet land enn Norge. Korte utlandsturer i forbindelse med for eksempel ferie regnes ikke med.",
-    "steg.medlemsskap.annetLandSiste12.listeTittel": "Utenlandsopphold siste 12 måneder",
-    "steg.medlemsskap.annetLandNeste12.hjelp": "Du svarer ja bare hvis du planlegger å oppholde deg fast i et annet land enn Norge. Korte utlandsturer i forbindelse med for eksempel ferie regnes ikke med.",
-    "steg.medlemsskap.annetLandNeste12.listeTittel": "Utenlandsopphold neste 12 måneder",
-    "step.medlemskap.knap.leggNyttUtenlandsopphold": "Legg til nytt utenlandsopphold",
-
     "step.oppsummering.pageTitle": "Oppsummering",
     "step.oppsummering.stepTitle": "Oppsummering",
     "step.oppsummering.nextButtonLabel": "Send inn søknaden",
@@ -119,12 +107,6 @@
     "step.oppsummering.annenForelderensSituasjon.tittel": "Grunn",
     "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
     "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen ikke kan ha tilsyn med barnet/barna:",
-
-    "steg.oppsummering.medlemskap.header": "Medlemskap i Folketrygden",
-    "steg.oppsummering.medlemskap.utlandetSiste12.header": "Har du bodd i utlandet i de siste 12 månedene?",
-    "steg.oppsummering.medlemskap.utlandetNeste12.header": "Skal du bo i utlandet i de neste 12 månedene?",
-    "steg.oppsummering.medlemskap.utlandetSiste12.liste.header": "Utenlandsopphold siste 12 måneder",
-    "steg.oppsummering.medlemskap.utlandetNeste12.liste.header": "Utenlandsopphold neste 12 måneder",
 
     "step.oppsummering.bekrefterOpplysninger": "Jeg bekrefter at opplysningene jeg har gitt er riktige, og at jeg ikke har holdt tilbake opplysninger som har betydning for min rett til omsorgsdager.",
 
