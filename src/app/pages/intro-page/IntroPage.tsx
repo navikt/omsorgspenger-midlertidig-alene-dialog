@@ -25,6 +25,14 @@ const IntroPage = () => {
                 <InformationPoster>
                     <FormattedMessage id="introForm.info.1" />
                     <p>
+                        <FormattedMessage id="introForm.erYrkesaktiv.forklaring.1" />
+                    </p>
+                    <ul>
+                        <li>{intlHelper(intl, 'introForm.arbeidstaker')}</li>
+                        <li>{intlHelper(intl, 'introForm.selvstendigNæringsdrivende')}</li>
+                        <li>{intlHelper(intl, 'introForm.frilanser')}</li>
+                    </ul>
+                    <p>
                         <FormattedHtmlMessage id="introForm.info.2.html" />
                     </p>
                     <ul>
