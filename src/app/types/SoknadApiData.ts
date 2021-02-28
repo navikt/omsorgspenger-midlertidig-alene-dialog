@@ -12,12 +12,17 @@ export interface AnnenForelder {
     vetLengdePåInnleggelseperioden?: boolean;
 }
 
+export interface ApiBarn {
+    identitetsnummer?: string;
+    aktørId?: string;
+    navn: string;
+}
+
 export interface SoknadApiData {
     id: string;
     språk: Locale;
     harForståttRettigheterOgPlikter: boolean;
     harBekreftetOpplysninger: boolean;
     annenForelder: AnnenForelder;
-    antallBarn: number;
-    fødselsårBarn: number[];
+    barn: ApiBarn[];
 }

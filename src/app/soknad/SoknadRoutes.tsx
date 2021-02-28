@@ -12,7 +12,7 @@ import { useFormikContext } from 'formik';
 import AppRoutes from '../config/routeConfig';
 import KvitteringPage from '../pages/kvittering-page/KvitteringPage';
 import { Person } from '../types/Person';
-import { SoknadFormData } from '../types/SoknadFormData';
+import { Barn, SoknadFormData } from '../types/SoknadFormData';
 import { getAvailableSteps } from '../utils/getAvailableSteps';
 import { mapFormDataToApiData } from '../utils/map-form-data-to-api-data/mapFormDataToApiData';
 import AnnenForelderenSituasjonStep from './annen-forelderens-situasjon-step/AnnenForelderenSituasjonStep';
@@ -26,25 +26,26 @@ import VelkommenPage from './velkommen-page/VelkommenPage';
 interface Props {
     soknadId?: string;
     søker: Person;
+    barn?: Barn[];
 }
 
-const SoknadRoutes = ({ soknadId, søker }: Props) => {
+const SoknadRoutes = ({ soknadId, søker, barn = [] }: Props) => {
     const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
-    const availableSteps = getAvailableSteps(values, søker);
+    const availableSteps = getAvailableSteps(values, søker, barn);
     const { soknadStepsConfig, sendSoknadStatus } = useSoknadContext();
 
-    const renderSoknadStep = (id: string, søker: Person, stepID: StepID): React.ReactNode => {
+    const renderSoknadStep = (id: string, søker: Person, barn: Barn[], stepID: StepID): React.ReactNode => {
         switch (stepID) {
             case StepID.OM_ANNEN_FORELDER:
                 return <OmAnnenForelderStep søker={søker} />;
             case StepID.ANNEN_FORELDER_SITUASJON:
                 return <AnnenForelderenSituasjonStep />;
             case StepID.DERES_FELLES_BARN:
-                return <OmDeresFellesBarnStep />;
+                return <OmDeresFellesBarnStep barn={barn} />;
             case StepID.OPPSUMMERING:
-                const apiValues = mapFormDataToApiData(id, intl.locale, values);
-                return <OppsummeringStep apiValues={apiValues} søker={søker} />;
+                const apiValues = mapFormDataToApiData(id, intl.locale, values, barn);
+                return <OppsummeringStep apiValues={apiValues} søker={søker} barn={barn} />;
         }
     };
 
@@ -83,7 +84,7 @@ const SoknadRoutes = ({ soknadId, søker }: Props) => {
                             key={step}
                             path={soknadStepsConfig[step].route}
                             exact={true}
-                            render={() => renderSoknadStep(soknadId, søker, step)}
+                            render={() => renderSoknadStep(soknadId, søker, barn, step)}
                         />
                     );
                 })}

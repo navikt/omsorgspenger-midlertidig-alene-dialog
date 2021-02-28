@@ -1,13 +1,17 @@
-import { SoknadFormData } from '../../types/SoknadFormData';
+import { ApiBarn } from 'app/types/SoknadApiData';
+import { Barn, SoknadFormData } from '../../types/SoknadFormData';
+import { mapAndreBarnToApiBarn, mapBarnToApiBarn } from './mapUtils';
 
 export interface BarnApiData {
-    antallBarn: number;
-    fødselsårBarn: number[];
+    barn: ApiBarn[];
 }
 
-export const mapBarnToApiData = ({ fødselsårBarn }: SoknadFormData): BarnApiData => {
+export const mapBarnStepToApiData = ({ andreBarn }: SoknadFormData, registrerteBarn: Barn[]): BarnApiData => {
+    const barn: ApiBarn[] = [
+        ...andreBarn.map((barn) => mapAndreBarnToApiBarn(barn)),
+        ...registrerteBarn.map((barn) => mapBarnToApiBarn(barn)),
+    ];
     return {
-        antallBarn: fødselsårBarn.length,
-        fødselsårBarn: fødselsårBarn.map((barn) => barn.alders),
+        barn: barn,
     };
 };

@@ -6,6 +6,5 @@ export const initialSoknadFormData: Partial<SoknadFormData> = {
     [SoknadFormField.annenForelderNavn]: '',
     [SoknadFormField.annenForelderFnr]: '',
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: '',
-    [SoknadFormField.antallBarn]: 0,
-    [SoknadFormField.fødselsårBarn]: [],
+    [SoknadFormField.andreBarn]: [],
 };

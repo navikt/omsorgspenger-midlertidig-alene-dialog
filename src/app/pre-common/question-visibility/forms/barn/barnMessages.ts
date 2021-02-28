@@ -1,17 +1,19 @@
 const barnMessages = {
     nb: {
-        'barn.list.legg_til_knapp': 'Legg til barn',
-        'barn.list.tittel': 'Barn',
-        'barn.modal.tittel': 'Her legger du inn årstallet til barn som du har felles med den andre forelderen.',
-        'barn.modal.alders_spm.label': 'Hvilket årstall er barnet født? ',
-        'barn.modal.hvorfor_spør': 'Hvorfor spør vi om dette?',
+        'barn.form.title': 'Legg til barn',
+        'barn.form.fnr': 'Barnets fødselsnummer/D-nummer',
+        'barn.form.navn': 'Barnets navn',
+        'barn.form.okButton': 'Ok',
+        'barn.form.cancelButton': 'Avbryt',
+        'barn.form.validation.required': 'Feltet er påkrevd',
     },
     nn: {
-        'barn.list.legg_til_knapp': 'Legg til barn',
-        'barn.list.tittel': 'Barn',
-        'barn.modal.tittel': 'Her legger du inn årstallet til barn som du har felles med den andre forelderen.',
-        'barn.modal.alders_spm.label': 'Hvilket årstall er barnet født? ',
-        'barn.modal.hvorfor_spør': 'Hvorfor spør vi om dette?',
+        'barn.form.title': 'Legg til barn',
+        'barn.form.fnr': 'Barnets fødselsnummer/D-nummer',
+        'barn.form.navn': 'Barnets namn',
+        'barn.form.okButton': 'Ok',
+        'barn.form.cancelButton': 'Avbryt',
+        'barn.form.validation.required': 'Feltet er påkravd',
     },
 };
 

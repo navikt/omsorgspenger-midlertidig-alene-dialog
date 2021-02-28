@@ -1,42 +1,40 @@
 import React from 'react';
 import ActionLink from '@navikt/sif-common-core/lib/components/action-link/ActionLink';
 import ItemList from '@navikt/sif-common-core/lib/components/item-list/ItemList';
-import { Barn } from './types';
+import { AndreBarn } from './types';
+import bemUtils from '@navikt/sif-common-core/lib/utils/bemUtils';
 
 interface Props {
-    barna: Barn[];
-    onEdit?: (opphold: Barn) => void;
-    onDelete?: (opphold: Barn) => void;
+    barna: AndreBarn[];
+    onEdit?: (opphold: AndreBarn) => void;
+    onDelete?: (opphold: AndreBarn) => void;
 }
 
+const bem = bemUtils('barnList');
+
 const BarnList = ({ barna = [], onDelete, onEdit }: Props) => {
-    const getBarnTitleString = (barn: Barn) => {
+    const renderBarnLabel = (barn: AndreBarn): React.ReactNode => {
+        const fnr = ` (fnr. ${barn.fnr})`;
         return (
-            <>
-                <span style={{ paddingRight: '1rem' }}>Født i {barn.alders}</span>
-            </>
-        );
-    };
-    const renderBarnLabel = (barn: Barn): React.ReactNode => {
-        return (
-            <>
-                {onEdit && <ActionLink onClick={() => onEdit(barn)}>{getBarnTitleString(barn)}</ActionLink>}
-                {!onEdit && <span>{getBarnTitleString(barn)}</span>}
-            </>
+            <div className={bem.element('label')}>
+                <span className={bem.element('navn')}>
+                    {onEdit && <ActionLink onClick={() => onEdit(barn)}>{barn.navn}</ActionLink>}
+                    {!onEdit && <span>{barn.navn}</span>}
+                </span>
+                <span className={bem.element('fnr')}>{fnr}</span>
+            </div>
         );
     };
 
     return (
-        <>
-            <ItemList<Barn>
-                getItemId={(barn) => barn.id}
-                getItemTitle={() => ''}
-                onDelete={onDelete}
-                onEdit={onEdit}
-                labelRenderer={renderBarnLabel}
-                items={barna.filter((barn) => barn.id !== undefined)}
-            />
-        </>
+        <ItemList<AndreBarn>
+            getItemId={(barn) => barn.id}
+            getItemTitle={(barn) => barn.navn}
+            onDelete={onDelete}
+            onEdit={onEdit}
+            labelRenderer={renderBarnLabel}
+            items={barna.filter((barn) => barn.id !== undefined)}
+        />
     );
 };
 

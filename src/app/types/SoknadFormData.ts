@@ -1,5 +1,11 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-import { Barn } from '../pre-common/question-visibility/forms/barn/types';
+import { AndreBarn } from 'app/pre-common/question-visibility/forms/barn/types';
+
+export interface Barn {
+    navn: string;
+    aktørId: string;
+    identitetsnummer: string;
+}
 
 export enum AnnenForeldrenSituasjon {
     'sykdom' = 'sykdom',
@@ -21,8 +27,7 @@ export enum SoknadFormField {
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
     annenForelderPeriodeMer6Maneder = 'annenForelderPeriodeMer6Maneder',
     vetLengdePåInnleggelseperioden = 'vetLengdePåInnleggelseperioden',
-    antallBarn = 'antallBarn',
-    fødselsårBarn = 'fødselsårBarn',
+    andreBarn = 'andreBarn',
 }
 
 export interface SoknadFormData {
@@ -36,8 +41,7 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderPeriodeTom]: string;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.vetLengdePåInnleggelseperioden]: YesOrNo;
-    [SoknadFormField.antallBarn]: number;
-    [SoknadFormField.fødselsårBarn]: Barn[];
+    [SoknadFormField.andreBarn]: AndreBarn[];
 }
 
 export type AnnenForelderFormData = Pick<
@@ -52,4 +56,4 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.vetLengdePåInnleggelseperioden
 >;
 
-export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.fødselsårBarn>;
+export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.andreBarn>;

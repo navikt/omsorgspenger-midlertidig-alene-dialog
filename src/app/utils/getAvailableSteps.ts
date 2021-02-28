@@ -5,6 +5,7 @@ import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValida
 import {
     AnnenForelderFormData,
     AnnenForeldrenSituasjon,
+    Barn,
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
@@ -47,12 +48,11 @@ const annenForelderSituasjonIsComplete = ({
     } else return annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
 };
 
-const omBarnaIsComplete = ({ fødselsårBarn }: Partial<OmBarnaFormData>): boolean => {
-    // TODO: Alders validering hvis trenges
-    return (fødselsårBarn || []).length > 0;
+const omBarnaIsComplete = ({ andreBarn }: Partial<OmBarnaFormData>, barn: Barn[]): boolean => {
+    return barn.length > 0 || (andreBarn || []).length > 0;
 };
 
-export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
+export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person, barn: Barn[]): StepID[] => {
     const steps: StepID[] = [];
     steps.push(StepID.OM_ANNEN_FORELDER);
 
@@ -62,7 +62,7 @@ export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Perso
     if (annenForelderSituasjonIsComplete(values)) {
         steps.push(StepID.DERES_FELLES_BARN);
     }
-    if (omBarnaIsComplete(values)) {
+    if (omBarnaIsComplete(values, barn)) {
         steps.push(StepID.OPPSUMMERING);
     }
 

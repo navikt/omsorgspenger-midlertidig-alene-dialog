@@ -20,10 +20,6 @@
 
     "validationText.mindre_5_bokstaver": "Du må skrive minst 5 tegn",
     "validationText.mer_1000_bokstaver": "Du kan skrive max 1000 tegn",
-    "validationText.utenlandsopphold_ikke_registrert": "Du har ikke registrert noen utenlandsopphold for perioden",
-    "validationText.utenlandsopphold_overlapper": "Utenlandsopphold overlapper",
-    "validationText.utenlandsopphold_utenfor_periode": "Utenlandsopphold er utenfor periode",
-    "validationText.utenlandsopphold_overlapper_samme_start_slutt": "Utenlandsopphold har samme start og slutt",
     "validationText.barn_ikke_registrert": "Du må legge til minst ett barn for å fortsette",
 
     "grunn.sykdom": "Sykdom, skade eller funksjonhemming",
@@ -80,10 +76,15 @@
     "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
     "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
 
-    "step.deres-felles-barn.pageTitle": "Deres felles barn",
-    "step.deres-felles-barn.stepTitle": "Deres felles barn",
-    "step.deres-felles-barn.banner": "Her skal du legge inn fødselsåret til barn og eventuelle fosterbarn du har felles med den andre forelderen som omfattes av denne søknaden.",
-    "step.deres-felles-barn.stopMessage": "Du må legge til minst ett barn for å fortsette",
+    "step.deres-felles-barn.pageTitle": "Om barn",
+    "step.deres-felles-barn.stepTitle": "Om barn",
+    "step.deres-felles-barn.listHeader.registrerteBarn": "Registrerte barn",
+    "step.deres-felles-barn.spm.andreBarn": "Har du andre barn?",
+    "step.deres-felles-barn.spm.flereBarn": "Har du flere barn?",
+    "step.deres-felles-barn.info.ingenbarn.2": "Du må legge til minst ett barn for å kunne gå videre.",
+    "step.deres-felles-barn.info.spm.text": "Har du barn som ikke er registrert her, kan du legge inn disse selv. Det kan være fosterbarn, eller om du har barn som er fylt 18 år og som har ekstra omsorgsdager på grunn av kronisk sykdom eller funksjonshemning.",
+
+    "step.deres-felles-barn.fødselsnummer": "Fødselsnummer",
     "step.deres-felles-barn.nextButtonLabel": "Fortsett",
     "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
     "step.deres-felles-barn.hvorforSpører.svar": "Vi trenger å vite alderen på barn for å kunne beregne hvor mange omsorgsdager du kan ha rett på og hvor lenge du har rett til å bruke omsorgsdager.",
@@ -95,10 +96,8 @@
 
     "step.oppsummering.søker.header": "Om deg som søker",
 
-    "step.oppsummering.deres-felles-barn.header": "Deres felles barn",
+    "step.oppsummering.deres-felles-barn.header": "Dine barn",
     "step.oppsummering.deres-felles-barn.barn": "Barn",
-    "step.oppsummering.deres-felles-barn.født": "Født i",
-    "step.oppsummering.deres-felles-barn.antallBarn": "Antall barn:",
 
     "step.oppsummering.annenForelder.header": "Om den andre forelderen",
 

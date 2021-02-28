@@ -11,7 +11,7 @@ import AppRoutes, { getRouteUrl } from '../config/routeConfig';
 import IkkeMyndigPage from '../pages/ikke-myndig-page/IkkeMyndigPage';
 import { Person } from '../types/Person';
 import { SoknadApiData } from '../types/SoknadApiData';
-import { SoknadFormData } from '../types/SoknadFormData';
+import { Barn, SoknadFormData } from '../types/SoknadFormData';
 import { SoknadTempStorageData } from '../types/SoknadTempStorageData';
 import {
     navigateTo,
@@ -32,11 +32,12 @@ import { SKJEMANAVN } from '../App';
 
 interface Props {
     søker: Person;
+    barn: Barn[];
     soknadTempStorage: SoknadTempStorageData;
     route?: string;
 }
 
-const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
+const Soknad = ({ søker, barn, soknadTempStorage: tempStorage }: Props) => {
     const history = useHistory();
     const [initializing, setInitializing] = useState(true);
 
@@ -83,7 +84,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
     };
 
     const continueSoknadLater = async (sId: string, stepID: StepID, values: SoknadFormData) => {
-        await soknadTempStorage.update(sId, values, stepID, { søker });
+        await soknadTempStorage.update(sId, values, stepID, { søker, barn });
         await logHendelse(ApplikasjonHendelse.fortsettSenere);
         relocateToNavFrontpage();
     };
@@ -128,7 +129,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
     };
 
     useEffect(() => {
-        if (isStorageDataValid(tempStorage, { søker })) {
+        if (isStorageDataValid(tempStorage, { søker, barn })) {
             setInitialFormData(tempStorage.formData);
             setSoknadId(tempStorage.metadata.soknadId);
             const currentRoute = history.location.pathname;
@@ -150,7 +151,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
         } else {
             resetSoknad(history.location.pathname !== AppRoutes.SOKNAD);
         }
-    }, [history, tempStorage, søker]);
+    }, [history, tempStorage, søker, barn]);
 
     return (
         <LoadWrapper
@@ -168,7 +169,10 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
                                 const stepToPersist = soknadStepsConfig[stepID].nextStep;
                                 if (stepToPersist && soknadId) {
                                     try {
-                                        await soknadTempStorage.update(soknadId, values, stepToPersist, { søker });
+                                        await soknadTempStorage.update(soknadId, values, stepToPersist, {
+                                            søker,
+                                            barn,
+                                        });
                                     } catch (error) {
                                         if (isUserLoggedOut(error)) {
                                             await logUserLoggedOut('ved mellomlagring');
@@ -199,7 +203,7 @@ const Soknad = ({ søker, soknadTempStorage: tempStorage }: Props) => {
                                             navigateToNextStepFromStep(stepID);
                                         },
                                     }}>
-                                    <SoknadRoutes soknadId={soknadId} søker={søker} />
+                                    <SoknadRoutes soknadId={soknadId} søker={søker} barn={barn} />
                                 </SoknadContextProvider>
                             );
                         }}
