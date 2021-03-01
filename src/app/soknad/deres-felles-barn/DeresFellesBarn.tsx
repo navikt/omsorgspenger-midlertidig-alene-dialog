@@ -21,9 +21,11 @@ const barnItemLabelRenderer = (barnet: Barn, intl: IntlShape): React.ReactNode =
     console.log(barnet);
     return (
         <div style={{ display: 'flex' }}>
-            <span style={{ order: 1 }}>{formatName(barnet.fornavn, barnet.etternavn, barnet.mellomnavn)}</span>
-            <span style={{ order: 2, paddingLeft: '1rem', justifySelf: 'flex-end' }}>
+            <span style={{ order: 1 }}>
                 {intlHelper(intl, 'step.deres-felles-barn.født')} {prettifyDate(barnet.fødselsdato)}
+            </span>
+            <span style={{ order: 2, paddingLeft: '1rem', justifySelf: 'flex-end' }}>
+                {formatName(barnet.fornavn, barnet.etternavn, barnet.mellomnavn)}
             </span>
         </div>
     );
