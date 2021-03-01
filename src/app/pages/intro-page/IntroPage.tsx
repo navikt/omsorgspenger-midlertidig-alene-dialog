@@ -23,15 +23,10 @@ const IntroPage = () => {
             topContentRenderer={() => <StepBanner tag="h1" text={intlHelper(intl, 'application.title')} />}>
             <Box margin="xxxl">
                 <InformationPoster>
-                    <FormattedMessage id="introForm.info.1" />
                     <p>
-                        <FormattedMessage id="introForm.erYrkesaktiv.forklaring.1" />
+                        <FormattedMessage id="introForm.info.1" />
                     </p>
-                    <ul>
-                        <li>{intlHelper(intl, 'introForm.arbeidstaker')}</li>
-                        <li>{intlHelper(intl, 'introForm.selvstendigNæringsdrivende')}</li>
-                        <li>{intlHelper(intl, 'introForm.frilanser')}</li>
-                    </ul>
+
                     <p>
                         <FormattedHtmlMessage id="introForm.info.2.html" />
                     </p>
@@ -43,6 +38,9 @@ const IntroPage = () => {
                         <li>{intlHelper(intl, 'introForm.info.grunnList.5')}</li>
                     </ul>
                     <p>{intlHelper(intl, 'introForm.info.2')}</p>
+                    <p>
+                        <FormattedMessage id="introForm.info.3" />
+                    </p>
                 </InformationPoster>
             </Box>
             <FormBlock>

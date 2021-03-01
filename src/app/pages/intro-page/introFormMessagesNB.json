@@ -1,10 +1,6 @@
 {
     "introForm.start": "Start søknad",
 
-    "introForm.arbeidstaker": "arbeidstaker",
-    "introForm.selvstendigNæringsdrivende": "selvstendig næringsdrivende",
-    "introForm.frilanser": "frilanser",
-
     "introForm.hvaBetyrDette": "Hva betyr dette?",
 
     "introForm.info.1": "Denne søknaden er for deg som bor sammen med den andre forelderen, men som skal søke om å bli regnet som at du er alene om omsorgen. I slike tilfeller får du doblet antall omsorgsdager.",
@@ -16,9 +12,7 @@
     "introForm.info.grunnList.4": "er i fengsel",
     "introForm.info.grunnList.5": "utøver verneplikt",
     "introForm.info.2": "Du regnes ikke for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
-
-    "introForm.erYrkesaktiv.spm": "Er du yrkesaktiv?",
-    "introForm.erYrkesaktiv.forklaring.1": "For å kunne bli regnet som alene og få ekstra omsorgsdager må du være yrkesaktiv, det vil si at du må være i minst én av disse arbeidssituasjonene:",
+    "introForm.info.3": "For å ha rett til å bruke omsorgsdager må du være yrkesaktiv. Det betyr at du må være arbeidstaker, selvstendig næringsdrivende, frilanser, eller en kombinasjon av disse.",
 
     "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du bekrefte at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder?",
     "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din."
