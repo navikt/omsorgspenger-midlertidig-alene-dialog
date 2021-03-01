@@ -84,6 +84,7 @@
     "step.deres-felles-barn.info.ingenbarn.2": "Du må legge til minst ett barn for å kunne gå videre.",
     "step.deres-felles-barn.info.spm.text": "Har du barn som ikke er registrert her, kan du legge inn disse selv. Det kan være fosterbarn, eller om du har barn som er fylt 18 år og som har ekstra omsorgsdager på grunn av kronisk sykdom eller funksjonshemning.",
     "step.deres-felles-barn.født": "Født",
+
     "step.deres-felles-barn.fødselsnummer": "Fødselsnummer",
     "step.deres-felles-barn.nextButtonLabel": "Fortsett",
     "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
