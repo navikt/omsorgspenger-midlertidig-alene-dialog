@@ -7,12 +7,12 @@ import { ApiEndpoint } from './api';
 export type BarnRemoteData = RemoteData<AxiosError, Barn[]>;
 
 interface BarnResultType {
-    barn: Barn[];
+    barnOppslag: Barn[];
 }
 const getBarnRemoteData = async (): Promise<BarnRemoteData> => {
     try {
         const { data } = await api.get<BarnResultType>(ApiEndpoint.barn);
-        return Promise.resolve(success(data.barn));
+        return Promise.resolve(success(data.barnOppslag));
     } catch (error) {
         return Promise.reject(failure(error));
     }
