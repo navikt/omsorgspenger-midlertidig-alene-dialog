@@ -12,6 +12,7 @@ import { Systemtittel } from 'nav-frontend-typografi';
 import { AndreBarn } from './types';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import barnUtils from './barnUtils';
+import { guid } from 'nav-frontend-js-utils';
 
 interface BarnFormLabels {
     title: string;
@@ -44,9 +45,8 @@ const BarnForm = ({ barn = { id: undefined, fnr: '', navn: '' }, labels, onSubmi
     const intl = useIntl();
 
     const onFormikSubmit = (formValues: BarnFormValues) => {
-        const barnToSubmit = barnUtils.mapFormValuesToPartialAnnetBarn(formValues, barn.id);
-        if (barnUtils.isBarn(barnToSubmit)) {
-            onSubmit(barnToSubmit);
+        if (barnUtils.isBarn(formValues)) {
+            onSubmit({ ...formValues, id: barn.id || guid() });
         } else {
             throw new Error('BarnForm: Formvalues is not a valid AnnetBarn on submit.');
         }

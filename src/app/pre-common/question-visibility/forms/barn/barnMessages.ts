@@ -6,6 +6,7 @@ const barnMessages = {
         'barn.form.okButton': 'Ok',
         'barn.form.cancelButton': 'Avbryt',
         'barn.form.validation.required': 'Feltet er påkrevd',
+        'barn.list.fnr': ' (fnr. {fnr})',
     },
     nn: {
         'barn.form.title': 'Legg til barn',
@@ -14,6 +15,7 @@ const barnMessages = {
         'barn.form.okButton': 'Ok',
         'barn.form.cancelButton': 'Avbryt',
         'barn.form.validation.required': 'Feltet er påkravd',
+        'barn.list.fnr': ' (fnr. {fnr})',
     },
 };
 

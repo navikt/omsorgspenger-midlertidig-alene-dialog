@@ -18,13 +18,9 @@ export enum IntroFormAvslag {
     erAndreForelderenIkkeUtAvStandMinst6Måneder = 'erAndreForelderenUtAvStandMinst6Måneder',
 }
 
-export const getIntroFormAvslag = (): IntroFormAvslag | undefined => {
-    return undefined;
-};
-
 const Q = IntroFormField;
 
-type IntroFormQuestionsPayload = IntroFormData & { avslag: IntroFormAvslag | undefined };
+type IntroFormQuestionsPayload = IntroFormData;
 
 const IntroFormConfig: QuestionConfig<IntroFormQuestionsPayload, IntroFormField> = {
     [Q.erAndreForelderenUtAvStandMinst6Måneder]: {

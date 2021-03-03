@@ -18,7 +18,6 @@ interface Props {
 }
 
 const barnItemLabelRenderer = (barnet: Barn, intl: IntlShape): React.ReactNode => {
-    console.log(barnet);
     return (
         <div style={{ display: 'flex' }}>
             <span style={{ order: 1 }}>
@@ -67,9 +66,9 @@ const OmDeresFellesBarnStep = ({ barn }: Props) => {
                 <BarnListAndDialog<SoknadFormField>
                     name={SoknadFormField.andreBarn}
                     labels={{
-                        addLabel: 'Legg til barn',
-                        listTitle: 'Andre barn',
-                        modalTitle: 'Legg til barn',
+                        addLabel: intlHelper(intl, 'step.deres-felles-barn.listDialog.knapplabel'),
+                        listTitle: intlHelper(intl, 'step.deres-felles-barn.listDialog.listTitle'),
+                        modalTitle: intlHelper(intl, 'step.deres-felles-barn.listDialog.modalTitle'),
                     }}
                 />
             </Box>

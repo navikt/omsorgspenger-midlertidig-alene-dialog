@@ -6,13 +6,7 @@ import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { validateYesOrNoIsAnswered } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { getTypedFormComponents, UnansweredQuestionsInfo } from '@navikt/sif-common-formik/lib';
 import { QuestionVisibilityContext } from '@navikt/sif-common-soknad/lib/question-visibility/QuestionVisibilityContext';
-import {
-    getIntroFormAvslag,
-    IntroFormData,
-    IntroFormField,
-    introFormInitialValues,
-    IntroFormQuestions,
-} from './introFormConfig';
+import { IntroFormData, IntroFormField, introFormInitialValues, IntroFormQuestions } from './introFormConfig';
 import IntroFormQuestion from './IntroFormQuestion';
 
 interface Props {
@@ -30,10 +24,8 @@ const IntroForm = ({ onValidSubmit }: Props) => {
                 onValidSubmit();
             }}
             renderForm={({ values }) => {
-                const avslag = getIntroFormAvslag();
                 const visibility = IntroFormQuestions.getVisbility({
                     ...values,
-                    avslag,
                 });
                 const kanFortsette = visibility.areAllQuestionsAnswered();
                 return (
