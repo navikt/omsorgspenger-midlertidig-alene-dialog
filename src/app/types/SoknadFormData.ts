@@ -1,12 +1,12 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-import { Utenlandsopphold } from '@navikt/sif-common-forms/lib/utenlandsopphold/types';
-import { Barn } from '../pre-common/question-visibility/forms/barn/types';
+import { AndreBarn } from 'app/pre-common/question-visibility/forms/barn/types';
 
-export enum Arbeidssituasjon {
-    'arbeidstaker' = 'arbeidstaker',
-    'selvstendigNæringsdrivende' = 'selvstendigNæringsdrivende',
-    'frilanser' = 'frilanser',
-    'annen' = 'annen',
+export interface Barn {
+    fødselsdato: Date;
+    fornavn: string;
+    mellomnavn?: string;
+    etternavn: string;
+    aktørId: string;
 }
 
 export enum AnnenForeldrenSituasjon {
@@ -20,7 +20,6 @@ export enum AnnenForeldrenSituasjon {
 export enum SoknadFormField {
     harForståttRettigheterOgPlikter = 'harForståttRettigheterOgPlikter',
     harBekreftetOpplysninger = 'harBekreftetOpplysninger',
-    arbeidssituasjon = 'arbeidssituasjon',
     annenForelderNavn = 'annenForelderNavn',
     annenForelderEtternavn = 'annenForelderEtternavn',
     annenForelderFnr = 'annenForelderFnr',
@@ -30,18 +29,12 @@ export enum SoknadFormField {
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
     annenForelderPeriodeMer6Maneder = 'annenForelderPeriodeMer6Maneder',
     vetLengdePåInnleggelseperioden = 'vetLengdePåInnleggelseperioden',
-    antallBarn = 'antallBarn',
-    fødselsårBarn = 'fødselsårBarn',
-    harBoddUtenforNorgeSiste12Mnd = 'harBoddUtenforNorgeSiste12Mnd',
-    utenlandsoppholdSiste12Mnd = 'utenlandsoppholdSiste12Mnd',
-    skalBoUtenforNorgeNeste12Mnd = 'skalBoUtenforNorgeNeste12Mnd',
-    utenlandsoppholdNeste12Mnd = 'utenlandsoppholdNeste12Mnd',
+    andreBarn = 'andreBarn',
 }
 
 export interface SoknadFormData {
     [SoknadFormField.harForståttRettigheterOgPlikter]: boolean;
     [SoknadFormField.harBekreftetOpplysninger]: boolean;
-    [SoknadFormField.arbeidssituasjon]: Arbeidssituasjon[];
     [SoknadFormField.annenForelderNavn]: string;
     [SoknadFormField.annenForelderFnr]: string;
     [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
@@ -50,15 +43,8 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderPeriodeTom]: string;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.vetLengdePåInnleggelseperioden]: YesOrNo;
-    [SoknadFormField.antallBarn]: number;
-    [SoknadFormField.fødselsårBarn]: Barn[];
-    [SoknadFormField.harBoddUtenforNorgeSiste12Mnd]: YesOrNo;
-    [SoknadFormField.utenlandsoppholdSiste12Mnd]: Utenlandsopphold[];
-    [SoknadFormField.skalBoUtenforNorgeNeste12Mnd]: YesOrNo;
-    [SoknadFormField.utenlandsoppholdNeste12Mnd]: Utenlandsopphold[];
+    [SoknadFormField.andreBarn]: AndreBarn[];
 }
-
-export type DinArbeidssituasjonFormData = Pick<SoknadFormData, SoknadFormField.arbeidssituasjon>;
 
 export type AnnenForelderFormData = Pick<
     SoknadFormData,
@@ -72,12 +58,4 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.vetLengdePåInnleggelseperioden
 >;
 
-export type MedlemskapFormData = Pick<
-    SoknadFormData,
-    | SoknadFormField.harBoddUtenforNorgeSiste12Mnd
-    | SoknadFormField.utenlandsoppholdSiste12Mnd
-    | SoknadFormField.skalBoUtenforNorgeNeste12Mnd
-    | SoknadFormField.utenlandsoppholdNeste12Mnd
->;
-
-export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.antallBarn | SoknadFormField.fødselsårBarn>;
+export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.andreBarn>;

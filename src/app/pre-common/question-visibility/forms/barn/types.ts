@@ -1,11 +1,7 @@
-import { hasValue } from '@navikt/sif-common-core/lib/validation/hasValue';
-
-export interface Barn {
+export interface AndreBarn {
     id?: string;
-    alders: number;
+    fnr: string;
+    navn: string;
 }
 
-export const isBarn = (barn: Partial<Barn>): barn is Barn => {
-    const { alders } = barn;
-    return hasValue(alders);
-};
+export type BarnFormValues = Partial<AndreBarn>;

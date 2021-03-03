@@ -1,20 +1,6 @@
 import { ApiStringDate } from '@navikt/sif-common-core/lib/types/ApiStringDate';
 import { Locale } from '@navikt/sif-common-core/lib/types/Locale';
-import { AnnenForeldrenSituasjon, Arbeidssituasjon } from './SoknadFormData';
-
-export interface BostedUtlandApiData {
-    fraOgMed: ApiStringDate;
-    tilOgMed: ApiStringDate;
-    landkode: string;
-    landnavn: string;
-}
-export interface Medlemskap {
-    harBoddIUtlandetSiste12Mnd: boolean;
-    skalBoIUtlandetNeste12Mnd: boolean;
-    utenlandsoppholdNeste12Mnd: BostedUtlandApiData[];
-    utenlandsoppholdSiste12Mnd: BostedUtlandApiData[];
-}
-
+import { AnnenForeldrenSituasjon } from './SoknadFormData';
 export interface AnnenForelder {
     navn: string;
     fnr: string;
@@ -26,14 +12,17 @@ export interface AnnenForelder {
     vetLengdePåInnleggelseperioden?: boolean;
 }
 
+export interface ApiBarn {
+    identitetsnummer?: string;
+    aktørId?: string;
+    navn: string;
+}
+
 export interface SoknadApiData {
     id: string;
     språk: Locale;
     harForståttRettigheterOgPlikter: boolean;
     harBekreftetOpplysninger: boolean;
-    arbeidssituasjon: Arbeidssituasjon[];
     annenForelder: AnnenForelder;
-    antallBarn: number;
-    fødselsårBarn: number[];
-    medlemskap: Medlemskap;
+    barn: ApiBarn[];
 }

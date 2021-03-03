@@ -9,19 +9,19 @@ import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { validateBekrefterOpplysninger } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { Person } from 'app/types/Person';
 import { SoknadApiData } from 'app/types/SoknadApiData';
-import { SoknadFormField } from '../../types/SoknadFormData';
+import { Barn, SoknadFormField } from '../../types/SoknadFormData';
 import { useSoknadContext } from '../SoknadContext';
 import SoknadFormComponents from '../SoknadFormComponents';
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 import AnnenForelderSituasjonSummary from './AnnenForelderSituasjonSummary';
 import AnnenForelderSummary from './AnnenForelderSummary';
-import MedlemskapSummary from './MedlemskapSummary';
 import OmBarnaSummary from './OmBarnaSummary';
 import SøkerSummary from './SøkerSummary';
 
 type Props = {
     søker: Person;
+    barn: Barn[];
     apiValues?: SoknadApiData;
 };
 
@@ -49,7 +49,6 @@ const OppsummeringStep = ({ søker, apiValues }: Props) => {
                                 <AnnenForelderSummary annenForelder={apiValues.annenForelder} />
                                 <OmBarnaSummary apiValues={apiValues} />
                                 <AnnenForelderSituasjonSummary annenForelder={apiValues.annenForelder} />
-                                <MedlemskapSummary medlemskap={apiValues.medlemskap} />
                             </ResponsivePanel>
                         </Box>
 

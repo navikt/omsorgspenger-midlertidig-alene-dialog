@@ -5,16 +5,11 @@ import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValida
 import {
     AnnenForelderFormData,
     AnnenForeldrenSituasjon,
-    DinArbeidssituasjonFormData,
-    MedlemskapFormData,
+    Barn,
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-
-const dinArbeidsituasjonIsComplete = ({ arbeidssituasjon }: Partial<DinArbeidssituasjonFormData>): boolean => {
-    return (arbeidssituasjon || []).length > 0;
-};
 
 const omAnnenForelderIsComplete = (
     { annenForelderNavn, annenForelderFnr }: Partial<AnnenForelderFormData>,
@@ -53,44 +48,21 @@ const annenForelderSituasjonIsComplete = ({
     } else return annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
 };
 
-const omBarnaIsComplete = ({ fødselsårBarn }: Partial<OmBarnaFormData>): boolean => {
-    // TODO: Alders validering hvis trenges
-    return (fødselsårBarn || []).length > 0;
+const omBarnaIsComplete = ({ andreBarn }: Partial<OmBarnaFormData>, barn: Barn[]): boolean => {
+    return barn.length > 0 || (andreBarn || []).length > 0;
 };
 
-const medlemskapIsComplete = ({
-    harBoddUtenforNorgeSiste12Mnd,
-    skalBoUtenforNorgeNeste12Mnd,
-    utenlandsoppholdSiste12Mnd,
-    utenlandsoppholdNeste12Mnd,
-}: Partial<MedlemskapFormData>): boolean => {
-    if (harBoddUtenforNorgeSiste12Mnd === YesOrNo.YES && (utenlandsoppholdSiste12Mnd || []).length < 1) {
-        return false;
-    }
-    if (skalBoUtenforNorgeNeste12Mnd === YesOrNo.YES && (utenlandsoppholdNeste12Mnd || []).length < 1) {
-        return false;
-    }
-    return true;
-};
-
-export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person): StepID[] => {
+export const getAvailableSteps = (values: Partial<SoknadFormData>, søker: Person, barn: Barn[]): StepID[] => {
     const steps: StepID[] = [];
-    steps.push(StepID.DIN_ARBEIDSITUASJON);
+    steps.push(StepID.OM_ANNEN_FORELDER);
 
-    if (dinArbeidsituasjonIsComplete(values)) {
-        steps.push(StepID.OM_ANNEN_FORELDER);
-    }
     if (omAnnenForelderIsComplete(values, søker)) {
         steps.push(StepID.ANNEN_FORELDER_SITUASJON);
     }
     if (annenForelderSituasjonIsComplete(values)) {
         steps.push(StepID.DERES_FELLES_BARN);
     }
-    if (omBarnaIsComplete(values)) {
-        steps.push(StepID.MEDLEMSKAP);
-    }
-
-    if (medlemskapIsComplete(values)) {
+    if (omBarnaIsComplete(values, barn)) {
         steps.push(StepID.OPPSUMMERING);
     }
 

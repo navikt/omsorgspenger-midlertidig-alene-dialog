@@ -13,10 +13,6 @@
     "page.ikkeMyndig.banner.lastNed": "Søknad om å bli regnet som alene om omsorgen for barn",
     "page.ikkeMyndig.tittel": "Søknad om å bli regnet som alene om omsorgen for barn",
 
-    "arbeidssituasjon.arbeidstaker": "Arbeidstaker",
-    "arbeidssituasjon.selvstendigNæringsdrivende": "Selvstendig næringsdrivende",
-    "arbeidssituasjon.frilanser": "Frilanser",
-
     "arbeidstaker": "arbeidstaker",
 
     "selvstendigNæringsdrivende": "selvstendig næringsdrivende",
@@ -24,10 +20,6 @@
 
     "validationText.mindre_5_bokstaver": "Du må skrive minst 5 tegn",
     "validationText.mer_1000_bokstaver": "Du kan skrive max 1000 tegn",
-    "validationText.utenlandsopphold_ikke_registrert": "Du har ikke registrert noen utenlandsopphold for perioden",
-    "validationText.utenlandsopphold_overlapper": "Utenlandsopphold overlapper",
-    "validationText.utenlandsopphold_utenfor_periode": "Utenlandsopphold er utenfor periode",
-    "validationText.utenlandsopphold_overlapper_samme_start_slutt": "Utenlandsopphold har samme start og slutt",
     "validationText.barn_ikke_registrert": "Du må legge til minst ett barn for å fortsette",
 
     "grunn.sykdom": "Sykdom, skade eller funksjonhemming",
@@ -52,12 +44,6 @@
     "step.velkommen.tittel": "Søknad om å bli regnet som at du er alene om omsorgen for barn",
     "step.velkommen.personopplysninger.lenketekst": "Les om hvordan NAV behandler personopplysningene dine",
     "step.velkommen.button.start": "Fortsett",
-
-    "step.din-arbeidsituasjon.pageTitle": "Din arbeidsituasjon",
-    "step.din-arbeidsituasjon.stepTitle": "Din arbeidsituasjon",
-    "step.din-arbeidsituasjon.banner": "Både du og den andre forelderen må ha rett til å bruke omsorgsdager for at du skal kunne bli regnet som at du er alene om omsorgen for barn. Det vil si at dere begge må enten være arbeidstaker, selvstendig næringsdrivende, frilanser eller en kombinasjon av disse.",
-    "step.din-arbeidsituasjon.nextButtonLabel": "Fortsett",
-    "step.din-arbeidsituasjon.spm": "Hva er din arbeidssituasjon? Du kan velge flere.",
 
     "step.om-annen-forelder.pageTitle": "Om den andre forelderen",
     "step.om-annen-forelder.stepTitle": "Om den andre forelderen",
@@ -90,25 +76,22 @@
     "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
     "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
 
-    "step.deres-felles-barn.pageTitle": "Deres felles barn",
-    "step.deres-felles-barn.stepTitle": "Deres felles barn",
-    "step.deres-felles-barn.banner": "Her skal du legge inn fødselsåret til barn og eventuelle fosterbarn du har felles med den andre forelderen som omfattes av denne søknaden.",
-    "step.deres-felles-barn.stopMessage": "Du må legge til minst ett barn for å fortsette",
+    "step.deres-felles-barn.pageTitle": "Om barn",
+    "step.deres-felles-barn.stepTitle": "Om barn",
+    "step.deres-felles-barn.listHeader.registrerteBarn": "Registrerte barn",
+    "step.deres-felles-barn.spm.andreBarn": "Har du andre barn?",
+    "step.deres-felles-barn.spm.flereBarn": "Har du flere barn?",
+    "step.deres-felles-barn.info.ingenbarn.2": "Du må legge til minst ett barn for å kunne gå videre.",
+    "step.deres-felles-barn.info.spm.text": "Har du barn som ikke er registrert her, kan du legge inn disse selv. Det kan være fosterbarn, eller om du har barn som er fylt 18 år og som har ekstra omsorgsdager på grunn av kronisk sykdom eller funksjonshemning.",
+    "step.deres-felles-barn.født": "Født",
+    "step.deres-felles-barn.listDialog.knapplabel": "Legg til barn",
+    "step.deres-felles-barn.listDialog.listTitle": "Andre barn",
+    "step.deres-felles-barn.listDialog.modalTitle": "Legg til barn",
+
+    "step.deres-felles-barn.fødselsnummer": "Fødselsnummer",
     "step.deres-felles-barn.nextButtonLabel": "Fortsett",
     "step.deres-felles-barn.hvorMangeBarn.spm": "Hvor mange felles barn har dere? Inkludert eventuelle fosterbarn",
     "step.deres-felles-barn.hvorforSpører.svar": "Vi trenger å vite alderen på barn for å kunne beregne hvor mange omsorgsdager du kan ha rett på og hvor lenge du har rett til å bruke omsorgsdager.",
-
-    "step.medlemskap.pageTitle": "Medlemskap",
-    "step.medlemskap.stepTitle": "Medlemskap",
-    "step.medlemskap.nextButtonLabel": "Fortsett",
-    "steg.medlemsskap.info": "Medlemskap i folketrygden er nøkkelen til rettigheter fra NAV. Hvis du bor eller jobber i Norge er du vanligvis medlem. Du kan lese mer om medlemskap på",
-    "steg.medlemsskap.annetLandSiste12.spm": "Har du bodd i utlandet i hele eller deler av de siste 12 månedene?",
-    "steg.medlemsskap.annetLandNeste12.spm": "Planlegger du å bo i utlandet i hele eller deler av de neste 12 månedene?",
-    "steg.medlemsskap.annetLandSiste12.hjelp": "Du svarer ja bare hvis du har oppholdt deg fast i et annet land enn Norge. Korte utlandsturer i forbindelse med for eksempel ferie regnes ikke med.",
-    "steg.medlemsskap.annetLandSiste12.listeTittel": "Utenlandsopphold siste 12 måneder",
-    "steg.medlemsskap.annetLandNeste12.hjelp": "Du svarer ja bare hvis du planlegger å oppholde deg fast i et annet land enn Norge. Korte utlandsturer i forbindelse med for eksempel ferie regnes ikke med.",
-    "steg.medlemsskap.annetLandNeste12.listeTittel": "Utenlandsopphold neste 12 måneder",
-    "step.medlemskap.knap.leggNyttUtenlandsopphold": "Legg til nytt utenlandsopphold",
 
     "step.oppsummering.pageTitle": "Oppsummering",
     "step.oppsummering.stepTitle": "Oppsummering",
@@ -116,12 +99,10 @@
     "step.oppsummering.info": "Les gjennom oppsummeringen og sjekk at alt er riktig før du sender inn søknaden. Hvis du vil gjøre endringer, kan du gå tilbake.",
 
     "step.oppsummering.søker.header": "Om deg som søker",
-    "step.oppsummering.søker.arbeidssituasjon": "Hva er din arbeidssituasjon?",
 
-    "step.oppsummering.deres-felles-barn.header": "Deres felles barn",
+    "step.oppsummering.deres-felles-barn.header": "Dine barn",
     "step.oppsummering.deres-felles-barn.barn": "Barn",
-    "step.oppsummering.deres-felles-barn.født": "Født i",
-    "step.oppsummering.deres-felles-barn.antallBarn": "Antall barn:",
+    "step.oppsummering.deres-felles-barn.listItem": " (fnr. {identitetsnummer})",
 
     "step.oppsummering.annenForelder.header": "Om den andre forelderen",
 
@@ -130,12 +111,6 @@
     "step.oppsummering.annenForelderensSituasjon.tittel": "Grunn",
     "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
     "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen ikke kan ha tilsyn med barnet/barna:",
-
-    "steg.oppsummering.medlemskap.header": "Medlemskap i Folketrygden",
-    "steg.oppsummering.medlemskap.utlandetSiste12.header": "Har du bodd i utlandet i de siste 12 månedene?",
-    "steg.oppsummering.medlemskap.utlandetNeste12.header": "Skal du bo i utlandet i de neste 12 månedene?",
-    "steg.oppsummering.medlemskap.utlandetSiste12.liste.header": "Utenlandsopphold siste 12 måneder",
-    "steg.oppsummering.medlemskap.utlandetNeste12.liste.header": "Utenlandsopphold neste 12 måneder",
 
     "step.oppsummering.bekrefterOpplysninger": "Jeg bekrefter at opplysningene jeg har gitt er riktige, og at jeg ikke har holdt tilbake opplysninger som har betydning for min rett til omsorgsdager.",
 
