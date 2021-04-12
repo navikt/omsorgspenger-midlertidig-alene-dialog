@@ -14,17 +14,18 @@ interface Props {
     annenForelder: AnnenForelder;
 }
 
-export const renderPeriodeAnnenForelderenKanIkkeHaTilsyn = (fraOgMed: string, tilOgMed: string): React.ReactNode => (
-    <div className={bem.block}>
-        <span className={bem.element('dates')}>
-            {prettifyDateExtended(apiStringDateToDate(fraOgMed))} -{' '}
-            {prettifyDateExtended(apiStringDateToDate(tilOgMed))}{' '}
-        </span>
-    </div>
-);
-
 const AnnenForelderSituasjonSummary = ({ annenForelder }: Props) => {
     const intl = useIntl();
+
+    const renderPeriodeAnnenForelderenKanIkkeHaTilsyn = (fraOgMed: string, tilOgMed?: string): React.ReactNode => (
+        <div className={bem.block}>
+            <span className={bem.element('dates')}>
+                {prettifyDateExtended(apiStringDateToDate(fraOgMed))} -{' '}
+                {tilOgMed && prettifyDateExtended(apiStringDateToDate(tilOgMed))}
+                {!tilOgMed && intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.VetIkkeHvorLengePerioden')}
+            </span>
+        </div>
+    );
 
     return (
         <SummarySection header={intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.header')}>
@@ -38,19 +39,18 @@ const AnnenForelderSituasjonSummary = ({ annenForelder }: Props) => {
                 </SummaryBlock>
             )}
 
-            {!annenForelder.periodeFraOgMed && !annenForelder.periodeTilOgMed && (
-                <SummaryBlock
-                    header={intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder')}>
-                    <JaNeiSvar harSvartJa={annenForelder.periodeOver6Måneder} />
-                </SummaryBlock>
-            )}
-
-            {annenForelder.periodeFraOgMed && annenForelder.periodeTilOgMed && (
+            {annenForelder.periodeFraOgMed && (
                 <SummaryBlock header={intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.periode.header')}>
                     {renderPeriodeAnnenForelderenKanIkkeHaTilsyn(
                         annenForelder.periodeFraOgMed,
                         annenForelder.periodeTilOgMed
                     )}
+                </SummaryBlock>
+            )}
+            {!annenForelder.periodeTilOgMed && (
+                <SummaryBlock
+                    header={intlHelper(intl, 'step.oppsummering.annenForelderensSituasjon.erVarighetMerEnn6Maneder')}>
+                    <JaNeiSvar harSvartJa={annenForelder.periodeOver6Måneder} />
                 </SummaryBlock>
             )}
         </SummarySection>

@@ -66,12 +66,13 @@
     "step.annen-foreldrens-situasjon.grunn.verneplikt": "Verneplikt",
     "step.annen-foreldrens-situasjon.grunn.annet": "Annet",
     "step.annen-foreldrens-situasjon.beskrivelseAvSituasjonen.spm": "Beskriv hva som gjør at den andre forelderen ikke kan ha tilsyn med barn:",
-    "step.annen-foreldrens-situasjon.erVarighetMerEnn6Maneder.spm": "Perioden den andre forelderen ikke kan ha tilsyn med barn må ha en varighet på minst 6 måneder. Kan du bekrefte at dette er tilfelle?",
+    "step.annen-foreldrens-situasjon.erVarighetMerEnn6Maneder.spm": "Er perioden på minst 6 måneder?",
     "step.annen-foreldrens-situasjon.periode.innlagtIHelseinstitusjon.spm": "I hvilken periode gjelder innleggelsen?",
     "step.annen-foreldrens-situasjon.periode.fengsel.spm": "I hvilken periode gjelder soningen i fengsel?",
     "step.annen-foreldrens-situasjon.periode.verneplikt.spm": "I hvilken periode utføres verneplikten?",
     "step.annen-foreldrens-situasjon.periode.fra": "Fra",
     "step.annen-foreldrens-situasjon.periode.til": "Til",
+    "step.annen-foreldrens-situasjon.periode.checkboxVetIkkeTom": "Jeg vet ikke hvor lenge perioden vil være",
     "step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm": "Er det avklart hvor lenge innleggelsen skal vare?",
     "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
     "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
@@ -111,6 +112,7 @@
     "step.oppsummering.annenForelderensSituasjon.tittel": "Grunn",
     "step.oppsummering.annenForelderensSituasjon.beskrivelse": "Beskrivelse av situasjonen:",
     "step.oppsummering.annenForelderensSituasjon.periode.header": "Periode når den andre forelderen ikke kan ha tilsyn med barnet/barna:",
+    "step.oppsummering.annenForelderensSituasjon.VetIkkeHvorLengePerioden": "Jeg vet ikke hvor lenge perioden vil være",
 
     "step.oppsummering.bekrefterOpplysninger": "Jeg bekrefter at opplysningene jeg har gitt er riktige, og at jeg ikke har holdt tilbake opplysninger som har betydning for min rett til omsorgsdager.",
 

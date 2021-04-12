@@ -25,32 +25,18 @@ export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boo
 export const cleanupAnnenForelderenSituasjonStep = (values: SoknadFormData): SoknadFormData => {
     const cleanedValues = { ...values };
 
-    if (
-        values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
-        values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet
-    ) {
-        cleanedValues.annenForelderPeriodeFom = '';
+    if (values.annenForelderPeriodeVetIkkeTom) {
         cleanedValues.annenForelderPeriodeTom = '';
-        cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
-    }
-
-    if (values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon) {
-        cleanedValues.annenForelderSituasjonBeskrivelse = '';
-        if (values.vetLengdePåInnleggelseperioden === YesOrNo.YES) {
-            cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
-        } else {
-            cleanedValues.annenForelderPeriodeFom = '';
-            cleanedValues.annenForelderPeriodeTom = '';
-        }
+    } else {
+        cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
     }
 
     if (
         values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel ||
-        values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt ||
+        values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
     ) {
         cleanedValues.annenForelderSituasjonBeskrivelse = '';
-        cleanedValues.annenForelderPeriodeMer6Maneder = YesOrNo.UNANSWERED;
-        cleanedValues.vetLengdePåInnleggelseperioden = YesOrNo.UNANSWERED;
     }
 
     return cleanedValues;
@@ -94,19 +80,22 @@ const AnnenForelderenSituasjonStep = () => {
         );
     };
 
-    const renderVetLengdePåInnleggelseperiodenSpm = () => {
-        return (
-            <FormBlock>
-                <SoknadFormComponents.YesOrNoQuestion
-                    name={SoknadFormField.vetLengdePåInnleggelseperioden}
-                    legend={intlHelper(intl, 'step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm')}
-                    validate={validateYesOrNoIsAnswered}
-                />
-            </FormBlock>
-        );
-    };
-
     const renderDateRangePicker = () => {
+        const dontShowVetIkkeTomCheckbox = () => {
+            return (
+                values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel ||
+                values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt
+            );
+        };
+
+        if (dontShowVetIkkeTomCheckbox()) {
+            values.annenForelderPeriodeVetIkkeTom = undefined;
+        }
+
+        if (values.annenForelderPeriodeVetIkkeTom) {
+            values.annenForelderPeriodeTom = '';
+        }
+
         return (
             <FormBlock>
                 <SoknadFormComponents.DateRangePicker
@@ -124,11 +113,18 @@ const AnnenForelderenSituasjonStep = () => {
                     }}
                     toInputProps={{
                         label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.til'),
-                        validate: validateRequiredField,
+                        validate: values.annenForelderPeriodeVetIkkeTom ? undefined : validateRequiredField,
                         name: SoknadFormField.annenForelderPeriodeTom,
+                        disabled: values.annenForelderPeriodeVetIkkeTom,
                     }}
                 />
-                {values.annenForelderPeriodeTom &&
+                {!dontShowVetIkkeTomCheckbox() && (
+                    <SoknadFormComponents.Checkbox
+                        label={intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.checkboxVetIkkeTom')}
+                        name={SoknadFormField.annenForelderPeriodeVetIkkeTom}
+                    />
+                )}
+                {values.annenForelderPeriodeFom &&
                     values.annenForelderPeriodeTom &&
                     isPeriodeLess6month(values.annenForelderPeriodeFom, values.annenForelderPeriodeTom) && (
                         <FormBlock>
@@ -141,38 +137,6 @@ const AnnenForelderenSituasjonStep = () => {
         );
     };
 
-    const renderAlternativer = () => {
-        switch (values.annenForelderSituasjon) {
-            case AnnenForeldrenSituasjon.sykdom:
-                return (
-                    <>
-                        {renderTekstArea()}
-                        {renderOver6MndSpm()}
-                    </>
-                );
-            case AnnenForeldrenSituasjon.annet:
-                return (
-                    <>
-                        {renderTekstArea()}
-                        {renderOver6MndSpm()}
-                    </>
-                );
-            case AnnenForeldrenSituasjon.innlagtIHelseinstitusjon:
-                return (
-                    <>
-                        {renderVetLengdePåInnleggelseperiodenSpm()}
-                        {values.vetLengdePåInnleggelseperioden === YesOrNo.YES && renderDateRangePicker()}
-                        {values.vetLengdePåInnleggelseperioden === YesOrNo.NO && renderOver6MndSpm()}
-                    </>
-                );
-            case AnnenForeldrenSituasjon.fengsel:
-                return <>{renderDateRangePicker()}</>;
-            case AnnenForeldrenSituasjon.utøverVerneplikt:
-                return <>{renderDateRangePicker()}</>;
-            default:
-                return <></>;
-        }
-    };
     return (
         <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} onStepCleanup={cleanupAnnenForelderenSituasjonStep}>
             <CounsellorPanel>
@@ -209,7 +173,14 @@ const AnnenForelderenSituasjonStep = () => {
                     validate={validateRequiredField}
                 />
             </Box>
-            {renderAlternativer()}
+
+            {(values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
+                values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet) &&
+                renderTekstArea()}
+
+            {renderDateRangePicker()}
+
+            {values.annenForelderPeriodeVetIkkeTom && renderOver6MndSpm()}
         </SoknadFormStep>
     );
 };
