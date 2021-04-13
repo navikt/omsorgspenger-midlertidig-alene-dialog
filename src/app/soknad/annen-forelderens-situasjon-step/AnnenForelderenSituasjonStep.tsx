@@ -100,11 +100,15 @@ const AnnenForelderenSituasjonStep = () => {
             <FormBlock>
                 <SoknadFormComponents.DateRangePicker
                     legend={
-                        values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
+                        values.annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom
+                            ? intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.sykdom.spm')
+                            : values.annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon
                             ? intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.innlagtIHelseinstitusjon.spm')
                             : values.annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel
                             ? intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.fengsel.spm')
-                            : intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.verneplikt.spm')
+                            : values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt
+                            ? intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.verneplikt.spm')
+                            : intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.annet.spm')
                     }
                     fromInputProps={{
                         label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.fra'),
@@ -178,7 +182,7 @@ const AnnenForelderenSituasjonStep = () => {
                 values.annenForelderSituasjon === AnnenForeldrenSituasjon.annet) &&
                 renderTekstArea()}
 
-            {renderDateRangePicker()}
+            {values.annenForelderSituasjon && renderDateRangePicker()}
 
             {values.annenForelderPeriodeVetIkkeTom && renderOver6MndSpm()}
         </SoknadFormStep>
