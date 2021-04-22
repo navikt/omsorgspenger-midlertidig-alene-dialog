@@ -87,7 +87,13 @@ const AnnenForelderenSituasjonStep = () => {
                 values.annenForelderSituasjon === AnnenForeldrenSituasjon.utøverVerneplikt
             );
         };
+        if (dontShowVetIkkeTomCheckbox()) {
+            values.annenForelderPeriodeVetIkkeTom = undefined;
+        }
 
+        if (values.annenForelderPeriodeVetIkkeTom) {
+            values.annenForelderPeriodeTom = '';
+        }
         return (
             <FormBlock>
                 <SoknadFormComponents.DateRangePicker
