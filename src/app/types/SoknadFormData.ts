@@ -27,8 +27,8 @@ export enum SoknadFormField {
     annenForelderSituasjonBeskrivelse = 'annenForelderSituasjonBeskrivelse',
     annenForelderPeriodeFom = 'annenForelderPeriodeFom',
     annenForelderPeriodeTom = 'annenForelderPeriodeTom',
+    annenForelderPeriodeVetIkkeTom = 'annenForelderPeriodeVetIkkeTom',
     annenForelderPeriodeMer6Maneder = 'annenForelderPeriodeMer6Maneder',
-    vetLengdePåInnleggelseperioden = 'vetLengdePåInnleggelseperioden',
     andreBarn = 'andreBarn',
 }
 
@@ -40,9 +40,9 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
     [SoknadFormField.annenForelderPeriodeFom]: string;
-    [SoknadFormField.annenForelderPeriodeTom]: string;
+    [SoknadFormField.annenForelderPeriodeTom]?: string;
+    [SoknadFormField.annenForelderPeriodeVetIkkeTom]?: boolean;
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
-    [SoknadFormField.vetLengdePåInnleggelseperioden]: YesOrNo;
     [SoknadFormField.andreBarn]: AndreBarn[];
 }
 
@@ -54,8 +54,8 @@ export type AnnenForelderFormData = Pick<
     | SoknadFormField.annenForelderSituasjonBeskrivelse
     | SoknadFormField.annenForelderPeriodeFom
     | SoknadFormField.annenForelderPeriodeTom
+    | SoknadFormField.annenForelderPeriodeVetIkkeTom
     | SoknadFormField.annenForelderPeriodeMer6Maneder
-    | SoknadFormField.vetLengdePåInnleggelseperioden
 >;
 
 export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.andreBarn>;

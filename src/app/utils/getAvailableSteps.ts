@@ -9,7 +9,6 @@ import {
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
-import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 
 const omAnnenForelderIsComplete = (
     { annenForelderNavn, annenForelderFnr }: Partial<AnnenForelderFormData>,
@@ -28,24 +27,21 @@ const annenForelderSituasjonIsComplete = ({
     annenForelderPeriodeFom,
     annenForelderPeriodeTom,
     annenForelderPeriodeMer6Maneder,
-    vetLengdePåInnleggelseperioden,
+    annenForelderPeriodeVetIkkeTom,
 }: Partial<AnnenForelderFormData>): boolean => {
     if (
         annenForelderSituasjon === AnnenForeldrenSituasjon.sykdom ||
         annenForelderSituasjon === AnnenForeldrenSituasjon.annet
     ) {
-        return (
-            (annenForelderSituasjonBeskrivelse || '').length > 0 &&
+        return (annenForelderSituasjonBeskrivelse || '').length > 0 &&
             (annenForelderSituasjonBeskrivelse || '').length <= 1000 &&
-            annenForelderPeriodeMer6Maneder !== (YesOrNo.UNANSWERED || undefined)
-        );
-    } else if (
-        annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon &&
-        vetLengdePåInnleggelseperioden === YesOrNo.NO
-    ) {
-        return annenForelderPeriodeMer6Maneder !== undefined;
-        // TODO: teste, validate datoer
-    } else return annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
+            annenForelderPeriodeVetIkkeTom
+            ? annenForelderPeriodeFom !== undefined && annenForelderPeriodeMer6Maneder !== undefined
+            : annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
+    } else
+        return annenForelderPeriodeVetIkkeTom
+            ? annenForelderPeriodeFom !== undefined && annenForelderPeriodeMer6Maneder !== undefined
+            : annenForelderPeriodeFom !== undefined && annenForelderPeriodeTom !== undefined;
 };
 
 const omBarnaIsComplete = ({ andreBarn }: Partial<OmBarnaFormData>, barn: Barn[]): boolean => {

@@ -27,11 +27,6 @@ export const mapAnnenForelderToApiData = (formData: AnnenForelderFormData): Anne
                 formData.annenForelderPeriodeMer6Maneder === YesOrNo.UNANSWERED
                     ? undefined
                     : formData.annenForelderPeriodeMer6Maneder === YesOrNo.YES,
-            vetLengdePåInnleggelseperioden:
-                formData.vetLengdePåInnleggelseperioden ||
-                formData.vetLengdePåInnleggelseperioden !== YesOrNo.UNANSWERED
-                    ? formData.vetLengdePåInnleggelseperioden === YesOrNo.YES
-                    : undefined,
         },
     };
 };

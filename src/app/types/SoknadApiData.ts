@@ -9,7 +9,6 @@ export interface AnnenForelder {
     periodeFraOgMed?: ApiStringDate;
     periodeTilOgMed?: ApiStringDate;
     periodeOver6Måneder?: boolean;
-    vetLengdePåInnleggelseperioden?: boolean;
 }
 
 export interface ApiBarn {
