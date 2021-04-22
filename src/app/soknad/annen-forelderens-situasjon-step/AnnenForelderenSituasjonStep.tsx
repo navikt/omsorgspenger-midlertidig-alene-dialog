@@ -88,14 +88,6 @@ const AnnenForelderenSituasjonStep = () => {
             );
         };
 
-        if (dontShowVetIkkeTomCheckbox()) {
-            values.annenForelderPeriodeVetIkkeTom = undefined;
-        }
-
-        if (values.annenForelderPeriodeVetIkkeTom) {
-            values.annenForelderPeriodeTom = '';
-        }
-
         return (
             <FormBlock>
                 <SoknadFormComponents.DateRangePicker
