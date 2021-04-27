@@ -10,12 +10,12 @@ const barnMessages = {
     },
     nn: {
         'barn.form.title': 'Legg til barn',
-        'barn.form.fnr': 'Barnets fødselsnummer/D-nummer',
-        'barn.form.navn': 'Barnets namn',
+        'barn.form.fnr': 'Fødselsnummeret/D-nummeret til barnet',
+        'barn.form.navn': 'Namnet på barnet',
         'barn.form.okButton': 'Ok',
         'barn.form.cancelButton': 'Avbryt',
         'barn.form.validation.required': 'Feltet er påkravd',
-        'barn.list.fnr': ' (fnr. {fnr})',
+        'barn.list.fnr': '(fnr. {fnr})',
     },
 };
 
