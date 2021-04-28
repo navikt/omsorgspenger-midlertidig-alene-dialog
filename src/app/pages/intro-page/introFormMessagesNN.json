@@ -1,0 +1,19 @@
+{
+    "introForm.start": "Start søknad",
+
+    "introForm.hvaBetyrDette": "Kva betyr dette?",
+
+    "introForm.info.1": "Denne søknaden er for deg som bur saman med den andre forelderen, men som skal søkje om å bli rekna som åleine om omsorga. I slike tilfelle får du dobla talet på omsorgsdagar.",
+    "introForm.info.2.html": "Du kan blir rekna som åleine om omsorga når den andre forelderen ikkje kan ha tilsyn med barn <strong>i ein periode på minst 6 månader.</strong> Det kan vere at den andre forelderen for eksempel",
+
+    "introForm.info.grunnList.1": "er fysisk eller psykisk sjuk",
+    "introForm.info.grunnList.2": "er innlagd i helseinstitusjon",
+    "introForm.info.grunnList.3": "har ei funksjonshemming",
+    "introForm.info.grunnList.4": "er i fengsel",
+    "introForm.info.grunnList.5": "utøver verneplikt",
+    "introForm.info.2": "Du blir ikkje rekna for å vere åleine om omsorga dersom den andre forelderen er mykje borte frå heimen på grunn av jobb, skule eller studium.",
+    "introForm.info.3": "For å ha rett til å bruke omsorgsdagar må du vere yrkesaktiv. Det betyr at du må vere arbeidstakar, sjølvstendig næringsdrivande, frilansar eller ein kombinasjon av desse.",
+
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du stadfeste at den andre forelderen ikkje kan ha tilsyn med barn i ein periode på minst 6 månader?",
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Dersom perioden den andre forelderen ikkje kan ta seg av barn, er på mindre enn 6 månader, kan det vere at du ikkje blir rekna som åleine om omsorga. Du kan likevel halde fram slik at vi kan vurdere søknaden din."
+}
