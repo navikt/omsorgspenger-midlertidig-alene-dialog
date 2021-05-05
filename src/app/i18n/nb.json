@@ -135,5 +135,37 @@
     "kvittering.info.1": "Vi behandler søknaden fra deg om å bli regnet som alene om omsorgen.",
     "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
     "kvittering.info.3a": "Når vi har behandlet søknaden din får du et svar fra oss i posten og på ",
-    "kvittering.info.3b": "Ditt NAV"
+    "kvittering.info.3b": "Ditt NAV",
+
+    "validation.harForståttRettigheterOgPlikter.noValue": "Du må bekrefte at du har lest og forstått dine plikter",
+
+    "validation.annenForelderNavn.stringHasNoValue": "Skriv inn navnet til den andre forelderen",
+    "validation.annenForelderNavn.stringIsTooLong": "Navnet på den andre forelderen kan ikke inneholde flere enn {maks} tegn.",
+    "validation.annenForelderNavn.stringIsTooShort": "Navnet på den andre forelderen må inneholde minst {min} tegn.",
+
+    "validation.annenForelderFnr.fødselsnummerHasNoValue": "Skriv inn fødselsnummeret til den andre forelderen",
+    "validation.annenForelderFnr.fødselsnummerIsInvalid": "Du har oppgitt et ugyldig fødselsnummer. Et gyldig fødselsnummer består av 11 siffer.",
+    "validation.annenForelderFnr.fødselsnummerIsNot11Chars": "Du har oppgitt et ugyldig fødselsnummer som ikke består av 11 siffer. Et gyldig fødselsnummer består av 11 siffer.",
+
+    "validation.annenForelderSituasjon.noValue": "Du må velge én av disse grunnene til at den andre forelderen ikke kan ha tilsyn med barn i en periode på 6 måneder",
+
+    "validation.annenForelderSituasjonBeskrivelse.stringHasNoValue": "Skriv inn hva som gjør at den andre forelderen ikke kan ha tilsyn med barn",
+    "validation.annenForelderSituasjonBeskrivelse.stringIsTooLong": "Beskrivelse om hva som gjør at den andre forelderen ikke kan ha tilsyn med barn, kan ikke inneholde flere enn {maks} tegn.",
+    "validation.annenForelderSituasjonBeskrivelse.stringIsTooShort": "Beskriv hva som gjør at den andre forelderen ikke kan ha tilsyn med barn, må inneholde minst {min} tegn.",
+
+    "validation.annenForelderPeriodeFom.noValue.sykdom": "Du må skrive fra hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn",
+    "validation.annenForelderPeriodeFom.noValue.innlagtIHelseinstitusjon": "Du må skrive fra hvilken dato gjelder innleggelsen",
+    "validation.annenForelderPeriodeFom.noValue.fengsel": "Du må skrive fra hvilken dato gjelder soningen i fengsel",
+    "validation.annenForelderPeriodeFom.noValue.utøverVerneplikt": "Du må skrive fra hvilken dato utføres verneplikten",
+    "validation.annenForelderPeriodeFom.noValue.annet": "Du må skrive fra hvilken dato gjelder dette",
+
+    "validation.annenForelderPeriodeTom.noValue.sykdom": "Du må skrive til hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn",
+    "validation.annenForelderPeriodeTom.noValue.innlagtIHelseinstitusjon": "Du må skrive til hvilken dato gjelder innleggelsen",
+    "validation.annenForelderPeriodeTom.noValue.fengsel": "Du må skrive til hvilken dato gjelder soningen i fengsel",
+    "validation.annenForelderPeriodeTom.noValue.utøverVerneplikt": "Du må skrive til hvilken dato utføres verneplikten",
+    "validation.annenForelderPeriodeTom.noValue.annet": "Du må skrive til hvilken dato gjelder dette",
+
+    "validation.annenForelderPeriodeMer6Maneder.yesOrNoIsUnanswered": "Du må svare at perioden på minst 6 måneder eller ikke",
+
+    "validation.harBekreftetOpplysninger.notChecked": "Du må bekrefte opplysningene"
 }

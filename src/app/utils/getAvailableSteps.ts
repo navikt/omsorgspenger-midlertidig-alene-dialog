@@ -1,7 +1,5 @@
-import { validateFødselsnummer } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { Person } from 'app/types/Person';
 import { StepID } from '../soknad/soknadStepsConfig';
-import { validateFødselsnummerIsDifferentThan } from '../validation/fieldValidation';
 import {
     AnnenForelderFormData,
     AnnenForeldrenSituasjon,
@@ -9,16 +7,22 @@ import {
     OmBarnaFormData,
     SoknadFormData,
 } from '../types/SoknadFormData';
+import { getFødselsnummerValidator } from '@navikt/sif-common-formik/lib/validation';
 
 const omAnnenForelderIsComplete = (
     { annenForelderNavn, annenForelderFnr }: Partial<AnnenForelderFormData>,
     søker: Person
 ): boolean => {
-    return (
-        (annenForelderNavn || '')?.length > 0 &&
-        validateFødselsnummer(annenForelderFnr || '') === undefined &&
-        validateFødselsnummerIsDifferentThan(søker.fødselsnummer)(annenForelderFnr || '') === undefined
+    const fnrError = getFødselsnummerValidator({ required: true, disallowedValues: [søker.fødselsnummer] })(
+        annenForelderFnr
     );
+    if (fnrError !== undefined) {
+        return false;
+    }
+    if ((annenForelderNavn || '')?.length < 1) {
+        return false;
+    }
+    return true;
 };
 
 const annenForelderSituasjonIsComplete = ({

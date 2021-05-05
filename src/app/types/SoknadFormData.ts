@@ -1,5 +1,5 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-import { AndreBarn } from 'app/pre-common/question-visibility/forms/barn/types';
+import { AndreBarn } from 'app/pre-common/forms/barn/types';
 
 export interface Barn {
     fødselsdato: Date;
