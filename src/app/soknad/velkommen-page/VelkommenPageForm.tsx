@@ -11,6 +11,7 @@ import { SoknadFormField } from '../../types/SoknadFormData';
 import DinePlikterContent from './dine-plikter/DinePlikter';
 import BehandlingAvPersonopplysningerContent from './personopplysninger/Personopplysninger';
 import { getCheckedValidator } from '@navikt/sif-common-formik/lib/validation';
+import intlFormErrorHandler from '@navikt/sif-common-formik/lib/validation/intlFormErrorHandler';
 
 interface DialogState {
     dinePlikterModalOpen?: boolean;
@@ -27,7 +28,10 @@ const VelkommenPageForm = ({ onStart }: Props) => {
     const intl = useIntl();
 
     return (
-        <SoknadFormComponents.Form onValidSubmit={onStart} includeButtons={false}>
+        <SoknadFormComponents.Form
+            onValidSubmit={onStart}
+            includeButtons={false}
+            formErrorHandler={intlFormErrorHandler(intl, 'validation')}>
             <FormBlock>
                 <SoknadFormComponents.ConfirmationCheckbox
                     label={intlHelper(intl, 'samtykke.tekst')}

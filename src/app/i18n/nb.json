@@ -137,7 +137,7 @@
     "kvittering.info.3a": "Når vi har behandlet søknaden din får du et svar fra oss i posten og på ",
     "kvittering.info.3b": "Ditt NAV",
 
-    "notChecked": "Du må bekrefte at du har lest og forstått dine plikter.",
+    "validation.harForståttRettigheterOgPlikter.notChecked": "Du må bekrefte at du har lest og forstått dine plikter.",
 
     "validation.annenForelderNavn.stringHasNoValue": "Skriv inn navnet til den andre forelderen.",
     "validation.annenForelderNavn.stringIsTooLong": "Navnet på den andre forelderen kan ikke inneholde flere enn {maks} tegn.",
