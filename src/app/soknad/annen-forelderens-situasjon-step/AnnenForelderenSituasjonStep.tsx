@@ -11,13 +11,15 @@ import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
+import datepickerUtils from '@navikt/sif-common-formik/lib/components/formik-datepicker/datepickerUtils';
 import dayjs from 'dayjs';
-// import { validateTextArea } from '../../validation/fieldValidation';
+
 import {
     getYesOrNoValidator,
     getRequiredFieldValidator,
     getStringValidator,
 } from '@navikt/sif-common-formik/lib/validation';
+import { validateFradato, validateTildato } from '../../validation/fieldValidations';
 
 export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
     return dayjs(periodeTom).add(1, 'day').diff(periodeFom, 'month', true) < 6;
@@ -46,6 +48,10 @@ export const cleanupAnnenForelderenSituasjonStep = (values: SoknadFormData): Sok
 const AnnenForelderenSituasjonStep = () => {
     const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
+
+    const periodeFra = datepickerUtils.getDateFromDateString(values.annenForelderPeriodeFom);
+
+    const periodeTil = datepickerUtils.getDateFromDateString(values.annenForelderPeriodeTom);
 
     const renderTekstArea = () => {
         return (
@@ -123,20 +129,14 @@ const AnnenForelderenSituasjonStep = () => {
                     }
                     fromInputProps={{
                         label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.fra'),
-                        validate: (value) => {
-                            const error = getRequiredFieldValidator()(value);
-                            return error ? `${error}.${values.annenForelderSituasjon}` : undefined;
-                        },
+                        validate: (value) => validateFradato(value, periodeTil, values.annenForelderSituasjon),
                         name: SoknadFormField.annenForelderPeriodeFom,
                     }}
                     toInputProps={{
                         label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.til'),
                         validate: values.annenForelderPeriodeVetIkkeTom
                             ? undefined
-                            : (value) => {
-                                  const error = getRequiredFieldValidator()(value);
-                                  return error ? `${error}.${values.annenForelderSituasjon}` : undefined;
-                              },
+                            : (value) => validateTildato(value, periodeFra, values.annenForelderSituasjon),
                         name: SoknadFormField.annenForelderPeriodeTom,
                         disabled: values.annenForelderPeriodeVetIkkeTom,
                     }}

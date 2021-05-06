@@ -8,12 +8,8 @@ import { AndreBarn } from './types';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import barnUtils from './barnUtils';
 import { guid } from 'nav-frontend-js-utils';
-import {
-    getFødselsnummerValidator,
-    getStringValidator,
-    ValidateFødselsnummerError,
-    ValidateStringError,
-} from '@navikt/sif-common-formik/lib/validation';
+import { getFødselsnummerValidator, getStringValidator } from '@navikt/sif-common-formik/lib/validation';
+import { ValidationError } from '@navikt/sif-common-formik/lib/validation/types';
 
 interface BarnFormLabels {
     title: string;
@@ -28,15 +24,6 @@ enum BarnFormFields {
     fnr = 'fnr',
     navn = 'navn',
 }
-export const AnnetBarnFormErrors = {
-    [BarnFormFields.navn]: { [ValidateStringError.stringHasNoValue]: 'barnForm.navn.stringHasNoValue' },
-    [BarnFormFields.fnr]: {
-        [ValidateFødselsnummerError.fødselsnummerHasNoValue]: 'barnForm.fnr.fødselsnummerHasNoValue',
-        [ValidateFødselsnummerError.fødselsnummerIsInvalid]: 'barnForm.fnr.fødselsnummerIsInvalid',
-        [ValidateFødselsnummerError.fødselsnummerIsNot11Chars]: 'barnForm.fnr.fødselsnummerIsNot11Chars',
-        [ValidateFødselsnummerError.fødselsnummerIsNotAllowed]: 'barnForm.fnr.fødselsnummerIsNotAllowed',
-    },
-};
 
 interface Props {
     barn?: Partial<AndreBarn>;
@@ -49,7 +36,7 @@ interface Props {
 
 type BarnFormValues = Partial<AndreBarn>;
 
-const Form = getTypedFormComponents<BarnFormFields, BarnFormValues>();
+const Form = getTypedFormComponents<BarnFormFields, BarnFormValues, ValidationError>();
 
 const BarnForm = ({
     barn = { id: undefined, fnr: '', navn: '' },
@@ -90,7 +77,20 @@ const BarnForm = ({
                             <Form.Input
                                 name={BarnFormFields.navn}
                                 label={formLabels.navn}
-                                validate={getStringValidator({ required: true })}
+                                validate={(value) => {
+                                    const error = getStringValidator({ required: true, minLength: 2, maxLength: 50 })(
+                                        value
+                                    );
+                                    return error
+                                        ? {
+                                              key: error,
+                                              values: {
+                                                  min: 2,
+                                                  maks: 50,
+                                              },
+                                          }
+                                        : undefined;
+                                }}
                                 placeholder={formLabels.placeholderNavn}
                             />
                         </FormBlock>

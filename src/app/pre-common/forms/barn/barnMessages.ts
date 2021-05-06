@@ -8,8 +8,8 @@ const barnMessages = {
         'barn.form.validation.required': 'Feltet er påkrevd',
         'barn.list.fnr': ' (fnr. {fnr})',
         'annetBarnForm.navn.stringHasNoValue': 'Skriv inn barnets navn',
-        'annetBarnForm.fødselsdato.dateHasNoValue':
-            'Du må oppgi barnets fødselsdato. Skriv inn eller velg dato fra datovelgeren.',
+        'annetBarnForm.navn.stringIsTooShort': 'Navnet på barnet må inneholde minst {min} tegn.',
+        'annetBarnForm.navn.stringIsTooLong': 'Navnet på barnet kan ikke inneholde flere enn {maks} tegn.',
         'annetBarnForm.fnr.fødselsnummerHasNoValue': 'Skriv inn barnets fødselsnummer',
         'annetBarnForm.fnr.fødselsnummerIsInvalid':
             'Du har oppgitt et ugyldig fødselsnummer. Et gyldig fødselsnummer består av 11 siffer.',

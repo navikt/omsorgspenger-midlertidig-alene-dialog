@@ -137,35 +137,59 @@
     "kvittering.info.3a": "Når vi har behandlet søknaden din får du et svar fra oss i posten og på ",
     "kvittering.info.3b": "Ditt NAV",
 
-    "validation.harForståttRettigheterOgPlikter.noValue": "Du må bekrefte at du har lest og forstått dine plikter",
+    "notChecked": "Du må bekrefte at du har lest og forstått dine plikter.",
 
-    "validation.annenForelderNavn.stringHasNoValue": "Skriv inn navnet til den andre forelderen",
+    "validation.annenForelderNavn.stringHasNoValue": "Skriv inn navnet til den andre forelderen.",
     "validation.annenForelderNavn.stringIsTooLong": "Navnet på den andre forelderen kan ikke inneholde flere enn {maks} tegn.",
     "validation.annenForelderNavn.stringIsTooShort": "Navnet på den andre forelderen må inneholde minst {min} tegn.",
 
-    "validation.annenForelderFnr.fødselsnummerHasNoValue": "Skriv inn fødselsnummeret til den andre forelderen",
+    "validation.annenForelderFnr.fødselsnummerHasNoValue": "Skriv inn fødselsnummeret til den andre forelderen.",
     "validation.annenForelderFnr.fødselsnummerIsInvalid": "Du har oppgitt et ugyldig fødselsnummer. Et gyldig fødselsnummer består av 11 siffer.",
     "validation.annenForelderFnr.fødselsnummerIsNot11Chars": "Du har oppgitt et ugyldig fødselsnummer som ikke består av 11 siffer. Et gyldig fødselsnummer består av 11 siffer.",
 
-    "validation.annenForelderSituasjon.noValue": "Du må velge én av disse grunnene til at den andre forelderen ikke kan ha tilsyn med barn i en periode på 6 måneder",
+    "validation.annenForelderSituasjon.noValue": "Du må velge én av disse grunnene til at den andre forelderen ikke kan ha tilsyn med barn i en periode på 6 måneder.",
 
-    "validation.annenForelderSituasjonBeskrivelse.stringHasNoValue": "Skriv inn hva som gjør at den andre forelderen ikke kan ha tilsyn med barn",
+    "validation.annenForelderSituasjonBeskrivelse.stringHasNoValue": "Skriv inn hva som gjør at den andre forelderen ikke kan ha tilsyn med barn.",
     "validation.annenForelderSituasjonBeskrivelse.stringIsTooLong": "Beskrivelse om hva som gjør at den andre forelderen ikke kan ha tilsyn med barn, kan ikke inneholde flere enn {maks} tegn.",
     "validation.annenForelderSituasjonBeskrivelse.stringIsTooShort": "Beskriv hva som gjør at den andre forelderen ikke kan ha tilsyn med barn, må inneholde minst {min} tegn.",
 
-    "validation.annenForelderPeriodeFom.noValue.sykdom": "Du må skrive fra hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn",
-    "validation.annenForelderPeriodeFom.noValue.innlagtIHelseinstitusjon": "Du må skrive fra hvilken dato gjelder innleggelsen",
-    "validation.annenForelderPeriodeFom.noValue.fengsel": "Du må skrive fra hvilken dato gjelder soningen i fengsel",
-    "validation.annenForelderPeriodeFom.noValue.utøverVerneplikt": "Du må skrive fra hvilken dato utføres verneplikten",
-    "validation.annenForelderPeriodeFom.noValue.annet": "Du må skrive fra hvilken dato gjelder dette",
+    "validation.annenForelderPeriodeFom.dateHasNoValue.sykdom": "Du må oppgi fra hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn.",
+    "validation.annenForelderPeriodeFom.dateHasNoValue.innlagtIHelseinstitusjon": "Du må oppgi fra hvilken dato gjelder innleggelsen.",
+    "validation.annenForelderPeriodeFom.dateHasNoValue.fengsel": "Du må oppgi fra hvilken dato gjelder soningen i fengsel.",
+    "validation.annenForelderPeriodeFom.dateHasNoValue.utøverVerneplikt": "Du må oppgi fra hvilken dato utføres verneplikten.",
+    "validation.annenForelderPeriodeFom.dateHasNoValue.annet": "Du må oppgi fra hvilken dato gjelder dette.",
 
-    "validation.annenForelderPeriodeTom.noValue.sykdom": "Du må skrive til hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn",
-    "validation.annenForelderPeriodeTom.noValue.innlagtIHelseinstitusjon": "Du må skrive til hvilken dato gjelder innleggelsen",
-    "validation.annenForelderPeriodeTom.noValue.fengsel": "Du må skrive til hvilken dato gjelder soningen i fengsel",
-    "validation.annenForelderPeriodeTom.noValue.utøverVerneplikt": "Du må skrive til hvilken dato utføres verneplikten",
-    "validation.annenForelderPeriodeTom.noValue.annet": "Du må skrive til hvilken dato gjelder dette",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.sykdom": "Startdatoen for når den andre forelderen ute av stand til å ha tilsyn med barn må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.innlagtIHelseinstitusjon": "Startdatoen for når gjelder innleggelsen må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.fengsel": "Startdatoen for når gjelder soningen i fengsel må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.utøverVerneplikt": "Startdatoen for når utføres verneplikten må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.annet": "Startdatoen for når gjelder dette må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
 
-    "validation.annenForelderPeriodeMer6Maneder.yesOrNoIsUnanswered": "Du må svare at perioden på minst 6 måneder eller ikke",
+    "validation.annenForelderPeriodeFom.dateHasInvalidFormat.sykdom": "Du må oppgi fra hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeFom.dateHasInvalidFormat.innlagtIHelseinstitusjon": "Du må oppgi fra hvilken dato gjelder innleggelsen i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeFom.dateHasInvalidFormat.fengsel": "Du må oppgi fra hvilken dato gjelder soningen i fengsel i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeFom.dateHasInvalidFormat.utøverVerneplikt": "Du må oppgi fra hvilken dato utføres verneplikten i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeFom.dateHasInvalidFormat.annet": "Du må oppgi fra hvilken dato gjelder dette i et gyldig format. Gyldig format er dd.mm.åååå.",
 
-    "validation.harBekreftetOpplysninger.notChecked": "Du må bekrefte opplysningene"
+    "validation.annenForelderPeriodeTom.dateHasNoValue.sykdom": "Du må oppgi til hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn.",
+    "validation.annenForelderPeriodeTom.dateHasNoValue.innlagtIHelseinstitusjon": "Du må oppgi til hvilken dato gjelder innleggelsen.",
+    "validation.annenForelderPeriodeTom.dateHasNoValue.fengsel": "Du må oppgi til hvilken dato gjelder soningen i fengsel.",
+    "validation.annenForelderPeriodeTom.dateHasNoValue.utøverVerneplikt": "Du må oppgi til hvilken dato utføres verneplikten.",
+    "validation.annenForelderPeriodeTom.dateHasNoValue.annet": "Du må oppgi til hvilken dato gjelder dette.",
+
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.sykdom": "Sluttdatoen for når den andre forelderen ute av stand til å ha tilsyn med barn kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.innlagtIHelseinstitusjon": "Sluttdatoen for når gjelder innleggelsen kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.fengsel": "Sluttdatoen for når gjelder soningen i fengsel kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.utøverVerneplikt": "Sluttdatoen for når utføres verneplikten kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.annet": "Sluttdatoen for når gjelder dette kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
+
+    "validation.annenForelderPeriodeTom.dateHasInvalidFormat.sykdom": "Du må oppgi til hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeTom.dateHasInvalidFormat.innlagtIHelseinstitusjon": "Du må oppgi til hvilken dato gjelder innleggelsen i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeTom.dateHasInvalidFormat.fengsel": "Du må oppgi til hvilken dato gjelder soningen i fengsel i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeTom.dateHasInvalidFormat.utøverVerneplikt": "Du må oppgi til hvilken dato utføres verneplikten i et gyldig format. Gyldig format er dd.mm.åååå.",
+    "validation.annenForelderPeriodeTom.dateHasInvalidFormat.annet": "Du må oppgi til hvilken dato gjelder dette i et gyldig format. Gyldig format er dd.mm.åååå.",
+
+    "validation.annenForelderPeriodeMer6Maneder.yesOrNoIsUnanswered": "Du må svare at perioden på minst 6 måneder eller ikke.",
+
+    "validation.harBekreftetOpplysninger.notChecked": "Du må bekrefte opplysningene."
 }

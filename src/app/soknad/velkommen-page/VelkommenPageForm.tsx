@@ -10,6 +10,7 @@ import SoknadFormComponents from '../../soknad/SoknadFormComponents';
 import { SoknadFormField } from '../../types/SoknadFormData';
 import DinePlikterContent from './dine-plikter/DinePlikter';
 import BehandlingAvPersonopplysningerContent from './personopplysninger/Personopplysninger';
+import { getCheckedValidator } from '@navikt/sif-common-formik/lib/validation';
 
 interface DialogState {
     dinePlikterModalOpen?: boolean;
@@ -31,11 +32,7 @@ const VelkommenPageForm = ({ onStart }: Props) => {
                 <SoknadFormComponents.ConfirmationCheckbox
                     label={intlHelper(intl, 'samtykke.tekst')}
                     name={SoknadFormField.harForståttRettigheterOgPlikter}
-                    validate={(value) => {
-                        return value !== true
-                            ? intlHelper(intl, 'validation.harForståttRettigheterOgPlikter.noValue')
-                            : undefined;
-                    }}>
+                    validate={getCheckedValidator()}>
                     <FormattedMessage
                         id="samtykke.harForståttLabel"
                         values={{
