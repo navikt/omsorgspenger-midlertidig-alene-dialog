@@ -23,7 +23,7 @@ const bokmålstekster = {
     ...soknadIntlMessages.nb,
 };
 
-const nynorsktekster = {
+export const nynorsktekster = {
     ...allCommonMessages.nn,
     ...appMessagesNN,
     ...introFormMessagesNN,
@@ -35,5 +35,5 @@ const nynorsktekster = {
 
 export const applicationIntlMessages: MessageFileFormat = {
     nb: bokmålstekster,
-    nn: nynorsktekster,
+    // nn: nynorsktekster,
 };
