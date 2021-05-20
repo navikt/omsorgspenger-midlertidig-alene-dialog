@@ -6,7 +6,6 @@ import Guide from '@navikt/sif-common-core/lib/components/guide/Guide';
 import ResponsivePanel from '@navikt/sif-common-core/lib/components/responsive-panel/ResponsivePanel';
 import VeilederSVG from '@navikt/sif-common-core/lib/components/veileder-svg/VeilederSVG';
 import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-import { validateBekrefterOpplysninger } from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { Person } from 'app/types/Person';
 import { SoknadApiData } from 'app/types/SoknadApiData';
 import { Barn, SoknadFormField } from '../../types/SoknadFormData';
@@ -18,6 +17,7 @@ import AnnenForelderSituasjonSummary from './AnnenForelderSituasjonSummary';
 import AnnenForelderSummary from './AnnenForelderSummary';
 import OmBarnaSummary from './OmBarnaSummary';
 import SøkerSummary from './SøkerSummary';
+import { getCheckedValidator } from '@navikt/sif-common-formik/lib/validation';
 
 type Props = {
     søker: Person;
@@ -56,7 +56,7 @@ const OppsummeringStep = ({ søker, apiValues }: Props) => {
                             <SoknadFormComponents.ConfirmationCheckbox
                                 label={intlHelper(intl, 'step.oppsummering.bekrefterOpplysninger')}
                                 name={SoknadFormField.harBekreftetOpplysninger}
-                                validate={validateBekrefterOpplysninger}
+                                validate={getCheckedValidator()}
                             />
                         </Box>
                     </>

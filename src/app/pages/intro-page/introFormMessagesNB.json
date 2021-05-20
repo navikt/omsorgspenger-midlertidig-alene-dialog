@@ -15,5 +15,7 @@
     "introForm.info.3": "For å ha rett til å bruke omsorgsdager må du være yrkesaktiv. Det betyr at du må være arbeidstaker, selvstendig næringsdrivende, frilanser, eller en kombinasjon av disse.",
 
     "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du bekrefte at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder?",
-    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din."
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
+
+    "introForm.validation.erAndreForelderenUtAvStandMinst6Måneder.unanswered": "Du må svare på at du kan bekrefte at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder"
 }

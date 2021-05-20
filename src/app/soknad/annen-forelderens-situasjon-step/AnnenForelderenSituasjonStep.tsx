@@ -7,16 +7,19 @@ import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-p
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import SoknadFormComponents from '../SoknadFormComponents';
 import { AnnenForeldrenSituasjon, SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
-import {
-    validateRequiredField,
-    validateYesOrNoIsAnswered,
-} from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { useFormikContext } from 'formik';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
 import AlertStripe from 'nav-frontend-alertstriper';
+import datepickerUtils from '@navikt/sif-common-formik/lib/components/formik-datepicker/datepickerUtils';
 import dayjs from 'dayjs';
-import { validateTextArea } from '../../validation/fieldValidation';
+
+import {
+    getYesOrNoValidator,
+    getRequiredFieldValidator,
+    getStringValidator,
+} from '@navikt/sif-common-formik/lib/validation';
+import { validateFradato, validateTildato } from '../../validation/fieldValidations';
 
 export const isPeriodeLess6month = (periodeFom: string, periodeTom: string): boolean => {
     return dayjs(periodeTom).add(1, 'day').diff(periodeFom, 'month', true) < 6;
@@ -46,14 +49,30 @@ const AnnenForelderenSituasjonStep = () => {
     const intl = useIntl();
     const { values } = useFormikContext<SoknadFormData>();
 
+    const periodeFra = datepickerUtils.getDateFromDateString(values.annenForelderPeriodeFom);
+
+    const periodeTil = datepickerUtils.getDateFromDateString(values.annenForelderPeriodeTom);
+
     const renderTekstArea = () => {
         return (
             <FormBlock>
                 <SoknadFormComponents.Textarea
                     name={SoknadFormField.annenForelderSituasjonBeskrivelse}
                     label={intlHelper(intl, 'step.annen-foreldrens-situasjon.beskrivelseAvSituasjonen.spm')}
-                    validate={validateTextArea}
+                    minLength={5}
                     maxLength={1000}
+                    validate={(value) => {
+                        const error = getStringValidator({ required: true, minLength: 5, maxLength: 1000 })(value);
+                        return error
+                            ? {
+                                  key: error,
+                                  values: {
+                                      min: 5,
+                                      maks: 1000,
+                                  },
+                              }
+                            : undefined;
+                    }}
                 />
             </FormBlock>
         );
@@ -66,7 +85,7 @@ const AnnenForelderenSituasjonStep = () => {
                     <SoknadFormComponents.YesOrNoQuestion
                         name={SoknadFormField.annenForelderPeriodeMer6Maneder}
                         legend={intlHelper(intl, 'step.annen-foreldrens-situasjon.erVarighetMerEnn6Maneder.spm')}
-                        validate={validateYesOrNoIsAnswered}
+                        validate={getYesOrNoValidator()}
                     />
                     {values.annenForelderPeriodeMer6Maneder === YesOrNo.NO && (
                         <FormBlock>
@@ -110,12 +129,14 @@ const AnnenForelderenSituasjonStep = () => {
                     }
                     fromInputProps={{
                         label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.fra'),
-                        validate: validateRequiredField,
+                        validate: (value) => validateFradato(value, periodeTil, values.annenForelderSituasjon),
                         name: SoknadFormField.annenForelderPeriodeFom,
                     }}
                     toInputProps={{
                         label: intlHelper(intl, 'step.annen-foreldrens-situasjon.periode.til'),
-                        validate: values.annenForelderPeriodeVetIkkeTom ? undefined : validateRequiredField,
+                        validate: values.annenForelderPeriodeVetIkkeTom
+                            ? undefined
+                            : (value) => validateTildato(value, periodeFra, values.annenForelderSituasjon),
                         name: SoknadFormField.annenForelderPeriodeTom,
                         disabled: values.annenForelderPeriodeVetIkkeTom,
                     }}
@@ -172,7 +193,7 @@ const AnnenForelderenSituasjonStep = () => {
                             value: AnnenForeldrenSituasjon.annet,
                         },
                     ]}
-                    validate={validateRequiredField}
+                    validate={getRequiredFieldValidator()}
                 />
             </Box>
 

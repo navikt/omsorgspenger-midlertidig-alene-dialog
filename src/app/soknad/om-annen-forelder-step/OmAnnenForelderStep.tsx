@@ -7,13 +7,8 @@ import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-p
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { SoknadFormField } from '../../types/SoknadFormData';
 import SoknadFormComponents from '../SoknadFormComponents';
-import {
-    validateAll,
-    validateFødselsnummer,
-    validateRequiredField,
-} from '@navikt/sif-common-core/lib/validation/fieldValidations';
 import { Person } from 'app/types/Person';
-import { validateFødselsnummerIsDifferentThan } from '../../validation/fieldValidation';
+import { getFødselsnummerValidator, getStringValidator } from '@navikt/sif-common-formik/lib/validation';
 
 type Props = {
     søker: Person;
@@ -36,10 +31,10 @@ const OmAnnenForelderStep = ({ søker }: Props) => {
                 <SoknadFormComponents.Input
                     name={SoknadFormField.annenForelderFnr}
                     label={intlHelper(intl, 'step.om-annen-forlder.fnr.spm')}
-                    validate={validateAll([
-                        validateFødselsnummer,
-                        validateFødselsnummerIsDifferentThan(søker.fødselsnummer),
-                    ])}
+                    validate={getFødselsnummerValidator({
+                        required: true,
+                        disallowedValues: [søker.fødselsnummer],
+                    })}
                     inputMode="numeric"
                     maxLength={11}
                     minLength={11}
@@ -50,7 +45,18 @@ const OmAnnenForelderStep = ({ søker }: Props) => {
                 <SoknadFormComponents.Input
                     name={SoknadFormField.annenForelderNavn}
                     label={intlHelper(intl, 'step.om-annen-forlder.navn.spm')}
-                    validate={validateRequiredField}
+                    validate={(value) => {
+                        const error = getStringValidator({ required: true, minLength: 2, maxLength: 50 })(value);
+                        return error
+                            ? {
+                                  key: error,
+                                  values: {
+                                      min: 2,
+                                      maks: 50,
+                                  },
+                              }
+                            : undefined;
+                    }}
                     style={{ maxWidth: '20rem' }}
                 />
             </FormBlock>
