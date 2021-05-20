@@ -159,11 +159,11 @@
     "validation.annenForelderPeriodeFom.dateHasNoValue.utøverVerneplikt": "Du må oppgi hvilken dato verneplikten utføres fra.",
     "validation.annenForelderPeriodeFom.dateHasNoValue.annet": "Du må oppgi hvilken dato den andre forelderen ikke kan ta seg av barn fra.",
 
-    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.sykdom": "Startdatoen for når den andre forelderen ute av stand til å ha tilsyn med barn må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
-    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.innlagtIHelseinstitusjon": "Startdatoen for når gjelder innleggelsen må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
-    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.fengsel": "Startdatoen for når gjelder soningen i fengsel må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
-    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.utøverVerneplikt": "Startdatoen for når utføres verneplikten må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
-    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.annet": "Startdatoen for når den andre forelderen ute av stand til å ha tilsyn med barn må være før sluttdatoen, eller på samme dag som sluttdatoen. Skriv inn eller velg dato fra datovelgeren.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.sykdom": "Fra-datoen kan ikke være senere enn til-datoen.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.innlagtIHelseinstitusjon": "Fra-datoen kan ikke være senere enn til-datoen.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.fengsel": "Fra-datoen kan ikke være senere enn til-datoen.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.utøverVerneplikt": "Fra-datoen kan ikke være senere enn til-datoen.",
+    "validation.annenForelderPeriodeFom.fromDateIsAfterToDate.annet": "Fra-datoen kan ikke være senere enn til-datoen.",
 
     "validation.annenForelderPeriodeFom.dateHasInvalidFormat.sykdom": "Du må oppgi fra hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn i et gyldig format. Gyldig format er dd.mm.åååå.",
     "validation.annenForelderPeriodeFom.dateHasInvalidFormat.innlagtIHelseinstitusjon": "Du må oppgi fra hvilken dato gjelder innleggelsen i et gyldig format. Gyldig format er dd.mm.åååå.",
@@ -177,11 +177,11 @@
     "validation.annenForelderPeriodeTom.dateHasNoValue.utøverVerneplikt": "Du må oppgi hvilken dato verneplikten utføres til.",
     "validation.annenForelderPeriodeTom.dateHasNoValue.annet": "Du må oppgi hvilken dato den andre forelderen ikke kan ta seg av barn til. ",
 
-    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.sykdom": "Sluttdatoen for når den andre forelderen ute av stand til å ha tilsyn med barn kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
-    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.innlagtIHelseinstitusjon": "Sluttdatoen for når gjelder innleggelsen kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
-    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.fengsel": "Sluttdatoen for når gjelder soningen i fengsel kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
-    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.utøverVerneplikt": "Sluttdatoen for når utføres verneplikten kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
-    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.annet": "Sluttdatoen for når den andre forelderen ute av stand til å ha tilsyn med barn kan ikke være før startdatoen. Skriv inn eller velg sluttdato fra datovelgeren.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.sykdom": "Til-datoen kan ikke være tidligere enn fra-datoen.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.innlagtIHelseinstitusjon": "Til-datoen kan ikke være tidligere enn fra-datoen.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.fengsel": "Til-datoen kan ikke være tidligere enn fra-datoen.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.utøverVerneplikt": "Til-datoen kan ikke være tidligere enn fra-datoen.",
+    "validation.annenForelderPeriodeTom.toDateIsBeforeFromDate.annet": "Til-datoen kan ikke være tidligere enn fra-datoen.",
 
     "validation.annenForelderPeriodeTom.dateHasInvalidFormat.sykdom": "Du må oppgi til hvilken dato er den andre forelderen ute av stand til å ha tilsyn med barn i et gyldig format. Gyldig format er dd.mm.åååå.",
     "validation.annenForelderPeriodeTom.dateHasInvalidFormat.innlagtIHelseinstitusjon": "Du må oppgi til hvilken dato gjelder innleggelsen i et gyldig format. Gyldig format er dd.mm.åååå.",
