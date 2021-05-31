@@ -8,6 +8,7 @@
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "jsx": "react",
+        "esModuleInterop": true,
         "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
         "noImplicitReturns": true,
@@ -21,9 +22,6 @@
         "paths": {},
 
         "typeRoots": ["./node_modules/@types", "./src/@types"]
-    },
-    "awesomeTypescriptLoaderOptions": {
-        "useCache": false
     },
     "exclude": ["node_modules", "src/build", "**.js", "dist"]
 }
