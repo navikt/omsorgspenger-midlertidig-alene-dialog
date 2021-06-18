@@ -1,4 +1,4 @@
-# Søknad om å bli regnet som alene om omsorgen for barn
+# Søknad om å bli regnet som alene om omsorgen for barn (Søknad om ekstra omsorgsdager)
 
 ## Komme i gang
 

@@ -15,7 +15,7 @@ import './styles/app.less';
 Modal.setAppElement('#app');
 
 export const APPLICATION_KEY = 'omsorgsdager-midlertidig-alene';
-export const SKJEMANAVN = 'Søknad om å bli regnet som alene om omsorgen for barn';
+export const SKJEMANAVN = 'Søknad om ekstra omsorgsdager';
 
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 

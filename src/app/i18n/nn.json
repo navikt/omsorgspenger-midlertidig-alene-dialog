@@ -1,17 +1,12 @@
 {
-    "application.title": "Søknad om å bli rekna som åleine om omsorga for barn",
-
     "application.loadError.title": "Noko gjekk gale ...",
     "application.loadError.message": "Beklagar, her har det dessverre skjedd ein feil. Dersom feilen held fram, prøv igjen litt seinare.",
 
     "page.error.pageTitle": "Noko gjekk gale ...",
     "page.form.ubesvarteSpørsmålInfo": "For å kome vidare må du svare på alle spørsmåla over.",
 
-    "page.ikkeMyndig.sidetittel": "Søknad om å bli rekna som åleine om omsorga for barn",
     "page.ikkeMyndig.banner.tittel": "Hei!",
     "page.ikkeMyndig.banner.tekst": "Fordi du er under 18 år, må ein av foreldra dine eller ein føresett skrive under på søknaden saman med deg. Du må derfor fylle ut søknaden på papir og sende han i posten.",
-    "page.ikkeMyndig.banner.lastNed": "Søknad om å bli rekna som åleine om omsorga for barn",
-    "page.ikkeMyndig.tittel": "Søknad om å bli rekna som åleine om omsorga for barn",
 
     "arbeidstaker": "arbeidstakar",
 
@@ -40,8 +35,8 @@
     "lesMerOmFastBostedOgSamvær": "Les meir om fast bustad og samvær",
 
     "step.velkommen.banner.tittel": "Hei",
-    "step.velkommen.banner.tekst": "Eg vil hjelpe deg med å fylle ut søknaden din om å bli rekna som åleine om omsorga.",
-    "step.velkommen.tittel": "Søknad om å bli rekna som åleine om omsorga for barn",
+    "step.velkommen.banner.tekst": "Eg vil hjelpe deg med å fylle ut søknaden din om om ekstra omsorgsdagar.",
+
     "step.velkommen.personopplysninger.lenketekst": "Les om korleis NAV behandlar personopplysningane dine",
     "step.velkommen.button.start": "Hald fram",
 
@@ -58,7 +53,6 @@
     "step.annen-forelder-situasjon.pageTitle": "Situasjonen til den andre forelderen",
     "step.annen-forelder-situasjon.stepTitle": "Situasjonen til den andre forelderen",
     "step.annen-foreldrens-situasjon.banner.1": "Her skal du gi informasjon om det som er grunnen til at den andre forelderen ikkje kan ha tilsyn med barn i ein periode på minst 6 månader.",
-    "step.annen-foreldrens-situasjon.banner.2": "Hugs at du ikkje blir rekna for å vere åleine om omsorga dersom den andre forelderen er mykje borte frå heimen på grunn av jobb, skule eller studium.",
     "step.annen-foreldrens-situasjon.grunn.spm": "Vel éin av desse grunnane til at den andre forelderen ikkje kan ha tilsyn med barn i ein periode på 6 månader:",
     "step.annen-foreldrens-situasjon.grunn.sykdom": "Sjukdom, skade eller funksjonshemming",
     "step.annen-foreldrens-situasjon.grunn.innlagtIHelseinstitusjon": "Innlagd i helseinstitusjon",
@@ -76,7 +70,7 @@
     "step.annen-foreldrens-situasjon.periode.til": "Til",
     "step.annen-foreldrens-situasjon.periode.checkboxVetIkkeTom": "Eg veit ikkje kor lenge perioden vil vare",
     "step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm": "Er det avklart kor lenge innlegginga skal vare?",
-    "step.annen-foreldrens-situasjon.advarsel.1": "Dersom perioden den andre forelderen ikkje kan ta seg av barn, er på mindre enn 6 månader, kan det vere at du ikkje blir rekna som åleine om omsorga. Du kan likevel halde fram slik at vi kan vurdere søknaden din.",
+
     "step.annen-forelder-situasjon.nextButtonLabel": "Hald fram",
 
     "step.deres-felles-barn.pageTitle": "Om barn",
@@ -130,9 +124,8 @@
     "samtykke.harForståttLabel.lenketekst": "pliktene dine",
     "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tasta inn ditt eige fødselsnummer",
 
-    "kvittering.tittel": "Søknaden om å bli rekna som åleine om omsorga for barn er komen fram",
     "kvittering.info.tittel": "Kva skjer vidare no?",
-    "kvittering.info.1": "Vi behandlar søknaden frå deg om å bli rekna som åleine om omsorga.",
+    "kvittering.info.1": "Vi behandlar søknaden frå deg om ekstra omsorgsdagar.",
     "kvittering.info.2": "Vi kontaktar deg dersom vi treng fleire opplysningar frå deg.",
     "kvittering.info.3a": "Når vi har behandla søknaden din, får du eit svar frå oss i posten og på",
     "kvittering.info.3b": "Ditt NAV"

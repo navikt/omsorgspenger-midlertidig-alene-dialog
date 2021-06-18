@@ -1,5 +1,5 @@
 {
-    "application.title": "Søknad om å bli regnet som alene om omsorgen for barn",
+    "application.title": "Søknad om ekstra omsorgsdager",
 
     "application.loadError.title": "Noe gikk galt ...",
     "application.loadError.message": "Beklager, her har det dessverre skjedd en feil. Dersom feilen fortsetter, prøv igjen litt senere.",
@@ -7,11 +7,11 @@
     "page.error.pageTitle": "Noe gikk galt ...",
     "page.form.ubesvarteSpørsmålInfo": "For å komme videre, må du svare på alle spørsmålene ovenfor",
 
-    "page.ikkeMyndig.sidetittel": "Søknad om å bli regnet som alene om omsorgen for barn",
+    "page.ikkeMyndig.sidetittel": "Søknad om ekstra omsorgsdager",
     "page.ikkeMyndig.banner.tittel": "Hei!",
     "page.ikkeMyndig.banner.tekst": "Fordi du er under 18 år, må en av foreldrene dine eller en foresatt skrive under på søknaden sammen med deg. Du må derfor fylle ut søknaden på papir og sende den i posten.",
-    "page.ikkeMyndig.banner.lastNed": "Søknad om å bli regnet som alene om omsorgen for barn",
-    "page.ikkeMyndig.tittel": "Søknad om å bli regnet som alene om omsorgen for barn",
+    "page.ikkeMyndig.banner.lastNed": "Søknad om ekstra omsorgsdager",
+    "page.ikkeMyndig.tittel": "Søknad om ekstra omsorgsdager",
 
     "arbeidstaker": "arbeidstaker",
 
@@ -40,8 +40,8 @@
     "lesMerOmFastBostedOgSamvær": "Les mer om fast bosted og samvær",
 
     "step.velkommen.banner.tittel": "Hei!",
-    "step.velkommen.banner.tekst": "Jeg vil hjelpe deg med å fylle ut søknaden om å bli regnet som at du er alene om omsorgen.",
-    "step.velkommen.tittel": "Søknad om å bli regnet som at du er alene om omsorgen for barn",
+    "step.velkommen.banner.tekst": "Jeg vil hjelpe deg med å fylle ut søknaden om ekstra omsorgsdager.",
+    "step.velkommen.tittel": "Søknad om ekstra omsorgsdager når den andre forelderen ikke kan ha tilsyn med barn",
     "step.velkommen.personopplysninger.lenketekst": "Les om hvordan NAV behandler personopplysningene dine",
     "step.velkommen.button.start": "Fortsett",
 
@@ -58,7 +58,6 @@
     "step.annen-forelder-situasjon.pageTitle": "Den andre forelderens situasjon",
     "step.annen-forelder-situasjon.stepTitle": "Den andre forelderens situasjon",
     "step.annen-foreldrens-situasjon.banner.1": "Her skal du gi informasjon om hva som er grunnen til at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder.",
-    "step.annen-foreldrens-situasjon.banner.2": "Husk at du ikke regnes for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
     "step.annen-foreldrens-situasjon.grunn.spm": "Velg én av disse grunnene til at den andre forelderen ikke kan ha tilsyn med barn i en periode på 6 måneder:",
     "step.annen-foreldrens-situasjon.grunn.sykdom": "Sykdom, skade eller funksjonhemming",
     "step.annen-foreldrens-situasjon.grunn.innlagtIHelseinstitusjon": "Innlagt i helseinstitusjon",
@@ -76,7 +75,7 @@
     "step.annen-foreldrens-situasjon.periode.til": "Til",
     "step.annen-foreldrens-situasjon.periode.checkboxVetIkkeTom": "Jeg vet ikke hvor lenge perioden vil vare",
     "step.annen-foreldrens-situasjon.vetLengdePåInnleggelseperioden.spm": "Er det avklart hvor lenge innleggelsen skal vare?",
-    "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
+    "step.annen-foreldrens-situasjon.advarsel.1": "Hvis perioden den andre forelderen ikke kan ha tilsyn med barn er på mindre enn 6 måneder, kan det være at du får avslag på søknaden. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
     "step.annen-forelder-situasjon.nextButtonLabel": "Fortsett",
 
     "step.deres-felles-barn.pageTitle": "Om barn",
@@ -130,9 +129,9 @@
     "samtykke.harForståttLabel.lenketekst": "dine plikter",
     "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tastet inn ditt eget fødselsnummer",
 
-    "kvittering.tittel": "Søknad om å bli regnet som alene om omsorgen for barn er mottatt",
+    "kvittering.tittel": "Søknad om ekstra omsorgsdager når den andre forelderen ikke kan ha tilsyn med barn er mottatt",
     "kvittering.info.tittel": "Hva skjer videre nå?",
-    "kvittering.info.1": "Vi behandler søknaden fra deg om å bli regnet som alene om omsorgen.",
+    "kvittering.info.1": "Vi behandler søknaden fra deg om ekstra omsorgsdager.",
     "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
     "kvittering.info.3a": "Når vi har behandlet søknaden din får du et svar fra oss i posten og på ",
     "kvittering.info.3b": "Ditt NAV",
