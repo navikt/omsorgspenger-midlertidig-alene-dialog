@@ -122,6 +122,7 @@
     "samtykke.harIkkeGodkjentVilkår": "Du må godkjenne vilkåra",
     "samtykke.harForståttLabel": "For å gå vidare må du bekrefte at du har lese og forstått {plikterLink}.",
     "samtykke.harForståttLabel.lenketekst": "pliktene dine",
+
     "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tasta inn ditt eige fødselsnummer",
 
     "kvittering.info.tittel": "Kva skjer vidare no?",
