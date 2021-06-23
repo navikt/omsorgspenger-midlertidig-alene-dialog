@@ -1,4 +1,6 @@
-# Søknad om å bli regnet som alene om omsorgen for barn (Søknad om ekstra omsorgsdager)
+# Søknad om ekstra omsorgsdager når den andre forelderen ikke kan ha tilsyn med barn (Søknad om ekstra omsorgsdager)
+
+# Før: Søknad om å bli regnet som alene om omsorgen for barn
 
 ## Komme i gang
 
