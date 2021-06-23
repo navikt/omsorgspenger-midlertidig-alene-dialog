@@ -3,19 +3,17 @@
 
     "introForm.hvaBetyrDette": "Hva betyr dette?",
 
-    "introForm.info.1": "Denne søknaden er for deg som bor sammen med den andre forelderen, men som skal søke om å bli regnet som at du er alene om omsorgen. I slike tilfeller får du doblet antall omsorgsdager.",
-    "introForm.info.2.html": "Du kan bli regnet som at du er alene om omsorgen når den andre forelderen ikke kan ha tilsyn med barn <strong>i en periode på minst 6 måneder.</strong> Det kan være at den andre forelderen for eksempel",
+    "introForm.info.1": "Denne søknaden er for deg som skal søke om ekstra omsorgsdager fordi den andre forelderen ikke kan ha tilsyn med barn i en periode som varer i minst 6 måneder. Dette er i situasjoner hvor den andre forelderen for eksempel",
 
     "introForm.info.grunnList.1": "er fysisk eller psykisk syk",
     "introForm.info.grunnList.2": "er innlagt i helseinstitusjon",
     "introForm.info.grunnList.3": "har en funksjonshemning",
     "introForm.info.grunnList.4": "er i fengsel",
     "introForm.info.grunnList.5": "utøver verneplikt",
-    "introForm.info.2": "Du regnes ikke for å være alene om omsorgen hvis den andre er mye borte fra hjemmet på grunn av jobb, skole eller studier.",
-    "introForm.info.3": "For å ha rett til å bruke omsorgsdager må du være yrkesaktiv. Det betyr at du må være arbeidstaker, selvstendig næringsdrivende, frilanser, eller en kombinasjon av disse.",
+    "introForm.info.2": "Hvis du får innvilget søknaden får du doblet antall omsorgsdager. For å ha rett til å bruke omsorgsdager må du være yrkesaktiv. Det betyr at du må være arbeidstaker, selvstendig næringsdrivende, frilanser eller en kombinasjon av disse.",
 
     "introForm.erAndreForelderenUtAvStandMinst6Måneder.spm": "Kan du bekrefte at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder?",
-    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Hvis perioden den andre forelderen ikke kan ta seg av barn er på mindre enn 6 måneder, kan det være at du ikke blir regnet som alene om omsorgen. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
+    "introForm.erAndreForelderenUtAvStandMinst6Måneder.stopMessage": "Hvis perioden den andre forelderen ikke kan ha tilsyn med barn er på mindre enn 6 måneder, kan det være at du får avslag på søknaden. Du kan likevel fortsette slik at vi kan vurdere søknaden din.",
 
     "introForm.validation.erAndreForelderenUtAvStandMinst6Måneder.unanswered": "Du må svare på at du kan bekrefte at den andre forelderen ikke kan ha tilsyn med barn i en periode på minst 6 måneder"
 }

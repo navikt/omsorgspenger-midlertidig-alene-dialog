@@ -10,7 +10,7 @@ const webpackConfig = {
     output: {
         path: path.resolve(__dirname, './../../../dist'),
         filename: 'js/[name].js',
-        publicPath: '/familie/sykdom-i-familien/soknad/regnet-som-alene/dist',
+        publicPath: '/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/dist',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json', '.jsx'],

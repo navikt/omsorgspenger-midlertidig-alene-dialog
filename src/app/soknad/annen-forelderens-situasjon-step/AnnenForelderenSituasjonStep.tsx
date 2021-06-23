@@ -162,10 +162,7 @@ const AnnenForelderenSituasjonStep = () => {
 
     return (
         <SoknadFormStep id={StepID.ANNEN_FORELDER_SITUASJON} onStepCleanup={cleanupAnnenForelderenSituasjonStep}>
-            <CounsellorPanel>
-                {intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.1')}
-                <p>{intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.2')}</p>
-            </CounsellorPanel>
+            <CounsellorPanel>{intlHelper(intl, 'step.annen-foreldrens-situasjon.banner.1')}</CounsellorPanel>
 
             <Box margin="xxl">
                 <SoknadFormComponents.RadioPanelGroup

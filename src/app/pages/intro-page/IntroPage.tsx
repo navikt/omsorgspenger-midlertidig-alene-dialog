@@ -3,7 +3,6 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { useHistory } from 'react-router-dom';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
-import FormattedHtmlMessage from '@navikt/sif-common-core/lib/components/formatted-html-message/FormattedHtmlMessage';
 import InformationPoster from '@navikt/sif-common-core/lib/components/information-poster/InformationPoster';
 import Page from '@navikt/sif-common-core/lib/components/page/Page';
 import StepBanner from '@navikt/sif-common-core/lib/components/step-banner/StepBanner';
@@ -27,9 +26,6 @@ const IntroPage = () => {
                         <FormattedMessage id="introForm.info.1" />
                     </p>
 
-                    <p>
-                        <FormattedHtmlMessage id="introForm.info.2.html" />
-                    </p>
                     <ul>
                         <li>{intlHelper(intl, 'introForm.info.grunnList.1')}</li>
                         <li>{intlHelper(intl, 'introForm.info.grunnList.2')}</li>
@@ -38,9 +34,6 @@ const IntroPage = () => {
                         <li>{intlHelper(intl, 'introForm.info.grunnList.5')}</li>
                     </ul>
                     <p>{intlHelper(intl, 'introForm.info.2')}</p>
-                    <p>
-                        <FormattedMessage id="introForm.info.3" />
-                    </p>
                 </InformationPoster>
             </Box>
             <FormBlock>
