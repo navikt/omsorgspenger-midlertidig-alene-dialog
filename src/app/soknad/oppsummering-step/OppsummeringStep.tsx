@@ -32,7 +32,7 @@ const OppsummeringStep = ({ søker, apiValues }: Props) => {
     return (
         <SoknadFormStep
             id={StepID.OPPSUMMERING}
-            includeValidationSummary={false}
+            includeValidationSummary={true}
             showButtonSpinner={isPending(sendSoknadStatus.status)}
             buttonDisabled={isPending(sendSoknadStatus.status)}
             onSendSoknad={apiValues ? () => sendSoknad(apiValues) : undefined}>

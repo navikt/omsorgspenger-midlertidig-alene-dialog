@@ -56,15 +56,17 @@ const SoknadFormStep = ({
                 runDelayedFormValidation={true}
                 cleanup={onStepCleanup}
                 onValidSubmit={onSendSoknad ? onSendSoknad : () => gotoNextStepFromStep(id)}
-                formErrorHandler={intlFormErrorHandler(intl, 'validation')}>
+                formErrorHandler={intlFormErrorHandler(intl, 'validation')}
+                formFooter={
+                    showSubmitButton ? (
+                        <Box textAlignCenter={true} margin="xl">
+                            <StepSubmitButton disabled={buttonDisabled} showSpinner={showButtonSpinner}>
+                                {texts.nextButtonLabel}
+                            </StepSubmitButton>
+                        </Box>
+                    ) : undefined
+                }>
                 {children}
-                {showSubmitButton && (
-                    <Box textAlignCenter={true} margin="xl">
-                        <StepSubmitButton disabled={buttonDisabled} showSpinner={showButtonSpinner}>
-                            {texts.nextButtonLabel}
-                        </StepSubmitButton>
-                    </Box>
-                )}
             </SoknadFormComponents.Form>
         </Step>
     );
