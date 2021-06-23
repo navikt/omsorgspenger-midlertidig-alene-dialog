@@ -26,7 +26,7 @@ server.use((req, res, next) => {
     next();
 });
 
-const MELLOMLAGRING_JSON = `${os.tmpdir()}/omsorgspenger-midlertidig-alene-dialog-mellomlagring.json`;
+const MELLOMLAGRING_JSON = `${os.tmpdir()}/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn-mellomlagring.json`;
 
 const isJSON = (str) => {
     try {

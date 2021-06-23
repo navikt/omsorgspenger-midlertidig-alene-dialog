@@ -1,16 +1,16 @@
 {
-    "app": "omsorgspenger-midlertidig-alene-dialog",
+    "app": "ekstra-omsorgsdager-andre-forelder-ikke-tilsyn",
     "cluster": "prod-gcp",
     "namespace": "dusseldorf",
     "team": "dusseldorf",
     "minReplicas": "1",
     "maxReplicas": "1",
-    "ingresses": ["https://www.nav.no/familie/sykdom-i-familien/soknad/regnet-som-alene"],
+    "ingresses": ["https://www.nav.no/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn"],
     "env": {
         "DEKORATOR_URL": "https://www.nav.no/dekoratoren/?simple=true&chatbot=false",
         "API_URL": "https://omsorgspenger-midlertidig-alene-api.nav.no",
-        "PUBLIC_PATH": "/familie/sykdom-i-familien/soknad/regnet-som-alene",
-        "LOGIN_URL": "https://loginservice.nav.no/login?redirect=https://www.nav.no/familie/sykdom-i-familien/soknad/regnet-som-alene/soknad",
+        "PUBLIC_PATH": "/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn",
+        "LOGIN_URL": "https://loginservice.nav.no/login?redirect=https://www.nav.no/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/soknad",
         "APPSTATUS_PROJECT_ID": "ryujtq87",
         "APPSTATUS_DATASET": "production"
     }

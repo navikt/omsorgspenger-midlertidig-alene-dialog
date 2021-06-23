@@ -9,13 +9,13 @@ spec:
     image: {{ image }}
     port: 8080
     liveness:
-        path: /familie/sykdom-i-familien/soknad/regnet-som-alene/health/isAlive
+        path: /familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/health/isAlive
         initialDelay: 20
         timeout: 1
         periodSeconds: 5
         failureThreshold: 10
     readiness:
-        path: /familie/sykdom-i-familien/soknad/regnet-som-alene/health/isReady
+        path: /familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/health/isReady
         initialDelay: 20
         timeout: 1
     resources:
