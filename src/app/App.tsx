@@ -40,7 +40,6 @@ render(
                 ]}
             />
         </SoknadApplication>
-        ,
     </AmplitudeProvider>,
     document.getElementById('app')
 );
