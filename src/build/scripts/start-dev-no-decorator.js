@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('../webpack/webpack.config.dev');
 const configureDevServer = require('../webpack/devserver.config');
+const path = require('path');
 
 require('dotenv').config();
 
