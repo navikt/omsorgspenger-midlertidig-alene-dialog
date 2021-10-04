@@ -4,6 +4,7 @@ import { isUnauthorized, isForbidden } from '@navikt/sif-common-core/lib/utils/a
 
 export const defaultAxiosConfig = {
     withCredentials: true,
+    headers: { 'Content-type': 'application/json; charset=utf-8' },
 };
 
 axios.defaults.baseURL = getEnvironmentVariable('API_URL');
