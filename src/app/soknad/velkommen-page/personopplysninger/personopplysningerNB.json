@@ -1,7 +1,7 @@
 {
     "modal.personopplysninger.dialog.tittel": "Om behandling av personopplysninger",
     "modal.personopplysninger.tittel": "Slik behandler NAV personopplysningene dine",
-    "modal.personopplysninger.intro.1": "Vi innhenter og mottar opplysninger om deg når vi skal behandle saken din. Det er nødvendig for at du skal få riktig tjeneste.",
+    "modal.personopplysninger.intro.1": "Vi innhenter og mottar opplysninger om deg for å behandle saken din. Det er nødvendig for at du skal få riktig tjeneste. Deler av saken din behandles automatisk.",
     "modal.personopplysninger.opplysninger.tittel": "Hvilke opplysninger innhenter vi?",
     "modal.personopplysninger.opplysninger.part1": "Opplysningene vi innhenter kommer enten fra deg eller fra offentlige registre:",
     "modal.personopplysninger.opplysninger.1": "hvilke barn du er registrert som forelder til.",
