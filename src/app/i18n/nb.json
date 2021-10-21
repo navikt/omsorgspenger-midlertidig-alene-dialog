@@ -143,8 +143,8 @@
     "validation.annenForelderNavn.stringIsTooShort": "Navnet på den andre forelderen må inneholde minst {min} tegn.",
 
     "validation.annenForelderFnr.fødselsnummerHasNoValue": "Skriv inn fødselsnummeret til den andre forelderen.",
-    "validation.annenForelderFnr.fødselsnummerIsInvalid": "Du har oppgitt et ugyldig fødselsnummer. Et gyldig fødselsnummer består av 11 siffer.",
-    "validation.annenForelderFnr.fødselsnummerIsNot11Chars": "Du har oppgitt et ugyldig fødselsnummer som ikke består av 11 siffer. Et gyldig fødselsnummer består av 11 siffer.",
+    "validation.annenForelderFnr.fødselsnummerIsInvalid": "Du har oppgitt et ugyldig fødselsnummer. Kontroller at du har tastet inn riktig.",
+    "validation.annenForelderFnr.fødselsnummerIsNot11Chars": "Du har oppgitt et ugyldig fødselsnummer. Et gyldig fødselsnummer består av 11 siffer.",
 
     "validation.annenForelderSituasjon.noValue": "Du må velge én av disse grunnene til at den andre forelderen ikke kan ha tilsyn med barn i en periode på 6 måneder.",
 

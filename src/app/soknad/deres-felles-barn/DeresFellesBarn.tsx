@@ -12,9 +12,11 @@ import { StepID } from '../soknadStepsConfig';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
 import { prettifyDate } from '@navikt/sif-common-core/lib/utils/dateUtils';
+import { Person } from '../../types/Person';
 
 interface Props {
     barn: Barn[];
+    søker: Person;
 }
 
 const barnItemLabelRenderer = (barnet: Barn, intl: IntlShape): React.ReactNode => {
@@ -30,11 +32,13 @@ const barnItemLabelRenderer = (barnet: Barn, intl: IntlShape): React.ReactNode =
     );
 };
 
-const OmDeresFellesBarnStep = ({ barn }: Props) => {
+const OmDeresFellesBarnStep = ({ barn, søker }: Props) => {
     const intl = useIntl();
     const {
-        values: { andreBarn },
+        values: { andreBarn, annenForelderFnr },
     } = useFormikContext<SoknadFormData>();
+
+    const andreBarnFnr = andreBarn.map((barn) => barn.fnr);
 
     const kanFortsette = (barn !== undefined && barn.length > 0) || andreBarn.length > 0;
     return (
@@ -70,6 +74,7 @@ const OmDeresFellesBarnStep = ({ barn }: Props) => {
                         listTitle: intlHelper(intl, 'step.deres-felles-barn.listDialog.listTitle'),
                         modalTitle: intlHelper(intl, 'step.deres-felles-barn.listDialog.modalTitle'),
                     }}
+                    disallowedFødselsnumre={[...[søker.fødselsnummer, annenForelderFnr], ...andreBarnFnr]}
                 />
             </Box>
             {andreBarn.length === 0 && barn.length === 0 && (
