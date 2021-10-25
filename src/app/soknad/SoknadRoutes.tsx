@@ -42,7 +42,7 @@ const SoknadRoutes = ({ soknadId, søker, barn = [] }: Props) => {
             case StepID.ANNEN_FORELDER_SITUASJON:
                 return <AnnenForelderenSituasjonStep />;
             case StepID.DERES_FELLES_BARN:
-                return <OmDeresFellesBarnStep barn={barn} />;
+                return <OmDeresFellesBarnStep barn={barn} søker={søker} />;
             case StepID.OPPSUMMERING:
                 const apiValues = mapFormDataToApiData(id, intl.locale, values, barn);
                 return <OppsummeringStep apiValues={apiValues} søker={søker} barn={barn} />;
