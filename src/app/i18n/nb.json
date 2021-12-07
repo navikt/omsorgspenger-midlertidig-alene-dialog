@@ -143,7 +143,7 @@
     "validation.annenForelderFnr.fødselsnummerHasNoValue": "Skriv inn fødselsnummeret til den andre forelderen.",
     "validation.annenForelderFnr.fødselsnummerIsInvalid": "Du har oppgitt et ugyldig fødselsnummer. Kontroller at du har tastet inn riktig.",
     "validation.annenForelderFnr.fødselsnummerIsNot11Chars": "Du har oppgitt et ugyldig fødselsnummer. Et gyldig fødselsnummer består av 11 siffer.",
-
+    "validation.annenForelderFnr.fødselsnummerIsNotAllowed": "Fødselsnummeret kan ikke være ditt eget. Legg inn barnets fødselsnummer.",
     "validation.annenForelderSituasjon.noValue": "Du må velge én av disse grunnene til at den andre forelderen ikke kan ha tilsyn med barn i en periode på 6 måneder.",
 
     "validation.annenForelderSituasjonBeskrivelse.stringHasNoValue": "Skriv inn hva som gjør at den andre forelderen ikke kan ha tilsyn med barn.",
