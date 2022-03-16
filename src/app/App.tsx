@@ -20,6 +20,7 @@ export const SKJEMANAVN = 'Søknad om ekstra omsorgsdager';
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 
 // trigger deploy
+// test2
 
 render(
     <AmplitudeProvider applicationKey={APPLICATION_KEY}>
