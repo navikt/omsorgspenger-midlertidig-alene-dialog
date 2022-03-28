@@ -8,7 +8,7 @@
     "ingresses": ["https://ekstra-omsorgsdager-andre-forelder-ikke-tilsyn.dev.nav.no"],
     "env": {
         "DEKORATOR_URL": "https://dekoratoren.dev.nav.no/?simple=true&chatbot=false&urlLookupTable=false",
-        "API_URL": "https://omsorgspenger-midlertidig-alene-api.dev.nav.no",
+        "API_URL": "https://k9-brukerdialog-api.dev.nav.no",
         "PUBLIC_PATH": "/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn",
         "LOGIN_URL": "https://loginservice.dev.nav.no/login?redirect=https://ekstra-omsorgsdager-andre-forelder-ikke-tilsyn.dev.nav.no/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/soknad",
         "APPSTATUS_PROJECT_ID": "ryujtq87",

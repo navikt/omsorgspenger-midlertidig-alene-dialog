@@ -66,13 +66,6 @@ const barnMock = {
     ],
 };
 
-const barnMock2 = {
-    barnOppslag: [
-        { fødselsdato: '1990-01-02', fornavn: 'Barn', mellomnavn: 'Barne', etternavn: 'Barnesen', aktørId: '1' },
-        { fødselsdato: '1990-01-02', fornavn: 'Mock', etternavn: 'Mocknes', aktørId: '2' },
-    ],
-};
-
 const startExpressServer = () => {
     const port = process.env.PORT || 8089;
 
@@ -86,7 +79,7 @@ const startExpressServer = () => {
         }, 2000);
     });
 
-    server.get('/soker', (req, res) => {
+    server.get('/oppslag/soker', (req, res) => {
         setTimeout(() => {
             res.send(søkerMock);
         }, 200);
@@ -95,25 +88,19 @@ const startExpressServer = () => {
     server.get('/soker-not-logged-in', (req, res) => {
         res.sendStatus(401);
     });
-    server.get('/soker-err', (req, res) => {
+    server.get('/oppslag/soker-err', (req, res) => {
         setTimeout(() => {
             res.sendStatus(501);
         }, 200);
     });
 
-    server.get('/barn', (req, res) => {
+    server.get('/oppslag/barn', (req, res) => {
         setTimeout(() => {
             res.send(barnMock);
         }, 200);
     });
 
-    server.get('/barn2', (req, res) => {
-        setTimeout(() => {
-            res.send(barnMock2);
-        }, 200);
-    });
-
-    server.get('/barn-err', (req, res) => {
+    server.get('/oppslag/barn-err', (req, res) => {
         setTimeout(() => {
             res.sendStatus(501);
         }, 200);
@@ -122,8 +109,8 @@ const startExpressServer = () => {
     server.get('/soker-logget-ut', (req, res) => {
         res.sendStatus(401);
     });
-    // TODO: endre her
-    server.post('/soknad', (req, res) => {
+
+    server.post('/omsorgspenger-midlertidig-alene/innsending', (req, res) => {
         const body = req.body;
         console.log('[POST] body', body);
         setTimeout(() => {
@@ -131,7 +118,7 @@ const startExpressServer = () => {
         }, 2500);
     });
     // TODO: endre her
-    server.post('/soknad/alene-err', (req, res) => {
+    server.post('/omsorgspenger-midlertidig-alene/innsending/alene-err', (req, res) => {
         const body = req.body;
         console.log('[POST] body', body);
         setTimeout(() => {
