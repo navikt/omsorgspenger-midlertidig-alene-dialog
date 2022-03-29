@@ -130,7 +130,7 @@ const startExpressServer = () => {
         res.sendStatus(401);
     });
 
-    server.get('/mellomlagring', (req, res) => {
+    server.get('/mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE', (req, res) => {
         if (existsSync(MELLOMLAGRING_JSON)) {
             const body = readFileSync(MELLOMLAGRING_JSON);
             res.send(JSON.parse(body));
@@ -139,21 +139,21 @@ const startExpressServer = () => {
         }
     });
 
-    server.put('/mellomlagring', (req, res) => {
+    server.put('/mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE', (req, res) => {
         const body = req.body;
         const jsBody = isJSON(body) ? JSON.parse(body) : body;
         writeFileAsync(MELLOMLAGRING_JSON, JSON.stringify(jsBody, null, 2));
         res.sendStatus(200);
     });
 
-    server.post('/mellomlagring', (req, res) => {
+    server.post('/mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE', (req, res) => {
         const body = req.body;
         const jsBody = isJSON(body) ? JSON.parse(body) : body;
         writeFileAsync(MELLOMLAGRING_JSON, JSON.stringify(jsBody, null, 2));
         res.sendStatus(200);
     });
 
-    server.delete('/mellomlagring', (req, res) => {
+    server.delete('/mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE', (req, res) => {
         writeFileAsync(MELLOMLAGRING_JSON, JSON.stringify({}, null, 2));
         res.sendStatus(200);
     });
