@@ -12,7 +12,7 @@ export interface AnnenForelder {
 }
 
 export interface ApiBarn {
-    identitetsnummer?: string;
+    norskIdentifikator?: string;
     aktørId?: string;
     navn: string;
 }

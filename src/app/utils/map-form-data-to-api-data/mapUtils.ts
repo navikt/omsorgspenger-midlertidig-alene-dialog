@@ -7,7 +7,7 @@ export const mapAndreBarnToApiBarn = (annetBarn: AndreBarn): ApiBarn => {
     return {
         navn: annetBarn.navn,
         aktørId: undefined,
-        identitetsnummer: annetBarn.fnr,
+        norskIdentifikator: annetBarn.fnr,
     };
 };
 
@@ -15,6 +15,6 @@ export const mapBarnToApiBarn = (registrertBarn: Barn): ApiBarn => {
     return {
         navn: formatName(registrertBarn.fornavn, registrertBarn.etternavn, registrertBarn.mellomnavn),
         aktørId: registrertBarn.aktørId,
-        identitetsnummer: undefined,
+        norskIdentifikator: undefined,
     };
 };

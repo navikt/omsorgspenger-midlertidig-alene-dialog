@@ -13,7 +13,7 @@ const BarnSummaryList = ({ barn }: Props) => {
     return (
         <SummaryList
             items={barn}
-            itemRenderer={({ identitetsnummer, navn }: ApiBarn): string => {
+            itemRenderer={({ norskIdentifikator: identitetsnummer, navn }: ApiBarn): string => {
                 const fnr = identitetsnummer
                     ? intlHelper(intl, 'step.oppsummering.deres-felles-barn.listItem', { identitetsnummer })
                     : '';
