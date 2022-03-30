@@ -26,9 +26,9 @@ axios.interceptors.response.use(
 );
 
 export enum ApiEndpoint {
-    'soker' = 'oppslag/soker',
+    'soker' = 'oppslag/soker?ytelse=omsorgspenger_midlertidig_alene',
     'mellomlagring' = 'mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE',
-    'barn' = 'oppslag/barn',
+    'barn' = 'oppslag/barn?ytelse=omsorgspenger_midlertidig_alene',
     'sendSoknad' = 'omsorgspenger-midlertidig-alene/innsending',
 }
 
