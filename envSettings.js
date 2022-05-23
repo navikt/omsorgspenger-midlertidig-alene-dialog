@@ -7,6 +7,7 @@ const envSettings = () => {
     const LOGIN_URL = process.env.LOGIN_URL;
     const APPSTATUS_PROJECT_ID = process.env.APPSTATUS_PROJECT_ID;
     const APPSTATUS_DATASET = process.env.APPSTATUS_DATASET;
+    const USE_AMPLITUDE = process.env.USE_AMPLITUDE;
 
     const appSettings = `
      window.appSettings = {
@@ -15,6 +16,7 @@ const envSettings = () => {
          LOGIN_URL: '${LOGIN_URL}',
          APPSTATUS_PROJECT_ID: '${APPSTATUS_PROJECT_ID}',
          APPSTATUS_DATASET: '${APPSTATUS_DATASET}',
+         USE_AMPLITUDE: '${USE_AMPLITUDE}',
      };`
         .trim()
         .replace(/ /g, '');
