@@ -14,11 +14,11 @@
     "validationText.mer_1000_bokstaver": "Du kan skrive maks 1000 teikn",
     "validationText.barn_ikke_registrert": "Du må leggje til minst eitt barn for å halde fram",
 
-    "grunn.sykdom": "Sjukdom, skade eller funksjonshemming",
-    "grunn.innlagtIHelseinstitusjon": "Innlagd i helseinstitusjon",
-    "grunn.fengsel": "Fengsel",
-    "grunn.utøverVerneplikt": "Utøver verneplikt",
-    "grunn.annet": "Anna",
+    "grunn.SYKDOM": "Sjukdom, skade eller funksjonshemming",
+    "grunn.INNLAGT_I_HELSEINSTITUSJON": "Innlagd i helseinstitusjon",
+    "grunn.FENGSEL": "Fengsel",
+    "grunn.UTØVER_VERNEPLIKT": "Utøver verneplikt",
+    "grunn.ANNET": "Anna",
 
     "mottaker.ektefelle": "ektefelle",
     "mottaker.samboer": "sambuar",
