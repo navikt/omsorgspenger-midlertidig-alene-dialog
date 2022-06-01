@@ -10,11 +10,11 @@ export interface Barn {
 }
 
 export enum AnnenForeldrenSituasjon {
-    'sykdom' = 'sykdom',
-    'innlagtIHelseinstitusjon' = 'innlagtIHelseinstitusjon',
-    'fengsel' = 'fengsel',
-    'utøverVerneplikt' = 'utøverVerneplikt',
-    'annet' = 'annet',
+    'sykdom' = 'SYKDOM',
+    'innlagtIHelseinstitusjon' = 'INNLAGT_I_HELSEINSTITUSJON',
+    'fengsel' = 'FENGSEL',
+    'utøverVerneplikt' = 'UTØVER_VERNEPLIKT',
+    'annet' = 'ANNET',
 }
 
 export enum SoknadFormField {
