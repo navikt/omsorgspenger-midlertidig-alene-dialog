@@ -6,7 +6,7 @@ export const defaultAxiosConfig = {
     headers: { 'Content-type': 'application/json; charset=utf-8' },
 };
 
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 axios.interceptors.request.use((config) => {
     return config;
 });
@@ -24,9 +24,9 @@ axios.interceptors.response.use(
 );
 
 export enum ApiEndpoint {
-    'soker' = 'oppslag/soker?ytelse=omsorgspenger-midlertidig-alene',
+    'soker' = 'oppslag/soker',
     'mellomlagring' = 'mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE',
-    'barn' = 'oppslag/barn?ytelse=omsorgspenger-midlertidig-alene',
+    'barn' = 'oppslag/barn',
     'sendSoknad' = 'omsorgspenger-midlertidig-alene/innsending',
 }
 

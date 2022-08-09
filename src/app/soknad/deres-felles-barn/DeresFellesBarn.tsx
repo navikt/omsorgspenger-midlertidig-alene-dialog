@@ -6,13 +6,14 @@ import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
 import { useFormikContext } from 'formik';
 import AlertStripe from 'nav-frontend-alertstriper';
 import BarnListAndDialog from '../../pre-common/forms/barn/BarnListAndDialog';
-import { Barn, SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
+import { SoknadFormData, SoknadFormField } from '../../types/SoknadFormData';
 import SoknadFormStep from '../SoknadFormStep';
 import { StepID } from '../soknadStepsConfig';
 import Box from '@navikt/sif-common-core/lib/components/box/Box';
 import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
 import { prettifyDate } from '@navikt/sif-common-core/lib/utils/dateUtils';
 import { Person } from '../../types/Person';
+import { Barn } from '../../types/Barn';
 
 interface Props {
     barn: Barn[];

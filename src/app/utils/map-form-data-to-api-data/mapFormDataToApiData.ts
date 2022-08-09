@@ -1,5 +1,6 @@
+import { Barn } from '../../types/Barn';
 import { SoknadApiData } from '../../types/SoknadApiData';
-import { Barn, SoknadFormData } from '../../types/SoknadFormData';
+import { SoknadFormData } from '../../types/SoknadFormData';
 import { mapAnnenForelderToApiData } from './mapAnnenForelderToApiData';
 import { mapBarnStepToApiData } from './mapBarnToApiData';
 
