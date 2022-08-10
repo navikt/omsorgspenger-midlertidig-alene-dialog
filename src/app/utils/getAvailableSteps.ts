@@ -5,6 +5,7 @@ import { getFødselsnummerValidator, getStringValidator } from '@navikt/sif-comm
 import { validateFradato, validateTildato } from '../validation/fieldValidations';
 import datepickerUtils from '@navikt/sif-common-formik/lib/components/formik-datepicker/datepickerUtils';
 import { Barn } from '../types/Barn';
+import { YesOrNo } from '@navikt/sif-common-formik/lib';
 
 export const velkommenIsValid = ({ harForståttRettigheterOgPlikter }: SoknadFormData): boolean =>
     harForståttRettigheterOgPlikter === true;
@@ -38,8 +39,7 @@ const annenForelderSituasjonIsComplete = (formData: SoknadFormData): boolean => 
 
     if (
         annenForelderSituasjon === undefined ||
-        (annenForelderPeriodeFom === undefined &&
-            validateFradato(annenForelderPeriodeFom, periodeTilDate) !== undefined)
+        (periodeFraDate === undefined && validateFradato(annenForelderPeriodeFom, periodeTilDate) !== undefined)
     ) {
         return false;
     }
@@ -49,7 +49,6 @@ const annenForelderSituasjonIsComplete = (formData: SoknadFormData): boolean => 
         annenForelderSituasjon === AnnenForeldrenSituasjon.fengsel
     ) {
         return (
-            annenForelderPeriodeTom !== undefined &&
             validateTildato(annenForelderPeriodeTom, periodeFraDate) === undefined &&
             annenForelderSituasjonBeskrivelse.length === 0
         );
@@ -57,9 +56,8 @@ const annenForelderSituasjonIsComplete = (formData: SoknadFormData): boolean => 
 
     const periodeIsValid = () =>
         annenForelderPeriodeVetIkkeTom
-            ? annenForelderPeriodeMer6Maneder !== undefined
-            : annenForelderPeriodeTom !== undefined &&
-              validateTildato(annenForelderPeriodeTom, periodeFraDate) === undefined;
+            ? annenForelderPeriodeMer6Maneder !== YesOrNo.UNANSWERED
+            : periodeTilDate !== undefined && validateTildato(annenForelderPeriodeTom, periodeFraDate) === undefined;
 
     if (annenForelderSituasjon === AnnenForeldrenSituasjon.innlagtIHelseinstitusjon) {
         return periodeIsValid() && annenForelderSituasjonBeskrivelse.length === 0;

@@ -8,7 +8,7 @@ export const initialSoknadFormData: SoknadFormData = {
     [SoknadFormField.annenForelderFnr]: '',
     [SoknadFormField.annenForelderSituasjon]: undefined,
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: '',
-    [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo.NO,
+    [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo.UNANSWERED,
     [SoknadFormField.annenForelderPeriodeFom]: '',
     [SoknadFormField.andreBarn]: [],
 };
