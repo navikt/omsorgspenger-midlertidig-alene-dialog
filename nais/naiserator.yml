@@ -49,4 +49,8 @@ spec:
        value: "{{this}}"
     {{/each}}
     tokenx:
-         enabled: true 
+         enabled: true
+    idporten:
+        enabled: true
+        sidecar:
+            enabled: true
