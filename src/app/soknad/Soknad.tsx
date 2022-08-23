@@ -9,8 +9,9 @@ import { ulid } from 'ulid';
 import { sendSoknad } from '../api/sendSoknad';
 import AppRoutes, { getRouteUrl } from '../config/routeConfig';
 import { Person } from '../types/Person';
+import { Barn } from '../types/Barn';
 import { SoknadApiData } from '../types/SoknadApiData';
-import { Barn, SoknadFormData } from '../types/SoknadFormData';
+import { SoknadFormData } from '../types/SoknadFormData';
 import { SoknadTempStorageData } from '../types/SoknadTempStorageData';
 import {
     navigateTo,
@@ -28,7 +29,9 @@ import { soknadStepsConfig, StepID } from './soknadStepsConfig';
 import soknadTempStorage, { isStorageDataValid } from './SoknadTempStorage';
 import { ApplikasjonHendelse, useAmplitudeInstance } from '@navikt/sif-common-amplitude';
 import { SKJEMANAVN } from '../App';
+import { FormikState } from 'formik';
 
+type resetFormFunc = (nextState?: Partial<FormikState<SoknadFormData>>) => void;
 interface Props {
     søker: Person;
     barn: Barn[];
@@ -63,43 +66,75 @@ const Soknad = ({ søker, barn, soknadTempStorage: tempStorage }: Props) => {
     };
 
     const abortSoknad = async () => {
-        await soknadTempStorage.purge();
-        await logHendelse(ApplikasjonHendelse.avbryt);
-        relocateToSoknad();
+        try {
+            await soknadTempStorage.purge();
+            await logHendelse(ApplikasjonHendelse.avbryt);
+            relocateToSoknad();
+        } catch (error) {
+            if (isUserLoggedOut(error)) {
+                logUserLoggedOut('Ved abort av søknad');
+                relocateToLoginPage();
+            } else {
+                console.log('Feil ved abort av søknad: ', error);
+                navigateToErrorPage(history);
+            }
+        }
     };
 
     const startSoknad = async () => {
-        await resetSoknad();
-        const sId = ulid();
-        setSoknadId(sId);
-        const firstStep = StepID.OM_ANNEN_FORELDER;
+        try {
+            await resetSoknad();
+            const sId = ulid();
+            setSoknadId(sId);
+            const firstStep = StepID.OM_ANNEN_FORELDER;
 
-        await soknadTempStorage.create();
-        await logSoknadStartet(SKJEMANAVN);
+            await soknadTempStorage.create();
+            await logSoknadStartet(SKJEMANAVN);
 
-        setTimeout(() => {
-            navigateTo(soknadStepUtils.getStepRoute(firstStep, SoknadApplicationType.SOKNAD), history);
-        });
+            setTimeout(() => {
+                navigateTo(soknadStepUtils.getStepRoute(firstStep, SoknadApplicationType.SOKNAD), history);
+            });
+        } catch (error) {
+            if (isUserLoggedOut(error)) {
+                logUserLoggedOut('Ved start av søknad');
+                relocateToLoginPage();
+            } else {
+                console.log('Feil ved start av søknad: ', error);
+                navigateToErrorPage(history);
+            }
+        }
     };
 
     const continueSoknadLater = async (sId: string, stepID: StepID, values: SoknadFormData) => {
-        await soknadTempStorage.update(sId, values, stepID, { søker, barn });
-        await logHendelse(ApplikasjonHendelse.fortsettSenere);
-        relocateToNavFrontpage();
+        try {
+            await soknadTempStorage.update(sId, values, stepID, { søker, barn });
+            await logHendelse(ApplikasjonHendelse.fortsettSenere);
+            relocateToNavFrontpage();
+        } catch (error) {
+            if (isUserLoggedOut(error)) {
+                logUserLoggedOut('Ved continueSoknadLater');
+                relocateToLoginPage();
+            } else {
+                console.log('Feil ved continueSoknadLater: ', error);
+                navigateToErrorPage(history);
+            }
+        }
     };
 
-    const onSoknadSent = async (apiValues: SoknadApiData) => {
+    const onSoknadSent = async (apiValues: SoknadApiData, resetFormikForm: resetFormFunc) => {
         await soknadTempStorage.purge();
         await logSoknadSent(SKJEMANAVN);
         setSendSoknadStatus({ failures: 0, status: success(apiValues) });
         setSoknadId(undefined);
+        setInitialFormData({ ...initialSoknadFormData });
+        resetFormikForm({ values: initialSoknadFormData });
         navigateToKvitteringPage(history);
     };
 
-    const send = async (apiValues: SoknadApiData) => {
+    const send = async (apiValues: SoknadApiData, resetFormikForm: resetFormFunc) => {
         try {
             await sendSoknad(apiValues);
-            onSoknadSent(apiValues);
+            onSoknadSent(apiValues, resetFormikForm);
         } catch (error) {
             if (isUserLoggedOut(error)) {
                 logUserLoggedOut('Ved innsending av søknad');
@@ -118,11 +153,11 @@ const Soknad = ({ søker, barn, soknadTempStorage: tempStorage }: Props) => {
         }
     };
 
-    const triggerSend = (apiValues: SoknadApiData) => {
+    const triggerSend = (apiValues: SoknadApiData, resetFormikForm: resetFormFunc) => {
         setTimeout(() => {
             setSendSoknadStatus({ ...sendSoknadStatus, status: pending });
             setTimeout(() => {
-                send(apiValues);
+                send(apiValues, resetFormikForm);
             });
         });
     };
@@ -160,7 +195,7 @@ const Soknad = ({ søker, barn, soknadTempStorage: tempStorage }: Props) => {
                     <SoknadFormComponents.FormikWrapper
                         initialValues={initialFormData}
                         onSubmit={() => null}
-                        renderForm={({ values }) => {
+                        renderForm={({ values, resetForm }) => {
                             const navigateToNextStepFromStep = async (stepID: StepID) => {
                                 const stepToPersist = soknadStepsConfig[stepID].nextStep;
                                 if (stepToPersist && soknadId) {
@@ -194,7 +229,7 @@ const Soknad = ({ søker, barn, soknadTempStorage: tempStorage }: Props) => {
                                             ? (stepId) => continueSoknadLater(soknadId, stepId, values)
                                             : undefined,
                                         startSoknad,
-                                        sendSoknad: triggerSend,
+                                        sendSoknad: (values) => triggerSend(values, resetForm),
                                         gotoNextStepFromStep: (stepID: StepID) => {
                                             navigateToNextStepFromStep(stepID);
                                         },

@@ -1,7 +1,7 @@
 import { formatName } from '@navikt/sif-common-core/lib/utils/personUtils';
-import { AndreBarn } from 'app/pre-common/forms/barn/types';
+import { AndreBarn } from '../../pre-common/forms/barn/types';
 import { ApiBarn } from '../../types/SoknadApiData';
-import { Barn } from '../../types/SoknadFormData';
+import { Barn } from '../../types/Barn';
 
 export const mapAndreBarnToApiBarn = (annetBarn: AndreBarn): ApiBarn => {
     return {

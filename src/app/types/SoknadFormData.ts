@@ -1,13 +1,5 @@
 import { YesOrNo } from '@navikt/sif-common-core/lib/types/YesOrNo';
-import { AndreBarn } from 'app/pre-common/forms/barn/types';
-
-export interface Barn {
-    fødselsdato: Date;
-    fornavn: string;
-    mellomnavn?: string;
-    etternavn: string;
-    aktørId: string;
-}
+import { AndreBarn } from '../pre-common/forms/barn/types';
 
 export enum AnnenForeldrenSituasjon {
     'sykdom' = 'SYKDOM',
@@ -37,7 +29,7 @@ export interface SoknadFormData {
     [SoknadFormField.harBekreftetOpplysninger]: boolean;
     [SoknadFormField.annenForelderNavn]: string;
     [SoknadFormField.annenForelderFnr]: string;
-    [SoknadFormField.annenForelderSituasjon]: AnnenForeldrenSituasjon;
+    [SoknadFormField.annenForelderSituasjon]?: AnnenForeldrenSituasjon;
     [SoknadFormField.annenForelderSituasjonBeskrivelse]: string;
     [SoknadFormField.annenForelderPeriodeFom]: string;
     [SoknadFormField.annenForelderPeriodeTom]?: string;
@@ -45,17 +37,3 @@ export interface SoknadFormData {
     [SoknadFormField.annenForelderPeriodeMer6Maneder]: YesOrNo;
     [SoknadFormField.andreBarn]: AndreBarn[];
 }
-
-export type AnnenForelderFormData = Pick<
-    SoknadFormData,
-    | SoknadFormField.annenForelderNavn
-    | SoknadFormField.annenForelderFnr
-    | SoknadFormField.annenForelderSituasjon
-    | SoknadFormField.annenForelderSituasjonBeskrivelse
-    | SoknadFormField.annenForelderPeriodeFom
-    | SoknadFormField.annenForelderPeriodeTom
-    | SoknadFormField.annenForelderPeriodeVetIkkeTom
-    | SoknadFormField.annenForelderPeriodeMer6Maneder
->;
-
-export type OmBarnaFormData = Pick<SoknadFormData, SoknadFormField.andreBarn>;

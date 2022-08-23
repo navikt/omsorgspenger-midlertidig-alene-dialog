@@ -7,7 +7,7 @@ import CounsellorPanel from '@navikt/sif-common-core/lib/components/counsellor-p
 import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlock';
 import { SoknadFormField } from '../../types/SoknadFormData';
 import SoknadFormComponents from '../SoknadFormComponents';
-import { Person } from 'app/types/Person';
+import { Person } from '../../types/Person';
 import { getFødselsnummerValidator, getStringValidator } from '@navikt/sif-common-formik/lib/validation';
 
 type Props = {

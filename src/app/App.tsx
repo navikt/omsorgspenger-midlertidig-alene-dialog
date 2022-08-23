@@ -17,6 +17,7 @@ Modal.setAppElement('#app');
 export const APPLICATION_KEY = 'omsorgsdager-midlertidig-alene';
 export const SKJEMANAVN = 'Søknad om ekstra omsorgsdager';
 
+const root = document.getElementById('app');
 const publicPath = getEnvironmentVariable('PUBLIC_PATH');
 
 render(
@@ -41,5 +42,5 @@ render(
             />
         </SoknadApplication>
     </AmplitudeProvider>,
-    document.getElementById('app')
+    root
 );
