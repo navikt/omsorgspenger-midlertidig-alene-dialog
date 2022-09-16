@@ -23,8 +23,7 @@ const KvitteringPage = () => {
                             <FormattedMessage id="kvittering.info.3a" />{' '}
                             <Lenke href={getLenker().saksbehandlingstider} target="_blank">
                                 <FormattedMessage id="kvittering.info.3b" />
-                            </Lenke>{' '}
-                            <FormattedMessage id="kvittering.info.3c" />
+                            </Lenke>
                         </span>,
                     ],
                 }}></Kvittering>
