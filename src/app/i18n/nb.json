@@ -127,12 +127,12 @@
     "samtykke.harForståttLabel.lenketekst": "dine plikter",
     "fieldvalidation.mottakersFnrErSøkersFnr": "Du har tastet inn ditt eget fødselsnummer",
 
-    "kvittering.tittel": "Søknad om ekstra omsorgsdager når den andre forelderen ikke kan ha tilsyn med barn er mottatt",
+    "kvittering.tittel": "Vi har mottatt søknad om ekstra omsorgsdager",
     "kvittering.info.tittel": "Hva skjer videre nå?",
-    "kvittering.info.1": "Vi behandler søknaden fra deg om ekstra omsorgsdager.",
-    "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger fra deg.",
-    "kvittering.info.3a": "Når vi har behandlet søknaden din får du et svar fra oss i posten og på ",
-    "kvittering.info.3b": "Ditt NAV",
+    "kvittering.info.1": "Vi behandler søknaden din.",
+    "kvittering.info.2": "Vi kontakter deg hvis vi trenger flere opplysninger.",
+    "kvittering.info.3a": "Når søknaden er ferdigbehandlet, får du et svar fra oss på «Min side».",
+    "kvittering.info.3b": "Du kan sjekke saksbehandlingstiden her.",
 
     "validation.harForståttRettigheterOgPlikter.notChecked": "Du må bekrefte at du har lest og forstått dine plikter.",
 
