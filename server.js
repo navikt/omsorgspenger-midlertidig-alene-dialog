@@ -25,10 +25,11 @@ server.use(
                     'https://*.psplugin.com',
                     'https://*.hotjar.com',
                     'https://www.googletagmanager.com',
+                    'https://www.google-analytics.com',
                     'https://*.sanity.io',
                 ],
                 frameSrc: ['https://*.hotjar.com'],
-                imgSrc: ["'self'", 'data:', 'https://*.nav.no'],
+                imgSrc: ["'self'", 'data:', 'https://*.nav.no', 'https://www.google-analytics.com'],
                 manifestSrc: ["'self'"],
                 scriptSrc: [
                     "'self'",
