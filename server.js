@@ -17,8 +17,15 @@ server.use(
     helmet({
         contentSecurityPolicy: {
             directives: {
-                connectSrc: ["'self'", 'https://*.nav.no', 'https://*.psplugin.com', 'https://*.hotjar.com'],
-                'default-src': ["'self'"],
+                connectSrc: [
+                    "'self'",
+                    'https://*.nav.no',
+                    'https://*.psplugin.com',
+                    'https://*.hotjar.com',
+                    'https://www.googletagmanager.com',
+                    '*.sanity.io',
+                ],
+                defaultSrc: ["'self'"],
                 fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
                 frameSrc: ['https://*.hotjar.com'],
                 imgSrc: ["'self'", 'data:', 'https://*.nav.no'],
