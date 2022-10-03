@@ -15,7 +15,26 @@ const server = express();
 
 server.use(
     helmet({
-        contentSecurityPolicy: false,
+        contentSecurityPolicy: {
+            directives: {
+                connectSrc: ["'self'", 'https://*.nav.no', 'https://*.psplugin.com', 'https://*.hotjar.com'],
+                'default-src': ["'self'"],
+                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
+                frameSrc: ['https://*.hotjar.com'],
+                imgSrc: ["'self'", 'data:', 'https://*.nav.no'],
+                manifestSrc: ["'self'"],
+                scriptSrc: [
+                    "'self'",
+                    'https://*.nav.no',
+                    'https://*.hotjar.com',
+                    'https://account.psplugin.com',
+                    '*.taskanalytics.com/tm.js',
+                    "'unsafe-inline'",
+                    "'unsafe-eval'",
+                ],
+                styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'"],
+            },
+        },
     })
 );
 server.use(compression());
