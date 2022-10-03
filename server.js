@@ -37,6 +37,7 @@ server.use(
                     'https://account.psplugin.com',
                     'https://*.taskanalytics.com/tm.js',
                     'https://www.googletagmanager.com',
+                    'https://www.google-analytics.com/analytics.js',
                     "'unsafe-inline'",
                     "'unsafe-eval'",
                 ],
