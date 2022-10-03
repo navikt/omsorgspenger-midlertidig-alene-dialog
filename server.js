@@ -36,6 +36,7 @@ server.use(
                     'https://*.hotjar.com',
                     'https://account.psplugin.com',
                     'https://*.taskanalytics.com/tm.js',
+                    'https://www.googletagmanager.com',
                     "'unsafe-inline'",
                     "'unsafe-eval'",
                 ],
