@@ -43,6 +43,7 @@ server.use(
                 styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'"],
             },
         },
+        crossOriginEmbedderPolicy: false,
     })
 );
 server.use(compression());
