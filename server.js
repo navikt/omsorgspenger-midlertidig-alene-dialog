@@ -17,6 +17,8 @@ server.use(
     helmet({
         contentSecurityPolicy: {
             directives: {
+                defaultSrc: ["'self'"],
+                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
                 connectSrc: [
                     "'self'",
                     'https://*.nav.no',
@@ -25,8 +27,6 @@ server.use(
                     'https://www.googletagmanager.com',
                     'https://*.sanity.io',
                 ],
-                defaultSrc: ["'self'"],
-                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
                 frameSrc: ['https://*.hotjar.com'],
                 imgSrc: ["'self'", 'data:', 'https://*.nav.no'],
                 manifestSrc: ["'self'"],
@@ -41,6 +41,7 @@ server.use(
                     "'unsafe-eval'",
                 ],
                 styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'"],
+                workerSrc: ['self', 'blob:'],
             },
         },
         crossOriginEmbedderPolicy: false,
