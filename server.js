@@ -17,7 +17,7 @@ server.use(
     helmet({
         contentSecurityPolicy: {
             directives: {
-                defaultSrc: ["'self'"],
+                ...helmet.contentSecurityPolicy.getDefaultDirectives(),
                 fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
                 connectSrc: [
                     "'self'",
@@ -47,6 +47,9 @@ server.use(
             },
         },
         crossOriginEmbedderPolicy: false,
+        crossOriginResourcePolicy: {
+            policy: 'cross-origin',
+        },
     })
 );
 server.use(compression());
