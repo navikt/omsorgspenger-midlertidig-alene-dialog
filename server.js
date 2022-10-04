@@ -17,7 +17,7 @@ server.use(
     helmet({
         contentSecurityPolicy: {
             directives: {
-                ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+                defaultSrc: ["'self'"],
                 fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
                 connectSrc: [
                     "'self'",
@@ -42,7 +42,7 @@ server.use(
                     "'unsafe-inline'",
                     "'unsafe-eval'",
                 ],
-                styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'"],
+                styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'", "'unsafe-eval'"],
                 workerSrc: ['self', 'blob:'],
             },
         },
