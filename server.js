@@ -48,6 +48,7 @@ server.use(
         },
         crossOriginEmbedderPolicy: false,
         crossOriginResourcePolicy: false,
+        crossOriginOpenerPolicy: false,
     })
 );
 server.use(compression());
