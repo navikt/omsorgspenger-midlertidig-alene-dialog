@@ -29,7 +29,13 @@ server.use(
                     'https://*.sanity.io',
                 ],
                 frameSrc: ['https://*.hotjar.com'],
-                imgSrc: ["'self'", 'data:', 'https://*.nav.no', 'https://www.google-analytics.com'],
+                imgSrc: [
+                    "'self'",
+                    'data:',
+                    'https://*.nav.no',
+                    'https://www.google-analytics.com',
+                    'https://*.psplugin.com',
+                ],
                 scriptSrc: [
                     "'self'",
                     'https://*.nav.no',
