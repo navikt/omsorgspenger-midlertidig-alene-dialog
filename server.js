@@ -101,9 +101,10 @@ const startServer = async (html) => {
     await Promise.all([initTokenX()]);
 
     server.use(`${process.env.PUBLIC_PATH}/dist/js`, express.static(path.resolve(__dirname, 'dist/js')));
-    server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res) => {
+    server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res, next) => {
         res.set('cross-origin-resource-policy', 'cross-origin');
         express.static(path.resolve(__dirname, 'dist/css'));
+        next();
     });
     server.get(`${process.env.PUBLIC_PATH}/health/isAlive`, (req, res) => res.sendStatus(200));
     server.get(`${process.env.PUBLIC_PATH}/health/isReady`, (req, res) => res.sendStatus(200));
