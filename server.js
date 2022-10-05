@@ -15,7 +15,38 @@ const server = express();
 
 server.use(
     helmet({
-        contentSecurityPolicy: false,
+        contentSecurityPolicy: {
+            directives: {
+                defaultSrc: ["'self'"],
+                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com'],
+                connectSrc: [
+                    "'self'",
+                    'https://*.nav.no',
+                    'https://*.psplugin.com',
+                    'https://*.hotjar.com',
+                    'https://www.googletagmanager.com',
+                    'https://www.google-analytics.com',
+                    'https://*.sanity.io',
+                ],
+                frameSrc: ['https://*.hotjar.com'],
+                imgSrc: ["'self'", 'data:', 'https://*.nav.no', 'https://www.google-analytics.com'],
+                scriptSrc: [
+                    "'self'",
+                    'https://*.nav.no',
+                    'https://*.hotjar.com',
+                    'https://account.psplugin.com',
+                    'https://*.taskanalytics.com/tm.js',
+                    'https://www.googletagmanager.com',
+                    'https://www.google-analytics.com/analytics.js',
+                    "'unsafe-inline'",
+                    "'unsafe-eval'",
+                ],
+                styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'", "'unsafe-eval'"],
+                workerSrc: ["'self'", 'blob:'],
+            },
+        },
+        crossOriginEmbedderPolicy: false,
+        crossOriginResourcePolicy: { policy: 'same-site' },
     })
 );
 server.use(compression());
