@@ -34,7 +34,7 @@ server.use(
                     "'self'",
                     'https://*.nav.no',
                     'https://*.hotjar.com',
-                    'https://account.psplugin.com',
+                    'https://*.psplugin.com',
                     'https://*.taskanalytics.com/tm.js',
                     'https://www.googletagmanager.com',
                     'https://www.google-analytics.com/analytics.js',
