@@ -47,7 +47,6 @@ server.use(
             },
         },
         crossOriginEmbedderPolicy: false,
-        crossOriginResourcePolicy: { policy: 'same-site' },
     })
 );
 server.use(compression());
