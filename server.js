@@ -53,7 +53,7 @@ server.use(
             },
         },
         crossOriginEmbedderPolicy: false,
-        crossOriginResourcePolicy: { policy: 'same-site' },
+        crossOriginResourcePolicy: { policy: 'cross-origin' },
     })
 );
 server.use(compression());
