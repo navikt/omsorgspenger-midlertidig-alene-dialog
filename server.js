@@ -30,7 +30,6 @@ server.use(
                 ],
                 frameSrc: ['https://*.hotjar.com'],
                 imgSrc: ["'self'", 'data:', 'https://*.nav.no', 'https://www.google-analytics.com'],
-                manifestSrc: ["'self'"],
                 scriptSrc: [
                     "'self'",
                     'https://*.nav.no',
@@ -43,7 +42,7 @@ server.use(
                     "'unsafe-eval'",
                 ],
                 styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'", "'unsafe-eval'"],
-                workerSrc: ['self', 'blob:'],
+                workerSrc: ["'self'", 'blob:'],
             },
         },
         crossOriginEmbedderPolicy: false,
