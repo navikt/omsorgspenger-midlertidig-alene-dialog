@@ -35,6 +35,7 @@ server.use(
                     'https://*.nav.no',
                     'https://www.google-analytics.com',
                     'https://*.psplugin.com',
+                    'https://www.vergic.com',
                 ],
                 scriptSrc: [
                     "'self'",
