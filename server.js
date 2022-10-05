@@ -41,7 +41,7 @@ server.use(
                     "'unsafe-inline'",
                     "'unsafe-eval'",
                 ],
-                styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'", "'unsafe-eval'"],
+                styleSrc: ["'self'", 'https://*.nav.no', 'https://*.psplugin.com', "'unsafe-inline'", "'unsafe-eval'"],
                 workerSrc: ["'self'", 'blob:'],
             },
         },
