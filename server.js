@@ -18,7 +18,7 @@ server.use(
         contentSecurityPolicy: {
             directives: {
                 defaultSrc: ["'self'"],
-                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com', 'http://*.psplugin.com'],
+                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com'],
                 connectSrc: [
                     "'self'",
                     'https://*.nav.no',
@@ -39,8 +39,6 @@ server.use(
                     'https://*.taskanalytics.com/tm.js',
                     'https://www.googletagmanager.com',
                     'https://www.google-analytics.com/analytics.js',
-                    "'unsafe-inline'",
-                    "'unsafe-eval'",
                 ],
                 styleSrc: ["'self'", 'https://*.nav.no', "'unsafe-inline'", "'unsafe-eval'"],
                 workerSrc: ['self', 'blob:'],
