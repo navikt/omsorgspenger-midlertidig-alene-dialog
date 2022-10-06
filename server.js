@@ -101,7 +101,14 @@ const startServer = async (html) => {
     await Promise.all([initTokenX()]);
 
     server.use(`${process.env.PUBLIC_PATH}/dist/js`, express.static(path.resolve(__dirname, 'dist/js')));
-
+    server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res, next) => {
+        const requestOrigin = req.headers.origin;
+        console.log('css requestOrigin: ', requestOrigin);
+        if (requestOrigin === 'https://nav.psplugin.com') {
+            res.set('Access-Control-Allow-Origin', requestOrigin);
+        }
+        next();
+    });
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, express.static(path.resolve(__dirname, 'dist/css')));
     server.get(`${process.env.PUBLIC_PATH}/health/isAlive`, (req, res) => res.sendStatus(200));
     server.get(`${process.env.PUBLIC_PATH}/health/isReady`, (req, res) => res.sendStatus(200));
