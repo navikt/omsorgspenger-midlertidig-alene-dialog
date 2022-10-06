@@ -102,10 +102,10 @@ const startServer = async (html) => {
 
     server.use(`${process.env.PUBLIC_PATH}/dist/js`, express.static(path.resolve(__dirname, 'dist/js')));
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res, next) => {
-        const requestOrigin = req.headers.origin;
-        console.log('css requestOrigin: ', requestOrigin);
+        const requestReferer = req.headers.Referer;
+        console.log('css requestReferer: ', requestReferer);
         if (requestOrigin === 'https://nav.psplugin.com') {
-            res.set('Access-Control-Allow-Origin', requestOrigin);
+            res.set('Access-Control-Allow-Origin', requestReferer);
         }
         next();
     });
