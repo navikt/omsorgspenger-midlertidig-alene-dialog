@@ -104,9 +104,9 @@ const startServer = async (html) => {
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res, next) => {
         const requestReferer = req.headers.Referer;
         console.log('css requestReferer: ', requestReferer);
-        if (requestOrigin === 'https://nav.psplugin.com') {
-            res.set('Access-Control-Allow-Origin', requestReferer);
-        }
+        const requestreferer = req.headers.referer;
+        console.log('css requestreferer: ', requestreferer);
+        console.log('css req.headers: ', req.headers);
         next();
     });
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, express.static(path.resolve(__dirname, 'dist/css')));
