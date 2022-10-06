@@ -29,6 +29,7 @@ server.use(
                     'https://*.sanity.io',
                 ],
                 frameSrc: ['https://*.hotjar.com'],
+                frameAncestors: ["'self'", 'https://www.nav.no'],
                 imgSrc: [
                     "'self'",
                     'data:',
