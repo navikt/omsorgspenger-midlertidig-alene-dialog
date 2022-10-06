@@ -105,7 +105,7 @@ const startServer = async (html) => {
         const requestReferer = req.headers.referer;
         console.log('requestReferer: ', requestReferer);
         if (requestReferer !== undefined && requestReferer === 'https://nav.psplugin.com') {
-            res.set('Access-Control-Allow-Origin', 'https://nav.psplugin.com');
+            res.set('cross-origin-resource-policy', 'cross-origin');
         }
         next();
     });
