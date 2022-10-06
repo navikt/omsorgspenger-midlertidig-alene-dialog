@@ -104,10 +104,9 @@ const startServer = async (html) => {
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res, next) => {
         const requestReferer = req.headers.referer;
         console.log('requestReferer: ', requestReferer);
-        console.log('requestReferer === https://nav.psplugin.com: ', requestReferer === 'https://nav.psplugin.com');
-        if (requestReferer !== undefined && requestReferer === 'https://nav.psplugin.com') {
-            console.log('cross-origin-resource-policy satt ', requestReferer);
-            res.set('cross-origin-resource-policy', 'cross-origin');
+        console.log('requestReferer === https://nav.psplugin.com/: ', requestReferer === 'https://nav.psplugin.com/');
+        if (requestReferer !== undefined && requestReferer === 'https://nav.psplugin.com/') {
+            res.set('Access-Control-Allow-Origin', 'https://nav.psplugin.com');
         }
         next();
     });
