@@ -102,11 +102,9 @@ const startServer = async (html) => {
 
     server.use(`${process.env.PUBLIC_PATH}/dist/js`, express.static(path.resolve(__dirname, 'dist/js')));
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, (req, res, next) => {
-        const requestReferer = req.headers.Referer;
-        console.log('css requestReferer: ', requestReferer);
-        const requestreferer = req.headers.referer;
-        console.log('css requestreferer: ', requestreferer);
-        console.log('css req.headers: ', req.headers);
+        const requestHost = req.headers.host;
+        console.log('requestHost: ', requestHost);
+
         next();
     });
     server.use(`${process.env.PUBLIC_PATH}/dist/css`, express.static(path.resolve(__dirname, 'dist/css')));
