@@ -15,47 +15,17 @@ const server = express();
 
 server.use(
     helmet({
-        contentSecurityPolicy: {
-            directives: {
-                defaultSrc: ["'self'"],
-                fontSrc: ["'self'", 'data:', 'https://*.psplugin.com'],
-                connectSrc: [
-                    "'self'",
-                    'https://*.nav.no',
-                    'https://*.psplugin.com',
-                    'https://*.hotjar.com',
-                    'https://www.googletagmanager.com',
-                    'https://www.google-analytics.com',
-                    'https://*.sanity.io',
-                ],
-                frameSrc: ['https://*.hotjar.com'],
-                imgSrc: [
-                    "'self'",
-                    'data:',
-                    'https://*.nav.no',
-                    'https://www.google-analytics.com',
-                    'https://*.psplugin.com',
-                    'https://www.vergic.com',
-                ],
-                scriptSrc: [
-                    "'self'",
-                    'https://*.nav.no',
-                    'https://*.hotjar.com',
-                    'https://*.psplugin.com',
-                    'https://*.taskanalytics.com/tm.js',
-                    'https://www.googletagmanager.com',
-                    'https://www.google-analytics.com/analytics.js',
-                    "'unsafe-inline'",
-                    "'unsafe-eval'",
-                ],
-                styleSrc: ["'self'", 'https://*.nav.no', 'https://*.psplugin.com', "'unsafe-inline'", "'unsafe-eval'"],
-                workerSrc: ["'self'", 'blob:'],
-            },
-        },
+        contentSecurityPolicy: false,
         crossOriginEmbedderPolicy: false,
-        crossOriginResourcePolicy: { policy: 'same-site' },
     })
 );
+
+server.use((req, res, next) => {
+    res.set('X-XSS-Protection', '1; mode=block');
+    res.set('Feature-Policy', "geolocation 'none'; microphone 'none'; camera 'none'");
+    next();
+});
+
 server.use(compression());
 server.use(cookieParser());
 
