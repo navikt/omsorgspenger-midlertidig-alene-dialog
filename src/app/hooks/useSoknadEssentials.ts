@@ -6,7 +6,7 @@ import getSokerRemoteData from '../api/getSoker';
 import getBarnRemoteData from '../api/getBarn';
 import getSoknadTempStorage from '../api/getSoknadTempStorage';
 import { Person } from '../types/Person';
-import { Barn } from 'app/types/SoknadFormData';
+import { Barn } from '../types/Barn';
 import { SoknadTempStorageData } from '../types/SoknadTempStorageData';
 import { relocateToLoginPage } from '../utils/navigationUtils';
 

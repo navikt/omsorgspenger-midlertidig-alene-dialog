@@ -50,7 +50,6 @@ const AnnenForelderenSituasjonStep = () => {
     const { values } = useFormikContext<SoknadFormData>();
 
     const periodeFra = datepickerUtils.getDateFromDateString(values.annenForelderPeriodeFom);
-
     const periodeTil = datepickerUtils.getDateFromDateString(values.annenForelderPeriodeTom);
 
     const renderTekstArea = () => {

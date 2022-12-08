@@ -1,14 +1,12 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
-import { getEnvironmentVariable } from '@navikt/sif-common-core/lib/utils/envUtils';
 import { isUnauthorized, isForbidden } from '@navikt/sif-common-core/lib/utils/apiUtils';
 
 export const defaultAxiosConfig = {
-    withCredentials: true,
+    withCredentials: false,
     headers: { 'Content-type': 'application/json; charset=utf-8' },
 };
 
-axios.defaults.baseURL = getEnvironmentVariable('API_URL');
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 axios.interceptors.request.use((config) => {
     return config;
 });
@@ -26,18 +24,18 @@ axios.interceptors.response.use(
 );
 
 export enum ApiEndpoint {
-    'soker' = 'oppslag/soker?ytelse=omsorgspenger-midlertidig-alene',
+    'soker' = 'oppslag/soker',
     'mellomlagring' = 'mellomlagring/OMSORGSPENGER_MIDLERTIDIG_ALENE',
-    'barn' = 'oppslag/barn?ytelse=omsorgspenger-midlertidig-alene',
+    'barn' = 'oppslag/barn',
     'sendSoknad' = 'omsorgspenger-midlertidig-alene/innsending',
 }
 
 const api = {
-    get: <ResponseType>(endpoint: ApiEndpoint, paramString?: string, config?: AxiosRequestConfig) => {
+    get: <ResponseType>(endpoint: string, paramString?: string, config?: AxiosRequestConfig) => {
         const url = `${endpoint}${paramString ? `?${paramString}` : ''}`;
         return axios.get<ResponseType>(url, config || defaultAxiosConfig);
     },
-    post: <DataType = any, ResponseType = any>(endpoint: ApiEndpoint, data: DataType) =>
+    post: <DataType = any, ResponseType = any>(endpoint: string, data: DataType) =>
         axios.post<ResponseType>(endpoint, data, defaultAxiosConfig),
 };
 

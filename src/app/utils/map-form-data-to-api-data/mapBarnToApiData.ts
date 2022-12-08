@@ -1,5 +1,6 @@
-import { ApiBarn } from 'app/types/SoknadApiData';
-import { Barn, SoknadFormData } from '../../types/SoknadFormData';
+import { Barn } from '../../types/Barn';
+import { ApiBarn } from '../../types/SoknadApiData';
+import { SoknadFormData } from '../../types/SoknadFormData';
 import { mapAndreBarnToApiBarn, mapBarnToApiBarn } from './mapUtils';
 
 export interface BarnApiData {
