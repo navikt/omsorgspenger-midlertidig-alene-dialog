@@ -97,7 +97,7 @@ const startServer = async (html) => {
             },
 
             router: async (req) => {
-                req.headers['X-Request-ID'] = uuidv4();
+                req.headers['X-Correlation-ID'] = uuidv4();
 
                 if (req.headers['authorization'] !== undefined) {
                     const token = req.headers['authorization'].replace('Bearer ', '');
