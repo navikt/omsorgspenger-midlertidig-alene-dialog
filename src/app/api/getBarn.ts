@@ -12,10 +12,7 @@ interface BarnResultType {
 }
 const getBarnRemoteData = async (): Promise<BarnRemoteData> => {
     try {
-        const { data } = await api.get<BarnResultType>(
-            getApiUrl(ApiEndpoint.barn),
-            'ytelse=omsorgspenger-midlertidig-alene'
-        );
+        const { data } = await api.get<BarnResultType>(getApiUrl(ApiEndpoint.barn));
         return Promise.resolve(success(data.barn));
     } catch (error) {
         return Promise.reject(failure(error));
