@@ -12,7 +12,7 @@
         "API_URL": "http://k9-brukerdialog-api",
         "FRONTEND_API_PATH": "/api",
         "PUBLIC_PATH": "/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn",
-        "LOGIN_URL": "https://ekstra-omsorgsdager-andre-forelder-ikke-tilsyn.dev.intern.nav.no/oauth2/login?redirect=/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/soknad",
+        "LOGIN_URL": "https://ekstra-omsorgsdager-andre-forelder-ikke-tilsyn.intern.dev.nav.no/oauth2/login?redirect=/familie/sykdom-i-familien/soknad/ekstra-omsorgsdager-andre-forelder-ikke-tilsyn/soknad",
         "APPSTATUS_PROJECT_ID": "ryujtq87",
         "APPSTATUS_DATASET": "staging",
         "USE_AMPLITUDE": "true",
