@@ -61,7 +61,12 @@ const AnnenForelderenSituasjonStep = () => {
                     minLength={5}
                     maxLength={1000}
                     validate={(value) => {
-                        const error = getStringValidator({ required: true, minLength: 5, maxLength: 1000 })(value);
+                        const error = getStringValidator({
+                            required: true,
+                            minLength: 5,
+                            maxLength: 1000,
+                            disallowUnicodeCharacters: true,
+                        })(value);
                         return error
                             ? {
                                   key: error,
